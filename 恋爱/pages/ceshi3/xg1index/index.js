@@ -5,7 +5,7 @@ Page({
   },
   offbtn(){
     tt.navigateTo({
-      url: '/pages/ceshi/xg1result/index' // 指定页面的url
+      url: '/pages/ceshi3/xg1result/index'
     });
   },
   onLoad: function (options) {

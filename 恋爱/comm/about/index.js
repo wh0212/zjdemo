@@ -1,4 +1,3 @@
-// comm/about/index.js
 Component({
   data: {
     list:[
@@ -211,12 +210,22 @@ Component({
         ftitle:"测试你未来婚后生活",
         count:'12.9w',
         id:30
+      },
+      {
+        img:"http://rgb366.99166.com/UpLoadFile/UploadFile/20178811199266.jpg",
+        title:"你会不会成为富翁or负翁",
+        ftitle:"测试你会不会成为富翁or负翁",
+        count:'52.9w',
+        id:31
+      },
+      {
+        img:"http://rgb366.99166.com/UpLoadFile/UploadFile/2019220154736544.jpg",
+        title:"你的事业顺不顺利",
+        ftitle:"测试你的事业顺不顺利",
+        count:'2.9w',
+        id:32
       }
     ]
-  },
-
-  properties: {
-
   },
   methods: {
     about(v) {
@@ -340,6 +349,14 @@ Component({
       }else if (index == 30) {
         tt.navigateTo({
           url: '/pages/hyindex/index'
+        });
+      }else if (index == 31) {
+        tt.navigateTo({
+          url: '/pages/cai6index/index'
+        });
+      }else if (index == 32) {
+        tt.navigateTo({
+          url: '/pages/sy6index/index'
         });
       }
     },

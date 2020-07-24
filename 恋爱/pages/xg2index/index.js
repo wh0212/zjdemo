@@ -6,21 +6,17 @@ Page({
     array: ["请选择","白羊座", "金牛座", "双子座", "巨蟹座","狮子座","处女座","天秤座","天蝎座","射手座","摩羯座","水瓶座","双鱼座"],
     index: 0,
   },
-  tapxz(){
-
-  },
   bindPickerChange(e) {
-    console.log("picker发送选择改变，携带值为", e.detail.value);
+    console.log("picker发送选择改变", e.detail.value);
     this.setData({
       index: e.detail.value,
     });
   },
   bindPickerCancel: function (e) {
-    console.log(e);
-    tt.showToast({ title: "cancel" });
+    
+    tt.showToast({icon:'fail', title: "cancel" });
   },
   leftact(v) {
-    console.log(v.currentTarget.dataset.index)
     if (v.currentTarget.dataset.index == 1) {
       this.setData({
         act: 1

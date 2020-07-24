@@ -48,7 +48,7 @@ Page({
     })
     if (this.data.index == this.data.list.length - 1) {
       tt.showToast({
-        title: '正在测试', // 内容
+        title: '正在测试',
         icon:'loading',
         success: (res) => {
           tt.navigateTo({

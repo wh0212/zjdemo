@@ -33,10 +33,15 @@ page{
 .inp{
   width: 90%;
   height: 100rpx;
-  border:3px rgb(68, 149, 255) solid;
+  border:2px rgb(68, 149, 255) solid;
   border-radius: 10rpx;
   margin:20rpx auto;
   padding: 0rpx 10rpx
+}
+.down{
+  position: absolute;
+  top: 10rpx;
+  right: 20rpx
 }
 .main_name{
   display: flex;
@@ -48,7 +53,7 @@ page{
 .active_left{
   width: 80px;
   height: 30px;
-  border:3px rgb(255, 96, 123) solid;
+  border:2px rgb(68, 149, 255) solid;
   border-radius: 40px;
   display: flex;
   align-items: center;
@@ -64,13 +69,13 @@ page{
   line-height: 30px
 }
 .active{
-  background: rgb(255, 96, 123);
+  background: rgb(68, 149, 255);
   color: #fff !important;
   border-top-right-radius: 0rpx !important;
    border-bottom-right-radius: 0rpx !important
 }
 .active2{
-  background: rgb(255, 96, 123);
+  background: rgb(68, 149, 255);
   color: #fff !important;
   border-top-left-radius: 0rpx !important;
    border-bottom-left-radius: 0rpx !important
@@ -102,57 +107,6 @@ page{
   line-height: 40px;
   color: #fff;
   font-size: 28rpx
-}
-
-/* 测试 */
-.test{
-  width: 90%;
-  padding: 20rpx;
-  margin: 0 auto
-}
-.test_title{
-  width: 100%;
-  font-size: 55rpx;
-  color: #fff;
-}
-.test_main{
-  width: 95%;
-  background: #fff;
-  border-radius: 10px;
-  height: 100px;
-  margin-top: 20rpx;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20rpx
-}
-.test_left{
-  flex: 2
-}
-.test_right{
-  flex: 4;
-  width: 100%;
-  height: 100px;
-  padding-left: 10rpx;
-  display: flex;
-  flex-direction: column
-}
-.test_right_ftitle{
-  font-size: 28rpx;
-  line-height: 80rpx
-}
-.test_right_xq{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 28rpx;
-  margin-top: 10rpx
-}
-.xq_right{
-  background: rgb(248, 62, 93);
-  color: #fff;
-  padding: 10rpx 20rpx;
-  border-radius: 30rpx
 }
 .classtxt{
   color: #fff;

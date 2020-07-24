@@ -12,6 +12,7 @@
 			<view data-index="2" class="{{act==2?'active2':''}}" bindtap="leftact">女</view>
 		</view>
 		<input type="" bindinput="inptxt" class="inputtxt" placeholder="请输入你的名字" />
+    
   </view>
    <view>
 
@@ -30,6 +31,7 @@
   bindcancel="bindPickerCancel"
   disabled="{{false}}">
 <input type="text" class="inpxz"  value="{{array[index]}}" placeholder="请选择你的星座" />
+<view style="color:rgb(255, 96, 123)" class="iconfont down icon-ico_arrows_unfold"></view>
 </picker-view>
    </view>
 

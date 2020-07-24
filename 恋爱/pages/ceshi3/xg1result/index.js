@@ -53,7 +53,7 @@ Page({
         icon: 'loading',
         success: (res) => {
           tt.navigateTo({
-            url: '/pages/ceshi3/xg1jieguo/index' // 指定页面的url
+            url: '/pages/ceshi3/xg1jieguo/index' 
           });
         }
       });

@@ -30,6 +30,7 @@
   bindcancel="bindPickerCancel"
   disabled="{{false}}">
 <input type="text" class="inpxz"  value="{{array[index]}}" placeholder="请选择你的星座" />
+<view style="color:rgba(255, 68, 121)" class="iconfont down icon-ico_arrows_unfold"></view>
 </picker-view>
    </view>
 

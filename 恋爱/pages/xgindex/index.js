@@ -44,7 +44,7 @@ Page({
       this.videoAdCreat()
     } else {
       tt.showToast({
-        title: '请输入名字', // 内容
+        title: '请输入对应内容',
         icon: 'fail'
       });
     }
@@ -65,7 +65,7 @@ Page({
       if (status && status.isEnded || status === undefined) {
         console.log('视频正常关闭 下发奖励')
         tt.showToast({
-          title: "正在檢測",
+          title: "正在检测",
           icon: "loading",
           success(res) {
             setTimeout(() => {

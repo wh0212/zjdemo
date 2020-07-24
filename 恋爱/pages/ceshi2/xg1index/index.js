@@ -5,7 +5,7 @@ Page({
   },
   offbtn(){
     tt.navigateTo({
-      url: '/pages/ceshi/xg1result/index' 
+      url: '/pages/ceshi2/xg1result/index' 
     });
   },
   onLoad: function (options) {

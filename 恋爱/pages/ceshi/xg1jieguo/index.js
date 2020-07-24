@@ -24,6 +24,7 @@ Page({
   },
   // 
   saveImagg() {
+    var that = this;
     tt.getSystemInfo({
       success: res => {
         console.log(res)
@@ -32,7 +33,7 @@ Page({
           screenWidth: res.screenWidth,
           screenHeight: res.screenHeight
         })
-        console.log(this.data)
+
         var img = "../../../image/ceshi.jpg"
         const ctx = tt.createCanvasContext('shareCanvas');
 
@@ -75,6 +76,7 @@ Page({
     })
   },
   onLoad: function (options) {
+    var that = this;
     tt.setNavigationBarTitle({
       title: "测评结果"
     });
@@ -94,7 +96,6 @@ Page({
       })
     })
     // 监听关闭
-    var that = this;
     this.videoAd.onClose((status) => {
       if (status && status.isEnded || status === undefined) {
         console.log('视频正常关闭 下发奖励')
