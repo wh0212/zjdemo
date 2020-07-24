@@ -1,0 +1,29 @@
+{
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"appid": "tt5e2b2896c1113f4d",
+	"projectname": "恋爱",
+	"condition": {
+		"miniprogram": {
+			"current": 0,
+			"list": [
+				{
+					"id": 0,
+					"name": "yy",
+					"pathName": "pages/hyindex/index",
+					"query": "",
+					"scene": "011001",
+					"referrerInfo": {
+						"appId": "",
+						"extraData": ""
+					}
+				}
+			]
+		}
+	}
+}

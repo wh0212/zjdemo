@@ -1,0 +1,33 @@
+<view class="classmain">
+	<!-- 测试 -->
+	<view class="test_main">
+		<image class="test_left" style="width:100%;height:100%" src="../../../image/ceshi3.jpg" mode="" />
+		<view class="test_right">
+			<view class="test_right_title">情侣吵架最忌讳什么</view>
+			<view class="xq_left">12.9w</view>
+		</view>
+	</view>
+
+	<view tt:if="{{act}}" class="main">
+		<view bindtap="search" class="main_jg">
+			<image class="shipin" src="../../../image/视频.png" mode="" /> 观看视频，免费领取结果
+		</view>
+	</view>
+
+	<view tt:if="{{!act}}" class="main_jieguo">
+		<view class="title">测试结果</view>
+		<view class="main_jieguo_txt">{{list[index]}}</view>
+		<!-- 保存图片 -->
+		<!-- <view bindtap="saveimg" class="addimage">
+			<image class="shipin2" src="../../../image/视频.png" mode="" />观看视频，免费保存结果
+		</view> -->
+	</view>
+
+</view>
+
+
+<about></about>
+
+<view class="canvasv">
+	<canvas canvas-id="shareCanvas" style="width:600px;height:900px;background:#fff"></canvas>
+</view>

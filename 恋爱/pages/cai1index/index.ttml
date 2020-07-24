@@ -1,0 +1,45 @@
+<view>
+	<image class="classimg" src="../../image/6.jpg" mode="" />
+</view>
+<view class="title"><text class="csr">出生日</text>测试你的财富关键词</view>
+<view class="main">
+	<view class="main_title">输入个人资料</view>
+	<view class=" inp main_name">
+		<text>姓名：</text>
+		<input class="username" bindinput="inptxt" type="text" placeholder="请输入您的名字" />
+    <view class="active_left">
+			<view class="{{act==1?'active':''}}" data-index="1" bindtap="leftact">男</view>
+			<view data-index="2" class="{{act==2?'active2':''}}" bindtap="leftact">女</view>
+		</view>
+  </view>
+
+  <view class=" inp main_time">
+      <picker
+      mode="date"
+      value="{{index}}"
+      range="{{array}}"
+      start="1000-01-01"
+        end="{{date}}"
+      bindchange="bindPickerChange"
+      bindcancel="bindPickerCancel"
+      disabled="{{false}}"
+    >
+    <picker-view 
+      mode="date"
+      value="{{index}}"
+      range="{{array}}"
+      start="1000-01-01"
+        end="{{date}}"
+      bindchange="bindPickerChange"
+      bindcancel="bindPickerCancel"
+      disabled="{{false}}">
+        <text>生日：</text>
+        <input class="time" value="{{index}}" type="text" placeholder="点击选择出生日期" />
+    </picker-view>
+   </view>
+   <view class="btn" bindtap="tapbtn">立即测试</view>
+</view>
+
+<view class="tishi">--本小程序仅供娱乐--</view>
+
+<about></about>

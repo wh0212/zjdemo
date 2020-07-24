@@ -1,0 +1,105 @@
+page{
+  background: rgb(217, 201, 190)
+}
+.image{
+  width: 85%;
+  padding: 20rpx;
+  border:8rpx blue solid;
+  border-radius: 20rpx;
+  margin: 0 auto;
+  background: #fff
+}
+.top_txt{
+  width: 100%;
+  color: #fff;
+  font-size: 60rpx;
+  font-weight: 600;
+  position: absolute;
+  top:350rpx;
+  text-align: center
+}
+.item_title{
+  width: 100%;
+  line-height: 60rpx;
+  text-align: center
+}
+.img{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50rpx auto
+}
+.bannerimg{
+  width: 100%;
+  height: 500rpx;
+  margin-bottom: 40rpx;
+  position: relative
+}
+.classimg{
+  text-align: center;
+  width: 280rpx;
+  height: 280rpx
+}
+.btn{
+  width: 90%;
+  margin: 0 auto;
+  background: yellow;
+  border:5rpx blue solid;
+  text-align: center;
+  line-height: 60px;
+  border-radius: 10rpx;
+  font-size: 38rpx;
+  color: blue;
+  font-weight: 550
+}
+/* 测试 */
+.test{
+  width: 90%;
+  padding: 20rpx;
+  margin: 0 auto
+}
+.test_title{
+  width: 100%;
+  font-size: 55rpx;
+  color: #fff;
+}
+.test_main{
+  width: 95%;
+  background: #fff;
+  border-radius: 10px;
+  height: 100px;
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx
+}
+.test_left{
+  flex: 2
+}
+.test_right{
+  flex: 4;
+  width: 100%;
+  height: 100px;
+  padding-left: 10rpx;
+  display: flex;
+  flex-direction: column
+}
+.test_right_ftitle{
+  font-size: 28rpx;
+  line-height: 80rpx
+}
+.test_right_xq{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28rpx;
+  margin-top: 10rpx
+}
+.xq_right{
+  background: rgb(248, 62, 93);
+  color: #fff;
+  padding: 10rpx 20rpx;
+  border-radius: 30rpx
+}

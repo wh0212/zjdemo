@@ -1,0 +1,44 @@
+<view class="bannerI">
+	<image style="width:100%" src="../../image/1.jpg" mode="" />
+</view>
+
+<view class="main">
+	<view class="main_title">测试有几个人向你表白</view>
+	<view class="main_active">
+		<view class="active_left">
+			<view class="{{act==1?'active':''}}" data-index="1" bindtap="leftact">男</view>
+			<view data-index="2" class="{{act==2?'active2':''}}" bindtap="leftact">女</view>
+		</view>
+		<input type="" bindinput="inptxt" class="inputtxt" placeholder="请输入你的名字" />
+  </view>
+   <view>
+
+      <picker
+  mode="selector"
+  value="{{index}}"
+  range="{{array}}"
+  bindchange="bindPickerChange"
+  bindcancel="bindPickerCancel"
+  disabled="{{false}}"
+>
+<picker-view mode="selector"
+  value="{{index}}"
+  range="{{array}}"
+  bindchange="bindPickerChange"
+  bindcancel="bindPickerCancel"
+  disabled="{{false}}">
+<input type="text" class="inpxz"  value="{{array[index]}}" placeholder="请选择你的星座" />
+</picker-view>
+   </view>
+
+
+<view>
+<view class="btn" bindtap="search">点此查询</view>
+</view>
+
+  
+</view>
+<view class="tishi">--本小程序仅供娱乐--</view>
+
+<!-- 有趣测试 -->
+<about></about>

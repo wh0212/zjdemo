@@ -1,0 +1,25 @@
+<view style="background:#fff">
+	<swiper circular="{{true}}" class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}"
+	 duration="{{duration}}">
+		<swiper-item  class="swiper_item">
+			<image bindtap="ceshi_btn" data-url="/pages/live2index/index" src="../../image/1.jpg" class="slide-image" />
+		</swiper-item>
+	</swiper>
+
+	<view class="tuijian">
+		<view class="tuijian_title">今日推荐</view>
+		<view class="tuijian_list">
+			<scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
+				<view tt:for="{{tuijianlist}}" class="scroll_item">
+					<view class="tit_img">
+						<image class="classimage" src="{{item.image}}" mode="" />
+					</view>
+					<view class="item_title">{{item.title}}</view>
+					<view class="item_btn" data-url="{{item.url}}" bindtap="ceshi_btn">立即测试</view>
+				</view>
+			</scroll-view>
+		</view>
+	</view>
+</view>
+
+<about></about>

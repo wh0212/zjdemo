@@ -1,0 +1,31 @@
+<view class="bannerI">
+	<image style="width:100%" src="../../image/aiqing.jpg" mode="" />
+</view>
+<view class="classtxt">
+	想在尘世中找到一个两情相悦的人本已不易，在这个过程中还可能遇到种种的烂桃花，让我们避之不及。若想自己的爱情能够顺顺利利，了解你这一生中会有几朵烂桃花。
+</view>
+
+<view class="main">
+	<view class="main_title">测试爱情意志力</view>
+	<view class="main_active">
+		<view class="active_left">
+			<view class="{{act==1?'active':''}}" data-index="1" bindtap="leftact">男</view>
+			<view data-index="2" class="{{act==2?'active2':''}}" bindtap="leftact">女</view>
+		</view>
+		<input type="" bindinput="inptxt" class="inputtxt" placeholder="请输入你的名字" />
+  </view>
+<view class="main_active">
+		<view class="active_left">
+			<view class="{{act1==3?'active':''}}" data-index="3" bindtap="leftact2">男</view>
+			<view data-index="4" class="{{act1==4?'active2':''}}" bindtap="leftact2">女</view>
+		</view>
+		<input type="" bindinput="inptxt2" class="inputtxt" placeholder="另一半名字" />
+  </view>
+<view>
+<view class="btn" bindtap="search">点此查询</view>
+</view>
+</view>
+
+<view class="tishi">--本小程序仅供娱乐--</view>
+<!-- 有趣测试 -->
+<about></about>

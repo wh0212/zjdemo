@@ -1,0 +1,18 @@
+<view class="bannerI">
+  <image style="width:100%" src="../../image/pocai.jpg" mode="" />
+</view>
+
+<!-- 内容答案 -->
+<view class="main">
+  <view class="main_title">{{dateY}}，你热情如火或高冷如水</view>
+  <view class="main_ftitle">{{dateY}}高冷指数</view>
+  <view class="main_txt">
+    {{list[index]}}
+  </view>
+</view>
+
+<view class="tishi">--本小程序仅供娱乐--</view>
+
+<!-- 有趣测试 -->
+
+<about></about>
