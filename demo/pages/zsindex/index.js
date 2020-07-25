@@ -71,7 +71,7 @@ Page({
           success(res) {
             setTimeout(() => {
               tt.reLaunch({
-                url: '/pages/xgindex/index'
+                url: '/pages/xgresult/index'
               });
             }, 2000)
 

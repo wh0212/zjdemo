@@ -72,7 +72,7 @@ Page({
           success(res) {
             setTimeout(() => {
               tt.reLaunch({
-                url: '/pages/xg5index/index'
+                url: '/pages/xg5result/index'
               });
             }, 2000)
 

@@ -68,7 +68,7 @@ Page({
           success(res) {
             setTimeout(() => {
               tt.reLaunch({
-                url: '/pages/xg2index/index' // 指定页面的url
+                url: '/pages/xg2result/index' // 指定页面的url
               });
             }, 2000)
 

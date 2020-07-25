@@ -67,7 +67,7 @@ Page({
           success(res) {
             setTimeout(() => {
               tt.reLaunch({
-                url: '/pages/sy7index/index' // 指定页面的url
+                url: '/pages/sy7result/index'
               });
             }, 2000)
 

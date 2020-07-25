@@ -67,7 +67,7 @@ Page({
           success(res) {
             setTimeout(() => {
               tt.reLaunch({
-                url: '/pages/zs2index/index'
+                url: '/pages/zs2result/index'
               });
             }, 2000)
 

@@ -72,7 +72,7 @@ Page({
           success(res) {
             setTimeout(() => {
               tt.reLaunch({
-                url: '/pages/hyindex/index'
+                url: '/pages/hyresult/index'
               });
             }, 2000)
 
