@@ -1,0 +1,131 @@
+/* pages/ceshi/xg1jieguo/index.ttss */
+.test_main{
+  width: 95%;
+  background: #fff;
+  height: 100px;
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx;
+  border-bottom: 1px #c2c2c2 solid
+}
+.test_left{
+  flex: 2
+}
+.canvasv{
+  z-index: 133333;
+  position: absolute;
+  top: -100000rpx
+}
+.test_right{
+  flex: 4;
+  width: 100%;
+  height: 100px;
+  padding-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
+.test_right_title{
+  width: 210px;
+  overflow:hidden; 
+  text-overflow:ellipsis; 
+  white-space:nowrap;
+}
+.test_right_ftitle{
+  font-size: 28rpx;
+  line-height: 80rpx;
+  color: #999
+}
+.test_right_xq{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28rpx;
+  margin-top: 10rpx
+}
+.xq_right{
+  background: rgb(248, 62, 93);
+  color: #fff;
+  padding: 10rpx 20rpx;
+  border-radius: 30rpx
+}
+.xq_left{
+  color: rgb(134, 142, 255)
+}
+#test_title_d{
+  color: #000 !important;
+}
+.main{
+  width: 90%;
+  margin: 40rpx auto;
+  height: 400rpx;
+  background: rgb(211, 214, 253);
+  border-radius: 40rpx;
+  position: relative;
+}
+.main_jg{
+  background: rgb(95, 105, 250);
+  color: #fff;
+  width: 400rpx;
+  padding: 20rpx 30rpx;
+  border-radius: 50rpx;
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  font-size: 30rpx;
+  display: flex;
+  align-items: center
+}
+.shipin{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx
+}
+.shipin2{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+  margin-left: 90rpx
+}
+.classmain{
+  width: 90%;
+  margin: 0 auto;
+  padding: 20rpx;
+  border: 1px #c2c2c2 solid;
+  border-radius: 20rpx
+}
+.main_jieguo{
+  width: 95%;
+  padding: 0rpx 20rpx;
+  padding-right: 0rpx !important
+}
+.title{
+  background: rgb(211, 214, 253);
+  margin: 40rpx auto;
+  font-size: 30rpx;
+  width: 200rpx;
+  padding: 10rpx 20rpx;
+  border-radius: 30rpx;
+  text-align: center
+}
+.main_jieguo_txt{
+  width: 100%;
+  font-size: 30rpx;
+  padding-right: 0rpx !important;
+  color: rgb(94, 93, 93)
+}
+
+.addimage{
+  background: rgb(95, 105, 250);
+  color: #fff;
+  width: 90%;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  margin: 30rpx auto;
+  border-radius: 10rpx
+}

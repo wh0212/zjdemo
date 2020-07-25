@@ -1,0 +1,16 @@
+<view class="banner">
+	<image class="classimg" src="../../image/cai7.jpg" mode="" />
+</view>
+
+
+<!-- 内容答案 -->
+<view class="main">
+  <view class="main_title">你的聚财指数有多高</view>
+  <view class="main_ftitle"></view>
+  <view class="main_txt">
+    {{list[index]}}
+  </view>
+</view>
+<view class="tishi">--本小程序仅供娱乐--</view>
+<!-- 有趣测试 -->
+<about></about>

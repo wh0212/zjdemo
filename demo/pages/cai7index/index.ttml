@@ -1,0 +1,38 @@
+<view class="banner">
+	<image class="classimg" src="../../image/cai7.jpg" mode="" />
+</view>
+<view class="title">测试你的聚财指数多高</view>
+<view class="main">
+	<view class="main_title">输入个人资料</view>
+	<view class=" inp main_name">
+		<text>姓名：</text>
+		<input class="username" bindinput="inptxt" type="text" placeholder="请输入你的名字" />
+    <view class="active_left">
+			<view class="{{act==1?'active':''}}" data-index="1" bindtap="leftact">男</view>
+			<view data-index="2" class="{{act==2?'active2':''}}" bindtap="leftact">女</view>
+		</view>
+  </view>
+
+  <view class=" inp main_time">
+    <picker mode="date" value="{{date}}" start="1000-10-01" end="{{datea}}" bindchange="changeDate">
+     <text style="color:#000">生日:</text>
+      <view class="time" >
+      {{index}}
+     </view>
+    <view style="color:rgba(58, 142, 255)" class="iconfont down icon-ico_arrows_unfold"></view>
+   </picker>
+</view>
+   <view class="btn" bindtap="tapbtn">立即测试</view>
+</view>
+
+<view class="tishi">--本小程序仅供娱乐--</view>
+
+<view class="why">
+  <view class="why_title">为什么要测</view>
+  <view class="why_txt">
+      新年新愿望里，大多会有一个愿望是发大财的。虽说钱不是万能的，人们也很反感拜金思想严重的人，但是钱确实能解决现实生活中的很多问题，至少经济压力便可以解决，有钱也更有底气和安全感一点。相信你的新年愿望里也有发大财的美梦，那你的美梦能不能实现，能不能发大财呢?
+  </view>
+</view>
+
+<!-- 有趣测试 -->
+<about></about>

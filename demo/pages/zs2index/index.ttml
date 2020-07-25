@@ -1,0 +1,52 @@
+<view class="bannerI">
+	<image style="width:100%" src="../../image/zs2.jpg" mode="" />
+</view>
+
+<view class="main">
+	<view class="main_title">星座测智商高度</view>
+	<view class="main_active">
+		<view class="active_left">
+			<view class="{{act==1?'active':''}}" data-index="1" bindtap="leftact">男</view>
+			<view data-index="2" class="{{act==2?'active2':''}}" bindtap="leftact">女</view>
+		</view>
+		<input type="" bindinput="inptxt" class="inputtxt" placeholder="请输入你的名字" />
+  </view>
+   <view>
+
+      <picker
+  mode="selector"
+  value="{{index}}"
+  range="{{array}}"
+  bindchange="bindPickerChange"
+  bindcancel="bindPickerCancel"
+  disabled="{{false}}"
+>
+<picker-view mode="selector"
+  value="{{index}}"
+  range="{{array}}"
+  bindchange="bindPickerChange"
+  bindcancel="bindPickerCancel"
+  disabled="{{false}}">
+<input type="text" class="inpxz"  value="{{array[index]}}" placeholder="请选择你的星座" />
+<view style="color:#903fc0" class="iconfont down icon-ico_arrows_unfold"></view>
+</picker-view>
+   </view>
+<view>
+<view class="btn" bindtap="search">点此查询</view>
+</view>
+
+  
+</view>
+<view class="tishi">--本小程序仅供娱乐--</view>
+
+<view class="why">
+  <view class="why_title">为什么要测</view>
+  <view class="why_txt">
+      老板，可以说是一个代表着成功，更是被无数人向往和憧憬的职位了，不管自己的企业是大还是小，相信每个人应该都是更想自己做老板，
+      自己的公司自己做主，而不是一直卑微的给别人打工，尤其是老板也是有着很多的权利，说出去也比较好听，
+      通过测试也是可以让你了解自己有没有做老板的潜质。
+  </view>
+</view>
+
+<!-- 有趣测试 -->
+<about></about>

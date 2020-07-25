@@ -1,0 +1,17 @@
+<view>
+	<image class="classimg" src="../../image/9.jpg" mode="" />
+</view>
+
+
+<!-- 内容答案 -->
+<view class="main">
+  <view class="main_title">{{dateY}},把握机会，明确目标</view>
+  <view class="main_ftitle">{{dateY}}发财契机</view>
+  <view class="main_txt">
+    {{list[index]}}
+  </view>
+</view>
+
+<view class="tishi">--本小程序仅供娱乐--</view>
+<!-- 有趣测试 -->
+<about></about>

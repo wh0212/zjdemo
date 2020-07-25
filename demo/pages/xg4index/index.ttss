@@ -1,0 +1,55 @@
+page{
+  background: rgb(217, 201, 190)
+}
+.image{
+  width: 85%;
+  padding: 20rpx;
+  border:8rpx blue solid;
+  border-radius: 20rpx;
+  margin: 0 auto;
+  background: #fff
+}
+.top_txt{
+  width: 100%;
+  color: #fff;
+  font-size: 60rpx;
+  font-weight: 600;
+  position: absolute;
+  top:350rpx;
+  text-align: center
+}
+.item_title{
+  width: 100%;
+  line-height: 60rpx;
+  text-align: center
+}
+.img{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50rpx auto
+}
+.bannerimg{
+  width: 100%;
+  height: 500rpx;
+  margin-bottom: 40rpx;
+  position: relative
+}
+.classimg{
+  text-align: center;
+  width: 280rpx;
+  height: 280rpx
+}
+.btn{
+  width: 90%;
+  margin: 0 auto;
+  background: yellow;
+  border:5rpx blue solid;
+  text-align: center;
+  line-height: 60px;
+  border-radius: 10rpx;
+  font-size: 38rpx;
+  color: blue;
+  font-weight: 550
+}

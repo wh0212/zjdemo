@@ -1,0 +1,151 @@
+page{
+  background: rgba(42, 80, 249)
+}
+.title{
+  font-size: 58rpx;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 50rpx;
+  margin-top: 20rpx
+}
+.csr{
+  color: rgba(255, 68, 121)
+}
+
+.main{
+  width: 85%;
+  padding: 20rpx;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 20rpx;
+}
+.main_title{
+  width: 100%;
+  text-align: center;
+  line-height: 80rpx
+}
+.inp{
+  width: 90%;
+  height: 100rpx;
+  border:1px rgba(58, 142, 255) solid;
+  border-radius: 10rpx;
+  margin:20rpx auto;
+  padding: 0rpx 10rpx
+}
+.main_name{
+  display: flex;
+  align-items: center;
+}
+.username{
+  width: 45%
+}
+.active_left{
+  width: 80px;
+  height: 30px;
+  border:1px rgba(58, 142, 255) solid;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 20rpx
+}
+.active_left view{
+  flex: 1;
+  text-align: center;
+  color: rgb(255, 96, 123);
+  height: 30px;
+  border-radius: 40px;
+  line-height: 30px
+}
+
+.active{
+  background: rgba(58, 142, 255);
+  color: #fff !important;
+  border-top-right-radius: 0rpx !important;
+   border-bottom-right-radius: 0rpx !important
+}
+.active2{
+  background: rgba(58, 142, 255);
+  color: #fff !important;
+  border-top-left-radius: 0rpx !important;
+   border-bottom-left-radius: 0rpx !important
+}
+
+.clasdown{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 20rpx
+}
+
+.classimg{
+  width: 100%;
+  height: 600rpx
+}
+.btn{
+  width: 95%;
+  line-height: 50px;
+  background: rgba(58, 142, 255);
+  text-align: center;
+  color: #fff;
+  margin: 20rpx auto;
+}
+.why{
+  width: 85%;
+  padding: 20rpx;
+  margin: 40rpx auto;
+  background: #fff;
+  border-radius: 20rpx;
+  position: relative
+}
+.why_title{
+  width: 200rpx;
+  padding: 6rpx 40rpx;
+  margin: 0 auto;
+  background: rgb(0, 225, 162);
+  border-radius: 40rpx;
+  display: inline-block;
+  position: absolute;
+  top: -30rpx;
+  color: #fff;
+  left: 50%;
+  margin-left: -140rpx
+}
+.why_txt{
+  margin-top: 40rpx;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  color: rgb(118, 121, 128)
+}
+.tishi{
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  font-size: 28rpx
+}
+.down{
+  position: absolute;
+  top: 0rpx;
+  right: 20rpx
+}
+.main_time{
+   display: flex;
+  align-items: center;
+  margin-bottom: 40rpx;
+  position: relative;
+  line-height: 100rpx
+}
+.time{
+  width: 74%;
+  height: 100rpx;
+  display: inline-block;
+  padding-left: 30rpx;
+  color: #777
+}
+picker{
+  width: 100%
+}
+
+
+

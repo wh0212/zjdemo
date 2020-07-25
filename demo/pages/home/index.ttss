@@ -1,0 +1,65 @@
+/* pages/home/index.ttss */
+.swiper{
+  padding: 20rpx
+}
+page{
+  background: #eee
+}
+.swiper_item{
+  border-radius: 20rpx;
+  overflow: hidden
+}
+.swiper_item image{
+  width: 100%;
+  height: 100%
+}
+.tuijian{
+  padding: 20rpx;
+}
+.tuijian_title{
+  font-size: 40rpx;
+  font-weight: 540
+}
+.tuijian_list{
+  width: 100%;
+  height: 400rpx;
+  margin:30rpx 0rpx
+}
+#test_title_d{
+  color: #000 !important;
+  font-size: 40rpx;
+  font-weight: 540
+}
+#test_list{
+  width: 95% !important;
+  background: #fff;
+  margin-top: 20rpx
+}
+.scroll_item{
+  width: 300rpx;
+  display: inline-block;
+  height: 400rpx;
+  margin-right: 20rpx;
+}
+.tit_img{
+  width: 100%;
+  height: 266rpx;
+  overflow: hidden;
+  border-radius: 10rpx
+}
+.classimage{
+  width: 100%;
+  height: 100%
+}
+.item_title{
+  font-size: 35rpx;
+  line-height: 70rpx
+}
+.item_btn{
+font-size: 30rpx;       
+padding: 5rpx 30rpx;
+background: rgb(255, 225, 240);
+display: inline-block;
+border-radius: 30rpx;
+color: rgb(160, 100, 125)
+}

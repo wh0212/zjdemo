@@ -1,0 +1,47 @@
+<view class="bannerI">
+	<image style="width:100%" src="../../image/zs.jpg" mode="" />
+</view>
+<view class="classtxt">
+	在当今这个社会，聪明的人总是能够获得更多的资源和机会，过着成功的人生。可是智商的高低除了先天因素外，后天的阅历和经验也很重要。想知道你的智商处于什么水平吗？不妨你检测一下吧。
+</view>
+<view class="main">
+	<view class="main_title">测试你的智商水平</view>
+	<view class="main_active">
+		<view class="active_left">
+			<view class="{{act==1?'active':''}}" data-index="1" bindtap="leftact">男</view>
+			<view data-index="2" class="{{act==2?'active2':''}}" bindtap="leftact">女</view>
+		</view>
+		<input type="" bindinput="inptxt" class="inputtxt" placeholder="请输入你的名字" />
+  </view>
+   <view>
+
+      <picker
+  mode="selector"
+  value="{{index}}"
+  range="{{array}}"
+  bindchange="bindPickerChange"
+  bindcancel="bindPickerCancel"
+  disabled="{{false}}"
+>
+<picker-view mode="selector"
+  value="{{index}}"
+  range="{{array}}"
+  bindchange="bindPickerChange"
+  bindcancel="bindPickerCancel"
+  disabled="{{false}}">
+<input type="text" class="inpxz"  value="{{array[index]}}" placeholder="请选择你的星座" />
+<view style="color:rgb(255, 96, 123)" class="iconfont down icon-ico_arrows_unfold"></view>
+</picker-view>
+   </view>
+
+
+<view>
+<view class="btn" bindtap="search">点此查询</view>
+</view>
+
+  
+</view>
+<view class="tishi">--本小程序仅供娱乐--</view>
+
+<!-- 有趣测试 -->
+<about></about>
