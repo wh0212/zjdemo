@@ -75,7 +75,9 @@
     "pages/zs6index/index",
     "pages/zs6result/index",
     "pages/cai7index/index",
-    "pages/cai7result/index"
+    "pages/cai7result/index",
+    "pages/sy7index/index",
+    "pages/sy7result/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -252,6 +252,13 @@ Component({
         ftitle:"测试你的聚财指数",
         count:'113.2w',
         id:36
+      },
+      {
+        img:"../../image/sy7.jpg",
+        title:"你被领导赏识的概率",
+        ftitle:"测试你会不会得到赏识",
+        count:'13.2w',
+        id:37
       }
     ]
   },
@@ -401,6 +408,10 @@ Component({
       }else if (index == 36) {
         tt.reLaunch({
           url: '/pages/cai7index/index'
+        });
+      }else if (index == 37) {
+        tt.reLaunch({
+          url: '/pages/sy7index/index'
         });
       }
     },

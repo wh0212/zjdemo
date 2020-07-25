@@ -1,13 +1,21 @@
-// pages/index/index.js
+const app = getApp()
 Page({
   data: {
     act: 1,
-    username: "",
-    index: "请选择日期",
-    datea: ''
+    txt: "",
+    array: ["请选择","白羊座", "金牛座", "双子座", "巨蟹座","狮子座","处女座","天秤座","天蝎座","射手座","摩羯座","水瓶座","双鱼座"],
+    index: 0,
+  },
+  bindPickerChange(e) {
+    console.log("picker发送选择改变", e.detail.value);
+    this.setData({
+      index: e.detail.value,
+    });
+  },
+  bindPickerCancel: function (e) {
+    tt.showToast({icon:'fail', title: "cancel" });
   },
   leftact(v) {
-    console.log(v.currentTarget.dataset.index)
     if (v.currentTarget.dataset.index == 1) {
       this.setData({
         act: 1
@@ -18,61 +26,30 @@ Page({
       })
     }
   },
-  bindPickerChange(e) {
-    console.log("picker发送选择改变，携带值为", e.detail.value);
-    this.setData({
-      index: e.detail.value,
-    });
-  },
-  bindPickerCancel: function (e) {
-    tt.showToast({ title: "cancel" });
-  },
   inptxt(v) {
+    console.log(v.detail.value);
     this.setData({
-      username: v.detail.value
+      txt: v.detail.value
     })
   },
-  tapbtn() {
-    if (this.data.index && this.data.username) {
 
+  search() {
+    console.log(this.data)
+    if (this.data.txt && this.data.index !==0) {
       this.videoAdCreat()
     } else {
       tt.showToast({
-        title: '请输入对应内容', // 内容
+        title: '请输入名字', 
         icon: 'fail'
       });
     }
+
   },
-  changeDate: function (e) {
-    //获取当前选择日期
-    var date = e.detail.value;
-    this.setData({
-      index: date
-    })
-  },
-  onLoad: function (options) {
-    var myDate = new Date()
-    let Y = myDate.getFullYear() //年
-    if (myDate.getMonth() + 1 < 10) { //月
-      var M = myDate.getMonth() + 1
-      M = "0" + M
-    } else {
-      var M = myDate.getMonth() + 1
-    }
-    if (myDate.getDate() < 10) { //日
-      var D = myDate.getDate()
-      D = "0" + D
-    } else {
-      var D = myDate.getDate()
-    }
-    myDate = `${Y}-${M}-${D}`//2019-09-23
-    this.setData({
-      datea: myDate
-    })
-    // 
+  onLoad: function () {
     this.videoAd = tt.createRewardedVideoAd({
       adUnitId: 'ek5fh4pno97ttg77oh'
     })
+    console.log(this.videoAd)
     this.videoAd.onError((err) => {
       tt.showToast({
         title: this.videoAdErrHandle(err),
@@ -84,13 +61,13 @@ Page({
       if (status && status.isEnded || status === undefined) {
         console.log('视频正常关闭 下发奖励')
         tt.showToast({
-          title: "正在檢測",
-          duration: 2000,
+          title: "正在检测",
           icon: "loading",
+          duration: 2000,
           success(res) {
             setTimeout(() => {
               tt.reLaunch({
-                url: '/pages/live3result/index' 
+                url: '/pages/sy7index/index' // 指定页面的url
               });
             }, 2000)
 

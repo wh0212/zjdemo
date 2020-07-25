@@ -16,11 +16,9 @@ Page({
     });
   },
   bindPickerCancel: function (e) {
-    console.log(e);
     tt.showToast({ title: "cancel" });
   },
   leftact(v) {
-    console.log(v.currentTarget.dataset.index)
     if (v.currentTarget.dataset.index == 1) {
       this.setData({
         act: 1
@@ -32,19 +30,17 @@ Page({
     }
   },
   inptxt(v) {
-    console.log(v.detail.value);
     this.setData({
       txt: v.detail.value
     })
   },
 
   search() {
-    console.log(this.data)
     if (this.data.txt && this.data.index !==0) {
       this.videoAdCreat()
     } else {
       tt.showToast({
-        title: '请输入相应内容', // 内容
+        title: '请输入相应内容', 
         icon: 'fail'
       });
     }
@@ -71,7 +67,7 @@ Page({
           success(res) {
             setTimeout(() => {
               tt.reLaunch({
-                url: '/pages/live2result/index' // 指定页面的url
+                url: '/pages/live2result/index'
               });
             }, 2000)
 
@@ -110,9 +106,7 @@ Page({
     }
   },
   videoAdErrHandle(err) {
-    console.log('视频加载失败')
-    console.log(err)
-    // {errMsg: "no advertisement", errCode: 1004}
+    console.log(err,'视频加载失败')
     const errHandle = {
       1000: '后端接口调用失败',
       1001: '参数错误',

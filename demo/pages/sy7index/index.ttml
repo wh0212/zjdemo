@@ -1,0 +1,47 @@
+<view class="bannerI">
+	<image style="width:100%" src="../../image/sy7.jpg" mode="" />
+</view>
+
+<view class="main">
+	<view class="main_title">测试你被领导赏识的概率</view>
+	<view class="main_active">
+		<view class="active_left">
+			<view class="{{act==1?'active':''}}" data-index="1" bindtap="leftact">男</view>
+			<view data-index="2" class="{{act==2?'active2':''}}" bindtap="leftact">女</view>
+		</view>
+		<input type="" bindinput="inptxt" class="inputtxt" placeholder="请输入你的名字" />
+  </view>
+    <view>
+      <picker
+        mode="selector"
+        value="{{index}}"
+        range="{{array}}"
+        bindchange="bindPickerChange"
+        bindcancel="bindPickerCancel"
+        disabled="{{false}}"
+      >
+      <picker-view mode="selector"
+        value="{{index}}"
+        range="{{array}}"
+        bindchange="bindPickerChange"
+        bindcancel="bindPickerCancel"
+        disabled="{{false}}">
+          <input type="text" class="inpxz"  value="{{array[index]}}" placeholder="请选择你的星座" />
+          <view style="color:rgb(255, 96, 123)" class="iconfont down icon-ico_arrows_unfold"></view>
+      </picker-view>
+    </view>
+  <view>
+  <view class="btn" bindtap="search">点此查询</view>
+</view>
+</view>
+<view class="tishi">--本小程序仅供娱乐--</view>
+
+<view class="why">
+  <view class="why_title">为什么要测</view>
+  <view class="why_txt">
+      想在职场里混得顺风顺水，领导的垂青是必不可少的条件。不过非常运势测试网认为人与人之间的交往十分奇妙，要让领导感到跟你投缘不得不费一番心思。在下苦功之前，不妨先测测你被领导赏识的概率吧，好让你做好相应的准备。
+  </view>
+</view>
+
+<!-- 有趣测试 -->
+<about></about>

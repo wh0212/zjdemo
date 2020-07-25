@@ -8,19 +8,18 @@ Page({
         title: "你们的爱情意志力"
       },
       {
-        url: "/pages/cai4index/index",
-        image: "../../image/banner.jpg",
-        title: "你的财运方向"
+        url: "/pages/sy7index/index",
+        image: "../../image/sy7.jpg",
+        title: "你会不会被赏识"
       },
       {
-        url: "/pages/syindex/index",
-        image: "../../image/sy.jpg",
-        title: "事业上的成就"
+        url: "/pages/cai7index/index",
+        image: "../../image/cai7.jpg",
+        title: "你的聚财指数"
       }
     ]
   },
   ceshi_btn(v) {
-    console.log(v.target.dataset.url)
     tt.reLaunch({
       url: v.target.dataset.url
     });
