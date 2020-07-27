@@ -77,7 +77,13 @@
     "pages/cai7index/index",
     "pages/cai7result/index",
     "pages/sy7index/index",
-    "pages/sy7result/index"
+    "pages/sy7result/index",
+    "pages/xg6index/index",
+    "pages/xg6result/index",
+    "pages/xg7index/index",
+    "pages/xg7result/index",
+    "pages/zs7index/index",
+    "pages/zs7result/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

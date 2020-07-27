@@ -7,7 +7,7 @@
 		"newFeature": true
 	},
 	"appid": "tt5e2b2896c1113f4d",
-	"projectname": "恋爱",
+	"projectname": "demo",
 	"condition": {
 		"miniprogram": {
 			"current": 0,
@@ -15,7 +15,7 @@
 				{
 					"id": 0,
 					"name": "yy",
-					"pathName": "pages/sy7index/index",
+					"pathName": "pages/index/index",
 					"query": "",
 					"scene": "011001",
 					"referrerInfo": {

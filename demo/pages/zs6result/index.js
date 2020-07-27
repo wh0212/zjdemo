@@ -31,7 +31,7 @@ Page({
       xqtxt = "75"
     }else if (pos == 3) {
       xqtxt = "25"
-    }else if (pos == 3) {
+    }else if (pos == 4) {
       xqtxt = "45"
     }else{
       xqtxt = "60"

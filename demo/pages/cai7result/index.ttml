@@ -6,7 +6,7 @@
 <!-- 内容答案 -->
 <view class="main">
   <view class="main_title">你的聚财指数有多高</view>
-  <view class="main_ftitle"></view>
+  <view class="main_ftitle">测试分析</view>
   <view class="main_txt">
     {{list[index]}}
   </view>

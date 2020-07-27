@@ -1,4 +1,5 @@
 const app = getApp()
+import serve from "../../ults/video.js"
 Page({
   data: {
     act: 1,
@@ -60,7 +61,7 @@ Page({
   search() {
     console.log(this.data)
     if (this.data.txt && this.data.txt2) {
-      this.videoAdCreat()
+      serve('/pages/live7result/index')
     } else {
       tt.showToast({
         title: '请输入名字', // 内容
@@ -70,42 +71,7 @@ Page({
 
   },
   onLoad: function () {
-    this.videoAd = tt.createRewardedVideoAd({
-      adUnitId: '2il8bjen03ef27cuxl'
-    })
-    this.videoAd.onError((err) => {
-      tt.showToast({
-        title: this.videoAdErrHandle(err),
-        icon: 'none'
-      })
-    })
-    // 监听关闭
-    this.videoAd.onClose((status) => {
-      if (status && status.isEnded || status === undefined) {
-        console.log('视频正常关闭 下发奖励')
-        tt.showToast({
-          title: "正在检测",
-          duration: 2000,
-          icon: "loading",
-          success(res) {
-            setTimeout(() => {
-              tt.reLaunch({
-                url: '/pages/live7result/index' // 指定页面的url
-              });
-            }, 2000)
-
-          },
-          fail(res) {
-            console.log(`showToast调用失败`);
-          },
-        });
-
-
-      } else {
-        // 播放中途退出，进行提示
-        tt.showToast({ title: '未完整观看视频不能获取奖励哦', icon: 'none' })
-      }
-    })
+    
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例
@@ -144,5 +110,8 @@ Page({
       1008: '广告单元已关闭',
     }
     return errHandle[err.errCode] || '视频加载错误,重新加载页面试试吧'
+  },
+  onUnload: function () {
+    tt.hideToast();
   }
 })

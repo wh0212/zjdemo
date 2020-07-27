@@ -259,6 +259,27 @@ Component({
         ftitle:"测试你会不会得到赏识",
         count:'13.2w',
         id:37
+      },
+      {
+        img:"../../image/xg6.jpg",
+        title:"你认为外貌重要吗",
+        ftitle:"测试你认为外貌重要吗",
+        count:'3.2w',
+        id:38
+      },
+      {
+        img:"../../image/xg7.jpg",
+        title:"你是不是一个主动的人",
+        ftitle:"测试你是不是一个主动的人",
+        count:'9.4w',
+        id:39
+      },
+      {
+        img:"../../image/zs7.jpg",
+        title:"你的智商or情商有几岁",
+        ftitle:"测试你智商or情商有几岁",
+        count:'23.1w',
+        id:40
       }
     ]
   },
@@ -412,6 +433,18 @@ Component({
       }else if (index == 37) {
         tt.reLaunch({
           url: '/pages/sy7index/index'
+        });
+      }else if (index == 38) {
+        tt.reLaunch({
+          url: '/pages/xg6index/index'
+        });
+      }else if (index == 39) {
+        tt.reLaunch({
+          url: '/pages/xg7index/index'
+        });
+      }else if (index == 40) {
+        tt.reLaunch({
+          url: '/pages/zs7index/index'
         });
       }
     },

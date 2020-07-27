@@ -5,8 +5,8 @@
 
 <!-- 内容答案 -->
 <view class="main">
-  <view class="main_title">{{dateY}},及时沟通，端正态度</view>
-  <view class="main_ftitle">{{dateY}}财运气势</view>
+  <view class="main_title">{{dateY}},你的财运气势</view>
+  <view class="main_ftitle">测试分析</view>
   <view class="main_txt">
     {{list[index]}}
   </view>

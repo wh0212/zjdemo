@@ -16,7 +16,9 @@ width: 100%;
   border:2px rgb(255, 96, 123) solid;
   border-radius: 40px;
   height: 40px;
-  padding-left: 20px
+  padding-left: 20px;
+  line-height: 40px;
+  color: #999
 }
 .down{
   position: absolute;

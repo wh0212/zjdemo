@@ -1,5 +1,5 @@
 page{
-  background: rgba(109, 99, 98)
+  background: #4faba8
 }
 .title{
   font-size: 58rpx;
@@ -9,8 +9,15 @@ page{
   margin-bottom: 50rpx;
   margin-top: 30rpx
 }
-
-
+.bannerI{
+  width: 100%;
+  height: 480rpx;
+  margin-bottom: 0px
+}
+.bannerI image{
+  width: 100%;
+  height: 100%
+}
 .csr{
   color: rgba(255, 68, 121)
 }
@@ -33,7 +40,7 @@ page{
 .inp{
   width: 90%;
   height: 100rpx;
-  border:3px #000 solid;
+  border:1px #000 solid;
   border-radius: 10rpx;
   margin:20rpx auto;
   padding: 0rpx 10rpx;
@@ -60,7 +67,7 @@ page{
 .active_left{
   width: 80px;
   height: 30px;
-  border:3px rgb(255, 96, 123) solid;
+  border:1px rgb(255, 96, 123) solid;
   border-radius: 40px;
   display: flex;
   align-items: center;
@@ -101,13 +108,12 @@ page{
   height: 600rpx
 }
 .btn{
-  width: 80%;
+  width: 94%;
   line-height: 50px;
   background: rgba(67, 50, 102);
   text-align: center;
   color: #fff;
   margin: 20rpx auto;
-  border-radius: 50rpx
 }
 .tishi{
   text-align: center;

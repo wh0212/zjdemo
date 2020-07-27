@@ -72,5 +72,8 @@ Page({
     tt.setNavigationBarTitle({
       title: "测试"
     });
+  },
+  onUnload: function () {
+    tt.hideToast();
   }
 })

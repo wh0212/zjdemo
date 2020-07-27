@@ -1,4 +1,4 @@
-<view>
+<view class="bannerI">
 	<image class="classimg" src="../../image/6.jpg" mode="" />
 </view>
 <view class="title"><text class="csr">出生日</text>测试你的财富关键词</view>

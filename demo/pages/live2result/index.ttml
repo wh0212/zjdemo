@@ -4,8 +4,8 @@
 
 <!-- 内容答案 -->
 <view class="main">
-  <view class="main_title">{{dateY}},爱情的开始</view>
-  <view class="main_ftitle">{{dateY}}表白人数</view>
+  <view class="main_title">{{dateY}},有多少人对你表白</view>
+  <view class="main_ftitle">测试分析</view>
   <view class="main_txt">
     {{list[index]}}
   </view>

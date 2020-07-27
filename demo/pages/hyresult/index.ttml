@@ -4,8 +4,8 @@
 
 <!-- 内容答案 -->
 <view class="main">
-  <view class="main_title">你的婚后生活</view>
-  <view class="main_ftitle">生活状态</view>
+  <view class="main_title">你的婚后生活状态</view>
+  <view class="main_ftitle">测试分析</view>
   <view class="main_txt">
     {{list[index]}}
   </view>

@@ -1,5 +1,5 @@
 #app{
-   background: rgb(8, 12, 20)
+   background: #abeeff
 }
 .bannerI{
   width: 100%;

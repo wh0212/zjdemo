@@ -25,6 +25,6 @@ Page({
     });
   },
   onLoad: function (options) {
-
+  
   }
 })

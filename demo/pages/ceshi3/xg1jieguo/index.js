@@ -1,4 +1,5 @@
 // pages/ceshi/xg1jieguo/index.js
+var app = getApp()
 Page({
   data: {
     act: true,
@@ -17,7 +18,80 @@ Page({
     this.videoAdCreat()
   },
   search() {
-    this.videoAdCreat()
+    var that = this;
+    if (app.globalData.gender == 1) {
+      this.videoAd = tt.createRewardedVideoAd({
+        adUnitId: 'ek5fh4pno97ttg77oh'
+      })
+      this.videoAd.onError((err) => {
+        tt.showToast({
+          title: this.videoAdErrHandle(err),
+          icon: 'none'
+        })
+      })
+      // 监听关闭
+      this.videoAd.onClose((status) => {
+        if (status && status.isEnded || status === undefined) {
+          console.log('视频正常关闭 下发奖励')
+          if (this.data.act) {
+            tt.showToast({
+              title: "正在检测",
+              icon: "loading",
+              success(res) {
+                setTimeout(() => {
+                  that.setData({
+                    act: false
+                  })
+                }, 2000)
+
+              },
+              fail(res) {
+                console.log(`showToast调用失败`);
+              },
+            });
+          } else {
+            console.log("保存图片")
+            tt.canvasToTempFilePath({
+              canvasId: 'shareCanvas',
+              success: function (res) {
+                console.log(res)
+                tt.saveImageToPhotosAlbum({
+                  filePath: res.tempFilePath,
+                  success: () => {
+                    console.log("成")
+                  }
+                })
+              },
+              fail: function (err) {
+                console.log(err)
+              }
+            })
+
+          }
+        } else {
+          // 播放中途退出，进行提示
+          tt.showToast({ title: '未完整观看视频不能获取奖励哦', icon: 'none' })
+        }
+      })
+      this.videoAdCreat()
+    } else {
+      tt.showToast({
+        title: "正在检测",
+        icon: "loading",
+        duration: 2000,
+        success(res) {
+          setTimeout(() => {
+            that.setData({
+              act: false
+            })
+          }, 2000)
+
+        },
+        fail(res) {
+          console.log(`showToast调用失败`);
+        },
+      });
+    }
   },
   saveImagg() {
     tt.getSystemInfo({
@@ -75,63 +149,18 @@ Page({
       title: "测评结果"
     });
     var pos = Math.round(Math.random() * (this.data.list.length - 1));
-    this.setData({
-      index: pos,
-      act: true
-    })
-    this.saveImagg()
-    this.videoAd = tt.createRewardedVideoAd({
-      adUnitId: '2il8bjen03ef27cuxl'
-    })
-    this.videoAd.onError((err) => {
-      tt.showToast({
-        title: this.videoAdErrHandle(err),
-        icon: 'none'
-      })
-    })
-    // 监听关闭
-    var that = this;
-    this.videoAd.onClose((status) => {
-      if (status && status.isEnded || status === undefined) {
-        console.log('视频正常关闭 下发奖励')
-        if (this.data.act) {
-          tt.showToast({
-            title: "正在检测",
-            icon: "loading",
-            success(res) {
-              setTimeout(() => {
-                that.setData({
-                  act: false
-                })
-              }, 2000)
 
-            },
-            fail(res) {
-              console.log(`showToast调用失败`);
-            },
-          });
-        } else {
-          tt.canvasToTempFilePath({
-            canvasId: 'shareCanvas',
-            success: function (res) {
-              console.log(res)
-              tt.saveImageToPhotosAlbum({
-                filePath: res.tempFilePath,
-                success: () => {
-                  console.log("成")
-                }
-              })
-            },
-            fail: function (err) {
-              console.log(err)
-            }
-          })
-        }
-      } else {
-        // 播放中途退出，进行提示
-        tt.showToast({ title: '未完整观看视频不能获取奖励哦', icon: 'none' })
-      }
-    })
+    if (app.globalData.gender == 0) {
+      this.setData({
+        act: false
+      })
+    } else {
+      this.setData({
+        index: pos,
+        act: true
+      })
+    }
+    // this.saveImagg()
   },
   //保存至相册
   fillTextWrap(ctx, text, x, y, maxWidth, lineHeight) {
@@ -214,7 +243,7 @@ Page({
     }
   },
   videoAdErrHandle(err) {
-    console.log('视频加载失败',err)
+    console.log('视频加载失败', err)
     const errHandle = {
       1000: '后端接口调用失败',
       1001: '参数错误',

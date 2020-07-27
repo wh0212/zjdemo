@@ -27,7 +27,7 @@
   bindchange="bindPickerChange"
   bindcancel="bindPickerCancel"
   disabled="{{false}}">
-<input type="text" class="inpxz"  value="{{array[index]}}" placeholder="请选择你的星座" />
+<text class="inpxz" placeholder="请选择你的星座">{{array[index]}}</text>
 <view style="color:#903fc0" class="iconfont down icon-ico_arrows_unfold"></view>
 </picker-view>
    </view>
