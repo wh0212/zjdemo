@@ -3,7 +3,7 @@
   height: 500rpx
 }
 page{
-  background: rgb(8, 12, 20)
+  background: #eae5d1
 }
 .classtxt{
   color: #fff;
@@ -13,7 +13,7 @@ page{
 }
 .down{
   position: absolute;
-  top: 30rpx;
+  top: 25rpx;
   right: 40rpx
 }
 .main_time{

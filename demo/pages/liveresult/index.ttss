@@ -1,5 +1,5 @@
 #app{
-  background: rgba(216, 193, 147)
+  background: #e38e69
 }
 .classimg{
   width: 100%;

@@ -1,13 +1,13 @@
 .bannerI{
-  width: 100%;
+  width: 105%;
   height: 500rpx
 }
 page{
-  background: rgb(8, 12, 20)
+  background: #9fbab5
 }
 .inpxz{
 width: 100%;
-  border:2px rgb(255, 96, 123) solid;
+  border:1px rgb(255, 96, 123) solid;
   border-radius: 40px;
   height: 40px;
   padding-left: 20px;
@@ -45,7 +45,7 @@ justify-content: space-between
 .active_left{
   width: 100px;
   height: 40px;
-  border:2px rgb(255, 96, 123) solid;
+  border:1px rgb(255, 96, 123) solid;
   border-radius: 40px;
   display: flex;
   align-items: center;
@@ -73,20 +73,19 @@ justify-content: space-between
 }
 .inputtxt{
   width: 340rpx;
-  border:2px rgb(255, 96, 123) solid;
+  border:1px rgb(255, 96, 123) solid;
   border-radius: 40px;
   height: 40px;
   padding-left: 20px
 }
 .btn{
-  width: 80%;
+  width: 98%;
   height: 50px;
   background: blueviolet;
   text-align: center;
   line-height: 50px;
   margin: 10px auto;
   color: #fff;
-  border-radius: 30px
 }
 .tishi{
   text-align: center;

@@ -3,7 +3,7 @@
   height: 500rpx
 }
 page{
-  background: rgb(8, 12, 20)
+  background: #3d423b
 }
 .classtxt{
   color: #fff;

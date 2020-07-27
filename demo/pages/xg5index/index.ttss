@@ -22,7 +22,7 @@ width: 100%;
 }
 .down{
   position: absolute;
-  top: 30rpx;
+  top: 25rpx;
   right: 40rpx
 }
 .main_time{

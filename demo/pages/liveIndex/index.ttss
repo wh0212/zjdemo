@@ -1,5 +1,5 @@
 page{
-  background: rgba(216, 193, 147)
+  background: #e38e69
 }
 .title{
   font-size: 58rpx;
@@ -27,7 +27,7 @@ page{
 .inp{
   width: 90%;
   height: 100rpx;
-  border:3px #000 solid;
+  border:1px #000 solid;
   border-radius: 10rpx;
   margin:20rpx auto;
   padding: 0rpx 10rpx
@@ -42,7 +42,7 @@ page{
 .active_left{
   width: 80px;
   height: 30px;
-  border:3px rgb(255, 96, 123) solid;
+  border:1px rgb(255, 96, 123) solid;
   border-radius: 40px;
   display: flex;
   align-items: center;
@@ -75,13 +75,12 @@ page{
   height: 600rpx
 }
 .btn{
-  width: 80%;
+  width: 95%;
   line-height: 50px;
   background: rgba(67, 50, 102);
   text-align: center;
   color: #fff;
   margin: 20rpx auto;
-  border-radius: 50rpx
 }
 
 .tishi{

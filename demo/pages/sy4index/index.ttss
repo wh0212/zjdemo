@@ -1,5 +1,5 @@
 page{
-  background: rgba(42, 80, 249)
+  background: #88b4b5
 }
 .title{
   font-size: 58rpx;

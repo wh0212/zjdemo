@@ -22,7 +22,7 @@ width: 100%;
 }
 .down{
   position: absolute;
-  top: 30rpx;
+  top: 25rpx;
   right: 40rpx
 }
 .main_time{
@@ -78,7 +78,7 @@ justify-content: space-between
    border-bottom-left-radius: 0rpx !important
 }
 .inputtxt{
-  width: 380rpx;
+  width: 360rpx;
   border:1px #903fc0 solid;
   border-radius: 40px;
   height: 40px;

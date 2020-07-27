@@ -1,5 +1,5 @@
 <view class="banner">
-	<image class="classimg" src="http://rgb366.99166.com/UpLoadFile/UploadFile/201962592230584.jpg" mode="" />
+	<image class="classimg" src="../../image/zs3.jpg" mode="" />
 </view>
 <view class="title">测试你未来<text class="csr"> 宝宝 </text>的智商</view>
 <view class="main">

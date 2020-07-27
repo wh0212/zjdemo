@@ -13,7 +13,7 @@ page{
 }
 .inpxz{
 width: 100%;
-  border:2px rgb(255, 96, 123) solid;
+  border:1px rgb(255, 96, 123) solid;
   border-radius: 40px;
   height: 40px;
   padding-left: 20px;
@@ -22,7 +22,7 @@ width: 100%;
 }
 .down{
   position: absolute;
-  top: 30rpx;
+  top: 25rpx;
   right: 40rpx
 }
 .main{
@@ -51,7 +51,7 @@ justify-content: space-between
 .active_left{
   width: 100px;
   height: 40px;
-  border:2px rgb(255, 96, 123) solid;
+  border:1px rgb(255, 96, 123) solid;
   border-radius: 40px;
   display: flex;
   align-items: center;
@@ -79,7 +79,7 @@ justify-content: space-between
 }
 .inputtxt{
   width: 340rpx;
-  border:2px rgb(255, 96, 123) solid;
+  border:1px rgb(255, 96, 123) solid;
   border-radius: 40px;
   height: 40px;
   padding-left: 20px
