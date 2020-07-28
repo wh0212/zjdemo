@@ -10,7 +10,10 @@ Page({
   },
   ptbtn(v) {
     this.setData({
-      ind: v.currentTarget.dataset.index
+      ind: v.currentTarget.dataset.index,
+      list:[
+
+      ]
     })
   },
   /**

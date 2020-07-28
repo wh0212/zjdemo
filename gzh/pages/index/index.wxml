@@ -29,15 +29,9 @@
 </view>
 
 <view class="pt_jc">
-	<view class="pt_jc_item">
-		新手必看教程
-	</view>
-	<view style="background:#913eff" class="pt_jc_item">
-		挂程序发抖音
-	</view>
-	<view style="background:#ff8361" class="pt_jc_item">
-		邀请好友来玩
-	</view>
+	<view class="pt_jc_item">新手必看教程</view>
+	<view style="background:#913eff" class="pt_jc_item">挂程序发抖音</view>
+	<view style="background:#ff8361" class="pt_jc_item">邀请好友来玩</view>
 </view>
 <!-- 活动 -->
 <view class="activity">
@@ -69,10 +63,7 @@
 			产品列表
 			<text style="font-size:25rpx;color:#999">共<text style="color:#fdec4e">{{list.length}}</text>款小程序</text>
 		</view>
-		<view style="color:#fdec4e;font-size:30rpx">
-			浏览全部单品
-			<text class="iconfont icon-icon"></text>
-		</view>
+		<view style="color:#fdec4e;font-size:30rpx">浏览全部单品<text class="iconfont icon-icon"></text></view>
 	</view>
 	<view class="list">
 		<!-- 产品 -->
@@ -85,9 +76,7 @@
 						<text class="item_top_left_xq_gj">{{item.type}}</text>
 					</view>
 				</view>
-				<view class="list_item_top_right">
-					查看详情
-				</view>
+				<view class="list_item_top_right">查看详情</view>
 			</view>
 			<view class="list_item_top_xq">{{item.describe}}</view>
 			<view class="list_item_top_sy">
