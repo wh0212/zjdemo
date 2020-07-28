@@ -2,3 +2,44 @@
 page {
   background: #14152b;
 }
+.pt_jc {
+  width: 95%;
+  margin: 20rpx auto;
+  display: flex;
+  align-items: center;
+}
+
+.pt_jc_item {
+  height: 120rpx;
+  flex: 1;
+  background: #0a9efd;
+  margin-right: 20rpx;
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 120rpx;
+  text-align: center;
+}
+.pt_jc_item:last-child {
+  margin-right: 0rpx;
+}
+.data_pt{
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  border-bottom:1px #999 solid;
+}
+.pt_count{
+  flex: 1;
+  text-align: center;
+  color: #6d7790;
+}
+.act{
+  color:#e51a5a !important;
+}
+.list{
+  width: 90%;
+  margin: 20rpx auto;
+
+}

@@ -1,1 +1,25 @@
+<view class="pt_jc">
+	<view class="pt_jc_item">
+		热门视频榜
+	</view>
+	<view style="background:#913eff" class="pt_jc_item">
+		星图热榜
+	</view>
+	<view style="background:#ff8361" class="pt_jc_item">
+		热点话题榜
+	</view>
+</view>
+<view class="data_pt">
+  <view class="pt_count {{ind==index ? 'act':''}}" wx:for="{{ptlist}}" data-index="{{index}}" bindtap="ptbtn">{{item}}</view>
+</view>
 
+<view class="list" wx:if="{{ind==0}}">
+免费用户
+</view>
+
+<view class="list" wx:if="{{ind==1}}">
+会员用户
+</view>
+<view class="list" wx:if="{{ind==2}}">
+抖音粉丝
+</view>

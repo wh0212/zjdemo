@@ -5,9 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    ind: 1,
+    ptlist: ['免费用户', '会员用户', '抖音粉丝']
   },
-
+  ptbtn(v) {
+    this.setData({
+      ind: v.currentTarget.dataset.index
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

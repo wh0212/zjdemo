@@ -101,7 +101,7 @@
 				</view>
 				<view style="color:#e83669" class="item_top_sy_item">
 					<text class="iconfont icon-xiazai"></text>
-					下载推码
+					下载推广码
 				</view>
 			</view>
 			<view wx:if="{{item.children.length>0}}">
