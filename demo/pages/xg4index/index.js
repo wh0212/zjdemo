@@ -6,7 +6,29 @@ Page({
   },
   tapbtn() {
     if (this.data.images) {
+      wx.getFileSystemManager().readFile({
+        filePath: this.data.images[0], // 选择图片返回的相对路径
+        encoding: 'base64', // 编码格式
+        success: res => { // 成功的回调
+          console.log('data:image/png;base64,' + res.data)
+          tt.request({
+            url: 'http://tgadmin.clvtmcn.cn/api/Safety/safetyIsImageIs',
+            method: 'post',
+            data: {
+              "tasks": [
+                {
+                  "image_data":res.data
+                }
+              ]
+            },
+            success: (res) => {
+              console.log(res)
+            }
+          });
+        }
+      })
       serve('/pages/xg4result/index')
+
     } else {
       tt.showToast({
         title: '请选择图片', // 内容
@@ -49,7 +71,7 @@ Page({
     this.setData({
       date: myDate
     })
-    
+
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例

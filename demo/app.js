@@ -22,11 +22,20 @@ App({
 
       }
     });
-    tt.login({
-      success: (res) => {
-        console.log(res)
-
-      }
-    })
+    // tt.login({
+    //   success: (res) => {
+    //     console.log(res)
+    //     tt.request({
+    //       url: 'http://tgadmin.clvtmcn.cn/api/login/jscode2session',
+    //       method: 'post',
+    //       data: {
+    //         code: res.code
+    //       },
+    //       success: (res) => {
+    //         console.log(res)
+    //       }
+    //     });
+    //   }
+    // })
   }
 })

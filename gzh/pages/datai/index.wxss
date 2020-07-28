@@ -1,0 +1,4 @@
+/* pages/datai/index.wxss */
+page {
+  background: #14152b;
+}

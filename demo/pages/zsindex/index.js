@@ -42,7 +42,27 @@ Page({
   search() {
     console.log(this.data)
     if (this.data.txt && this.data.index !== 0) {
-      serve('/pages/zsresult/index')
+      tt.request({
+        url: 'http://tgadmin.clvtmcn.cn/api/safety/safetyIsContent',
+        method: 'post',
+        data: {
+          content: this.data.txt
+        },
+        success: (res) => {
+          console.log(res)
+          if (res.data.prob == 1) {
+            tt.showToast({
+              title: '出现违规字',
+              success: (res) => {
+                return
+              }
+            });
+          } else {
+             serve('/pages/zsresult/index')
+          }
+        }
+      });
+     
     } else {
       tt.showToast({
         title: '请输入名字',

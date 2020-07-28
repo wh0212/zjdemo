@@ -33,7 +33,27 @@ Page({
   tapbtn() {
 
     if (this.data.index && this.data.username) {
-      serve('/pages/sy4result/index')
+      tt.request({
+        url: 'http://tgadmin.clvtmcn.cn/api/safety/safetyIsContent',
+        method: 'post',
+        data: {
+          content: this.data.username
+        },
+        success: (res) => {
+          console.log(res)
+          if (res.data.prob == 1) {
+            tt.showToast({
+              title: '出现违规字',
+              success: (res) => {
+                return
+              }
+            });
+          } else {
+            serve('/pages/sy4result/index')
+          }
+        }
+      });
+      
     } else {
       tt.showToast({
         title: '请输入对应内容', // 内容

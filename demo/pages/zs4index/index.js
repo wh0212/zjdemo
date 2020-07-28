@@ -4,10 +4,10 @@ Page({
   data: {
     act: 1,
     txt: "",
-    array: ["请选择","白羊座", "金牛座", "双子座", "巨蟹座","狮子座","处女座","天秤座","天蝎座","射手座","摩羯座","水瓶座","双鱼座"],
+    array: ["请选择", "白羊座", "金牛座", "双子座", "巨蟹座", "狮子座", "处女座", "天秤座", "天蝎座", "射手座", "摩羯座", "水瓶座", "双鱼座"],
     index: 0,
   },
-  tapxz(){
+  tapxz() {
 
   },
   bindPickerChange(e) {
@@ -40,9 +40,27 @@ Page({
   },
 
   search() {
-    console.log(this.data)
-    if (this.data.txt && this.data.index !==0) {
-      serve('/pages/zs4result/index')
+    if (this.data.txt && this.data.index !== 0) {
+      tt.request({
+        url: 'http://tgadmin.clvtmcn.cn/api/safety/safetyIsContent',
+        method: 'post',
+        data: {
+          content: this.data.txt
+        },
+        success: (res) => {
+          console.log(res)
+          if (res.data.prob == 1) {
+            tt.showToast({
+              title: '出现违规字',
+              success: (res) => {
+                return
+              }
+            });
+          } else {
+            serve('/pages/zs4result/index')
+          }
+        }
+      });
     } else {
       tt.showToast({
         title: '请输入对应内容',
@@ -52,7 +70,7 @@ Page({
 
   },
   onLoad: function () {
-    
+
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例
