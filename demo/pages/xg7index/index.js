@@ -1,5 +1,6 @@
 var app = getApp()
 import serve from "../../ults/video.js"
+import shipin from "../../ults/qudao.js"
 Page({
   data: {
     act: 1,
@@ -57,7 +58,11 @@ Page({
               }
             });
           } else {
-            serve('/pages/xg7result/index')
+            var obj = {
+              channel: "30",
+              appletsName: '测试你是一个主动的人吗',
+            }
+            serve('/pages/xg7result/index',obj)
           }
         }
       });
@@ -88,7 +93,7 @@ Page({
     this.setData({
       datea: myDate
     })
-    
+    shipin(30,'测试你是一个主动的人吗')
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例

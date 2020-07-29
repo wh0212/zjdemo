@@ -1,5 +1,6 @@
 const app = getApp()
 import serve from "../../ults/video.js"
+import shipin from "../../ults/qudao.js"
 Page({
   data: {
     act: 1,
@@ -77,20 +78,26 @@ Page({
               }
             });
           } else {
-            serve('/pages/live8result/index')
+            var obj = {
+              channel: "16",
+              appletsName: '测试另一半的魅力',
+            }
+            serve('/pages/live8result/index',obj)
           }
         }
       });
       
     } else {
       tt.showToast({
-        title: '请输入名字', // 内容
+        title: '请输入名字',
         icon: 'fail'
       });
     }
 
   },
- 
+ onLoad(){
+   shipin(16,'测试另一半的魅力')
+ },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例
 

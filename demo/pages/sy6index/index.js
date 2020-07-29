@@ -1,5 +1,6 @@
 const app = getApp()
 import serve from "../../ults/video.js"
+import shipin from "../../ults/qudao.js"
 Page({
   data: {
     act: 1,
@@ -53,7 +54,11 @@ Page({
               }
             });
           } else {
-            serve('/pages/sy6result/index')
+            var obj = {
+              channel: "22",
+              appletsName: '测试你的事业顺不顺利',
+            }
+            serve('/pages/sy6result/index',obj)
           }
         }
       });
@@ -67,7 +72,7 @@ Page({
 
   },
   onLoad: function () {
-    
+    shipin(22,'测试你的事业顺不顺利')
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例

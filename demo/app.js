@@ -22,20 +22,21 @@ App({
 
       }
     });
-    // tt.login({
-    //   success: (res) => {
-    //     console.log(res)
-    //     tt.request({
-    //       url: 'http://tgadmin.clvtmcn.cn/api/login/jscode2session',
-    //       method: 'post',
-    //       data: {
-    //         code: res.code
-    //       },
-    //       success: (res) => {
-    //         console.log(res)
-    //       }
-    //     });
-    //   }
-    // })
+    tt.login({
+      success: (res) => {
+        console.log(res)
+        tt.request({
+          url: 'http://tgadmin.clvtmcn.cn/api/login/jscode2session',
+          method: 'post',
+          data: {
+            code: res.code,
+            type:1
+          },
+          success: (res) => {
+            tt.setStorageSync('cookies', res.data);
+          }
+        });
+      }
+    })
   }
 })

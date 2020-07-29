@@ -1,5 +1,6 @@
 const app = getApp()
 import serve from "../../ults/video.js"
+import shipin from "../../ults/qudao.js"
 Page({
   data: {
     act: 1,
@@ -58,7 +59,11 @@ Page({
               }
             });
           } else {
-            serve('/pages/xgresult/index')
+            var obj = {
+              channel: "31",
+              appletsName: '测试你的高冷指数',
+            }
+            serve('/pages/xgresult/index',obj)
           }
         }
       });
@@ -72,7 +77,7 @@ Page({
 
   },
   onLoad: function () {
-    
+    shipin(31,'测试你的高冷指数')
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例

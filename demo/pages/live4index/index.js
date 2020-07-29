@@ -1,6 +1,7 @@
 // pages/index/index.js
 var app = getApp()
 import serve from "../../ults/video.js"
+import shipin from "../../ults/qudao.js"
 Page({
   data: {
     act: 1,
@@ -60,7 +61,11 @@ Page({
               }
             });
           } else {
-            serve('/pages/live4result/index')
+            var obj = {
+              channel: "13",
+              appletsName: '测试你还要单身多久',
+            }
+            serve('/pages/live4result/index',obj)
           }
         }
       });
@@ -91,6 +96,7 @@ Page({
     this.setData({
       datea: myDate
     })
+    shipin(13,'测试你还要单身多久')
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例

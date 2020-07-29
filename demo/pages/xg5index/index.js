@@ -1,13 +1,14 @@
 const app = getApp()
 import serve from "../../ults/video.js"
+import shipin from "../../ults/qudao.js"
 Page({
   data: {
     act: 1,
     txt: "",
-    array: ["请选择","白羊座", "金牛座", "双子座", "巨蟹座","狮子座","处女座","天秤座","天蝎座","射手座","摩羯座","水瓶座","双鱼座"],
+    array: ["请选择", "白羊座", "金牛座", "双子座", "巨蟹座", "狮子座", "处女座", "天秤座", "天蝎座", "射手座", "摩羯座", "水瓶座", "双鱼座"],
     index: 0,
   },
-  tapxz(){
+  tapxz() {
 
   },
   bindPickerChange(e) {
@@ -41,7 +42,7 @@ Page({
 
   search() {
     console.log(this.data)
-    if (this.data.txt && this.data.index !==0) {
+    if (this.data.txt && this.data.index !== 0) {
       tt.request({
         url: 'http://tgadmin.clvtmcn.cn/api/safety/safetyIsContent',
         method: 'post',
@@ -58,11 +59,15 @@ Page({
               }
             });
           } else {
-            serve('/pages/xg5result/index')
+            var obj = {
+              channel: "28",
+              appletsName: '测试你什么时候遇到另一半',
+            }
+            serve('/pages/xg5result/index',obj)
           }
         }
       });
-      
+
     } else {
       tt.showToast({
         title: '请输入名字', // 内容
@@ -72,7 +77,7 @@ Page({
 
   },
   onLoad: function () {
-    
+    shipin(28,'测试你什么时候遇到另一半')
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例

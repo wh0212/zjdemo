@@ -1,6 +1,7 @@
 // pages/index/index.js
 var app = getApp()
 import serve from "../../ults/video.js"
+import shipin from "../../ults/qudao.js"
 Page({
   data: {
     act: 1,
@@ -60,7 +61,11 @@ Page({
               }
             });
           } else {
-            serve('/pages/xg3result/index')
+            var obj = {
+              channel: "26",
+              appletsName: '测试你的精神洁癖',
+            }
+            serve('/pages/xg3result/index',obj)
           }
         }
       });
@@ -91,7 +96,7 @@ Page({
     this.setData({
       datea: myDate
     })
-    
+    shipin(26,'测试你的精神洁癖')
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例

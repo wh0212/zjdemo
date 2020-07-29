@@ -1,5 +1,6 @@
 // pages/ceshi/xg1jieguo/index.js
 var app = getApp()
+import shipin from "../../../ults/qudao.js"
 Page({
   data: {
     act: true,
@@ -42,9 +43,23 @@ Page({
               icon: "loading",
               success(res) {
                 setTimeout(() => {
-                  that.setData({
-                    act: false
-                  })
+                  tt.request({
+                    url: 'http://tgadmin.clvtmcn.cn/api/login/adUnitInform',
+                    method: "post",
+                    data: {
+                      openid: tt.getStorageSync('cookies').openid,
+                      channel: "39",
+                      appletsName: "你的未来事业测试",
+                      type: 1
+                    },
+                    success: (res) => {
+                      console.log(res, 222)
+                      that.setData({
+                        act: false
+                      })
+                    }
+                  });
+
                 }, 2000)
 
               },
@@ -165,6 +180,7 @@ Page({
         act: true
       })
     }
+    shipin(39, '你的未来事业测试')
     // this.saveImagg()
   },
   fillTextWrap(ctx, text, x, y, maxWidth, lineHeight) {

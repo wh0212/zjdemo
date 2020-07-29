@@ -1,5 +1,6 @@
 var app = getApp();
 import serve from "../../ults/video.js"
+import shipin from "../../ults/qudao.js"
 Page({
   data: {
     act: 1,
@@ -58,7 +59,11 @@ Page({
               }
             });
           } else {
-            serve('/pages/cai7result/index')
+            var obj = {
+              channel: "8",
+              appletsName: '测试你的聚财指数多高',
+            }
+            serve('/pages/cai7result/index',obj)
           }
         }
       });
@@ -89,7 +94,7 @@ Page({
     this.setData({
       datea: myDate
     })
-    
+    shipin(8,'测试你的聚财指数多高')
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例

@@ -1,5 +1,6 @@
 const app = getApp()
 import serve from "../../ults/video.js"
+import shipin from "../../ults/qudao.js"
 Page({
   data: {
     act: 1,
@@ -77,7 +78,11 @@ Page({
               }
             });
           } else {
-            serve('/pages/live7result/index')
+            var obj = {
+              channel: "15",
+              appletsName: '测试爱情意志力',
+            }
+            serve('/pages/live7result/index',obj)
           }
         }
       });
@@ -91,7 +96,7 @@ Page({
 
   },
   onLoad: function () {
-    
+    shipin(15,'测试爱情意志力')
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例

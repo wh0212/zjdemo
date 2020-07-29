@@ -1,6 +1,7 @@
 // pages/index/index.js
 var app = getApp();
 import serve from "../../ults/video.js"
+import shipin from "../../ults/qudao.js"
 Page({
   data: {
     act: 1,
@@ -54,7 +55,11 @@ Page({
               }
             });
           } else {
-            serve('/pages/cai1result/index')
+            var obj = {
+              channel: "2",
+              appletsName: '测你的你的财富关键字',
+            }
+            serve('/pages/cai1result/index', obj)
           }
         }
       });
@@ -84,7 +89,8 @@ Page({
     this.setData({
       datea: myDate
     })
-
+    
+    shipin(2,'测你的你的财富关键字')
 
   },
   videoAdCreat() {

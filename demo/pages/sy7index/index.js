@@ -1,5 +1,6 @@
 const app = getApp()
 import serve from "../../ults/video.js"
+import shipin from "../../ults/qudao.js"
 Page({
   data: {
     act: 1,
@@ -53,7 +54,11 @@ Page({
               }
             });
           } else {
-            serve('/pages/sy7result/index')
+            var obj = {
+              channel: "23",
+              appletsName: '测试你被领导赏识的概率',
+            }
+            serve('/pages/sy7result/index',obj)
           }
         }
       });
@@ -67,7 +72,7 @@ Page({
 
   },
   onLoad: function () {
-   
+   shipin(23,'测试你被领导赏识的概率')
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例

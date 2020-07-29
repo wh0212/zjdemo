@@ -1,5 +1,6 @@
 const app = getApp()
 import serve from "../../ults/video.js"
+import shipin from "../../ults/qudao.js"
 Page({
   data: {
     act: 1,
@@ -58,7 +59,11 @@ Page({
               }
             });
           } else {
-             serve('/pages/zsresult/index')
+            var obj = {
+              channel: "38",
+              appletsName: '测试你的智商水平',
+            }
+             serve('/pages/zsresult/index',obj)
           }
         }
       });
@@ -72,6 +77,7 @@ Page({
 
   },
   onLoad: function () {
+    shipin(38,'测试你的智商水平')
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例

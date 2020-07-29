@@ -1,5 +1,6 @@
 const app = getApp()
 import serve from "../../ults/video.js"
+import shipin from "../../ults/qudao.js"
 Page({
   data: {
     act: 1,
@@ -54,7 +55,11 @@ Page({
               }
             });
           } else {
-            serve('/pages/xg2result/index')
+            var obj = {
+              channel: "25",
+              appletsName: '测试你在别人眼中的性格',
+            }
+            serve('/pages/xg2result/index',obj)
           }
         }
       });
@@ -68,7 +73,7 @@ Page({
 
   },
   onLoad: function () {
-   
+   shipin(25,'测试你在别人眼中的性格')
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例

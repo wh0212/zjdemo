@@ -1,6 +1,7 @@
 // pages/index/index.js
 var app = getApp()
 import serve from "../../ults/video.js"
+import shipin from "../../ults/qudao.js"
 Page({
   data: {
     act: 1,
@@ -60,7 +61,11 @@ Page({
               }
             });
           } else {
-            serve('/pages/liveresult/index')
+            var obj = {
+              channel: "17",
+              appletsName: '测试有几个人喜欢你',
+            }
+            serve('/pages/liveresult/index',obj)
           }
         }
       });
@@ -91,7 +96,7 @@ Page({
     this.setData({
       datea: myDate
     })
-    
+    shipin(17,'测试有几个人喜欢你')
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例

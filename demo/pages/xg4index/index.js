@@ -1,5 +1,6 @@
 const app = getApp()
 import serve from "../../ults/video.js"
+import shipin from "../../ults/qudao.js"
 Page({
   data: {
     images: ""
@@ -17,7 +18,7 @@ Page({
             data: {
               "tasks": [
                 {
-                  "image_data":res.data
+                  "image_data": res.data
                 }
               ]
             },
@@ -27,7 +28,11 @@ Page({
           });
         }
       })
-      serve('/pages/xg4result/index')
+      var obj = {
+        channel: "27",
+        appletsName: '看你是一个怎样的人',
+      }
+      serve('/pages/xg4result/index',obj)
 
     } else {
       tt.showToast({
@@ -71,7 +76,7 @@ Page({
     this.setData({
       date: myDate
     })
-
+shipin(27,'看你是一个怎样的人')
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例

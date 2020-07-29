@@ -1,5 +1,6 @@
 const app = getApp()
 import serve from "../../ults/video.js"
+import shipin from "../../ults/qudao.js"
 Page({
   data: {
     act: 1,
@@ -54,7 +55,11 @@ Page({
               }
             });
           } else {
-            serve('/pages/zs7result/index')
+            var obj = {
+              channel: "37",
+              appletsName: '你的智商or情商有几岁',
+            }
+            serve('/pages/zs7result/index',obj)
           }
         }
       });
@@ -67,7 +72,7 @@ Page({
     }
   },
   onLoad: function () {
-
+    shipin(37,'你的智商or情商有几岁')
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例

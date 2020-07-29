@@ -1,5 +1,6 @@
 const app = getApp()
 import serve from "../../ults/video.js"
+import shipin from "../../ults/qudao.js"
 Page({
   data: {
     act: 1,
@@ -54,7 +55,11 @@ Page({
               }
             });
           } else {
-            serve('/pages/live2result/index')
+            var obj = {
+              channel: "11",
+              appletsName: '测试有几个人向你表白',
+            }
+            serve('/pages/live2result/index',obj)
           }
         }
       });
@@ -68,7 +73,7 @@ Page({
 
   },
   onLoad: function () {
-   
+    shipin(11,'测试有几个人向你表白')
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例

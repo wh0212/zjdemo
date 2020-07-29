@@ -1,5 +1,6 @@
 const app = getApp()
 import serve from "../../ults/video.js"
+import shipin from "../../ults/qudao.js"
 Page({
   data: {
     act: 1,
@@ -58,7 +59,11 @@ Page({
               }
             });
           } else {
-            serve('/pages/cai5result/index')
+            var obj = {
+              channel: "6",
+              appletsName: '测试你的破财指数',
+            }
+            serve('/pages/cai5result/index',obj)
           }
         }
       });
@@ -72,7 +77,7 @@ Page({
 
   },
   onLoad: function () {
-
+    shipin(6,'测试你的破财指数')
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例

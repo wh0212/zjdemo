@@ -1,5 +1,6 @@
 const app = getApp()
 import serve from "../../ults/video.js"
+import shipin from "../../ults/qudao.js"
 Page({
   data: {
     act: 1,
@@ -58,7 +59,11 @@ Page({
               }
             });
           } else {
-           serve('/pages/hyresult/index')
+            var obj = {
+              channel: "9",
+              appletsName: '星座测婚后生活',
+            }
+           serve('/pages/hyresult/index',obj)
           }
         }
       });
@@ -72,7 +77,7 @@ Page({
 
   },
   onLoad: function () {
-    
+    shipin(9,'星座测婚后生活')
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例

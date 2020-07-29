@@ -1,6 +1,7 @@
 
 var app = getApp();
 import serve from "../../ults/video.js"
+import shipin from "../../ults/qudao.js"
 Page({
   data: {
     act: 1,
@@ -53,7 +54,11 @@ Page({
               }
             });
           } else {
-            serve('/pages/cai3result/index')
+            var obj = {
+              channel: "4",
+              appletsName: '测试你的发财契机',
+            }
+            serve('/pages/cai3result/index',obj)
           }
         }
       });
@@ -91,6 +96,7 @@ Page({
     this.setData({
       datea: myDate
     })
+    shipin(4,'测试你的发财契机')
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例

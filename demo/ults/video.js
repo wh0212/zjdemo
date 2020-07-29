@@ -2,7 +2,7 @@ var app = getApp()
 var videoAd = tt.createRewardedVideoAd({
   adUnitId: 'ek5fh4pno97ttg77oh'
 })
-const serve = function (url) {
+const serve = function (url,obj) {
   console.log(url)
   if (app.globalData.gender == 1) {
     console.log(videoAd)
@@ -33,9 +33,24 @@ const serve = function (url) {
           duration: 2000,
           success(res) {
             setTimeout(() => {
-              tt.reLaunch({
-                url
+              console.log(tt.getStorageSync('cookies').openid)
+              tt.request({
+                url: 'http://tgadmin.clvtmcn.cn/api/login/adUnitInform',
+                method: "post",
+                data: {
+                  openid: tt.getStorageSync('cookies').openid,
+                  channel: obj.channel,
+                  appletsName: obj.appletsName,
+                  type: 1
+                },
+                success: (res) => {
+                  console.log(res,222)
+                  tt.reLaunch({
+                    url
+                  });
+                }
               });
+
             }, 2000)
           },
           fail(res) {
@@ -104,5 +119,7 @@ function videoAdErrHandle(err) {
   }
   return errHandle[err.errCode] || '视频加载错误,重新加载页面试试吧'
 }
+
+
 
 export default serve

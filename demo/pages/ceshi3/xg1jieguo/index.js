@@ -1,5 +1,6 @@
 // pages/ceshi/xg1jieguo/index.js
 var app = getApp()
+import shipin from "../../../ults/qudao.js"
 Page({
   data: {
     act: true,
@@ -81,9 +82,22 @@ Page({
         duration: 2000,
         success(res) {
           setTimeout(() => {
-            that.setData({
-              act: false
-            })
+            tt.request({
+              url: 'http://tgadmin.clvtmcn.cn/api/login/adUnitInform',
+              method: "post",
+              data: {
+                openid: tt.getStorageSync('cookies').openid,
+                channel: "41",
+                appletsName: "情侣吵架最忌讳什么",
+                type: 1
+              },
+              success: (res) => {
+                console.log(res, 222)
+                that.setData({
+                  act: false
+                })
+              }
+            });
           }, 2000)
 
         },
@@ -160,6 +174,7 @@ Page({
         act: true
       })
     }
+    shipin(41, '情侣吵架最忌讳什么')
     // this.saveImagg()
   },
   //保存至相册

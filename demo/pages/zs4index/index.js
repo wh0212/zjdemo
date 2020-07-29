@@ -1,5 +1,6 @@
 const app = getApp()
 import serve from "../../ults/video.js"
+import shipin from "../../ults/qudao.js"
 Page({
   data: {
     act: 1,
@@ -57,7 +58,11 @@ Page({
               }
             });
           } else {
-            serve('/pages/zs4result/index')
+            var obj = {
+              channel: "34",
+              appletsName: '测试你的社交天赋有多高',
+            }
+            serve('/pages/zs4result/index',obj)
           }
         }
       });
@@ -70,7 +75,7 @@ Page({
 
   },
   onLoad: function () {
-
+    shipin(34,'测试你的社交天赋有多高')
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例

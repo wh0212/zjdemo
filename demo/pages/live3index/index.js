@@ -1,6 +1,7 @@
 // pages/index/index.js
 var app = getApp()
 import serve from "../../ults/video.js"
+import shipin from "../../ults/qudao.js"
 Page({
   data: {
     act: 1,
@@ -52,7 +53,11 @@ Page({
               }
             });
           } else {
-            serve('/pages/live3result/index')
+             var obj = {
+              channel: "12",
+              appletsName: '测试你的一见钟情',
+            }
+            serve('/pages/live3result/index',obj)
           }
         }
       });
@@ -90,6 +95,7 @@ Page({
     this.setData({
       datea: myDate
     })
+    shipin(12,'测试你的一见钟情')
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例

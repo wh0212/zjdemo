@@ -1,4 +1,5 @@
 var app = getApp()
+import shipin from "../../../ults/qudao.js"
 Page({
   data: {
     act: true,
@@ -38,9 +39,22 @@ Page({
               icon: "loading",
               success(res) {
                 setTimeout(() => {
-                  that.setData({
-                    act: false
-                  })
+                  tt.request({
+                    url: 'http://tgadmin.clvtmcn.cn/api/login/adUnitInform',
+                    method: "post",
+                    data: {
+                      openid: tt.getStorageSync('cookies').openid,
+                      channel: "40",
+                      appletsName: "你的第一印象",
+                      type: 1
+                    },
+                    success: (res) => {
+                      console.log(res, 222)
+                      that.setData({
+                        act: false
+                      })
+                    }
+                  });
                 }, 2000)
 
               },
@@ -158,6 +172,7 @@ Page({
         act: true
       })
     }
+    shipin(40,'你的第一印象')
     // this.saveImagg()
   },
   fillTextWrap(ctx, text, x, y, maxWidth, lineHeight) {

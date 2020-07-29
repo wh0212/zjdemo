@@ -1,6 +1,7 @@
 // pages/index/index.js
 var app = getApp();
 import serve from "../../ults/video.js"
+import shipin from "../../ults/qudao.js"
 Page({
   data: {
     act: 1,
@@ -51,11 +52,15 @@ Page({
               }
             });
           } else {
-            serve("/pages/cai2result/index")
+            var obj = {
+              channel: "3",
+              appletsName: '测试你近期的财运',
+            }
+            serve("/pages/cai2result/index", obj)
           }
         }
       });
-      
+
     } else {
       tt.showToast({
         title: '请输入对应内容', // 内容
@@ -82,6 +87,7 @@ Page({
     this.setData({
       datea: myDate
     })
+    shipin(3,'测试你近期的财运')
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例
