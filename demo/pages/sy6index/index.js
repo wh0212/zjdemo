@@ -39,7 +39,7 @@ Page({
     console.log(this.data)
     if (this.data.txt && this.data.index !==0) {
       tt.request({
-        url: 'http://tgadmin.clvtmcn.cn/api/safety/safetyIsContent',
+        url: 'https://tgadmin.clvtmcn.cn/api/safety/safetyIsContent',
         method: 'post',
         data: {
           content: this.data.txt
@@ -49,6 +49,7 @@ Page({
           if (res.data.prob == 1) {
             tt.showToast({
               title: '出现违规字',
+              icon:'fail',
               success: (res) => {
                 return
               }
@@ -65,7 +66,7 @@ Page({
       
     } else {
       tt.showToast({
-        title: '请输入名字', 
+        title: '请输入相应内容', 
         icon: 'fail'
       });
     }

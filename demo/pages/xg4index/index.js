@@ -13,7 +13,7 @@ Page({
         success: res => { // 成功的回调
           console.log('data:image/png;base64,' + res.data)
           tt.request({
-            url: 'http://tgadmin.clvtmcn.cn/api/Safety/safetyIsImageIs',
+            url: 'https://tgadmin.clvtmcn.cn/api/Safety/safetyIsImageIs',
             method: 'post',
             data: {
               "tasks": [
@@ -36,7 +36,7 @@ Page({
 
     } else {
       tt.showToast({
-        title: '请选择图片', // 内容
+        title: '请选择图片', 
         icon: 'fail'
       });
     }

@@ -1,1 +1,3 @@
-/* pages/product/index.wxss */
+page{
+  background: #14162b;
+}

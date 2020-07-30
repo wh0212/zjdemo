@@ -1,5 +1,6 @@
 <view class="bannerI">
 	<image class="classimg" src="../../image/6.jpg" mode="" />
+  <!-- <view bindtap="shipinfun" class="shipin">拍视频</view> -->
 </view>
 <view class="title"><text class="csr">出生日</text>测试你的财富关键词</view>
 <view class="main">

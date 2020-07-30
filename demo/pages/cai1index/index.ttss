@@ -1,6 +1,16 @@
 page{
   background: #4faba8
 }
+.shipin{
+  position: absolute;
+  top: 10%;
+  right: 0rpx;
+  background: #fff;
+  font-size: 26rpx;
+  border-top-left-radius: 30rpx;
+  border-bottom-left-radius: 30rpx;
+  padding: 10rpx 20rpx
+}
 .title{
   font-size: 58rpx;
   color: #fff;
@@ -12,7 +22,8 @@ page{
 .bannerI{
   width: 100%;
   height: 480rpx;
-  margin-bottom: 0px
+  margin-bottom: 0px;
+  position: relative
 }
 .bannerI image{
   width: 100%;

@@ -6,7 +6,8 @@ Page({
    */
   data: {
     userinfo: {},
-    model: false
+    model: false,
+    phoneAct:false
   },
   bindGetUserInfo(v) {
     console.log(v.detail.userInfo)
@@ -29,7 +30,11 @@ Page({
             model: true
           })
         }
-
+      }
+    })
+    wx.login({
+      success: (res) => {
+        console.log(res)
       }
     })
   },
@@ -46,7 +51,7 @@ Page({
    */
   onShow: function () {
     this.setData({
-      userinfo:wx.getStorageSync('userinfo')
+      userinfo: wx.getStorageSync('userinfo')
     })
   },
 

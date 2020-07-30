@@ -5,7 +5,7 @@ App({
   onLaunch: function () {
     tt.getSystemInfo({
       success: (res) => {
-        console.log(res.appName)
+        console.log(res)
         if (res.appName == 'Toutiao') {
           console.log("头条")
           that.globalData.gender = 0
@@ -24,15 +24,15 @@ App({
     });
     tt.login({
       success: (res) => {
-        console.log(res)
         tt.request({
-          url: 'http://tgadmin.clvtmcn.cn/api/login/jscode2session',
+          url: 'https://tgadmin.clvtmcn.cn/api/login/jscode2session',
           method: 'post',
           data: {
             code: res.code,
             type:1
           },
           success: (res) => {
+            
             tt.setStorageSync('cookies', res.data);
           }
         });

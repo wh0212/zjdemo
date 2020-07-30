@@ -70,6 +70,13 @@
 					"pathName": "pages/datai/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "pages/cp_detail/index",
+					"pathName": "pages/cp_detail/index",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

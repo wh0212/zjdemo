@@ -76,7 +76,7 @@
 						<text class="item_top_left_xq_gj">{{item.type}}</text>
 					</view>
 				</view>
-				<view class="list_item_top_right">查看详情</view>
+				<view class="list_item_top_right" data-item="{{item}}" bindtap="fundeatil">查看详情</view>
 			</view>
 			<view class="list_item_top_xq">{{item.describe}}</view>
 			<view class="list_item_top_sy">

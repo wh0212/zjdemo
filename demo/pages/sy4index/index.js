@@ -33,9 +33,9 @@ Page({
   },
   tapbtn() {
 
-    if (this.data.index && this.data.username) {
+    if (this.data.index!='请选择日期' && this.data.username) {
       tt.request({
-        url: 'http://tgadmin.clvtmcn.cn/api/safety/safetyIsContent',
+        url: 'https://tgadmin.clvtmcn.cn/api/safety/safetyIsContent',
         method: 'post',
         data: {
           content: this.data.username
@@ -45,6 +45,7 @@ Page({
           if (res.data.prob == 1) {
             tt.showToast({
               title: '出现违规字',
+              icon:'fail',
               success: (res) => {
                 return
               }
@@ -61,7 +62,7 @@ Page({
       
     } else {
       tt.showToast({
-        title: '请输入对应内容', // 内容
+        title: '请输入对应内容', 
         icon: 'fail'
       });
     }

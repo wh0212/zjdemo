@@ -10,15 +10,40 @@
 </view>
 <!-- 免费用户 -->
 <view class="list" wx:if="{{ind==0}}">
-	免费用户
+	<view class="list_item">
+		<view class="list_item_count">1</view>
+		<image class="list_item_portrait" src="../../image/Snipaste_2020-07-28_11-43-33.png"></image>
+		<view class="list_item_title">大头哥(短视频教学)</view>
+		<view class="list_item_price">8202.33元</view>
+	</view>
 </view>
 <!-- 会员用户 -->
 <view class="list" wx:if="{{ind==1}}">
 	<view class="list_item">
-
+		<view class="list_item_count">1</view>
+		<image class="list_item_portrait" src="../../image/Snipaste_2020-07-28_11-43-33.png"></image>
+		<view class="list_item_title">大头哥(短视频教学)</view>
+		<view class="list_item_price">8202.33元</view>
+	</view>
+	<view class="list_item">
+		<view class="list_item_count">2</view>
+		<image class="list_item_portrait" src="../../image/Snipaste_2020-07-28_11-43-33.png"></image>
+		<view class="list_item_title">大头哥(短视频教学dfsdd)</view>
+		<view class="list_item_price">8202.33元</view>
+	</view>
+	<view class="list_item">
+		<view class="list_item_count">3</view>
+		<image class="list_item_portrait" src="../../image/Snipaste_2020-07-28_11-43-33.png"></image>
+		<view class="list_item_title">大头哥</view>
+		<view class="list_item_price">8202.33元</view>
 	</view>
 </view>
 <!-- 抖音粉丝 -->
 <view class="list" wx:if="{{ind==2}}">
-	抖音粉丝
+	<view class="list_item">
+		<view class="list_item_count">1</view>
+		<image class="list_item_portrait" src="../../image/Snipaste_2020-07-28_11-43-33.png"></image>
+		<view class="list_item_title">大头哥(短视频教学)</view>
+		<view class="list_item_price">8202.33元</view>
+	</view>
 </view>

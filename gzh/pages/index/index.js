@@ -34,7 +34,12 @@ Page({
       }
     ]
   },
-
+  fundeatil(v){
+    console.log(v.currentTarget.dataset.item)
+    wx.navigateTo({
+      url: '/pages/cp_detail/index?data='+JSON.stringify(v.currentTarget.dataset.item),
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

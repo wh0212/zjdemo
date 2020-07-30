@@ -60,6 +60,49 @@
 		</view>
 	</view>
 </view>
+<!-- 其他功能 -->
+<view class="workers">
+	<view class="workes_title">其他功能</view>
+	<view class="workes_main">
+		<view class="workes_main_item">
+			<view style="color:#fece3a" class="iconfont renmai icon-douyin"></view>
+			<view class="workes_item_name">我的抖音号</view>
+		</view>
+		<view class="workes_main_item">
+			<view style="color:#fc5a84" class="iconfont renmai icon-baobiao"></view>
+			<view class="workes_item_name">收益报表</view>
+		</view>
+		<view class="workes_main_item">
+			<view style="color:#adadad" class="iconfont renmai icon-hezuo"></view>
+			<view class="workes_item_name">商务合作</view>
+		</view>
+		<view class="workes_main_item">
+			<view style="color:#adadad" class="iconfont renmai icon-B-tuanduiguanli"></view>
+			<view class="workes_item_name">团队管理</view>
+		</view>
+		<view class="workes_main_item">
+			<view style="color:#adadad" class="iconfont renmai icon-tongzhi"></view>
+			<view class="workes_item_name">系统通知</view>
+		</view>
+		<view class="workes_main_item">
+			<view style="color:#adadad" class="iconfont renmai icon-jianyi"></view>
+			<view class="workes_item_name">投诉建议</view>
+		</view>
+		<view class="workes_main_item">
+				<view style="color:#adadad" class="iconfont renmai icon-guanyuwomen-copy"></view>
+			<view class="workes_item_name">关于我们</view>
+		</view>
+		<view class="workes_main_item">
+			<view style="color:#adadad" class="iconfont renmai icon-xitongshezhi"></view>
+			<view class="workes_item_name">系统设置</view>
+		</view>
+	</view>
+</view>
+
+<view class="fotter">
+	<view style="color:#b5b8c7">快狗推</view>
+	<view style="color:#727888;font-size:24rpx;margin-top:10rpx">--让短视频更简单--</view>
+</view>
 
 <view wx:if="{{model}}" class="model" catchtouchmove="true">
 	<button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">用户授权</button>

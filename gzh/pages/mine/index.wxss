@@ -177,3 +177,40 @@ page {
   background: rgba(0, 0, 0, 0.618);
   z-index: 1111;
 }
+.fotter{
+  width: 100%;
+  text-align: center;
+  margin: 50rpx 0rpx;
+}
+.workers{
+  width: 95%;
+  margin:20rpx auto;
+}
+.workes_title{
+  color: #fff;
+  font-size: 38rpx;
+  margin-bottom: 20rpx;
+}
+.workes_main{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.workes_main_item{
+  width: 22.19%;
+  height: 150rpx;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+}
+.workes_item_name{
+  width: 100%;
+  font-size: 26rpx;
+  color: #fff;
+}
+.renmai{
+  font-size: 60rpx;
+}

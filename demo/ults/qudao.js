@@ -1,6 +1,6 @@
 function shipin(channel,name) {
   tt.request({
-    url: "http://tgadmin.clvtmcn.cn/api/login/adUnitInform",
+    url: "https://tgadmin.clvtmcn.cn/api/login/adUnitInform",
     method: "post",
     data: {
       openid: tt.getStorageSync('cookies').openid,
