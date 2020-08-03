@@ -145,7 +145,7 @@ Page({
     // option.from === 'button'
     return {
       title: '知识星球大挑战',
-      desc: "我通关啦！快来看看你能闯到哪",
+      desc: "快来看看你能闯到哪",
       path: '/pages/index/index?from=sharebuttonabc&otherkey=othervalue&id=0', // ?后面的参数会在转发页面打开时传入onLoad方法
       // imageUrl: 'https://e.com/e.png', // 支持本地或远程图片，默认是小程序icon
       templateId: '1beecc0ql9d238i7n0',
