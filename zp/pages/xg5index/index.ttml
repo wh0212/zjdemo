@@ -1,0 +1,28 @@
+<view class="top">
+	<image class="bannerimg" src="../../image/sy4.jpg" mode="" />
+	<view class="top_txt">你有当老板的潜质吗</view>
+</view>
+
+<view class="image">
+	<view class="item_title">上传您的图片，点击即可测试</view>
+	<view class="img">
+		<image bindtap="upimage" class="classimg" tt:if="{{images == ''}}" src="../../image/img.png" mode="" />
+		<image bindtap="upimage" class="classimg" tt:if="{{images != ''}}" src="{{images}}" mode="" />
+	</view>
+	<view class="btn" bindtap="tapbtn">
+		立即测试
+	</view>
+</view>
+<view class="tishi">--本小程序仅供娱乐--</view>
+
+<view class="why">
+	<view class="why_title">为什么要测</view>
+	<view class="why_txt">
+		老板，可以说是一个代表着成功，更是被无数人向往和憧憬的职位了，不管自己的企业是大还是小，相信每个人应该都是更想自己做老板，
+      自己的公司自己做主，而不是一直卑微的给别人打工，尤其是老板也是有着很多的权利，说出去也比较好听，
+      通过测试也是可以让你了解自己有没有做老板的潜质。
+	</view>
+</view>
+
+<!-- 有趣测试 -->
+<about></about>

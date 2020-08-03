@@ -121,27 +121,6 @@ Component({
         id:17
       },
       {
-        img:"../../image/ceshi.jpg",
-        title:"你未来的事业",
-        ftitle:"测试你的未来事业",
-        count:'2.9w',
-        id:18
-      },
-      {
-        img:"../../image/ceshi2.jpg",
-        title:"别人对你的第一印象",
-        ftitle:"测试你的第一印象",
-        count:'12.9w',
-        id:19
-      },
-      {
-        img:"../../image/ceshi3.jpg",
-        title:"情侣吵架最忌讳什么",
-        ftitle:"测试情侣吵架最忌讳什么",
-        count:'1.9w',
-        id:20
-      },
-      {
         img:"../../image/zs.jpg",
         title:"你的智商水平",
         ftitle:"测试你的智商水平",
@@ -353,18 +332,6 @@ Component({
       }else if (index == 17) {
         tt.reLaunch({
           url: '/pages/syindex/index'
-        });
-      }else if (index == 18) {
-        tt.reLaunch({
-          url: '/pages/ceshi/xg1index/index'
-        });
-      }else if (index == 19) {
-        tt.reLaunch({
-          url: '/pages/ceshi2/xg1index/index'
-        });
-      }else if (index == 20) {
-        tt.reLaunch({
-          url: '/pages/ceshi3/xg1index/index'
         });
       }else if (index == 21) {
         tt.reLaunch({

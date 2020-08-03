@@ -6,7 +6,8 @@ Page({
     act: 1,
     username: "",
     index: "请选择日期",
-    datea: ""
+    datea: "",
+    openid:""
   },
   changeDate: function (e) {
     //获取当前选择日期
@@ -63,6 +64,7 @@ Page({
             var obj = {
               channel: "33",
               appletsName: '测试你未来宝宝的智商',
+              openid:this.data.openid
             }
             serve('/pages/zs3result/index',obj)
           }
@@ -77,6 +79,11 @@ Page({
     }
   },
   onLoad: function (options) {
+    if (options.openid) {
+      this.setData({
+        openid: options.openid
+      })
+    }
     var myDate = new Date()
     let Y = myDate.getFullYear() //年
     if (myDate.getMonth() + 1 < 10) { //月
@@ -95,7 +102,23 @@ Page({
     this.setData({
       datea: myDate
     })
-    shipin(33,'测试你未来宝宝的智商')
+    shipin(33,'测试你未来宝宝的智商',options.openid)
+  },
+  onShareAppMessage(option) {
+    // option.from === 'button'
+    return {
+      title: '测试你未来宝宝的智商',
+      desc: "来吧，展示，专业的数据，准到爆的测评，等你来！",
+      path: '/pages/zs3index/index?from=sharebuttonabc&otherkey=othervalue&id=33', // ?后面的参数会在转发页面打开时传入onLoad方法
+      // imageUrl: 'https://e.com/e.png', // 支持本地或远程图片，默认是小程序icon
+      templateId: '2kh936c8dg672h134n',
+      success() {
+        console.log('转发发布器已调起，并不意味着用户转发成功，微头条不提供这个时机的回调');
+      },
+      fail() {
+        console.log('转发发布器调起失败');
+      }
+    }
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例

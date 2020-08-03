@@ -1,0 +1,25 @@
+<view class="user">
+  <image class="user_image" src="{{user.avatarUrl}}" mode="" />
+  <view class="user_right">
+    <view>{{user.nickName}}</view>
+    <view class="user_kemu">
+      <view class="kemu_item" tt:for="{{kemu}}" tt:key="index">
+        <text style="background:{{item.color}}" class="kemu_title">{{item.title}}</text>
+        <view class="kemu_count">{{item.count}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="main">
+  <image bindtap="suanshu" class="sx_image" src="../../image/sx.png" mode="" />
+  <image bindtap="yingyu" class="sx_image" src="../../image/yy.png" mode="" />
+  <view class="main_bot">
+    <image bindtap="chengyu" style="flex:0.5" src="../../image/cy.png" mode="" />
+    <!-- <view class="bot_right">
+        <image bindtap="ranking" data-title="算数" src="../../image/sslist.png" mode="" />
+        <image bindtap="ranking" data-title="英语" src="../../image/yylist.png" mode="" />
+        <image bindtap="ranking" data-title="成语" src="../../image/cylist.png" mode="" />
+    </view> -->
+  </view>
+</view>

@@ -1,0 +1,21 @@
+{
+  "pages":[
+    "pages/xg4index/index",
+    "pages/index/index",
+    "pages/xg4result/index",
+    "pages/xg3index/index",
+    "pages/xg3result/index",
+    "pages/xg2index/index",
+    "pages/xg2result/index",
+    "pages/xgindex/index",
+    "pages/xgresult/index",
+    "pages/xg5index/index",
+    "pages/xg5result/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "有趣幸运测评",
+    "navigationBarTextStyle":"black"
+  }
+}

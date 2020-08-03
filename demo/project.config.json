@@ -6,7 +6,7 @@
 		"minified": true,
 		"newFeature": true
 	},
-	"appid": "tt5e2b2896c1113f4d",
+	"appid": "tt711a07a7ee2037ee",
 	"projectname": "demo",
 	"condition": {
 		"miniprogram": {
@@ -15,7 +15,7 @@
 				{
 					"id": 0,
 					"name": "yy",
-					"pathName": "pages/cai4index/index",
+					"pathName": "pages/cai1index/index",
 					"query": "",
 					"scene": "011001",
 					"referrerInfo": {

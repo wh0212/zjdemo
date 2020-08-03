@@ -1,0 +1,36 @@
+<!-- 倒计时 -->
+<view tt:if="{{!active}}" class="zb">
+	<image style="width:100%;height:150rpx" src="../../image/zb.png" mode="" />
+	<view class="countdown">{{countDown}}</view>
+</view>
+
+<view class="main" tt:if="{{active}}">
+	<text class="ti_count">第{{timucount}}题</text>
+	<view class="ti_sec">
+		<view class="ti_zhu">
+			<view style="width:{{secwidth}}%" class="ti_zhu_act"></view>
+		</view>
+		<view>{{shicount}}秒</view>
+	</view>
+	<!--  -->
+	<view class="ti_timu">
+		<view style="color:#fa5962">{{list[ticount].timu}}</view>
+		<view style="font-size:50rpx">的中文是意思是？</view>
+	</view>
+	<!-- 选项 -->
+	<view class="about">
+      <view data-index="{{index}}" bindtap="daanfun" tt:for="{{list[ticount].chren}}" class="about_item">
+          {{list[ticount].chren[index]}}
+      </view>
+	</view>
+</view>
+
+<!-- 遮罩层 -->
+<view tt:if="{{model}}" class="model">
+	<view class="model_main">
+		<view class="model_main_count">第{{timucount}}道</view>
+		<image class="cuowuimage" src="../../image/cuowu.png" mode="" />
+		<view bindtap="videofun" class="crunchies">看一次广告复活冲榜</view>
+		<view bindtap="back" style="color:#999;margin-top:40rpx;font-size:30rpx">放弃学习</view>
+	</view>
+</view>

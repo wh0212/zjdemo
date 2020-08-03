@@ -12,6 +12,22 @@ Page({
       "长得好看，已经令很多人都羡慕了，你不仅长得好看，而且气质出众，又是一个喜欢结交朋友的人，这让你不管到哪都能结交到新的朋友，给人留下比较深刻的印象，尤其是异性对你很有眼缘。非常运势测试网有足够的理由相信2020年你被一见钟情的概率很高，一来你会认识新的朋友，二来你自信大方，魅力很容易就散发出来了。容易被一见钟情的你，桃花运当然很好，你就更加要谨慎一点，要知道一见钟情不代表天长地久，不要因为被追就轻易动心，对感情还是要理性点，这也是尊重别人，尊重自己，尊重爱情。"    ],
     index:0
   },
+  onShareAppMessage(option) {
+    // option.from === 'button'
+    return {
+      title: '测试你的一见钟情',
+      desc: "来吧，展示，专业的数据，准到爆的测评，等你来！",
+      path: '/pages/live3index/index?from=sharebuttonabc&otherkey=othervalue&id=12', // ?后面的参数会在转发页面打开时传入onLoad方法
+      // imageUrl: 'https://e.com/e.png', // 支持本地或远程图片，默认是小程序icon
+      templateId: '2kh936c8dg672h134n',
+      success() {
+        console.log('转发发布器已调起，并不意味着用户转发成功，微头条不提供这个时机的回调');
+      },
+      fail() {
+        console.log('转发发布器调起失败');
+      }
+    }
+  },
   onLoad: function (options) {
     tt.setNavigationBarTitle({
       title: "结果"

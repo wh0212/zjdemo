@@ -1,0 +1,21 @@
+/* pages/ranking/index.ttss */
+page{
+  background: #b3cafe
+}
+.nav{
+  text-align: center;
+  color: #fff;
+  font-size: 40rpx
+}
+.list{
+  width: 90%;
+  margin: 40rpx auto;
+}
+.list_about{
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+.list_about view{
+  font-size: 30rpx
+}

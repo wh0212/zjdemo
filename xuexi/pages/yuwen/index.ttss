@@ -1,0 +1,133 @@
+page{
+  background: #9ae7bb
+}
+.zb{
+  width: 90%;
+  margin: 150rpx auto
+}
+.countdown{
+  width: 100%;
+  text-align: center;
+  line-height: 500rpx;
+  font-size: 100rpx;
+  color: #fac902;
+  font-weight: 600
+}
+.main{
+  width: 90%;
+  margin: 10rpx auto
+}
+.ti_count{
+  padding: 6rpx 40rpx;
+  background: #000000;
+  color: #e1c456;
+  border-radius: 40rpx;
+}
+.ti_sec{
+  width: 100%;
+  height: 120rpx;
+  background: #f9ca00;
+  margin-top: 40rpx;
+  border: 2px #000 solid;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around
+}
+.ti_zhu{
+  width: 500rpx;
+  height: 40rpx;
+  background: #000;
+  border-radius: 20rpx;
+  border:1px #000 solid;
+  overflow: hidden
+}
+.ti_zhu_act{
+  width:100%;
+  height: 40rpx;
+  background: #fb6564;
+}
+.ti_timu{
+  width: 100%;
+  height: 300rpx;
+  background: #fff;
+  border: 1px #000 solid;
+  border-radius: 20rpx;
+  margin-top: 40rpx;
+  text-align: center;
+  font-size: 70rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+justify-content: center
+}
+.ti_about{
+  width: 100%;
+  margin: 40rpx auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between
+}
+.ti_about_item{
+  width: 140rpx;
+  height:140rpx;
+  border:2px #000 solid;
+  border-radius: 15rpx;
+  margin-bottom: 20rpx;
+  text-align: center;
+  line-height: 140rpx;
+  background: #fff
+}
+.timuAct{
+  width: 100rpx;
+  height: 100rpx;
+  border:1px #000 solid;
+  border-radius: 15rpx;
+  text-align: center;
+  margin-right: 15rpx;
+  
+}
+/* 遮罩层 */
+.model{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7)
+}
+.model_main{
+  width: 85%;
+  height: 850rpx;
+  position:absolute;
+  left:50%;    /* 定位父级的50% */
+  top:50%;
+  transform: translate(-50%,-50%); /*自己的50% */
+  text-align: center
+}
+.model_main_count{
+  background: #9b6bff;
+  width: 200rpx;
+  height: 80rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 80rpx;
+  margin: 0 auto;
+  border: 1.5px #000 solid
+}
+.cuowuimage{
+  margin-top: -10rpx;
+  height: 500rpx;
+  margin-bottom: 40rpx
+}
+.crunchies{
+  width: 94%;
+  height: 100rpx;
+  border-radius: 10rpx;
+  background: #f4c61b;
+  border: 1.5px #000 solid;
+  text-align: center;
+  line-height: 100rpx;
+  margin: 0 auto
+}

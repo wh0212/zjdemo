@@ -7,12 +7,13 @@ Page({
     act: 1,
     username: "",
     index: "请选择日期",
-    datea: ''
+    datea: '',
+    openid: ''
   },
-  shipinfun(){
-  
+  shipinfun() {
+
   },
-  onShareAppMessage(e){
+  onShareAppMessage(e) {
     console.log(e)
   },
   leftact(v) {
@@ -36,7 +37,7 @@ Page({
   },
   bindPickerCancel: function (e) {
     console.log(e);
-    tt.showToast({ title: "cancel" });
+    tt.showToast({ title: "cancel" ,icon: 'fail'});
   },
   inptxt(v) {
     this.setData({
@@ -44,7 +45,7 @@ Page({
     })
   },
   tapbtn() {
-    if (this.data.index!='请选择日期' && this.data.username) {
+    if (this.data.index != '请选择日期' && this.data.username) {
       tt.request({
         url: 'https://tgadmin.clvtmcn.cn/api/safety/safetyIsContent',
         method: 'post',
@@ -56,7 +57,7 @@ Page({
           if (res.data.prob == 1) {
             tt.showToast({
               title: '出现违规字',
-              icon:'fail',
+              icon: 'fail',
               success: (res) => {
                 return
               }
@@ -65,20 +66,25 @@ Page({
             var obj = {
               channel: "2",
               appletsName: '测你的你的财富关键字',
+              openid: this.data.openid
             }
-
             serve('/pages/cai1result/index', obj)
           }
         }
       });
     } else {
       tt.showToast({
-        title: '请输入对应内容', 
+        title: '请输入对应内容',
         icon: 'fail'
       });
     }
   },
   onLoad: function (options) {
+    if (options.openid) {
+      this.setData({
+        openid: options.openid
+      })
+    }
     var myDate = new Date()
     let Y = myDate.getFullYear() //年
     if (myDate.getMonth() + 1 < 10) { //月
@@ -97,47 +103,25 @@ Page({
     this.setData({
       datea: myDate
     })
-    
-    shipin(2,'测你的你的财富关键字')
+
+    shipin(2, '测你的你的财富关键字', options.openid)
 
   },
-  videoAdCreat() {
-    // 在页面onLoad回调事件中创建激励视频广告实例
-
-    this.videoAdLoad()
-
-  },
-  videoAdLoad() {
-    // 用户触发广告后，显示激励视频广告
-    if (this.videoAd) {
-      this.videoAd.show().catch((err) => {
-        this.videoAd.load()
-          .then(() => this.videoAd.show())
-          .catch(err => {
-            tt.showToast({
-              title: this.videoAdErrHandle(err),
-              icon: 'none'
-            })
-          })
-      })
+  onShareAppMessage(option) {
+    // option.from === 'button'
+    return {
+      title: '你的财富关键字',
+      desc: "来吧，展示，专业的数据，准到爆的测评，等你来！",
+      path: '/pages/cai1index/index?from=sharebuttonabc&otherkey=othervalue&id=2', // ?后面的参数会在转发页面打开时传入onLoad方法
+      // imageUrl: 'https://e.com/e.png', // 支持本地或远程图片，默认是小程序icon
+      templateId: '2kh936c8dg672h134n',
+      success() {
+        console.log('转发发布器已调起，并不意味着用户转发成功，微头条不提供这个时机的回调');
+      },
+      fail() {
+        console.log('转发发布器调起失败');
+      }
     }
-  },
-  videoAdErrHandle(err) {
-    console.log('视频加载失败')
-    console.log(err)
-    // {errMsg: "no advertisement", errCode: 1004}
-    const errHandle = {
-      1000: '后端接口调用失败',
-      1001: '参数错误',
-      1002: '广告单元无效',
-      1003: '内部错误',
-      1004: '无合适的广告',
-      1005: '广告组件审核中',
-      1006: '广告组件被驳回',
-      1007: '广告组件被封禁',
-      1008: '广告单元已关闭',
-    }
-    return errHandle[err.errCode] || '视频加载错误,重新加载页面试试吧'
   },
   onUnload: function () {
     tt.hideToast();

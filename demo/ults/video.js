@@ -1,6 +1,6 @@
 var app = getApp()
 var videoAd = tt.createRewardedVideoAd({
-  adUnitId: 'ek5fh4pno97ttg77oh'
+  adUnitId: 'hj5h948jc2d22g8a0d'
 })
 const serve = function (url,obj) {
   console.log(url)
@@ -33,12 +33,11 @@ const serve = function (url,obj) {
           duration: 2000,
           success(res) {
             setTimeout(() => {
-              console.log(tt.getStorageSync('cookies').openid)
               tt.request({
-                url: 'http://tgadmin.clvtmcn.cn/api/login/adUnitInform',
+                url: 'https://tgadmin.clvtmcn.cn/api/login/adUnitInform',
                 method: "post",
                 data: {
-                  openid: tt.getStorageSync('cookies').openid,
+                  openid: obj.openid,
                   channel: obj.channel,
                   appletsName: obj.appletsName,
                   type: 1
@@ -94,32 +93,9 @@ function videoAdLoad() {
       videoAd.load()
         .then(() => videoAd.show())
         .catch(err => {
-          tt.showToast({
-            title: videoAdErrHandle(err),
-            icon: 'none'
-          })
+          
         })
     })
   }
 }
-function videoAdErrHandle(err) {
-  console.log('视频加载失败')
-  console.log(err)
-  // {errMsg: "no advertisement", errCode: 1004}
-  const errHandle = {
-    1000: '后端接口调用失败',
-    1001: '参数错误',
-    1002: '广告单元无效',
-    1003: '内部错误',
-    1004: '无合适的广告',
-    1005: '广告组件审核中',
-    1006: '广告组件被驳回',
-    1007: '广告组件被封禁',
-    1008: '广告单元已关闭',
-  }
-  return errHandle[err.errCode] || '视频加载错误,重新加载页面试试吧'
-}
-
-
-
 export default serve

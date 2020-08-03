@@ -1,0 +1,72 @@
+.user{
+  width: 90%;
+  height: 130rpx;
+  margin: 0 auto;
+  display: flex;
+  align-items: center
+}
+page{
+  background: #c3d3ff
+}
+.user_image{
+  width: 120rpx;
+  height: 120rpx;
+  border:1px #000 solid;
+  border-radius: 50%;
+}
+.user_right{
+  height: 100%;
+  padding-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around
+}
+.user_kemu{
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+}
+.kemu_item{
+  width: 120rpx;
+  height: 40rpx;
+  background: #fff;
+  border:1px #000 solid;
+  border-radius: 40rpx;
+  margin-right: 10rpx;
+  display: flex;
+  align-items: center
+}
+.kemu_title{
+  border-radius: 20rpx;
+  padding: 1rpx 10rpx
+}
+.kemu_count{
+  width: 100%;
+  text-align: center
+}
+.main{
+  width: 90%;
+  margin: 20rpx auto;
+}
+.sx_image{
+  width: 100%;
+  height: 270rpx;
+  margin-bottom: 10rpx
+}
+.main_bot{
+  width: 100%;
+  display: flex;
+  align-items: center
+}
+.bot_right{
+  flex: 1
+}
+.bot_right image{
+  width: 90%;
+  height: 135rpx;
+  float: right;
+  margin-bottom: 20rpx
+}
+.bot_right image:last-child{
+  margin-bottom: 0rpx
+}

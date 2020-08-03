@@ -1,0 +1,18 @@
+<view class="top">
+	<image class="bannerimg" src="../../image/banner.jpg" mode="" />
+  <view class="top_txt">测你近期的财运</view>
+</view>
+
+<view class="image">
+  <view class="item_title">上传您的图片，点击即可测试</view>
+  <view class="img">
+    <image bindtap="upimage" class="classimg" tt:if="{{images == ''}}" src="../../image/img.png" mode="" />
+    <image bindtap="upimage" class="classimg" tt:if="{{images != ''}}" src="{{images}}" mode="" />
+  </view>
+  <view class="btn" bindtap="tapbtn" >
+    立即测试
+  </view>
+</view>
+<view class="tishi">--本小程序仅供娱乐--</view>
+<!-- 有趣测试 -->
+<about></about>

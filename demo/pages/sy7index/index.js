@@ -7,6 +7,7 @@ Page({
     txt: "",
     array: ["请选择","白羊座", "金牛座", "双子座", "巨蟹座","狮子座","处女座","天秤座","天蝎座","射手座","摩羯座","水瓶座","双鱼座"],
     index: 0,
+    openid:""
   },
   bindPickerChange(e) {
     console.log("picker发送选择改变", e.detail.value);
@@ -58,6 +59,7 @@ Page({
             var obj = {
               channel: "23",
               appletsName: '测试你被领导赏识的概率',
+              openid:this.data.openid
             }
             serve('/pages/sy7result/index',obj)
           }
@@ -72,8 +74,29 @@ Page({
     }
 
   },
-  onLoad: function () {
-   shipin(23,'测试你被领导赏识的概率')
+  onLoad: function (options) {
+    if (options.openid) {
+      this.setData({
+        openid: options.openid
+      })
+    }
+   shipin(23,'测试你被领导赏识的概率',options.openid)
+  },
+  onShareAppMessage(option) {
+    // option.from === 'button'
+    return {
+      title: '测试你被领导赏识的概率',
+      desc: "来吧，展示，专业的数据，准到爆的测评，等你来！",
+      path: '/pages/sy7index/index?from=sharebuttonabc&otherkey=othervalue&id=23', // ?后面的参数会在转发页面打开时传入onLoad方法
+      // imageUrl: 'https://e.com/e.png', // 支持本地或远程图片，默认是小程序icon
+      templateId: '2kh936c8dg672h134n',
+      success() {
+        console.log('转发发布器已调起，并不意味着用户转发成功，微头条不提供这个时机的回调');
+      },
+      fail() {
+        console.log('转发发布器调起失败');
+      }
+    }
   },
   videoAdCreat() {
     // 在页面onLoad回调事件中创建激励视频广告实例

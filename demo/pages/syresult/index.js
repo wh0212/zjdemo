@@ -14,6 +14,22 @@ Page({
     ],
     index: 0,
   },
+  onShareAppMessage(option) {
+    // option.from === 'button'
+    return {
+      title: '测试你的事业成就',
+      desc: "来吧，展示，专业的数据，准到爆的测评，等你来！",
+      path: '/pages/syindex/index?from=sharebuttonabc&otherkey=othervalue&id=24', // ?后面的参数会在转发页面打开时传入onLoad方法
+      // imageUrl: 'https://e.com/e.png', // 支持本地或远程图片，默认是小程序icon
+      templateId: '2kh936c8dg672h134n',
+      success() {
+        console.log('转发发布器已调起，并不意味着用户转发成功，微头条不提供这个时机的回调');
+      },
+      fail() {
+        console.log('转发发布器调起失败');
+      }
+    }
+  },
   onLoad: function (options) {
     tt.setNavigationBarTitle({
       title: "结果"

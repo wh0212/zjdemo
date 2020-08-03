@@ -1,0 +1,52 @@
+<view class="bannerI">
+	<image style="width:100%" src="../../image/timg (1).jpg" mode="" />
+</view>
+
+<view class="main">
+	<view class="main_title">你和暧昧对象最终结果如何</view>
+	<view class="main_active">
+		<view class="active_left">
+			<view class="{{act==1?'active':''}}" data-index="1" bindtap="leftact">男</view>
+			<view data-index="2" class="{{act==2?'active2':''}}" bindtap="leftact">女</view>
+		</view>
+		<input type="" bindinput="inptxt" class="inputtxt" placeholder="请输入你的名字" />
+  </view>
+   <view>
+
+      <picker
+        mode="selector"
+        value="{{index}}"
+        range="{{array}}"
+        bindchange="bindPickerChange"
+        bindcancel="bindPickerCancel"
+        disabled="{{false}}"
+      >
+      <picker-view mode="selector"
+        value="{{index}}"
+        range="{{array}}"
+        bindchange="bindPickerChange"
+        bindcancel="bindPickerCancel"
+        disabled="{{false}}">
+      <text type="text" class="inpxz" placeholder="请选择你的星座">{{array[index]}}</text>
+      <view style="color:#999" class="iconfont down icon-ico_arrows_unfold"></view>
+      </picker-view>
+   </view>
+
+
+<view>
+<view class="btn" bindtap="search">点此查询</view>
+</view>
+
+  
+</view>
+<view class="tishi">--本小程序仅供娱乐--</view>
+
+<view class="why">
+  <view class="why_title">为什么要测</view>
+  <view class="why_txt">
+    暧昧的感觉既美好又苦涩，看起来亲密却没有确定的身份，想要放弃却又难以割舍这份感情。当你和另一个人陷入了这种说不清道不明的关系时，你可想知道自己和暧昧对象最终会有怎样的结果呢？来寻找答案吧。
+  </view>
+</view>
+
+<!-- 有趣测试 -->
+<about></about>

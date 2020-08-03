@@ -1,0 +1,39 @@
+<!-- 倒计时 -->
+<view tt:if="{{!active}}" class="zb">
+	<image style="width:100%;height:150rpx" src="../../image/zb.png" mode="" />
+	<view class="countdown">{{countDown}}</view>
+</view>
+
+<!-- 题 -->
+<view class="main" tt:if="{{active}}">
+	<text class="ti_count">第{{timucount}}题</text>
+	<view class="ti_sec">
+		<view class="ti_zhu">
+			<view style="width:{{secwidth}}%" class="ti_zhu_act"></view>
+		</view>
+		<view>{{shicount}}秒</view>
+	</view>
+	<!--  -->
+	<view class="ti_timu">
+		<text>{{list[ticount].count}}</text>=
+		<text style="color:#fe5e66">{{list[ticount].daan}}</text>
+	</view>
+	<view class="answer">
+		<view data-act="{{list[ticount].act}}" data-j="{{0}}" bindtap="correct" class="correct">
+			<view class="iconfont icon-cuowu"></view>
+		</view>
+		<view data-act="{{list[ticount].act}}" data-j="{{1}}" bindtap="correct" class="mistake">
+			<view class="iconfont icon-zhengque"></view>
+		</view>
+	</view>
+</view>
+
+
+<view tt:if="{{model}}" class="model">
+	<view class="model_main">
+		<view class="model_main_count">第{{timucount}}道</view>
+    <image class="cuowuimage" src="../../image/cuowu.png" mode="" />
+    <view bindtap="videofun" class="crunchies">看一次广告复活冲榜</view>
+    <view bindtap="back" style="color:#999;margin-top:40rpx;font-size:30rpx">放弃学习</view>
+	</view>
+</view>

@@ -21,7 +21,7 @@
      </view>
     <view style="color:rgb(68, 149, 255)" class="iconfont down icon-ico_arrows_unfold"></view>
    </picker>
-</view>
+  </view>
    <view class="btn" bindtap="tapbtn">立即测试</view>
 </view>
 

@@ -1,0 +1,33 @@
+{
+  "pages":[
+    "pages/caiindex/index",
+    "pages/cai4index/index",
+    "pages/cai4result/index",
+    "pages/index/index",
+    "pages/cairesult/index",
+    "pages/cai2index/index",
+    "pages/cai2result/index",
+    "pages/xgindex/index",
+    "pages/xgresult/index",
+    "pages/xg2result/index",
+    "pages/xg2index/index",
+    "pages/syindex/index",
+    "pages/syresult/index",
+    "pages/sy2index/index",
+    "pages/sy2result/index",
+    "pages/liveindex/index",
+    "pages/liveresult/index",
+    "pages/live2index/index",
+    "pages/live2result/index",
+    "pages/qwindex/index",
+    "pages/qwresult/index",
+    "pages/qw2index/index",
+    "pages/qw2result/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle":"black"
+  }
+}

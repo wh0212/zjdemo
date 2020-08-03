@@ -32,7 +32,7 @@ width: 100%;
   width: 85%;
   background: #fff;
   border-radius: 20rpx;
-  margin: 20rpx auto ;
+  margin: 40rpx auto ;
   padding: 20rpx
 }
 .main_title{

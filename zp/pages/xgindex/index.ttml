@@ -1,0 +1,26 @@
+<view class="top">
+	<image class="bannerimg" src="../../image/3.jpg" mode="" />
+	<view class="top_txt">你还要单身多久呢?</view>
+</view>
+
+<view class="image">
+	<view class="item_title">上传您的图片，点击即可测试</view>
+	<view class="img">
+		<image bindtap="upimage" class="classimg" tt:if="{{images == ''}}" src="../../image/img.png" mode="" />
+		<image bindtap="upimage" class="classimg" tt:if="{{images != ''}}" src="{{images}}" mode="" />
+	</view>
+	<view class="btn" bindtap="tapbtn">
+		立即测试
+	</view>
+</view>
+<view class="tishi">--本小程序仅供娱乐--</view>
+
+<view class="why">
+	<view class="why_title">为什么要测</view>
+	<view class="why_txt">
+		爱情如此美好，可单身者却要忍受孤独的痛苦，此时此刻是否你也正在期待脱单？想知道你还要单身多久吗？让测试为你揭晓答案吧。
+	</view>
+</view>
+
+<!-- 有趣测试 -->
+<about></about>

@@ -1,0 +1,10 @@
+<!-- pages/ranking/index.ttml -->
+<view class="nav">{{title}}周排行榜</view>
+<!-- 列表 -->
+<view class="list">
+  <view class="list_about">
+     <view>头像昵称</view>
+     <view>用时</view>
+     <view>题数</view>
+  </view>
+</view>
