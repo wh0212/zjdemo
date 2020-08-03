@@ -132,6 +132,11 @@ Page({
         timu: "白驹过隙",
         chren: ['狗', '德', '局', '狙', '见', '林', '域', '混', '蒙', '后', '驹', '学'],
         act: '驹'
+      },
+      {
+        timu: "滥竽充数",
+        chren: ['说', '起', '短', '地', '于', '曲', '天', '野', '条', '芋', '慢', '闹'],
+        act: '芋'
       }
     ],
     openid: 0
@@ -242,7 +247,6 @@ Page({
   },
   shijian() {
     if (this.data.active) {
-      console.log(2222)
       let that = this;
       let countDownNum = 15; //获取倒计时初始值 
       that.setData({
@@ -264,7 +268,6 @@ Page({
           }
         }, 1000)
       })
-      console.log(that.data.timer2, "dafdd")
     }
   },
   back() {

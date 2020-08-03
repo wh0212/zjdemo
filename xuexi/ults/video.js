@@ -4,7 +4,6 @@ var videoAd = tt.createRewardedVideoAd({
 })
 const serve = function (obj, back) {
   if (app.globalData.gender == 1) {
-    console.log(videoAd)
     videoAd.onError((err) => {
 
     })
@@ -29,7 +28,6 @@ const serve = function (obj, back) {
           }
         });
         back()
-
       } else {
         // 播放中途退出，进行提示
         tt.showToast({ title: '未完整观看视频不能获取奖励哦', icon: 'none' })

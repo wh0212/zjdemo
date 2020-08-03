@@ -31,6 +31,11 @@ Page({
         act: false
       },
       {
+        count: '14+22',
+        daan: 35,
+        act: false
+      },
+      {
         count: '4+9',
         daan: 13,
         act: true
@@ -153,6 +158,16 @@ Page({
         daan: 68,
         act: false
       },
+      {
+        count: '27-13',
+        daan: 14,
+        act: true
+      },
+      {
+        count: '23-6',
+        daan: 17,
+        act: true
+      },
     ],
     ticount: 0,//题目
     model: false,
@@ -181,7 +196,6 @@ Page({
       appletsName: '算数小超人',
       openid: this.data.openid
     }
-    console.log(app.globalData.gender)
     let that = this;
     clearInterval(that.data.timer2)
     if (app.globalData.gender == 0) {
@@ -193,7 +207,6 @@ Page({
       that.shijian()
     } else {
       serve(obj,function back() {
-        console.log("视频看完了啊")
         that.setData({
           model: false,
           secwidth: 100,
@@ -273,7 +286,6 @@ Page({
   },
   shijian() {
     if (this.data.active) {
-      console.log(2222)
       let that = this;
       let countDownNum = 8; //获取倒计时初始值 
       that.setData({
@@ -295,7 +307,6 @@ Page({
           }
         }, 1000)
       })
-      console.log(that.data.timer2, "dafdd")
     }
   },
   onLoad: function (options) {

@@ -15,7 +15,6 @@ App({
     tt.setStorageSync('count', ojb);
     tt.getSystemInfo({
       success: (res) => {
-        // console.log(res)
         if (res.appName == 'Toutiao') {
           console.log("头条")
           that.globalData.gender = 0

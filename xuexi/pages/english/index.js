@@ -9,7 +9,7 @@ Page({
     secwidth: 100,
     ticount: 0,//题目
     model: false,
-    timucount: 1,
+    timucount: 1,//题数
     timer2: {},
     openid: 0,
     list: [
@@ -127,6 +127,21 @@ Page({
         timu: 'translate',
         chren: ['变异', '成长', '改变', '翻译'],
         act: 3
+      },
+      {
+        timu: 'experience',
+        chren: ['经历', '变化', '突破', '成功'],
+        act: 0
+      },
+      {
+        timu: 'colour',
+        chren: ['眼色', '颜色', '尺子', '钢笔'],
+        act: 1
+      },
+      {
+        timu: 'zoo',
+        chren: ['博物馆', '科技园', '星星', '动物园'],
+        act: 3
       }
     ]
   },
@@ -176,7 +191,6 @@ Page({
 
   },
   daanfun(v) {
-    console.log(v.currentTarget.dataset.index)
     if (v.currentTarget.dataset.index == this.data.list[this.data.ticount].act) {
       console.log("正确")
       clearInterval(this.data.timer2)
@@ -223,7 +237,6 @@ Page({
   },
   shijian() {
     if (this.data.active) {
-      console.log(2222)
       let that = this;
       let countDownNum = 10; //获取倒计时初始值 
       that.setData({
@@ -245,7 +258,6 @@ Page({
           }
         }, 1000)
       })
-      console.log(that.data.timer2, "dafdd")
     }
   },
   onLoad: function (options) {
@@ -267,7 +279,6 @@ Page({
       ccount: tt.getStorageSync('count').ccount
     }
     tt.setStorageSync('count', ojb);
-
     tt.reLaunch({
       url: '/pages/index/index'
     });
