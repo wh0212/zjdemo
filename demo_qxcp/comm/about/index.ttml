@@ -1,0 +1,16 @@
+<!-- 有趣测试 -->
+<view id="test_list" class="test">
+	<!-- 第一印象 -->
+	<view bindtap="about" data-index="{{item.id}}" class="test_main" tt:for="{{list}}" >
+
+		<view  class="test_right">
+			<view class="test_right_title">{{item.title}}</view>
+			<view class="test_right_ftitle">{{item.ftitle}}</view>
+			<view class="test_right_xq">
+				<view class="xq_left">{{item.count}}</view>
+			</view>
+		</view>
+		<image  class="test_left" src="{{item.img}}" mode="" />
+	</view>
+  <view class="bottom">--到底了--</view>
+</view>

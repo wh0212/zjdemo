@@ -1,0 +1,49 @@
+<view class="bannerI">
+	<image style="width:100%" src="../../image/zs7.jpg" mode="" />
+</view>
+
+<view class="main">
+	<view class="main_title">你的智商or情商有几岁</view>
+	<view class="main_active">
+		<view class="active_left">
+			<view class="{{act==1?'active':''}}" data-index="1" bindtap="leftact">男</view>
+			<view data-index="2" class="{{act==2?'active2':''}}" bindtap="leftact">女</view>
+		</view>
+		<input type="" bindinput="inptxt" class="inputtxt" placeholder="请输入你的名字" />
+  </view>
+   <view>
+
+      <picker
+  mode="selector"
+  value="{{index}}"
+  range="{{array}}"
+  bindchange="bindPickerChange"
+  bindcancel="bindPickerCancel"
+  disabled="{{false}}"
+>
+<picker-view mode="selector"
+  value="{{index}}"
+  range="{{array}}"
+  bindchange="bindPickerChange"
+  bindcancel="bindPickerCancel"
+  disabled="{{false}}">
+<text class="inpxz" placeholder="请选择你的星座" >{{array[index]}}</text>
+<view style="color:#903fc0" class="iconfont down icon-ico_arrows_unfold"></view>
+</picker-view>
+   </view>
+<view>
+<view class="btn" bindtap="search">点此查询</view>
+</view>
+
+  
+</view>
+<view class="tishi">--本小程序仅供娱乐--</view>
+
+<view class="why">
+  <view class="why_title">为什么要测</view>
+  <view class="why_txt">
+这世上十全十美的事不多，完美的人也太少，就比如有颜值的人，不一定性格好，性格好的不一定有能力，有能力的人也不一定就懂得说话的艺术。因为智商是智商，情商是情商，不一定能两个都很高。认为智商对于学习确实很重要，而情商对于社交，做人做事就更加重要了，你的智商和情商有几岁，是不是双双在线呢？  </view>
+</view>
+
+<!-- 有趣测试 -->
+<about></about>

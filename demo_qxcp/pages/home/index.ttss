@@ -1,0 +1,79 @@
+/* pages/home/index.ttss */
+.swiper{
+  padding: 20rpx 40rpx
+}
+page{
+  background: #eee
+}
+.swiper_item{
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.swiper_item image{
+  width: 100%;
+  height: 100%
+}
+
+.main{
+  width: 100%;
+  padding: 0rpx 0rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx
+}
+.main_left{
+  flex: 1.2;
+  text-align: center;
+  margin-top: 20rpx
+}
+.main_right{
+  flex: 4;
+  margin-top: 20rpx;
+  background: rgb(246, 246, 246);
+  padding-left: 20rpx
+}
+.bottom{
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 30rpx
+}
+.left_item{
+  width: 100%;
+  line-height: 100rpx;
+  text-align: center;
+  display: flex;
+  align-items: center
+}
+
+.name{
+  width: 100%;
+  text-align: center;
+  font-size: 32rpx
+}
+.active{
+  width: 8rpx;
+  height: 100rpx;
+  background: rgb(240, 191, 8);
+  position: absolute;
+  left: 0;
+}
+.xiding{
+  position: fixed;
+  top:0;
+ z-index: 2;
+}
+/* .flexd{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 9999
+} */
+.classmain{
+  width:100%;
+  background:blue;
+  padding: 20rpx 0rpx;
+  margin-top: 20rpx
+}
+

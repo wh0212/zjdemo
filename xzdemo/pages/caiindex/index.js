@@ -66,7 +66,7 @@ Page({
               appletsName: '测试你的偏财指数',
               openid:this.data.openid
             }
-            serve('/pages/cai4result/index',obj)
+            serve('/pages/cairesult/index',obj)
           }
         }
       });

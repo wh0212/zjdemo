@@ -1,0 +1,12 @@
+<!-- pages/mine/index.ttml -->
+<view class="user" style="background:url({{user.avatarUrl}});background-repeat: no-repeat;background-position: center;background-size: cover;">
+  <image class="user_img" src="{{user.avatarUrl}}" mode="" />
+  <view class="classuser">欢迎回来，{{user.nickName}}</view>
+</view>
+<view class="nav">
+  <view bindtap="activefun" data-index="{{1}}" class="{{ind==1?'act':''}}">未完成</view>
+  <view bindtap="activefun" data-index="{{2}}" class="{{ind==2?'act':''}}">已完成</view>
+  <view bindtap="activefun" data-index="{{3}}" class="{{ind==3?'act':''}}">全部测评</view>
+</view>
+
+<view class="classbtn" bindtap="index">查看更多精彩测评</view>

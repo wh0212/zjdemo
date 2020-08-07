@@ -1,0 +1,27 @@
+@import"../../wxParse/wxParse.wxss";
+.toolbar{
+  padding: 20rpx;
+  border: 1px #eee solid;
+}
+.iconfont{
+  font-size: 40rpx;
+  margin: 0rpx 20rpx;
+  line-height: 70rpx;
+}
+.main{
+  width: 95%;
+  margin: 0 auto;
+  border:1px #999 solid;
+  border-radius: 10rpx;
+  padding: 0rpx 10rpx;
+}
+.btn{
+  width: 80%;
+  line-height: 90rpx;
+  background: rgb(113, 158, 253);
+  margin: 40rpx auto;
+  color: #fff;
+  text-align: center;
+  margin-top: 100rpx;
+  border-radius: 10rpx;
+}

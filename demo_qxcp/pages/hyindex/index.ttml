@@ -1,0 +1,50 @@
+<view class="bannerI">
+	<image style="width:100%" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595572488674&di=6e23b31ea3453849994d42d66ea67036&imgtype=0&src=http%3A%2F%2Fgss0.baidu.com%2F94o3dSag_xI4khGko9WTAnF6hhy%2Fzhidao%2Fpic%2Fitem%2Fa6efce1b9d16fdfa775745cdb58f8c5494ee7bde.jpg"
+	 mode="" />
+</view>
+
+<view class="main">
+	<view class="main_title">星座测婚后生活</view>
+	<view class="main_active">
+		<view class="active_left">
+			<view class="{{act==1?'active':''}}" data-index="1" bindtap="leftact">男</view>
+			<view data-index="2" class="{{act==2?'active2':''}}" bindtap="leftact">女</view>
+		</view>
+		<input type="" bindinput="inptxt" class="inputtxt" placeholder="请输入你的名字" />
+  </view>
+   <view>
+
+      <picker
+  mode="selector"
+  value="{{index}}"
+  range="{{array}}"
+  bindchange="bindPickerChange"
+  bindcancel="bindPickerCancel"
+  disabled="{{false}}"
+>
+<picker-view mode="selector"
+  value="{{index}}"
+  range="{{array}}"
+  bindchange="bindPickerChange"
+  bindcancel="bindPickerCancel"
+  disabled="{{false}}">
+<text class="inpxz" placeholder="请选择你的星座" >{{array[index]}}</text>
+<view style="color:#903fc0" class="iconfont down icon-ico_arrows_unfold"></view>
+</picker-view>
+   </view>
+<view>
+<view class="btn" bindtap="search">点此查询</view>
+</view>
+
+</view>
+<view class="tishi">--本小程序仅供娱乐--</view>
+
+<view class="why">
+  <view class="why_title">为什么要测</view>
+  <view class="why_txt">
+      不同的家庭拥有不同的生活模式，结婚后，两个来自不同家庭的人组成了一个新的家庭，又会用怎样的方式来经营生活呢？想知道你婚后的生活是什么样的吗？让测试为你揭晓答案吧。
+  </view>
+</view>
+
+<!-- 有趣测试 -->
+<about></about>

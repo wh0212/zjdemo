@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/mortgage/mortgage",
+    "pages/finance/finance",
+    "pages/finance/func/func",
+    "pages/wuxian-yijin/wxyj",
+    "pages/logs/logs",
+    "pages/mortgage/detail/detail"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#1AAD19",
+    "backgroundTextStyle": "black",
+    "backgroundColor": "#f8f8f8",
+    "navigationBarTitleText": "Finance"
+  }
+}

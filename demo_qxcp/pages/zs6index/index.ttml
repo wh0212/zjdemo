@@ -1,0 +1,50 @@
+<view class="bannerI">
+	<image style="width:100%" src="../../image/zs6.jpg" mode="" />
+</view>
+
+<view class="main">
+	<view class="main_title">星座测领悟能力</view>
+	<view class="main_active">
+		<view class="active_left">
+			<view class="{{act==1?'active':''}}" data-index="1" bindtap="leftact">男</view>
+			<view data-index="2" class="{{act==2?'active2':''}}" bindtap="leftact">女</view>
+		</view>
+		<input type="" bindinput="inptxt" class="inputtxt" placeholder="请输入你的名字" />
+  </view>
+   <view>
+
+      <picker
+  mode="selector"
+  value="{{index}}"
+  range="{{array}}"
+  bindchange="bindPickerChange"
+  bindcancel="bindPickerCancel"
+  disabled="{{false}}"
+>
+<picker-view mode="selector"
+  value="{{index}}"
+  range="{{array}}"
+  bindchange="bindPickerChange"
+  bindcancel="bindPickerCancel"
+  disabled="{{false}}">
+<text class="inpxz" placeholder="请选择你的星座" >{{array[index]}}</text>
+<view style="color:#903fc0" class="iconfont down icon-ico_arrows_unfold"></view>
+</picker-view>
+   </view>
+<view>
+<view class="btn" bindtap="search">点此查询</view>
+</view>
+
+  
+</view>
+<view class="tishi">--本小程序仅供娱乐--</view>
+
+<view class="why">
+  <view class="why_title">为什么要测</view>
+  <view class="why_txt">
+     领悟能力就是理解、领会、感悟的能力，也是能体现一个人智力的重要因素。那么你是领悟能力强的人吗?领悟能力强的人总是能对某一件事物，很快的做出思考和理解，所以可以少走很多弯路，做起事来也能得心应手。可以避免吃很多的苦，今天我们就一起来做个小测试，来测测看你的领悟能力怎么样?
+  </view>
+</view>
+
+<!-- 有趣测试 -->
+<about></about>

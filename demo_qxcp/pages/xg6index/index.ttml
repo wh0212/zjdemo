@@ -1,0 +1,47 @@
+<view class="bannerI">
+	<image style="width:100%" src="../../image/xg6.jpg" mode="" />
+</view>
+<view class="classtxt">
+好看，确实会有赏心悦目的魅力，现实生活中长得好看的人，不管男人，还是女人，被异性青睐的几率会大很多，毕竟人人都有爱美之心，如果好看性格又好，那就是真正的男神女神了。内在美，真正的实力才是最重要的，也最经的起世间考验，但是高颜值也确实是一个优势， 特别是在竞争激烈的当代，在你心中认为外貌会很重要吗? 
+</view>
+<view class="main">
+	<view class="main_title">你认为外貌重要吗</view>
+	<view class="main_active">
+		<view class="active_left">
+			<view class="{{act==1?'active':''}}" data-index="1" bindtap="leftact">男</view>
+			<view data-index="2" class="{{act==2?'active2':''}}" bindtap="leftact">女</view>
+		</view>
+		<input type="" bindinput="inptxt" class="inputtxt" placeholder="请输入你的名字" />
+  </view>
+   <view>
+
+      <picker
+  mode="selector"
+  value="{{index}}"
+  range="{{array}}"
+  bindchange="bindPickerChange"
+  bindcancel="bindPickerCancel"
+  disabled="{{false}}"
+>
+<picker-view mode="selector"
+  value="{{index}}"
+  range="{{array}}"
+  bindchange="bindPickerChange"
+  bindcancel="bindPickerCancel"
+  disabled="{{false}}">
+<text class="inpxz" placeholder="请选择你的星座" >{{array[index]}}</text>
+<view style="color:rgba(255, 68, 121)" class="iconfont down icon-ico_arrows_unfold"></view>
+</picker-view>
+   </view>
+
+
+<view>
+<view class="btn" bindtap="search">点此查询</view>
+</view>
+
+  
+</view>
+<view class="tishi">--本小程序仅供娱乐--</view>
+
+<!-- 有趣测试 -->
+<about></about>

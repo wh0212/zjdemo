@@ -1,0 +1,14 @@
+<scroll-view scroll-y="true" bindscrolltolower="scroll" scroll-with-animation style="height:100vh;width:100%">
+	<view class="list">
+		<view class="item" bindtap="detail" data-item="{{item}}" tt:for="{{list}}">
+			<image class="item_img" src="{{item.image}}" mode="" />
+			<view class="item_right">
+				<view class="item_right_title">{{item.title}}</view>
+				<view class="item_right_xq">
+					<text>{{item.type}}</text>
+					<text>{{item.date}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</scroll-view>

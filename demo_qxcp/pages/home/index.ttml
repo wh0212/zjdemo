@@ -1,0 +1,36 @@
+
+<view>
+	<swiper circular="{{true}}" circular indicator-dots class="swiper">
+		<swiper-item class="swiper_item">
+			<image bindtap="ceshi_btn" data-url="/pages/live2index/index" src="../../image/1.jpg" class="slide-image" />
+		</swiper-item>
+		<swiper-item class="swiper_item">
+			<image bindtap="ceshi_btn" data-url="/pages/live2index/index" src="../../image/2.jpg" class="slide-image" />
+		</swiper-item>
+	</swiper>
+</view>
+
+<view class="main" hidden="{{scrollTop>160}}">
+	<view class="main_left">
+		<view bindtap="activefun" data-index="{{item.id}}" tt:for="{{list}}" class="left_item" class="left_item">
+			<view tt:if="{{active==index}}" class="active"></view>
+			<view class="name">{{item.name}}</view>
+		</view>
+	</view>
+	<view class="main_right">
+		<about id="about"></about>
+	</view>
+</view>
+<view class="main" hidden="{{scrollTop<160}}">
+	<view class="main_left">
+		<view bindtap="activefun2" data-index="{{item.id}}" tt:for="{{list}}" class="left_item" class="left_item">
+			<view tt:if="{{active==index}}" class="active"></view>
+			<view class="name">{{item.name}}</view>
+		</view>
+	</view>
+	<view class="main_right">
+		<scroll-view scroll-y="true" style="height:100vh">
+			<about id="about2"></about>
+		</scroll-view>
+	</view>
+</view>

@@ -4,7 +4,6 @@ App({
     shucount: 0 || tt.getStorageSync('count').shucount,
     yingcount: 0 || tt.getStorageSync('count').yingcount,
     ccount: 0 || tt.getStorageSync('count').ccount
-
   },
   onLaunch: function () {
     let ojb = {

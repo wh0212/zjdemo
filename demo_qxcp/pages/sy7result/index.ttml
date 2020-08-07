@@ -1,0 +1,18 @@
+<view class="bannerI">
+  <image style="width:100%" src="../../image/sy7.jpg" mode="" />
+</view>
+
+<!-- 内容答案 -->
+<view class="main">
+  <view class="main_title">{{dateY}}，你会被赏识吗</view>
+  <view class="main_ftitle">赏识概率{{xq}}%</view>
+  <view class="main_txt">
+    {{list[index]}}
+  </view>
+</view>
+
+<view class="tishi">--本小程序仅供娱乐--</view>
+
+<!-- 有趣测试 -->
+
+<about></about>

@@ -1,0 +1,47 @@
+<view class="bannerI">
+	<image style="width:100%" src="../../image/zs4.jpg" mode="" />
+</view>
+<view class="classtxt">
+	人是社交动物，只有在群体之中才能获得必要的安全感。可是，并非所有人都对社交关系处理得游刃有余。要想知道你的社交天赋有多高，不妨了解一番吧。
+</view>
+<view class="main">
+	<view class="main_title">测试你的社交天赋有多高</view>
+	<view class="main_active">
+		<view class="active_left">
+			<view class="{{act==1?'active':''}}" data-index="1" bindtap="leftact">男</view>
+			<view data-index="2" class="{{act==2?'active2':''}}" bindtap="leftact">女</view>
+		</view>
+		<input type="" bindinput="inptxt" class="inputtxt" placeholder="请输入你的名字" />
+  </view>
+   <view>
+
+      <picker
+  mode="selector"
+  value="{{index}}"
+  range="{{array}}"
+  bindchange="bindPickerChange"
+  bindcancel="bindPickerCancel"
+  disabled="{{false}}"
+>
+<picker-view mode="selector"
+  value="{{index}}"
+  range="{{array}}"
+  bindchange="bindPickerChange"
+  bindcancel="bindPickerCancel"
+  disabled="{{false}}">
+<text class="inpxz" placeholder="请选择你的星座" >{{array[index]}}</text>
+<view style="color:rgba(255, 68, 121)" class="iconfont down icon-ico_arrows_unfold"></view>
+</picker-view>
+   </view>
+
+
+<view>
+<view class="btn" bindtap="search">点此查询</view>
+</view>
+
+  
+</view>
+<view class="tishi">--本小程序仅供娱乐--</view>
+
+<!-- 有趣测试 -->
+<about></about>

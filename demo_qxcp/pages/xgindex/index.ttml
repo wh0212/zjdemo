@@ -1,0 +1,47 @@
+<view class="bannerI">
+	<image style="width:100%" src="../../image/gl.jpg" mode="" />
+</view>
+<view class="classtxt">
+	不同个性的人在交往中表现出来的形象也不一样，有些人热情如火，有些人却高冷如冰，那么你又是哪一种形象代表呢？想要更了解自己，不妨跟着非常运势测试网来测测，你的高冷指数究竟有多少吧。
+</view>
+<view class="main">
+	<view class="main_title">测试你的高冷指数</view>
+	<view class="main_active">
+		<view class="active_left">
+			<view class="{{act==1?'active':''}}" data-index="1" bindtap="leftact">男</view>
+			<view data-index="2" class="{{act==2?'active2':''}}" bindtap="leftact">女</view>
+		</view>
+		<input type="" bindinput="inptxt" class="inputtxt" placeholder="请输入你的名字" />
+  </view>
+   <view>
+
+      <picker
+  mode="selector"
+  value="{{index}}"
+  range="{{array}}"
+  bindchange="bindPickerChange"
+  bindcancel="bindPickerCancel"
+  disabled="{{false}}"
+>
+<picker-view mode="selector"
+  value="{{index}}"
+  range="{{array}}"
+  bindchange="bindPickerChange"
+  bindcancel="bindPickerCancel"
+  disabled="{{false}}">
+<text class="inpxz" placeholder="请选择你的星座" >{{array[index]}}</text>
+<view style="color:rgba(255, 68, 121)" class="iconfont down icon-ico_arrows_unfold"></view>
+</picker-view>
+   </view>
+
+
+<view>
+<view class="btn" bindtap="search">点此查询</view>
+</view>
+
+  
+</view>
+<view class="tishi">--本小程序仅供娱乐--</view>
+
+<!-- 有趣测试 -->
+<about></about>
