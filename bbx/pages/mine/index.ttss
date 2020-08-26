@@ -1,0 +1,139 @@
+.nav{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px rgb(175, 175, 175) solid
+}
+.nav_item{
+  flex: 1;
+  text-align: center;
+  position: relative
+}
+.main{
+  width: 90%;
+  margin: 20rpx auto;
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 0rpx 20rpx;
+  opacity: 0.8
+}
+.btm_nav{
+  width: 140rpx;
+  height: 5rpx;
+  margin: 0 auto;
+  background: #e74135;
+  position: absolute;
+  bottom: -10rpx;
+  left: 50%;
+  margin-left: -70rpx
+}
+.txt{
+  line-height: 80rpx;
+  margin: 25rpx auto;
+  color: #333
+}
+.xr{
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 350rpx
+}
+page{
+   background-image:url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598274641943&di=a6de0693b692088e4730089b57933ecc&imgtype=0&src=http%3A%2F%2Fpic15.nipic.com%2F20110727%2F4104010_210149590141_2.jpg);
+  background-repeat: no-repeat;
+  background-size: 150% 120%;
+  height: 100vh;
+  overflow: hidden
+}
+.couple{
+  padding-top: 10rpx
+}
+.phone{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 150rpx;
+  justify-content: space-between;
+}
+.textarea{
+  border: 1px #c2c2c2 solid;
+  width: 96.5%;
+  height: 350rpx;
+  margin-top: 20rpx;
+  border-radius: 20rpx;
+  padding: 10rpx 10rpx
+}
+.addbtn{
+  width: 100%;
+  line-height: 80rpx;
+  text-align: center;
+  color: #Fff;
+  background: #5ca0f8;
+  margin-top: 100rpx
+}
+.inp{
+  border:1px #999 solid;
+  border-radius: 40rpx;
+  height: 80rpx;
+  padding-left: 20rpx
+}
+.yzm{
+  width: 100%;
+  height: 150rpx;
+  text-align: center;
+  margin-top: 30rpx;
+  color: #999
+}
+.yzmImage{
+  margin-top: 30rpx;
+  height: 150rpx
+}
+/*  */
+
+.getyzm{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 100rpx
+}
+.inpyzm{
+  flex: 1;
+  border:1px #999 solid;
+  height: 80rpx;
+  padding-left: 20rpx;
+  margin-right: 150rpx;
+}
+.yzmImage2{
+  flex: 2;
+  height: 80rpx
+}
+.user {
+  width: 95%;
+  height: 300rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 50rpx;
+  border-radius: 20rpx;
+  margin: 20rpx auto;
+  opacity: 0.8
+}
+.userAvatar{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  border:2rpx #eee solid
+}
+.username{
+  margin-top: 30rpx;
+  background: #fff;
+  padding: 10rpx 40rpx;
+  border-radius: 40rpx;
+  font-size: 32rpx;
+  border: 1px #999 solid
+}

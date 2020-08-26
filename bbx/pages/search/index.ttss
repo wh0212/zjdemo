@@ -1,0 +1,195 @@
+.search {
+  width: 90%;
+  margin: 20rpx auto;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  padding: 0rpx 20rpx;
+  color: #999;
+  justify-content: space-between;
+  font-size: 32rpx;
+  line-height: 70rpx;
+  border-radius: 40rpx
+}
+#app{
+  background: #fbfbfb
+}
+.none_lishi{
+  text-align: center;
+  color: #999;
+  font-size: 32rpx;
+  width: 100%;
+  margin-top: 50rpx
+}
+.top{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  background: #fbfbfb;
+}
+page{
+  background: #fbfbfb
+}
+.inp {
+  width: 79%;
+  padding-left: 15rpx;
+}
+
+.btnsearch {
+  border-left: 1px #73769d solid;
+  padding-left: 20rpx;
+  line-height: 40rpx
+}
+
+.list{
+  width: 94%;
+  margin: 0 auto;
+  padding: 20rpx 0rpx;
+  background: #fff;
+  border-radius: 20rpx;
+}
+.item{
+  width: 100%;
+  height: 180rpx;
+  border-bottom: 1px #eee solid;
+  padding: 20rpx 0rpx;
+  display: flex;
+  align-items: center;
+}
+.item_img{
+  flex: 1;
+  height: 100%;
+  margin-right: 20rpx
+}
+.item_right{
+  flex: 1.5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20rpx;
+  justify-content: space-between
+}
+.item_right_none{
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  justify-content: space-between
+}
+.item_right_title{
+  font-size: 34rpx;
+  width: 380rpx;
+  margin-bottom: 15rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.item_right_title_none{
+  font-size: 34rpx;
+  width: 99%;
+  margin-bottom: 15rpx;
+  line-height: 50rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.item_right_xq{
+  font-size: 30rpx;
+  color: #a3a3a3;
+}
+.item_right_xq text{
+  margin-right: 10rpx
+}
+.lishi{
+  width: 100%;
+  padding: 0rpx 20rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 120rpx
+}
+.kong{
+  text-align: center;
+  position: relative
+}
+.bottom{
+  text-align: center;
+  font-size: 32rpx;
+  color: #999;
+  line-height: 80rpx
+}
+.loading{
+  position: absolute;
+  background: #fbfbfb;
+  bottom: 0;
+  height: 100rpx;
+  width: 100%;
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 100rpx
+}
+.lishi_main{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+  width: 98%
+}
+.lishi_item{
+  min-width:110rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 32rpx;
+  background: #eee;
+  border-radius: 15rpx;
+  margin: 10rpx 15rpx;
+  color: #3a3a3a;
+  padding: 0rpx 20rpx
+}
+
+.scroll-view{
+  position: fixed;
+    top: 110rpx;
+    bottom: 0;
+    width: 100%;
+    flex: 1;
+}
+
+.lishi_title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 94%
+}
+
+
+.ontop{
+  position: fixed;
+  width: 95rpx;
+  height: 95rpx;
+  right: 20rpx;
+  bottom: 100rpx;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.7;
+  text-align: center;
+  line-height: 95rpx;
+}
+.on_Top{
+  font-size: 95rpx;
+  color: #e74135
+}

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "scrolly": "../../comm/scroll"
+  },
+  "navigationBarTitleText": "搜索文章"
+}

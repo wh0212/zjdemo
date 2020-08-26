@@ -89,9 +89,9 @@
               </view>
             </view>
             <view class="btn-area">
-              <button type="primary" bindtap="showDetail" disabled="{{activeIndex==2?!(commercialTotal&&gjjTotal): (activeIndex==1?!gjjTotal: !commercialTotal)}}">计算</button>
+              <button type="primary" bindtap="showDetail" disabled="{{activeIndex==2?!(commercialTotal&&gjjTotal): (activeIndex==1?!gjjTotal: !commercialTotal)}}">看视频计算结果</button>
             </view>
-            <view class="placeholder">结果仅供参考，不保障绝对准确。</view>
+            <view class="placeholder">结果仅供参考</view>
             <!-- <view class="page__hd baseline-explanation">
               <view class="page__title">注意事项</view>
               <view class="page__desc">

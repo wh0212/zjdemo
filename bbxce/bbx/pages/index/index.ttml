@@ -1,0 +1,94 @@
+<view class="top">
+	<view class="search">
+		<view style="font-size:32rpx" class="iconfont icon-icon-search"></view>
+		<input bindinput="inpchange" value="{{inptxt}}" class="inp" type="text" placeholder="搜索关键字" style="color:#999"></input>
+	  <view  bindtap="search" class="btnsearch">搜索</view>
+    <!-- <view tt:if="{{!searchAct}}" bindtap="nosearch" class="btnsearch">取消</view> -->
+  </view>
+  <view class="scroll_nav_top">
+    <scroll-view scroll-left="{{nav_left}}" class="scroll_nav" scroll-x="true" style=" white-space: nowrap; display: flex">
+      <view tt:for="{{navList}}" bindtap="navitem" data-index="{{index}}" data-item="{{item}}" class="nav_item">{{item.name}}
+        <view class="nav_act" tt:if="{{index==navact}}"></view>
+      </view>
+    </scroll-view>
+    <view bindtap="modelshow" class="iconfont icon-gengduo"></view>
+  </view>
+</view>
+
+<!-- 模态框 -->
+<view catchtouchmove='true' bindtap="hidemodel" tt:if="{{modelAct}}" class="model">
+  <view class="mode_main">
+    <view class="mode_title">
+      <view class="my_lanmu">我的栏目</view>
+      <view class="mode_bj" catchtap="model_biinaji">{{delItem?'完成':'编辑'}}
+        <text tt:if="{{!delItem}}" class="iconfont icon-bianji"></text>
+      </view>
+    </view>
+    <view  class="my_lanmu_list">
+      <view bindtap="navitemxz" data-index="{{index}}" data-item="{{item}}" class="my_lanmu_list_item {{index==navact?'mode_lanmu_act':''}}" tt:for="{{navList}}">
+        {{item.name}}
+        <view catchtap="delItemfun" data-item="{{item}}" tt:if="{{delItem}}" class="iconfont icon-chahao {{delItem?'icon-chahao_act':''}}"></view>
+      </view>
+    </view>
+    <view class="my_lanmu">为你推荐</view>
+    <view  class="my_lanmu_list">
+      <view bindtap="navitempush" data-index="{{item}}" data-item="{{item}}" class="my_lanmu_list_item" tt:for="{{recommend}}">
+        {{item.name}}
+        <view class="iconfont icon-jiahao"></view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<scroll-view class="scroll_list"  scroll-y="true" bindscrolltolower="scroll" lower-threshold="{{0}}" scroll-with-animation>
+  <view tt:if="{{list.length>0}}">
+    <swiper class="banner" indicator-dots autoplay circular interval="3000">
+    <swiper-item tt:if="{{index<6}}" bindtap="detail" data-item="{{item}}" tt:for="{{list}}">
+        <image style="width:100%" mode="aspectFill" src="{{item.image}}" class="slide-image" />
+      </swiper-item>
+    </swiper>
+    <view class="list">
+      <view class="item" bindtap="detail" data-item="{{item}}" tt:for="{{list}}">
+        <image class="item_img" src="{{item.image}}" mode="" />
+        <view class="item_right">
+          <view class="item_right_title">{{item.title}}</view>
+          <view class="item_right_xq">
+            <text>{{item.type}}</text>
+            <text>{{item.date}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view tt:if="{{list.length==0}}" class="kong">
+    <image src="../../image/timg.gif" mode="" />
+  </view>
+  <view tt:if="{{bottomAct}}" class="bottom">~~到底了~~</view>
+</scroll-view>
+
+
+<!-- <scrolly class="scroll-view" pull="{{pull}}" push="{{push}}"  bindrefresh="refresh" bindtoload="toload">
+  <view tt:if="{{list.length>0}}">
+    <swiper class="banner" indicator-dots autoplay circular interval="3000">
+    <swiper-item tt:if="{{index<6}}" bindtap="detail" data-item="{{item}}" tt:for="{{list}}">
+        <image style="width:100%" mode="aspectFill" src="{{item.image}}" class="slide-image" />
+      </swiper-item>
+    </swiper>
+    <view class="list">
+      <view class="item" bindtap="detail" data-item="{{item}}" tt:for="{{list}}">
+        <image class="item_img" src="{{item.image}}" mode="" />
+        <view class="item_right">
+          <view class="item_right_title">{{item.title}}</view>
+          <view class="item_right_xq">
+            <text>{{item.type}}</text>
+            <text>{{item.date}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view tt:if="{{list.length==0}}" class="kong">
+    <image src="../../image/timg.gif" mode="" />
+  </view>
+  <view tt:if="{{bottomAct}}" class="bottom">到底了~~</view>
+</scrolly> -->

@@ -29,7 +29,6 @@ Page({
     percentIndex: 0,
     years: [30, 25, 20, 15, 10],
     yearIndex: 0,
-
     sliderOffset: 0,
     sliderLeft: 0
   },
@@ -126,6 +125,7 @@ Page({
       templateId: '7mb20d4853f18mgjrr',
       success() {
         console.log('转发发布器已调起，并不意味着用户转发成功，微头条不提供这个时机的回调');
+
       },
       fail() {
         console.log('转发发布器调起失败');

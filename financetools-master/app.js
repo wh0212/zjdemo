@@ -11,7 +11,7 @@ App({
       success: (res) => {
         if (res.appName == 'Toutiao') {
           console.log("头条")
-          that.globalData.gender = 0
+          that.globalData.gender = 0;
         } else if (res.appName == 'Douyin') {
           console.log("抖音")
           that.globalData.gender = 1;

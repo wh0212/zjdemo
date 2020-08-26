@@ -39,7 +39,8 @@ const serve = function (url,obj) {
                   openid: obj.openid,
                   channel: obj.channel,
                   appletsName: obj.appletsName,
-                  type: 1
+                  type: 1,
+                  appid:'tt011f77a29e2547ea'
                 },
                 success: (res) => {
                   console.log(res,222)

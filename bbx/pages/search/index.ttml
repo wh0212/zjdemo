@@ -1,0 +1,54 @@
+<view class="top">
+	<view class="search" bindtap="searchfun">
+		<view style="font-size:32rpx" class="iconfont iconicon-search"></view>
+		<input bindinput="inpchange" value="{{inptxt}}" class="inp" type="text" placeholder="搜一搜" style="color:#999"></input>
+	  <view tt:if="{{searchAct}}" bindtap="search" class="btnsearch">搜索</view>
+    <view tt:if="{{!searchAct}}" bindtap="nosearch" class="btnsearch">取消</view>
+</view>
+</view>
+
+<!-- 历史搜索 -->
+<view tt:if="{{lishiAct}}" class="lishi">
+  <view class="lishi_title">
+    <view>搜索历史</view>
+    <view tt:if="{{lishilist.length>0}}" bindtap="remove" class="iconfont iconlajixiang"></view>
+  </view>
+  <view class="lishi_main">
+    <view tt:if="{{lishilist.length==0}}" class="none_lishi">-暂无搜索历史-</view>
+    <view bindtap="lishiItme" data-name="{{item}}" class="lishi_item" tt:for="{{lishilist}}">
+      {{item}}
+    </view>
+  </view>
+</view>
+
+<scrolly tt:if="{{!lishiAct}}" class="scroll-view" style="background:{{list.length>0?'#eee':'#fbfbfb'}}" bindonDown="onDown" pull="{{pull}}" top="{{top}}" push="{{push}}"   bindtoload="toload" bindrefresh="refresh">
+  <view style="margin-top:20rpx" tt:if="{{list.length>0}}">
+    <view class="list">
+      <view class="item" bindtap="detail" data-item="{{item}}" tt:for="{{list}}">
+        <view tt:if="{{item.image}}"  class="item_right">
+          <view class="item_right_title">{{item.title}}</view>
+          <view class="item_right_xq">
+            <text>{{item.type}}</text>
+            <text>{{item.date}}</text>
+          </view>
+        </view>
+        <view  tt:if="{{item.image==''}}" class="item_right_none">
+          <view class="item_right_title_none">{{item.title}}</view>
+          <view class="item_right_xq">
+            <text>{{item.type}}</text>
+            <text>{{item.date}}</text>
+          </view>
+        </view>
+        <image class="item_img" src="{{item.image}}" mode="" />
+      </view>
+    </view>
+  </view>
+  <view tt:if="{{list.length==0}}" class="kong">
+    <view class="loading">更多精彩内容，静待更新</view>
+    <image src="../../image/timg.gif" mode="" />
+  </view>
+</scrolly>
+
+<view  tt:if="{{downTop}}" bindtap="ontop" class="ontop">
+  <view class="iconfont on_Top icon-huidaodingbu"></view>
+</view>

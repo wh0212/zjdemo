@@ -1,14 +1,78 @@
-<scroll-view scroll-y="true" bindscrolltolower="scroll" scroll-with-animation style="height:100vh;width:100%">
-	<view class="list">
-		<view class="item" bindtap="detail" data-item="{{item}}" tt:for="{{list}}">
-			<image class="item_img" src="{{item.image}}" mode="" />
-			<view class="item_right">
-				<view class="item_right_title">{{item.title}}</view>
-				<view class="item_right_xq">
-					<text>{{item.type}}</text>
-					<text>{{item.date}}</text>
-				</view>
+<view class="top">
+	<view class="search" bindtap="searchfun">
+		<view style="font-size:32rpx" class="iconfont iconicon-search"></view>
+		<view class="inp" style="color:#999">搜一搜</view>
+	</view>
+	<view class="scroll_nav_top">
+		<scroll-view scroll-left="{{nav_left}}" class="scroll_nav" scroll-x="true" style=" white-space: nowrap; display: flex">
+			<view tt:for="{{navList}}" style="{{index==navact?'color:#e74135':''}}" bindtap="navitem" data-index="{{index}}" data-item="{{item}}"
+			 class="nav_item">{{item.name}}
+				<view class="nav_act" tt:if="{{index==navact}}"></view>
+			</view>
+		</scroll-view>
+		<view bindtap="modelshow" class="iconfont icongengduo"></view>
+	</view>
+</view>
+
+<!-- modal box -->
+<view catchtouchmove='true' bindtap="hidemodel" tt:if="{{modelAct}}" class="model">
+	<view class="mode_main">
+		<view class="mode_title">
+			<view class="my_lanmu">我的栏目</view>
+			<view class="mode_bj" catchtap="model_biinaji">{{delItem?'完成':'编辑'}}
+				<text tt:if="{{!delItem}}" class="iconfont iconbianji"></text>
+			</view>
+		</view>
+		<view class="my_lanmu_list">
+			<view bindtap="navitemxz" data-index="{{index}}" data-item="{{item}}" class="my_lanmu_list_item {{index==navact?'mode_lanmu_act':''}}"
+			 tt:for="{{navList}}">
+				{{item.name}}
+				<view catchtap="delItemfun" data-item="{{item}}" tt:if="{{delItem}}" class="iconfont iconchahao {{delItem?'icon-chahao_act':''}}"></view>
+			</view>
+		</view>
+		<view class="my_lanmu">为你推荐</view>
+		<view class="my_lanmu_list">
+			<view bindtap="navitempush" data-index="{{item}}" data-item="{{item}}" class="my_lanmu_list_item" tt:for="{{recommend}}">
+				{{item.name}}
+				<view class="iconfont iconjiahao"></view>
 			</view>
 		</view>
 	</view>
-</scroll-view>
+</view>
+<scrolly class="scroll-view" pull="{{pull}}" top="{{top}}" push="{{push}}" bindonDown="onDown" bindtoload="toload" bindrefresh="refresh">
+	<view tt:if="{{list.length>0}}">
+		<swiper indicator-active-color="#e74135" class="banner" indicator-dots autoplay circular interval="3000">
+			<swiper-item class="swiperItem" tt:if="{{index<6}}" bindtap="detail" data-item="{{item}}" tt:for="{{list}}">
+				<view class="scrollTitle">{{item.title}}</view>
+				<image style="width:100%;border-radius: 20rpx;" mode="aspectFill" src="{{item.image}}" class="slide-image" />
+			</swiper-item>
+		</swiper>
+		<view class="list">
+			<view class="item" bindtap="detail" data-item="{{item}}" tt:for="{{list}}">
+				<view tt:if="{{item.image}}" class="item_right">
+					<view class="item_right_title">{{item.title}}</view>
+					<view class="item_right_xq">
+						<text>{{item.type}}</text>
+						<text>{{item.date}}</text>
+					</view>
+				</view>
+				<view tt:if="{{item.image==''}}" class="item_right_none">
+					<view class="item_right_title_none">{{item.title}}</view>
+					<view class="item_right_xq">
+						<text>{{item.type}}</text>
+						<text>{{item.date}}</text>
+					</view>
+				</view>
+				<image class="item_img" src="{{item.image}}" mode="" />
+			</view>
+		</view>
+	</view>
+	<view tt:if="{{list.length==0}}" class="kong">
+		<image src="../../image/bj.png" mode="" />
+	</view>
+</scrolly>
+
+<!-- 回到顶部 -->
+<view tt:if="{{downTop}}" bindtap="ontop" class="ontop">
+	<view class="iconfont on_Top icon-huidaodingbu"></view>
+</view>

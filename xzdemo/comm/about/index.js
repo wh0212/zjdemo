@@ -1,13 +1,13 @@
 Component({
   data: {
     list: [
-      {
-        img: "../../image/banner.jpg",
-        title: "你的财运在哪里",
-        ftitle: "测试你的财运在哪里",
-        count: '1.9w',
-        id: 1
-      },
+      // {
+      //   img: "../../image/banner.jpg",
+      //   title: "你的财运在哪里",
+      //   ftitle: "测试你的财运在哪里",
+      //   count: '1.9w',
+      //   id: 1
+      // },
       {
         img: "../../image/xg2.jpg",
         title: "生活中你有几幅面孔",
@@ -22,13 +22,13 @@ Component({
         count: '2.4w',
         id: 2
       },
-      {
-        img: "../../image/zs4.jpg",
-        title: "你的窝囊指数是多少",
-        ftitle: "测试你的窝囊指数",
-        count: '1.1w',
-        id: 5
-      },
+      // {
+      //   img: "../../image/zs4.jpg",
+      //   title: "你的窝囊指数是多少",
+      //   ftitle: "测试你的窝囊指数",
+      //   count: '1.1w',
+      //   id: 5
+      // },
       {
         img: "../../image/cai2.jpg",
         title: "你的财富状况",

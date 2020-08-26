@@ -1,0 +1,33 @@
+<view class="container">
+	<view class="page-body">
+		<view class='wrapper'>
+			<view class='toolbar' bindtap="format">
+				<i class="iconfont icon-zitijiacu " data-name="bold"></i>
+				<i class="iconfont icon-zitixieti" data-name="italic"></i>
+				<i class="iconfont icon-format-header-" data-name="header" data-value="{{1}}"></i>
+				<i class="iconfont icon-format-header-1" data-name="header" data-value="{{2}}"></i>
+				<i class="iconfont icon-format-header-2" data-name="header" data-value="{{3}}"></i>
+				<i class="iconfont icon-charutupian" catchtouchend="insertImage"></i>
+				<i class="iconfont icon-zitixiahuaxian" data-name="underline"></i>
+        <i class="iconfont icon-list-ordered" data-name="list" data-value="ordered"></i>
+				<i class="iconfont icon-font_size_down" data-name="fontSize" data-value="14px"></i>
+				<i class="iconfont icon-font_size_up" data-name="fontSize" data-value="18px"></i>
+				<i class="iconfont icon-shanchu" bindtap="clear"></i>
+			</view>
+
+			<view class="main">
+				<editor id="editor" class="ql-container" placeholder="{{placeholder}}" showImgSize showImgToolbar showImgResize bindstatuschange="onStatusChange" bindready="onEditorReady" bindinput="onContentChange" bindblur="onNoFocus">
+				</editor>
+			</view>
+
+			<view>
+				<view class="btn" bindtap="clickLogText">上传</view>
+			</view>
+
+		</view>
+	</view>
+
+</view>
+<view class="main">
+	<rich-text space="nbsp" nodes="{{htmlSnip}}"></rich-text>
+</view>

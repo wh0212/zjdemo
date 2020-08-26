@@ -1,63 +1,468 @@
 const app = getApp()
-
+import Request from "../../ults/http.js"
 Page({
   data: {
-    list:[
-      {
-        image:'../../image/2.jpg',
-        title:'世界上最大的动物是谁',
-        type:'最神秘',
-        date:`${new Date().getMonth()+1}-${new Date().getDate()}`,
-        detail:"<p> <div style='font-size:18px;line-height: 45px'>蓝鲸</div>不但是最大的鲸类，也是现存最大的动物，是迄今为止最大的哺乳动物。一般体长为22-33米，体重为150,000-180,000千克，也就是说，它的体重相当于25只以上的非洲象，或者2000-3000个人的重量的总和。所幸的是，由于海洋浮力的作用，它不需要像陆生动物那样费力地支撑自己的体重，另外庞大的身躯还有助于保持恒定的体温。蓝鲸全身体表均呈淡蓝色或鼠灰色，背部有淡色的细碎斑纹，胸部有白色的斑点，褶沟在20条以上，腹部也布满褶皱，长达脐部，并带有赭石色的黄斑。雌兽在生殖孔两侧有乳沟，内有细长的乳头。头相对较小而扁平，有2个喷气孔，位于头的顶上，吻宽，口大，嘴里没有牙齿，上颌宽，向上凸起呈弧形，生有黑色的须板，每侧多达300-400枚，长90-110厘米，宽50-60厘米。在耳膜内每年都积存有很多蜡，根据蜡的厚度，可以判断它的年龄。在它的上颌部还有一块白色的胼胝，曾经是生长毛发的地方，后来，毛发都退化了，就留下一块疣状的赘生物，成了寄生虫的滋生地。由于这块胼胝在每个个体上都不相同，就像是戴着不同形状的“帽子”，所以可以据此区分不同的个体。背鳍特别短小，其长度不及体长的1.5%，鳍肢也不算太长，约为4米左右，具4趾，其后缘没有波浪状的缺刻，尾巴宽阔而平扁。整个身体呈流线形，看起来很像一把剃刀，所以又被称为“剃刀鲸”。  蓝鲸的身躯是如此的巨大，以致于一条舌头就有2000千克，头骨有3000千克，肝脏有1000千克，心脏有500千克，血液循环量达8000千克，雄兽的睾丸也有45千克。如果把它的肠子拉直，足有200-300米；血管粗得足以装下一个小孩，脏壁厚达60多厘米，雄兽的阴茎长达3米。它的力量也大得惊人，所发出的功率约为1500-1700马力，堪称是动物世界中当之无愧的巨无霸和大力士。  一头成年蓝鲸能长到非洲象体重的30倍左右。蓝鲸平均长度约25米，最高纪录为33.5米左右。雌鲸大于雄鲸，南蓝鲸大于北蓝鲸。上面观，吻宽而平。蓝鲸背鳍小，高约0.4米，位体后1/4处。鳍肢较小，其长占体长的15%。尾鳍宽为体长的1/3至1/4，后缘直线形。蜇沟55-88条，最长者达于脐。每侧须板270-395枚。体背深苍灰蓝，腹面稍淡，口部和须黑色。  蓝鲸和其他种类的鲸不同，其他种类显得矮壮，而蓝鲸则身体长椎状，看起来像被拉长。头平呈U型，从上嘴唇到背部气孔有明显的脊型突起，嘴巴前端鲸须板密集，大约300个鲸须板（大概1米长）悬于上颚，深入口中约半米。60-90个凹槽（称为腹褶）沿喉部平行于身体。这些皱褶用于大量吞食后排出海水。蓝鲸背鳍小，只有在下潜过程中短暂可见。背鳍的形状因个体而不同；有些仅有一个刚好可见的隆起，而其他的鳍则非常醒目，为镰型。背鳍大概位于身体长度的四分之三处。当要浮出水面呼吸时，蓝鲸将肩部和气孔区域升出水面，升出水面的程度比其他的大型鲸类（如鳍鲸和鲳鲸）要大得多。这经常可作为识别海洋物种的有用线索。 当呼吸时，如果风平浪静，蓝鲸喷出的一道壮观的垂直水柱（可达12米，一般为9米）在几千米外都可以看到。蓝鲸的肺容量为5,000升。</p>"
-      },
-      {
-        image:'../../image/1.jpg',
-        title:'宇宙大爆炸什么样子',
-        type:'进化史',
-        date:`${new Date().getMonth()+1}-${new Date().getDate()}`,
-       detail:"<p> <div style='font-size:18px;line-height: 45px'>大爆炸开始时：</div>约150亿年前，体积无限小，密度无限大，温度无限高，时空曲率无限大的点，称为奇点。空间和时间诞生于某种超时空——部分宇宙学家称之为量子真空（假真空），其充满着与海森堡不确定性原理相符的量子能量扰动。<br /><div style='font-size:18px;line-height: 45px'>大爆炸后10-43秒（普朗克时间）：</div>约1032度，宇宙从量子涨落背景出现，这个阶段称为普朗克时间。在此之前，宇宙的密度可能超过每立方厘米1094克，超过质子密度1078倍，物理学上所有的力都是一种。（超对称）在这个阶段，宇宙已经冷却到引力可以分离出来，开始独立存在，存在传递引力相互作用的引力子。宇宙中的其他力（强、弱相互作用和电磁相互作用）仍为一体。 <br /> <div style='font-size:18px;line-height: 45px'>大爆炸后10-35秒：</div>约1027度，暴涨期（第一推动），引力已分离，夸克、玻色子、轻子形成。此阶段宇宙已经冷却到强相互作用可以分离出来，而弱相互作用及电磁相互作用仍然统一于所谓电弱相互作用。宇宙也发生了暴涨，暴涨仅持续了10-33秒，在此瞬间，宇宙经历了100次加倍（2100），得到的尺度是先前尺度的1030倍（暴涨的是宇宙本身，即空间与时间本身，并不违反光速藩篱）。暴涨前宇宙还在光子的相互联系范围内，可以平滑掉所有粗糙的点，暴涨停止时，今天所探测的东西已经在各自小区域稳定下来，而这被称为暴涨理论。<br /><div style='font-size:18px;line-height: 45px'>大爆炸后10-12秒：</div>约1015度，粒子期，质子和中子及其反粒子形成，玻色子、中微子、电子、夸克以及胶子稳定下来。宇宙变得足够冷，电弱相互作用分解为电磁相互作用和弱相互作用。轻子家族（电子、中微子以及相应的反粒子）需要等宇宙继续冷却10-4秒才能从与其他粒子的平衡相中分离出来。其中中微子一旦从物质中退耦，将自由穿越空间，原则上可以探测到这些原初中微子。  大爆炸后0.01秒：约1000亿度，光子、电子、中微子为主，质子中子仅占10亿分之一，热平衡态，体系急剧膨胀，温度和密度不断下降。大爆炸后0.1秒后：约300亿度，中子质子比从1.0下降到0.61。<br /><div style='font-size:18px;line-height: 45px'>大爆炸后1秒后：</div>约100亿度，中微子向外逃逸，正负电子湮没反应出现，核力尚不足束缚中子和质子。<br /><div style='font-size:18px;line-height: 45px'>大爆炸后10秒后：</div>约30亿度，核时期，氢、氦类稳定原子核（化学元素）形成。当宇宙冷却到109开尔文以下（约100秒后），粒子转变不可能发生了。核合成计算指出，重子密度仅占拓扑平宇宙所需物质的2%~5%，强烈暗示了其他物质能量的形式（非重子暗物质和暗能量）充满了宇宙。<br /><div style='font-size:18px;line-height: 45px'>大爆炸后35分钟后：</div>约3亿度，原初核合成过程停止，尚不能形成中性原子。<br /><div style='font-size:18px;line-height: 45px'>大爆炸后1011秒（104年）:</div>温度约为105开尔文，物质期。在宇宙早期历史中，光主宰着各能量形式。随着宇宙膨胀，电磁辐射的波长被拉长，相应光子能量也跟着减小。辐射能量密度与尺度（R）和体积（4πR3/3）的乘积成反比例减小，即安1/R4减小，而物质的能量密度只是简单地与体积成1/R3反比例减小。一万年后，物质密度追上辐射密度且超越它，从那时起，宇宙和它的动力学开始为物质所主导。<br />  <div style='font-size:18px;line-height: 45px'>大爆炸后30万年后：</div>约3000度，化学结合作用使中性原子形成，宇宙主要成分为气态物质，并逐步在自引力作用下凝聚成密度较高的气体云块，直至恒星和恒星系统。量子真空在暴涨期达到全盛，之后便以暗能量的形式弥漫于全宇宙，且随着物质和辐射密度迅速减小，暗能量越来越明显。暗能量可能占据宇宙总能量密度的  ，从而推动了宇宙加速膨胀。</p>"
-      },
-      {
-        image:'../../image/3.jpg',
-        title:'世界最神秘动物之一',
-        type:'最神秘',
-        date:`${new Date().getMonth()+1}-${new Date().getDate()}`,
-        detail:"<p> <div style='font-size:18px;line-height: 45px'>袋狼</div>第一次出现距离现今约400万年。袋狼曾广泛生活于澳洲和新几内亚，5000年前，澳洲野狗随人类进入澳大利亚，与食性相同的袋狼发生争斗，袋狼随后从新几内亚和澳大利亚草原渐渐消失，仅在大洋洲的塔斯马尼亚岛上还有生存。澳大利亚的土著首次接触袋狼，可以追溯到至少公元前1000年。但自1770年英国探险家科克到澳大利亚探险以来，袋狼因为被怀疑袭击羊群，所以被牧民所痛恨，然而多数事件的元凶其实是澳洲野狗。移民们把袋狼视为敌人，认为其为“杀羊魔”，并且在政府的奖赏制度鼓励下进行大肆屠杀，加上狗的引入和人类侵占其栖息地，使其近乎绝迹。当政府欲停止袋狼绝种趋势时，情况已无法挽救。1933年有人捕获一只袋狼，命名为本杰明，饲养在赫芭特动物园，1936年因管理员疏忽曝晒而死亡，此后再没有活袋狼存在的消息。1936年后不断传出有酷似袋狼的动物在新几内亚袭击家畜的消息，也有许多目击者声称他们看到袋狼，但却无法证明袋狼确实仍存于世。1967年有人在山洞中发现腐烂的动物尸体，经专家证实确为袋狼尸体，但对其是否为新鲜尸体或是多年前留下的干尸科学家看法分歧。袋狼是否已经灭绝，不得而知。但如今科学界普遍认为袋狼已经灭绝。 1999年澳洲博物馆馆长麦克‧阿契在悉尼博物馆发现一个自1866年被保存在酒精中的小袋狼标本，麦克‧阿契便着手研究从中抽取DNA使袋狼复活的可能性，2000年5月13日又在其他博物馆发现六个类似的标本，使得相关的基因库更为完整。麦克‧阿契表示，袋狼将在50年内通过复制科技重现于世。</p>"
-      },
-      {
-        image:'../../image/5.jpg',
-        title:'藏族黑陶烧制技艺',
-        type:'技艺传承',
-        date:`${new Date().getMonth()+1}-${new Date().getDate()-1}`,
-        detail:"<p>距离云南香格里拉县城30公里处有一个不起眼的小村落——汤堆村，隶属于迪庆州尼西乡，曾是茶马古道的必经之地。这里不仅保留有古朴的藏族民风，还传承着有2000多年历史的民间黑陶制作工艺。作为藏族文化的象征，黑陶制品在藏族聚居区被广泛地使用。在金沙江、澜沧江流域，考古学家曾发现2000多年前的黑陶器皿。2000多年来，藏族的民间艺人孜孜不倦地用双手传承着悠远的黑陶文化。囊谦黑陶囊谦县位于青海最南部，属于玉树藏族自治州，曾是玉树历史上的政治经济文化中心，历史悠久。在囊谦，历史同样久远的还有囊谦藏黑陶，其制造工艺已有4000多年历史。囊谦黑陶囊谦黑陶走进囊谦娘拉乡娘多村国家非物质文化遗产传承人白玛群加的家，随处可以看到形状各异的黑陶作品，宛如置身黑陶世界。囊谦藏黑陶仍保持着原始的手工制作工艺，过程非常复杂。原材料选用当地纯净细腻的红黏土和黏土石，经手工捣碎成末，然后经过筛选、拉坯、晾晒、修整、压光、绘纹等环节，再采用独特的“封罐熏烟渗碳”方法，经十余天烧制才能完成，成品具有“黑如碳、硬如瓷”的特点。每一件陶器器型差异与变化的掌控，全凭制陶艺人的感觉与经验。整个玉树康巴地区，只有白玛群加和他的师傅——80多岁的扎旺老人完全掌握黑陶的烧制技艺。相传唐代文成公主进藏远嫁松赞干布时途经玉树，将独特的制陶技艺传授给当地的藏族群众，使当地原始的制陶工艺更加完善，成为藏汉文化融合的结晶。在历史长河中，囊谦黑陶渗透在藏族的文化和宗教生活中，并在明清时演化出了康区藏式黑陶———藏黑陶。白玛群加在2001年拜黑陶艺人扎旺老人为师，潜心学习古老的黑陶手工技艺，并一直在家乡制作黑陶手工艺品。囊谦藏传黑陶以玉树州康巴藏族人文习俗、文化符号、宗教图腾等为素材，融合现代艺术表现手法，经古法烧制后呈现“黑如漆”的天然成色。在白玛群加众多作品中，将军壶无疑是他最得意的作品。</p>"
-      },
-      {
-        image:'../../image/4.jpg',
-        title:'生长在树上的莲花',
-        type:'最神秘',
-        date:`${new Date().getMonth()+1}-${new Date().getDate()}`,
-        detail:"<p><div style='font-size:18px;line-height: 45px'>乔木</div>高达20米，嫩枝及芽有红褐短毛，后脱落无毛。叶革质、狭倒卵形、狭椭圆状倒卵形，或倒披针形，长8-17厘米，宽2.5-5.5厘米。先端短急尖，通常尖头钝，基部楔形，沿叶柄稍下延，边缘稍内卷，下面疏生红褐色短毛；侧脉每边8-12条；叶柄长1-3厘米，基部稍膨大；托叶痕半椭圆形，长3-4毫米总花梗长6-11毫米，径6-10毫米，具1环状苞片脱落痕，被红褐色短柔毛。花被片纯白色，每轮3片，外轮3片质较薄，近革质，凹入，长圆状椭圆形，长6-7厘米，宽3-4厘米，内2轮的稍小，常肉质，倒卵形，长5-6厘米，宽2-3厘米；雄蕊长约1厘米，花药长约8毫米，药隔钝；雌蕊群长约1.5厘米，具23-30枚心皮，平滑，基部心皮长5-6毫米，宽3-4毫米，中部心皮露出面宽约5毫米；花柱长约1毫米；胚珠8-10颗，2列。聚合果褐色，卵球形，长2-5厘米，蓇葖露出面有粗点状凸起，先端具长约1毫米的短喙；种子红色。花期5月，果期10月。</p>"
-      },
-      {
-        image:'../../image/6.jpg',
-        title:'神奇的日全食',
-        type:'科学传播',
-        date:`${new Date().getMonth()+1}-${new Date().getDate()}`,
-        detail:"<p><div style='font-size:18px;line-height: 45px'>日全食</div>是日食的一种，发生在新月在黄道和白道的交点附近18°左右的范围内。日全食发生时随着月球遮挡住太阳辐射，大气层高处的电离层也会发生一些相应变化。这暂时会对信号需经过电离层反射的无线电中波、短波通信造成一定干扰，使用超短波的调频广播、手机、无线上网等则不受影响。不过，对整个地球磁场而言，这种影响还是微小的。另外，日食造成的降温不会很大。一次日全食的过程可以分为以下五个时期：初亏、食既、食甚、生光、复圆。<div style='font-size:18px;line-height: 45px'>初亏</div>由于月亮自西向东绕地球运转，所以日食总是在太阳圆面的西边缘开始的。当月亮的东边缘刚接触到太阳圆面的瞬间（即月面的东边缘与日面的西边缘相外切的时刻）。<div style='font-size:18px;line-height: 45px'>初亏</div>也就是日食过程开始的时刻。<div style='font-size:18px;line-height: 45px'>食既</div>从初亏开始，英国天文学家倍利最早描述了这种现象，因此又称为倍利珠。这是由于月球表面有许多崎岖不平的山峰，当阳光照射到月球边缘时，就形成了贝利珠现象。食甚食既以后，日轮继续东移，当月轮中心和日面中心相距最近时，就到食甚。<div style='font-size:18px;line-height: 45px'>食甚</div>是太阳被月亮遮去最多的时刻。生光月亮继续往东移动，当月面的西边缘和日面的西边缘相内切的瞬间。<div style='font-size:18px;line-height: 45px'>生光</div>它是日全食结束的时刻。在生光将发生之前，钻石环、贝利珠的现象又会出现在太阳的西边缘，但也是很快就会消失。接着在太阳西边缘又射出一线刺眼的光芒，原来在日全食时可以看到的色球层、日珥、日冕等现象迅即隐没在阳光之中，星星也消失了，阳光重新普照大地。复圆生光之后，月面继续移离日面，太阳被遮蔽的部分逐渐减少，当月面的西边缘与日面的东边缘相切的刹那，<div style='font-size:18px;line-height: 45px'>复圆</div>这时太阳又呈现出圆盘形状，整个日全食过程就宣告结束了。</p>"
-      }
-    ]
+    list: [],
+    navList: [{name: '综合'}],
+    recommend: [],
+    navact: 0,
+    page: 1,
+    inptxt: "",
+    modelAct: false,
+    nav_left: 0, //横向滚动位置
+    itemWdith: 62,
+    delItem: false,
+    searchAct: true,
+    navItem: {name: '综合'},//默认类目
+    bottomAct: false,
+    clueData: [],
+    pull: {
+      isLoading: false,
+      pullText: '正在加载'
+    },
+    push: {
+      isLoading: false,
+      pullText: '-上拉加载更多-'
+    },
+    top: -1,
+    downTop: false,
+    right: 635,
+    bottom: 950
   },
-  scroll(v){
-    console.log("上拉加载")
-  },
-  detail(v){
-    var obj = v.currentTarget.dataset.item;
-    app.globalData.item=obj;
+  searchfun(){
     tt.navigateTo({
-      url: '/pages/detail/index'
+      url: '/pages/search/index'
     });
   },
-  onLoad: function () {
-    
-  }
+  onDown(e) {
+    this.setData({
+      downTop: e.detail.onDown
+    })
+  },
+  ontop() {
+    this.setData({
+      top: 0,
+      right: 635,
+      bottom: 950
+    })
+  },
+  refresh(e) {
+    this.setData({
+      'pull.isLoading': true,
+      'pull.pullText': '正在加载',
+      page: 1
+    })
+    setTimeout(() => {
+      // list
+      Request({
+        url: '/article/search',
+        method: 'GET',
+        data: {
+          title: '',
+          page: 1,
+          article_class_id: this.data.navItem.id
+        }
+      }).then((res) => {
+        this.setData({
+          list: res.data.data,
+          page: 1,
+          'pull.pullText': '刷新完成',
+          inptxt: '',
+          searchAct: true
+        })
+      })
+    }, 900)
+    setTimeout(() => {
+      this.setData({
+        'pull.isLoading': false,
+      })
+      console.log('+++++ 刷新完成 +++++')
+    }, 1000)
+  },
+  toload(e) {
+      this.setData({
+        'push.isLoading': true,
+        'push.pullText': '正在加载'
+      })
+    setTimeout(() => {
+      this.data.page++;
+      console.log(this.data.page, this.data.navItem.id,"page");
+      if (!this.data.searchAct) {
+        Request({
+          url: '/article/search',
+          method: 'GET',
+          data: {
+            title: this.data.inptxt,
+            page: this.data.page,
+            article_class_id: '' || this.data.navItem.id
+          }
+        }).then((res) => {
+        
+          if (res.data.data.length == 0) {
+            this.setData({
+              bottomAct: true,
+              'push.isLoading': false,
+              'push.pullText': '- 到底了 -'
+            })
+          } else {
+            this.setData({
+              list: [...res.data.data,...this.data.list],
+              clueData: data,
+              'push.isLoading': false,
+              'push.pullText': '- 上拉加载更多 -'
+            })
+          }
+        })
+      } else {
+        Request({
+          url: '/article/search',
+          method: 'GET',
+          data: {
+            title: '',
+            page: this.data.page,
+            article_class_id: '' || this.data.navItem.id
+          }
+        }).then((res) => {
+          console.log(res.data)
+          if (res.data.data.length == 0) {
+            this.setData({
+              bottomAct: true,
+              'push.isLoading': false,
+              'push.pullText': '- 到底了 -'
+            })
+          } else {
+            this.setData({
+              list: [...this.data.list, ...res.data.data],
+              clueData: data,
+              'push.isLoading': false,
+              'push.pullText': '- 上拉加载更多 -'
+            })
+          }
+        })
+      }
+      let data = this.data.clueData.concat([
+        { createTime: '2019-11-12 16:33' }
+      ])
+      this.setData({
+        clueData: data,
+        'push.isLoading': false,
+        'push.pullText': '- 到底了 -'
+      })
+      console.log('== 加载完成 ==')
+    }, 2000)
+  },
+  // delete栏目 
+  delItemfun(v) {
+    var item = v.currentTarget.dataset.item;
+    var navlist = [];
+    this.data.navList.map((v, i) => {
+      if (v.id == item.id) {
+        tt.request({
+          url: 'https://tgadmin.clvtmcn.cn/api/article/bindClass',
+          method: 'GET',
+          data: {
+            openid: tt.getStorageSync('openid'),
+            article_class_ids: [v.id]
+          },
+          success: (res) => {
+            console.log(res.data, "dfjk")
+          }
+        });
+        return
+      } else {
+        navlist.push(v)
+      }
+    })
+    this.setData({
+      navList: navlist,
+      recommend: [...this.data.recommend, v.currentTarget.dataset.item]
+    })
+  },
+  model_biinaji() {
+    if (this.data.delItem) {
+      this.setData({
+        delItem: false
+      })
+    } else {
+      this.setData({
+        delItem: true
+      })
+    }
+  },
+  // 添加到 nav 
+  navitempush(v) {
+    this.setData({
+      page: 1,
+      bottomAct: false
+    })
+    var item = v.currentTarget.dataset.index;
+    var recommend = [];
+    var obj = {}
+    if (this.data.delItem) {
+      this.setData({
+        modelAct: true
+      })
+      tt.showToast({
+        title: '正在编辑',
+        icon:'fail',
+        success: () => {
+          this.setData({
+            modelAct: true
+          })
+        }
+      });
+      this.setData({
+        modelAct: true
+      })
+    } else {
+      this.data.recommend.map((v, i) => {
+        if (v.id == item.id) {
+          obj = v
+          tt.request({
+            url: 'https://tgadmin.clvtmcn.cn/api/article/bindClass',
+            method: 'GET',
+            data: {
+              openid: tt.getStorageSync('openid'),
+              article_class_ids: [v.id]
+            },
+            success: (res) => {
+              console.log(res.data, "123123")
+              this.setData({
+                list: [],
+                searchAct: true,
+                inptxt: ""
+              })
+              Request({
+                url: '/article/search',
+                method: 'GET',
+                data: {
+                  title: '',
+                  page: 1,
+                  article_class_id: this.data.navItem.id
+                }
+              }).then((res) => {
+                console.log(res.data, "推荐")
+                if (res.data.data.length == 0) {
+                  this.setData({
+                    list: res.data.data,
+                    searchAct: true,
+                    inptxt: "",
+                    'push.isLoading': false,
+                    'push.pullText': ''
+                  })
+                } else {
+                  this.setData({
+                    list: res.data.data,
+                    searchAct: true,
+                    inptxt: "",
+                    'push.isLoading': false,
+                    'push.pullText': '- 上拉加载更多 -'
+                  })
+                }
+              })
+            }
+          });
+          return
+        } else {
+          recommend.push(v)
+        }
+      })
+      this.setData({
+        navList: [...this.data.navList, v.currentTarget.dataset.index],
+        recommend: recommend,
+        navItem: obj
+      })
+      this.setData({
+        navact: this.data.navList.length - 1,
+        nav_left: ((this.data.navList.length - 1) * this.data.itemWdith)
+      })
+    }
+  },
+  modelshow2() {
+    this.setData({
+      modelAct: true
+    })
+  },
+  modelshow() {
+    if (this.data.modelAct) {
+      this.setData({
+        modelAct: false,
+        delItem: false
+      })
+    } else {
+      this.setData({
+        modelAct: true
+      })
+    }
+    tt.setStorageSync('navlist', this.data.navList);
+    tt.setStorageSync('remcod', this.data.recommend)
+  },
+  hidemodel() {
+    this.setData({
+      modelAct: false,
+      delItem: false
+    })
+    tt.setStorageSync('navlist', this.data.navList);
+    tt.setStorageSync('remcod', this.data.recommend)
+  },
+  // model选择类目
+  navitemxz(v) {
+    this.setData({
+      page: 1,
+      inptxt: '',
+      searchAct: true,
+      bottomAct: false,
+      top:0,
+      downTop:false
+    })
+    Request({
+      url: '/article/search',
+      method: 'GET',
+      data: {
+        title: '',
+        page: 1,
+        article_class_id: v.currentTarget.dataset.item.id
+      }
+    }).then((res) => {
+      console.log(res.data, "model list")
+      if (res.data.data.length == 0) {
+        this.setData({
+          list: res.data.data,
+          modelAct: false,
+          'push.isLoading': false,
+          'push.pullText': '',
+        })
+      } else {
+        this.setData({
+          list: res.data.data,
+          modelAct: false,
+          'push.isLoading': false,
+          'push.pullText': '~ 上拉加载更多 ~'
+        })
+      }
+    })
+    this.setData({
+      navact: v.currentTarget.dataset.index,
+      nav_left: (v.currentTarget.dataset.index * this.data.itemWdith),
+      modelAct: false,
+      navItem: v.currentTarget.dataset.item
+    })
+  },
+  // nav-选择类目
+  navitem(v) {
+    this.setData({
+      page: 1,
+      inptxt: '',
+      searchAct: true,
+      bottomAct: false,
+      top:0,
+      downTop:false
+    })
+    Request({
+      url: '/article/search',
+      method: 'GET',
+      data: {
+        title: '',
+        page: 1,
+        article_class_id: v.currentTarget.dataset.item.id
+      }
+    }).then((res) => {
+      console.log(res.data, "导航选择")
+      if (res.data.data.length == 0) {
+        this.setData({
+          list: res.data.data,
+          modelAct: false,
+          'push.isLoading': false,
+          'push.pullText': '',
+        })
+      } else {
+        this.setData({
+          list: res.data.data,
+          modelAct: false,
+          'push.isLoading': false,
+          'push.pullText': '- 上拉加载更多 -'
+        })
+      }
+    })
+    this.setData({
+      navact: v.currentTarget.dataset.index,
+      navItem: v.currentTarget.dataset.item
+    })
+  },
+  detail(v) {
+    var obj = v.currentTarget.dataset.item;
+    app.globalData.item = obj;
+    tt.navigateTo({
+      url: `/pages/detail/index?itemId=${obj.id}`
+    });
+  },
+  onLoad: function (options) {
+    console.log(options,"dfdfdfd")
+    this.setData({
+      openid: options.openid
+    })
+    // nav
+    Request({
+      url: '/article/articelClass',
+      method: 'GET'
+    }).then((res) => {
+      res.data.all.unshift({
+        name: '综合'
+      })
+      this.setData({
+        navList: res.data.all,
+        recommend: res.data.hot
+      })
+    })
+    // list
+    Request({
+      url: '/article/search',
+      method: 'GET',
+      data: {
+        title: '',
+        page: this.data.page,
+        article_class_id: ''
+      }
+    }).then((res) => {
+      this.setData({
+        list: res.data.data
+      })
+    })
+    var that = this;
+    var obj = tt.createSelectorQuery();
+    obj.selectAll('.nav_item').boundingClientRect(function (rect) {
+      that.setData({
+        itemWdith: rect[0].width
+      })
+    })
+    obj.exec();
+    var navlist = tt.getStorageSync('navlist');
+    var remcod = tt.getStorageSync('remcod');
+    if (navlist && remcod) {
+      this.setData({
+        navList: navlist,
+        recommend: remcod
+      })
+    }
+  },
+  onHide() {
+    tt.setStorageSync('navlist', this.data.navList);
+    tt.setStorageSync('remcod', this.data.recommend)
+  },
+  onShareAppMessage(option) {
+    // option.from === 'button'
+    return {
+      title: "资讯百宝箱",
+      desc: "资讯百宝箱，延伸你的视野！",
+      path: `/pages/index/index?from=sharebuttonabc&otherkey=othervalue&id=资讯百宝箱`,
+      // imageUrl: '',
+      templateId: '4csdk0ph0k62j48etv',
+      success() {
+        console.log('转发发布器已调起，并不意味着用户转发成功，微头条不提供这个时机的回调');
+      },
+      fail() {
+        console.log('转发发布器调起失败');
+      }
+    }
+  },
 })

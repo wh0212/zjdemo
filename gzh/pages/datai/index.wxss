@@ -1,0 +1,144 @@
+page {
+  background: #14152b;
+}
+
+.pt_jc {
+  width: 95%;
+  margin: 20rpx auto;
+  display: flex;
+  align-items: center;
+}
+
+.pt_jc_item {
+  height: 120rpx;
+  flex: 1;
+  background: #0a9efd;
+  margin-right: 20rpx;
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 120rpx;
+  text-align: center;
+}
+
+.pt_jc_item:last-child {
+  margin-right: 0rpx;
+}
+
+.data_pt {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  padding-bottom: 10rpx;
+  border-bottom: 1px #999 solid;
+}
+
+.pt_count {
+  flex: 1;
+  text-align: center;
+  color: #6d7790;
+  position: relative;
+}
+
+.act {
+  color: #e51a5a !important;
+}
+
+.list {
+  width: 90%;
+  margin: 20rpx auto;
+}
+
+.actdian {
+  width: 10rpx;
+  height: 10rpx;
+  background: red;
+  border-radius: 50%;
+  margin: 10rpx auto;
+  position: absolute;
+  left: 50%;
+}
+
+/* 列表 */
+.list_item {
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 1px #1e2141 solid;
+  display: flex;
+  align-content: center;
+  line-height: 100rpx;
+  vertical-align: middle;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+
+.list_item_portrait {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  margin-top: 15rpx;
+}
+.list_item_portrait_cp {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.list_item_title_cp {
+  padding-left: 20rpx;
+  color: #fff;
+  width: 40%;
+  /* overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; */
+  font-size: 29rpx;
+  height: 100%;
+  display: flex;
+  line-height: 40rpx;
+  flex-direction: column;
+}
+
+.list_item_title {
+  padding-left: 20rpx;
+  color: #fff;
+  width: 40%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 29rpx;
+}
+
+.list_item_cp {
+  font-size: 24rpx;
+  color: #999;
+  display: flex;
+  align-items: center;
+}
+
+.list_item_price_cp {
+  color: #e83669;
+  font-weight: 530;
+  right: 0;
+  position: absolute;
+  line-height: 100rpx;
+}
+.list_item_price {
+  color: #ffd739;
+  font-weight: 530;
+  right: 0;
+  position: absolute;
+  line-height: 100rpx;
+}
+
+.list_item_count {
+  width: 80rpx;
+  text-align: center;
+  color: #fff;
+}
+.list_item_count_cp {
+  width: 80rpx;
+  text-align: center;
+  color: #fff;
+  height: 100%;
+  margin-top: -15rpx;
+}

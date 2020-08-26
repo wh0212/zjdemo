@@ -1,0 +1,58 @@
+<view class="pt_jc">
+	<view class="pt_jc_item">热门视频榜</view>
+	<view style="background:#913eff" class="pt_jc_item">星图热榜</view>
+	<view style="background:#ff8361" class="pt_jc_item">热点话题榜</view>
+</view>
+<view class="data_pt">
+	<view class="pt_count {{ind==index ? 'act':''}}" wx:for="{{ptlist}}" data-index="{{index}}" wx:key="index" bindtap="ptbtn">{{item}}
+		<view class="actdian" wx:if="{{ind==index}}"></view>
+	</view>
+</view>
+<!-- 产品排行 -->
+<view class="list" wx:if="{{ind==0}}">
+	<view class="list_item" wx:for="{{listcp}}" wx:key="index">
+		<view class="list_item_count_cp">
+			<text wx:if="{{index+1>3}}">{{index+1}}</text>
+			<text wx:if="{{index+1==1}}" style="color:#ffb700" class="iconfont icon-diyiming"></text>
+			<text wx:if="{{index+1==2}}" style="color:#80bbd7" class="iconfont icon-dierming"></text>
+			<text wx:if="{{index+1==3}}" style="color:#f88336" class="iconfont icon-no3"></text>
+		</view>
+		<image class="list_item_portrait_cp" src="{{item.img}}"></image>
+		<view class="list_item_title_cp">
+			<view>{{item.title}}</view>
+			<view class="list_item_cp">
+				<image style="width:30rpx;height:30rpx;margin-right:20rpx" src="{{item.icon}}"></image>
+				<text>{{item.xcxName}}</text>
+			</view>
+		</view>
+		<view class="list_item_price_cp">推广</view>
+	</view>
+</view>
+<!-- 收益排行 -->
+<view class="list" wx:if="{{ind==1}}">
+	<view class="list_item" wx:for="{{listhy}}" wx:key="index">
+		<view class="list_item_count">
+			<text wx:if="{{index+1>3}}">{{index+1}}</text>
+			<text wx:if="{{index+1==1}}" style="color:#ffb700" class="iconfont icon-diyiming"></text>
+			<text wx:if="{{index+1==2}}" style="color:#80bbd7" class="iconfont icon-dierming"></text>
+			<text wx:if="{{index+1==3}}" style="color:#f88336" class="iconfont icon-no3"></text>
+		</view>
+		<image class="list_item_portrait" src="{{item.img}}"></image>
+		<view class="list_item_title">{{item.title}}</view>
+		<view class="list_item_price">{{item.price}}元</view>
+	</view>
+</view>
+<!-- 抖音粉丝 -->
+<view class="list" wx:if="{{ind==2}}">
+	<view class="list_item" wx:for="{{listdy}}" wx:key="index">
+		<view class="list_item_count">
+			<text wx:if="{{index+1>3}}">{{index+1}}</text>
+			<text wx:if="{{index+1==1}}" style="color:#ffb700" class="iconfont icon-diyiming"></text>
+			<text wx:if="{{index+1==2}}" style="color:#80bbd7" class="iconfont icon-dierming"></text>
+			<text wx:if="{{index+1==3}}" style="color:#f88336" class="iconfont icon-no3"></text>
+		</view>
+		<image class="list_item_portrait" src="{{item.img}}"></image>
+		<view class="list_item_title">{{item.title}}</view>
+		<view class="list_item_price">{{item.price}}元</view>
+	</view>
+</view>

@@ -1,0 +1,67 @@
+.main{
+  width: 94%;
+  margin: 0rpx auto
+}
+.title{
+  font-weight: 550;
+  line-height: 90rpx
+}
+.xinxi{
+  text-align: center;
+  font-size: 30rpx;
+  color: #999
+}
+.date_type{
+  font-size: 30rpx;
+  color: #7b7b7b;
+}
+.date_type text{
+  margin-right: 30rpx
+}
+.image{
+  width: 100% !important;
+  height: 270rpx !important;
+  margin-top: 20rpx !important
+}
+.act{
+  margin-top: 60rpx;
+  font-size: 32rpx;
+  padding-bottom: 30rpx !important;;
+  line-height: 55rpx;
+}
+.txt{
+  margin-top: 60rpx;
+  font-size: 32rpx;
+  padding-bottom: 30rpx !important;;
+  line-height: 55rpx;
+  height: calc(100vh - 250px) !important;
+  overflow: hidden !important;
+}
+
+.btn{
+  text-align: center;
+  line-height: 80rpx;
+  background: #5ca0f8;
+  font-size: 30rpx;
+  color: #fff;
+  width: 94%;
+  margin: 80rpx auto
+}
+.btn {
+animation: scaleDrew 2.5s ease-in-out infinite;
+}
+@keyframes scaleDrew {
+/* 定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称 */
+    0% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.05);
+    }
+    50% {
+      transform: scale(1);
+    }
+    75% {
+      transform: scale(1.05);
+    }
+  }

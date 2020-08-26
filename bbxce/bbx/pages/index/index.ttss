@@ -1,0 +1,229 @@
+.top{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  background: #e74135
+}
+.scroll-view {
+    position: absolute;
+    top: 230rpx;
+    bottom: 0;
+    width: 100%;
+    flex: 1;
+}
+page{
+  background: #fbfbfb
+}
+.search {
+  width: 90%;
+  margin: 20rpx auto;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0rpx 20rpx;
+  color: #999;
+  justify-content: space-between;
+  font-size: 32rpx;
+  line-height: 70rpx
+}
+
+.inp {
+  width: 79%;
+  padding-left: 15rpx;
+}
+
+.btnsearch {
+  border-left: 1px #73769d solid;
+  padding-left: 20rpx;
+}
+.banner{
+  width: 95%;
+  margin: 0rpx auto
+}
+.banner swiper-item{
+  width: 100%;
+  border-radius: 20rpx;
+  overflow: hidden
+}
+.list{
+  width: 94%;
+  margin: 0 auto;
+  padding: 20rpx 0rpx
+}
+.scroll_nav_top{
+  display: flex;
+  align-items: center;
+  position: relative;
+   border-bottom: 1px rgb(180, 180, 180) solid;
+   background: #fff;
+   height: 90rpx
+}
+.icon-gengduo{
+  background: #fff;
+  width: 100rpx;
+  height: 100%;
+  position: absolute;
+  right: 10rpx;
+  line-height: 90rpx;
+  text-align: center
+}
+.scroll_nav{
+  width: 89%;
+  height: 70rpx;
+}
+.nav_act{
+  width: 100%;
+  height: 6rpx;
+  background: #e74135;
+  margin-top: 8rpx
+}
+.nav_item{
+  padding: 8rpx 28rpx;
+  display: inline-block;
+  font-size: 34rpx;
+}
+.item{
+  width: 100%;
+  height: 180rpx;
+  border-bottom: 1px #eee solid;
+  padding: 20rpx 0rpx;
+  display: flex;
+  align-items: center;
+}
+.item_img{
+  flex: 1;
+  height: 100%
+}
+.item_right{
+  flex: 1.5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20rpx
+}
+.item_right_title{
+  font-size: 34rpx;
+  width: 90%;
+  margin-bottom: 10rpx;
+  overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+
+}
+.item_right_xq{
+  font-size: 30rpx;
+  color: #a3a3a3;
+}
+.item_right_xq text{
+  margin-right: 10rpx
+}
+.scroll_list{
+  position: fixed;
+  top: 0;
+  margin-top: 220rpx;
+  height: calc(100vh - 220rpx);
+}
+/* 模态框 */
+.model{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 190rpx;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 99
+}
+.mode_main{
+  background: #fff;
+  width: 100%;
+  padding: 20rpx
+}
+.my_lanmu{
+  font-size: 34rpx;
+  font-weight: 540
+}
+.my_lanmu_list{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10rpx 0rpx
+}
+.my_lanmu_list_item{
+  padding: 10rpx 39rpx;
+  background: #eee;
+  margin: 10rpx 20rpx;
+  font-size: 32rpx;
+  position: relative;
+  border-radius: 10rpx;
+  color: #3a3a3a
+}
+.icon-chahao{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.icon-chahao_act{
+  position: absolute;
+  top: 0;
+  right: 0;
+    width: 100%;
+  height: 100%;
+  text-align: right;
+}
+.icon-jiahao{
+  position: absolute;
+  top: 5rpx;
+  right: 5rpx;
+  font-size: 20rpx
+}
+.mode_title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 92%;
+}
+.mode_bj{
+  font-size: 26rpx;
+  color: #d6535c
+}
+.mode_lanmu_act{
+  color: #d6535c
+}
+.icon-chahao {
+animation: scaleDrew 1s ease-in-out infinite;
+}
+@keyframes scaleDrew {
+/* 定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称 */
+    0% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.05);
+    }
+    50% {
+      transform: scale(1);
+    }
+    75% {
+      transform: scale(1.05);
+    }
+  }
+  .icon-bianji{
+    font-size: 26rpx
+  }
+.kong{
+  text-align: center
+}
+.bottom{
+  text-align: center;
+  font-size: 32rpx;
+  color: #999;
+  line-height: 80rpx
+}
+.down{
+  text-align: center;
+  font-size: 32rpx;
+  color: #999;
+  line-height: 80rpx
+}

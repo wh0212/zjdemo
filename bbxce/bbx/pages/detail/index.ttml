@@ -1,0 +1,15 @@
+<view class="main">
+	<view class="title">{{item.title}}</view>
+	<view class="date_type">
+		<text>{{item.date}}</text>
+		<text>{{item.type}}</text>
+	</view>
+	<view class="image">
+		<image mode="aspectFill" class="image" src="{{item.image}}" mode="" />
+	</view>
+	<view id="txt" class="{{scroll?'txt':'act'}}">
+		<rich-text class="rich" nodes="{{item.detail}}"></rich-text>
+    <view tt:if="{{!scroll}}" class="xinxi">内容仅供娱乐，如有侵权请联系删除</view>
+	</view>
+</view>
+<view tt:if="{{scroll}}" class="btn" bindtap="datafun">观看视频查看完整信息</view>

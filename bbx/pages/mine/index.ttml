@@ -1,0 +1,13 @@
+<scrolly class="scroll-view" pull="{{pull}}" top="{{top}}" push="{{push}}" bindonDown="onDown" bindtoload="toload" bindrefresh="refresh">
+	<view class="user">
+		<image class="userAvatar" src="{{userinfo.avatarUrl}}" mode="" />
+		<view class="username">{{userinfo.nickName}}</view>
+	</view>
+
+	<view tt:if="{{navActive==0}}" class="mine main">
+		<view class="txt">
+			<text decode="{{true}}">&ensp;&ensp;&ensp;&ensp;</text> 本小程序致力于短视频内容延伸拓展,力求让图文视频结合，向用户提供更丰富的视频相关信息， 便捷高效，拓展用户视野，提升用户使用体验(*^▽^*)
+		</view>
+		<image class="xr" src="/image/timg1.gif" mode="" />
+	</view>
+</scrolly>

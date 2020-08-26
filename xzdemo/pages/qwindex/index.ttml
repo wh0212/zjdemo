@@ -40,7 +40,7 @@
    </picker>
   </view>
 <view>
-<view class="btn" bindtap="search">点此查询</view>
+<view class="btn" bindtap="search">点此观看视频查询结果</view>
 </view>
 
   

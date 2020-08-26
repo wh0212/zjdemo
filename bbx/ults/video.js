@@ -1,9 +1,9 @@
 var app = getApp()
 var videoAd = tt.createRewardedVideoAd({
-  adUnitId: 'uwbk60jx3770tn930e'
+  adUnitId: 'nqcqfka2i3j3rf69ub'
 })
 const serve = function (obj, back) {
-  console.log(obj, "jinru", app.globalData.gender)
+  console.log(obj, "广告", app.globalData.gender)
   if (app.globalData.gender == 1) {
     console.log(videoAd)
     videoAd.onError((err) => {
@@ -33,10 +33,11 @@ const serve = function (obj, back) {
                 url: 'https://tgadmin.clvtmcn.cn/api/login/adUnitInform',
                 method: "post",
                 data: {
-                  openid: obj.openid,
-                  channel: obj.channel,
+                  act: obj.openid,
+                  channel: obj.openid,
                   appletsName: obj.appletsName,
-                  type: 1
+                  type: 1,
+                  appid: 'tt99eeef5306d4c283'
                 },
                 success: (res) => {
                   console.log(res, 222)
@@ -51,7 +52,7 @@ const serve = function (obj, back) {
           },
         });
       } else {
-        // 播放中途退出，进行提示
+        // 播放中途退出提示
         tt.showToast({ title: '未完整观看视频不能获取奖励哦', icon: 'none' })
       }
     })
@@ -65,7 +66,6 @@ const serve = function (obj, back) {
         setTimeout(() => {
           back()
         }, 2000)
-
       },
       fail(res) {
         console.log(`showToast调用失败`);
@@ -73,9 +73,8 @@ const serve = function (obj, back) {
     });
   }
 　};
-
 function videoAdCreat() {
-  // 在页面onLoad回调事件中创建激励视频广告实例
+  // 在事件中创建激励视频广告实例
   videoAdLoad()
 }
 function videoAdLoad() {
@@ -84,9 +83,7 @@ function videoAdLoad() {
     videoAd.show().catch((err) => {
       videoAd.load()
         .then(() => videoAd.show())
-        .catch(err => {
-
-        })
+        .catch(err => {})
     })
   }
 }

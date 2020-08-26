@@ -4,11 +4,47 @@
 		<text>{{item.date}}</text>
 		<text>{{item.type}}</text>
 	</view>
-  <view class="image">
+	<view class="image">
 		<image mode="aspectFill" class="image" src="{{item.image}}" mode="" />
 	</view>
-  <view id="txt" class="{{scroll?'txt':'act'}}">
-    <rich-text nodes="{{item.detail}}"></rich-text>
-  </view>
+	<view id="txt" class="{{scroll?'txt':'act'}}">
+		<rich-text class="rich" nodes="{{item.detail}}"></rich-text>
+	</view>
 </view>
-<view tt:if="{{scroll}}" class="btn" bindtap="datafun">观看视频查看完整信息</view>
+
+<button tt:if="{{shipinAct==1}}" style="right:{{right}}rpx;top:{{bottom}}rpx;"  catchtouchmove="viewTouchMove" open-type="share" class="shipin" data-channel="video" >
+  <text class="iconfont iconpaishipin"></text>
+  拍视频
+</button>
+
+
+<view tt:if="{{scroll}}" class="bottom">
+	<view class="zhezhoa"></view>
+  <view class="shengyu">剩余{{bfbtxt}}</view>
+	<view class="btn" bindtap="datafun">观看视频查看完整信息</view>
+</view>
+
+
+<view tt:if="{{!scroll}}" class="qq">如侵犯您的权益请与我们联系。我们将立即删除。</view>
+<view class="list" tt:if="{{list.length>0 && !scroll}}">
+	<view class="tuijian">为你推荐</view>
+	<view class="class_list">
+		<view class="item" bindtap="detail" data-item="{{item}}" tt:for="{{list}}">
+			<view tt:if="{{item.image}}" class="item_right">
+				<view class="item_right_title">{{item.title}}</view>
+				<view class="item_right_xq">
+					<text>{{item.type}}</text>
+					<text>{{item.date}}</text>
+				</view>
+			</view>
+			<view tt:if="{{item.image==''}}" class="item_right_none">
+				<view class="item_right_title_none">{{item.title}}</view>
+				<view class="item_right_xq">
+					<text>{{item.type}}</text>
+					<text>{{item.date}}</text>
+				</view>
+			</view>
+			<image class="item_img" src="{{item.image}}" mode="" />
+		</view>
+	</view>
+</view>

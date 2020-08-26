@@ -1,22 +1,44 @@
 {
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true
 	},
-	"appid": "tt410337bede3907f2",
+	"appid": "tt99eeef5306d4c283",
 	"projectname": "bbx",
 	"condition": {
 		"miniprogram": {
-			"current": -1,
+			"current": 2,
 			"list": [
 				{
 					"id": 0,
 					"name": "q",
-					"pathName": "pages/detail/index",
+					"pathName": "pages/index/index",
+					"query": "openid=22222",
+					"scene": "011001",
+					"referrerInfo": {
+						"appId": "",
+						"extraData": ""
+					}
+				},
+				{
+					"id": 1,
+					"name": "mine",
+					"pathName": "pages/mine/index",
 					"query": "",
+					"scene": "011001",
+					"referrerInfo": {
+						"appId": "",
+						"extraData": ""
+					}
+				},
+				{
+					"id": 2,
+					"name": "ggg",
+					"pathName": "pages/detail/index",
+					"query": "itemId=57",
 					"scene": "011001",
 					"referrerInfo": {
 						"appId": "",

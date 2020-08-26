@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "scrolly": "../../comm/scroll"
+  },
+  "navigationBarBackgroundColor": "#e74135",
+  "navigationBarTextStyle":"white"
+}
