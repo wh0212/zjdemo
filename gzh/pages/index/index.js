@@ -33,6 +33,9 @@ Page({
     ],
     model: false
   },
+  ptDetail(e){
+    console.log(e.currentTarget.dataset.id)
+  },
   showBigImg(v) {
     wx.getImageInfo({
       src: v.currentTarget.dataset.img,

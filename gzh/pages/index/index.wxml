@@ -14,14 +14,8 @@
 	<view class="pt_left">平台<text style="color:#ff1b62">公告</text></view>
 	<view class="pt_right">
 		<swiper class="pt_swiper" vertical autoplay circular>
-			<swiper-item>
-				<view>多家分店反间谍法地方</view>
-			</swiper-item>
-			<swiper-item>
-				<view>多家分店反间谍法地2方</view>
-			</swiper-item>
-			<swiper-item>
-				<view>多家分店反间谍法3地方</view>
+			<swiper-item bindtap="ptDetail" data-id="{{1}}">
+				<view>快狗推推广宣传基本要求</view>
 			</swiper-item>
 		</swiper>
 		<view style="margin-top:-10rpx" class="iconfont pt_icon icon-icon"></view>

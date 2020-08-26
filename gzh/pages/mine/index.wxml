@@ -5,6 +5,7 @@
 			<view style="font-size:38rpx">{{userinfo.nickName}}</view>
 			<view style="font-size:28rpx">手机号：请绑定手机号</view>
 		</view>
+		<view bindtap="model_ewm" class="attention iconfont icon-guanzhugongzhonghao1"></view>
 	</view>
 	<view class="wx_compile">
 		<view class="wx_compile_item">微信：请绑定微信
@@ -15,6 +16,13 @@
 	</view>
 </view>
 
+<!-- 保存平台二维码 -->
+<view catchtap="nodemdel_erm" catchtouchmove="preventD" wx:if="{{modelerm}}" class="model_ewm">
+	<view catchtap="{{true}}" class="ewm_main">
+		<image style="width:90%;" bindlongtap="showBigImg" src="http://img.kuaigoutui.com/537eac22118117557c569998f305542.jpg"></image>
+		<view class="saveImg">长按图片保存</view>
+	</view>
+</view>
 <view class="user_remaining">
 	<view class="remaining_yu">
 		<view class="remainng_yue">
@@ -106,7 +114,7 @@
 <!-- 授权 -->
 <view class="model" catchtouchmove="true" wx:if="{{model}}">
 	<view class='header'>
-		<image src='/image/微信logo.png'></image>
+		<image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598421609695&di=966a25bbba4759a598bdcd814f3f16db&imgtype=0&src=http%3A%2F%2Ftc.sinaimg.cn%2Fmaxwidth.2048%2Ftc.service.weibo.com%2Fp1_pstatp_com%2F57619eb96c53c0f566ca951db6e006b7.jpg'></image>
 	</view>
 	<view class='content'>
 		<view>申请获取以下权限</view>
