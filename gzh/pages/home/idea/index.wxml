@@ -1,0 +1,11 @@
+<view class="main">
+	<view style="color:#999;font-size:30rpx">
+		概括你的想法
+	</view>
+	<view class="ideainp">
+		<input class="input" placeholder="我有一个想法" type="text"></input>
+	</view>
+	<view style="color:#999;font-size:30rpx;margin-top:80rpx">详细介绍</view>
+	<textarea maxlength="{{-1}}" class="txt" placeholder="写出你想法的详细思路~~" placeholder-style="color:#5d6887;" />
+  <view class="btn">提交想法</view>
+	</view>

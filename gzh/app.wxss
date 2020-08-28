@@ -1,1 +1,4 @@
-@import "./utils/styleIcon.wxss"
+@import "./utils/styleIcon.wxss";
+page {
+  background: #14152b;
+}

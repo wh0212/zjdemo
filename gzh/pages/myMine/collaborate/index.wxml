@@ -1,0 +1,20 @@
+<view class="main">
+	<view class="item">
+		<view class="title"> <text style="color:red">*</text> 昵称</view>
+		<input class="inp" bindinput="inpchange" value="{{inptxt}}" type="text" placeholder="请输入名字" placeholder-style="color:#5f6884"></input>
+	</view>
+	<view class="item">
+		<view class="title"> <text style="color:red">*</text> 手机号</view>
+		<input class="inp" bindinput="phonechange" value="{{phone}}" type="number" placeholder="请输入手机号" placeholder-style="color:#5f6884"></input>
+	</view>
+	<view class="item">
+		<view class="title"> <text style="color:red">*</text> 微信号</view>
+		<input class="inp" bindinput="wxchange" value="{{wxtxt}}" type="text" placeholder="请输入微信号" placeholder-style="color:#5f6884"></input>
+	</view>
+	<view class="itemtarea">
+		<view class="title"> <text style="color:red">*</text> 合作内容</view>
+		<textarea value="{{teare}}" bindinput="tearechange" class="tarea" maxlength="{{-1}}" placeholder="请输入需要合作的内容" placeholder-style="color:#5f6884;" />
+	</view>
+
+  <view bindtap="addbtn" class="btn">提交</view>
+</view>

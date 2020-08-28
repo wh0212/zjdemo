@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "addImg":"../../comm/addImg/index",
+    "modelXz":"../../comm/modelxz/index"
+  },
   "navigationBarTitleText": "全部单品"
 }

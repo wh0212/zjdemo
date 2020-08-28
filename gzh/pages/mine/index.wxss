@@ -21,7 +21,16 @@ page {
   right: 50rpx;
   position: absolute;
 }
-
+.bianji{
+  height: 50rpx;
+  background: none;
+  font-size: 28rpx !important;
+  color: #707895;
+  line-height: 50rpx !important;
+  border-radius: 0rpx;
+  vertical-align: middle;
+  margin-left: 20rpx;
+}
 .model_ewm {
   position: fixed;
   left: 0;
@@ -30,7 +39,6 @@ page {
   bottom: 0;
   background: rgba(0, 0, 0, 0.8);
 }
-
 .ewm_main {
   width: 80%;
   padding: 20rpx 0rpx;
@@ -40,7 +48,7 @@ page {
   top: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
- 
+  background: #fff;
 }
 
 .saveImg {
@@ -73,6 +81,7 @@ page {
   width: 95%;
   margin: 0 auto;
   padding: 30rpx 0rpx;
+  border-bottom: 1px #707895 solid;
 }
 
 .getuser {
@@ -112,13 +121,16 @@ page {
   align-items: center;
   justify-content: space-between;
 }
+
 .wx_compile_item:last-child {
   border: none;
 }
+
 .user_bj {
   border: 1px #999 solid;
   padding: 7rpx 15rpx;
 }
+
 /* 余额 */
 .user_remaining {
   width: 85%;

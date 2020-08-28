@@ -1,0 +1,8 @@
+.main{
+  color: #fff;
+  width: 95%;
+  margin: 30rpx auto;
+}
+.main view{
+  margin: 20rpx 0rpx;
+}

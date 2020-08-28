@@ -1,0 +1,5 @@
+<view class="main">
+<view class="iconfont icon-querenzhengque"></view>
+  <view class="title">绑定成功</view>
+  <view class="xq">请返回系统列表查看即可</view>
+</view>

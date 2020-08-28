@@ -1,0 +1,57 @@
+.top{
+  width: 95%;
+  margin: 30rpx auto;
+  padding-bottom: 20rpx;
+  border-bottom: 1px #999 solid;
+}
+.money{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.moneycount{
+  font-size: 40rpx;
+  color: #fff;
+  font-weight: 600;
+}
+.btntx{
+  padding: 10rpx 20rpx;
+  background: red;
+  color: #fff;
+}
+.txt{
+  color: red;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}
+.wallet {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px rgb(39, 41, 77) solid;
+  padding: 20rpx 0rpx;
+}
+
+.wallet_item {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  line-height: 50rpx;
+  font-size: 26rpx;
+}
+.about{
+  width: 95%;
+  margin: 60rpx auto;
+  color: #fff;
+  margin-top: 150rpx;
+}
+.about_item{
+  line-height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px rgb(39, 41, 77) solid;
+  border-top: 1px rgb(39, 41, 77) solid;
+}

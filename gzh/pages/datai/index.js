@@ -43,7 +43,19 @@ Page({
         title: '大头哥',
         price: 82690.32
       }
-    ]
+    ],
+    model:false,
+    ewmact:false
+  },
+  typept(v) {
+    this.setData({
+      ewmact:v.detail.ewmact
+    })
+  },
+  promotion() {
+    this.setData({
+      model: true
+    })
   },
   ptbtn(v) {
     this.setData({

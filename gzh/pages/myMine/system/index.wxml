@@ -1,0 +1,8 @@
+<view class="main">
+  <view class="about">
+    <view bindtap="remove" class="item">
+      <view>退出登录</view>
+      <view class="iconfont icon-icon"></view>
+    </view>
+  </view>
+</view>

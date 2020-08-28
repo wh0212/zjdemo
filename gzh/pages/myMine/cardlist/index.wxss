@@ -1,0 +1,77 @@
+.btn {
+  width: 80%;
+  line-height: 80rpx;
+  background: red;
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  bottom: 100rpx;
+  left: 10%;
+}
+
+.list {
+  width: 95%;
+  margin: 30rpx auto;
+  margin-bottom: 200rpx;
+}
+.title_t{
+  color: #fff;
+  padding-left: 20rpx;
+  line-height: 80rpx;
+}
+.item {
+  width: 100%;
+  border-radius: 10rpx;
+  background: orange;
+  padding: 20rpx 0rpx;
+  margin-bottom: 20rpx;
+}
+
+.item_top {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.count {
+  width: 90%;
+  line-height: 130rpx;
+  margin: 0 auto;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item_name {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.nonecount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 130rpx;
+}
+
+.nonecount_item {
+  display: flex;
+  align-items: center;
+  margin-right: 20rpx;
+}
+
+.dian {
+  width: 15rpx;
+  height: 15rpx;
+  background: #fff;
+  margin: 0rpx 10rpx;
+  border-radius: 50%;
+}

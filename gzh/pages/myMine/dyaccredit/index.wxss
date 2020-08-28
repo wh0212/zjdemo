@@ -1,0 +1,17 @@
+.main{
+  width: 80%;
+  margin: 60rpx auto;
+  text-align: center;
+  line-height: 80rpx;
+}
+.title{
+  color: #fff;
+  font-size: 40rpx;
+}
+.xq{
+  color: #c2c2c2;
+}
+.icon-querenzhengque{
+  color:#2daf84;
+  font-size: 80rpx;
+}

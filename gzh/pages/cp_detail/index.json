@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "ec-canvas": "../../ec-canvas/ec-canvas"
+    "addImg":"../../comm/addImg/index",
+    "modelXz":"../../comm/modelxz/index"
   }
 }

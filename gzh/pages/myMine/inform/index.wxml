@@ -1,0 +1,28 @@
+<!-- <view class="xuanze_about">
+	<view bindtap="xuanzefun" data-index="{{0}}" class="{{xzact==0?'xuanzeAct':''}}">
+		系统通知
+		<view style="position: absolute;" class="mo" wx:if="{{xzact==0}}"></view>
+	</view>
+	<view bindtap="xuanzefun" data-index="{{1}}" class="{{xzact==1?'xuanzeAct':''}}">平台回复<view style="position: absolute;" class="mo" wx:if="{{xzact==1}}"></view>
+	</view>
+</view> -->
+
+<view wx:if="{{xzact==0}}" class="main">
+	<view class="main_item" wx:for="{{list}}" wx:key="index"> 
+		<text class="main_date">{{item.add_time}}</text>
+		<view class="main_xq">
+			<view class="item_title">{{item.title}}</view>
+			<view class="item_xq">
+				{{item.text}}
+			</view>
+			<view class="item_gd">
+				<text>点击查看</text>
+        <text class="iconfont icon-icon"></text>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view wx:if="{{xzact==1}}" class="main">
+
+</view>

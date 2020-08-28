@@ -1,0 +1,50 @@
+<view class="main">
+	<view class="item">
+		<view class="title"> <text style="color:red">*</text> 标题</view>
+		<input class="inp" bindinput="inpchange" value="{{inptxt}}" type="text" placeholder="请输入标题" placeholder-style="color:#5f6884"></input>
+	</view>
+	<view class="item">
+		<view class="title"> <text style="color:red">*</text> 栏目</view>
+		<picker bindchange="bindPickerChange" range-key="title" value="{{index}}" range="{{array}}">
+			<view class="inp" style="color:#5f6884">{{lanmu}}</view>
+		</picker>
+	</view>
+	<view>
+		<view class="title"><text style="color:red">*</text>文章内容</view>
+		<view>
+			<view class='toolbar' bindtap="format">
+				<i class="iconfont icon-zitijiacu " data-name="bold"></i>
+				<i class="iconfont icon-zitixieti" data-name="italic"></i>
+				<i class="iconfont icon-format-header-" data-name="header" data-value="{{1}}"></i>
+				<i class="iconfont icon-format-header-1" data-name="header" data-value="{{2}}"></i>
+				<i class="iconfont icon-format-header-2" data-name="header" data-value="{{3}}"></i>
+				<i class="iconfont icon-charutupian" catchtouchend="insertImage"></i>
+				<i class="iconfont icon-zitixiahuaxian" data-name="underline"></i>
+				<i class="iconfont icon-list-ordered" data-name="list" data-value="ordered"></i>
+				<i class="iconfont icon-font_size_down" data-name="fontSize" data-value="14px"></i>
+				<i class="iconfont icon-font_size_up" data-name="fontSize" data-value="18px"></i>
+				<i class="iconfont icon-shanchu" bindtap="clear"></i>
+			</view>
+			<view>
+				<editor id="editor" class="ql-container" placeholder="{{placeholder}}" showImgSize showImgToolbar showImgResize bindstatuschange="onStatusChange" bindready="onEditorReady" bindinput="onContentChange" bindblur="onNoFocus">
+				</editor>
+			</view>
+		</view>
+		<view >
+			<view class="title"> <text style="color:red">*</text> 封面图片</view>
+			<!-- 容器 -->
+			<view class='ui_uploader_cell'>
+				<!-- 根据已选择的图片临时路径数组展示图片-->
+				<view class='ui_uploader_item' wx:for="{{uploaderList}}" wx:key="index">
+					<!-- 删除-->
+					<icon class='ui_uploader_item_icon' bindtap='clearImg' data-index="{{index}}" type="clear" size="20" color="red" />
+					<!-- 图片-->
+					<image bindtap='showImg' data-index="{{index}}" src='{{item}}'></image>
+				</view>
+				<!-- 上传按钮+框 -->
+				<view class='ui_uploader iconfont icon-shangchuantupian' bindtap='upload' wx:if="{{showUpload}}"></view>
+			</view>
+		</view>
+	</view>
+	<view bindtap="addbtn" class="btn">提交</view>
+</view>

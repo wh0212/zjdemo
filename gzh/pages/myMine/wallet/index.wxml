@@ -1,0 +1,34 @@
+<view class="top">
+	<view style="color:#999">可提现余额(元)</view>
+	<view class="money">
+		<view class="moneycount">{{yue}}</view>
+		<view bindtap="tixian" class="btntx">申请提现</view>
+	</view>
+	<view class="txt">单笔提现金额超过5000元，平台待收取信息服务费6%，具体详见规则</view>
+</view>
+<view class="wallet">
+	<view class="wallet_item">
+		<view style="font-size:38rpx;margin-top:10rpx;color:#fff">{{zsy}}</view>
+		<view style="color:#999">总收益(元)</view>
+	</view>
+	<view class="wallet_item">
+		<view style="font-size:38rpx;margin-top:10rpx;color:#fff">{{money.bprice}}</view>
+		<view style="color:#999">本月总收益(元)</view>
+	</view>
+</view>
+<view class="wallet">
+	<view class="wallet_item">
+		<view style="font-size:38rpx;margin-top:10rpx;color:#fff">{{money.pay_price}}</view>
+		<view style="color:#999">上月待发放(元)</view>
+	</view>
+	<view class="wallet_item">
+		<view style="font-size:38rpx;margin-top:10rpx;color:#fff">{{money.sprice}}</view>
+		<view style="color:#999">上月总收益(元)</view>
+	</view>
+</view>
+
+
+<view class="about">
+	<view class="about_item">提现记录 <text class="iconfont pt_icon icon-icon"></text></view>
+	<navigator url="/pages/myMine/cardlist/index" class="about_item">银行卡 <text class="iconfont pt_icon icon-icon"></text></navigator>
+</view>

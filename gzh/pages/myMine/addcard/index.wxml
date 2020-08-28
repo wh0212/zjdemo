@@ -1,0 +1,63 @@
+<view style="margin-top:20rpx">
+	<view class="xinxi">为了您的资金安全，大额提现会通过第三方支付代发。</view>
+	<view class="xinxi">请填写实名信息和银行卡进行验证</view>
+	<view class="xinxi">由于银行限额，每人每月限额9万，如需提现更多，您可以绑定亲属实名信息用于周转</view>
+</view>
+
+<view class="main">
+	<view class="item">
+		<view class="title"> <text style="color:red">*</text> 真实姓名</view>
+		<input class="inp" bindinput="inpchange" value="{{inptxt}}" type="text" placeholder="请输入您的真实名字" placeholder-style="color:#5f6884"></input>
+	</view>
+	<view class="item">
+		<view class="title"> <text style="color:red">*</text> 身份证号码</view>
+		<input class="inp" bindinput="phonechange" value="{{phone}}" type="number" placeholder="请输入您的身份证号码" placeholder-style="color:#5f6884"></input>
+	</view>
+	<view class="about">
+		<view bindtap="aboutka" data-id="{{0}}" class="about_item {{kaabout==0?'act':''}}">银行卡</view>
+		<view bindtap="aboutka" data-id="{{1}}" class="about_item {{kaabout==1?'act':''}}">支付宝账号</view>
+	</view>
+	<view wx:if="{{kaabout==0}}" class="yinhk">
+		<view class="item">
+			<view class="title"> <text style="color:red">*</text> 选择办卡银行</view>
+			<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+				<view class="inp" style="color:#5f6884">{{promk.huhang}}</view>
+			</picker>
+		</view>
+		<view class="item">
+			<view class="title"> <text style="color:red">*</text> 银行卡账号</view>
+			<input class="inp" bindinput="kachange" value="{{promk.kacount}}" type="number" placeholder="请输入您的银行卡账号" placeholder-style="color:#5f6884"></input>
+		</view>
+		<view class="item">
+			<view class="title"> <text style="color:red">*</text> 银行卡预留手机号</view>
+			<input class="inp" bindinput="yuliuphone" value="{{promk.yuphone}}" type="number" placeholder="请输入您的银行卡预留手机号码" placeholder-style="color:#5f6884"></input>
+		</view>
+	</view>
+	<view wx:if="{{kaabout==1}}" class="yinhk">
+		<view class="item">
+			<view class="title"> <text style="color:red">*</text> 支付宝账号</view>
+			<input class="inp" bindinput="zfbchange" value="{{promzfb.zhphone}}" type="number" placeholder="请输入您的支付宝账号" placeholder-style="color:#5f6884"></input>
+		</view>
+		<view class="item">
+			<view class="title"> <text style="color:red">*</text> 预留手机号</view>
+			<input class="inp" bindinput="zfbphonechange" value="{{promzfb.yuliuphone}}" type="number" placeholder="请输入您的预留手机号" placeholder-style="color:#5f6884"></input>
+		</view>
+	</view>
+	<view class="tongyi">
+		<checkbox bindtap="check" value="ty" /> 本人承若已阅读并同意</view>
+	<view bindtap="addbtn" class="btn">提交</view>
+</view>
+
+<view class="model" catchtouchmove="preventD" catchtap="nonemodel" wx:if="{{showmodel}}">
+	<view catchtap="{{true}}" class="model_main">
+		<view class="model_title">信息提交后不可更改</view>
+		<view class="model_title">请再次确认无误后提交</view>
+		<view class="model_data" wx:if="{{kaabout==0}}">
+			<view style="width:80%;line-height:70rpx;text-align:left;margin:0 auto">姓名： <text style="color:red">{{inptxt}}</text> </view>
+			<view style="width:80%;line-height:70rpx;text-align:left;margin:0 auto">身份证： <text style="color:red">{{sfzcount}}</text> </view>
+			<view style="width:80%;line-height:70rpx;text-align:left;margin:0 auto">手机号： <text style="color:red">{{promk.yuphone}}</text> </view>
+			<view style="width:80%;line-height:70rpx;text-align:left;margin:0 auto">卡号：  <text style="color:red">{{promk.kacount}}</text> </view>
+		</view>
+		<view bindtap="querenfun" class="quedingadd">确认信息</view>
+	</view>
+</view>

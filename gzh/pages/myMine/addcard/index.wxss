@@ -1,0 +1,90 @@
+.xinxi{
+  color: red;
+  font-size: 26rpx;
+  padding: 0 20rpx;
+}
+.main{
+  width: 95%;
+  margin: 0 auto;
+  padding-top: 40rpx;
+}
+.item{
+  width: 100%;
+  height: 150rpx;
+  margin-bottom: 20rpx;
+  border-bottom: 1px #999 solid;
+}
+.title{
+  color: #999;
+  line-height: 80rpx;
+}
+.inp{
+  color: #fff;
+}
+.tarea{
+  width: 94%;
+  background: #232247;
+  padding: 20rpx;
+  color: #fff;
+}
+.btn{
+  width: 90%;
+  line-height: 80rpx;
+  color: #fff;
+  background: red;
+  text-align: center;
+  margin: 40rpx auto;
+  margin-top: 80rpx;
+}
+.about{
+  width: 90%;
+  margin: 0 auto;
+  border:1px red solid;
+  display: flex;
+  align-items: center;
+  line-height: 80rpx;
+}
+.about_item{
+  flex:1;
+  color: #fff;
+  text-align: center;
+}
+.act{
+  background: red;
+}
+.tongyi{
+  color: #999;
+}
+.model{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+}
+.model_main {
+  width: 80%;
+  padding: 20rpx 0rpx;
+  border-radius: 10rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: #fff;
+}
+.model_title{
+  font-size: 28rpx;
+  width: 100%;
+  text-align: center;
+}
+.quedingadd{
+  width: 80%;
+  line-height: 80rpx;
+  background: red;
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+}

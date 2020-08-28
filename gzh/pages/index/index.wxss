@@ -1,6 +1,37 @@
 .swiper {
   width: 95%;
   margin: 0 auto;
+  margin-top: 140rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.top{
+  width: 100%;
+  background-color: #14152b;
+  padding: 20rpx;
+  position: fixed;
+  top: 0rpx;
+  z-index: 999;
+}
+.search {
+  width: 91.5%;
+  background: #212345;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  color: #73769d;
+  justify-content: space-between;
+  font-size: 32rpx;
+  padding: 0rpx 10rpx;
+}
+
+.inp {
+  width: 79%;
+}
+
+.btnsearch {
+  border-left: 1px #73769d solid;
+  padding-left: 20rpx;
 }
 
 page {
@@ -42,11 +73,10 @@ page {
   font-size: 28rpx;
   line-height: 60rpx;
 }
-
-.pt_icon {
-  width: 20rpx;
-  height: 20rpx;
-  margin-right: 10rpx;
+.pt_swiper_item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .pt_jc {
@@ -122,10 +152,11 @@ page {
   padding: 20rpx;
   background: #232247;
   margin-bottom: 25rpx;
+  position: relative;
 }
 
 .list_item_top {
-  width: 100%;
+  width: 97%;
   height: 150rpx;
   display: flex;
   align-items: center;
@@ -133,7 +164,7 @@ page {
 }
 
 .list_item_top_right {
-  padding: 15rpx 25rpx;
+  padding: 10rpx 25rpx;
   text-align: center;
   background: #fe2c53;
   color: #fff;
@@ -231,89 +262,10 @@ page {
   color: #8282a8;
   font-size: 26rpx;
 }
-
-/* 下载推广码 */
-.tuiguang {
-  position: fixed;
-  left: 0;
+.icon-mianfei{
+  color: #eee;
+  position: absolute;
   right: 0;
-  bottom: 0;
   top: 0;
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.tuiguang_main {
-  width: 80%;
-  padding: 20rpx 0rpx;
-  background: #fff;
-  border-radius: 10rpx;
-  position: absolute;
-  left: 50%;
-  /* 定位父级的50% */
-  top: 50%;
-  transform: translate(-50%, -50%);
-  /*自己的50% */
-}
-
-.main_title {
-  text-align: center;
-  font-size: 35rpx;
-}
-
-.main_js {
-  text-align: center;
-  line-height: 70rpx;
-}
-
-.main_dy {
-  display: flex;
-  align-items: center;
-  width: 90%;
-  margin: 20rpx auto;
-  position: relative;
-}
-
-.dylogo {
-  width: 100rpx;
-  height: 100rpx;
-  margin-right: 30rpx;
-}
-
-.main_dy_tg {
-  float: right;
-  right: 0;
-  position: absolute;
-  z-index: 9999999;
-  font-size: 28rpx;
-  background: #fe2c53;
-  color: #fff;
-  text-align: center;
-  padding: 10rpx 20rpx;
-}
-
-.ewm {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 99999;
-}
-.ewm_main {
-  width: 80%;
-  padding: 20rpx 0rpx;
-  background: #fff;
-  border-radius: 10rpx;
-  position: absolute;
-  left: 50%;
-  /* 定位父级的50% */
-  top: 50%;
-  transform: translate(-50%, -50%);
-  /*自己的50% */
-  text-align: center;
-}
-.saveImg{
-  font-size: 30rpx;
-  text-align: center;
+  font-size: 70rpx;
 }

@@ -32,7 +32,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.12.0",
-	"appid": "wx083df26e17132bc2",
+	"appid": "wx96e43a9f555bb77c",
 	"projectname": "gzh",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -65,16 +65,16 @@
 			"current": -1,
 			"list": [
 				{
-					"id": -1,
-					"name": "pages/mine/index",
-					"pathName": "pages/mine/index",
+					"id": 0,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/datai/index",
-					"pathName": "pages/datai/index",
+					"id": 1,
+					"name": "pages/article/index",
+					"pathName": "pages/article/index",
 					"query": "",
 					"scene": null
 				},
@@ -89,6 +89,21 @@
 					"id": -1,
 					"name": "pages/all_item/index",
 					"pathName": "pages/all_item/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/idea/index",
+					"pathName": "pages/home/idea/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "pages/myMine/system/index",
+					"pathName": "pages/myMine/system/index",
+					"query": "",
 					"scene": null
 				}
 			]

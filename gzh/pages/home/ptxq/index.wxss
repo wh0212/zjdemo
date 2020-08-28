@@ -1,0 +1,13 @@
+.main{
+  width: 95%;
+  margin: 0 auto;
+  padding-top: 40rpx;
+}
+.title{
+  color: #fff;
+  font-size: 40rpx;
+}
+.txt{
+  color: #fff;
+  margin-top: 30rpx;
+}

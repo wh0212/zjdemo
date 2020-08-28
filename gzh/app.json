@@ -4,7 +4,21 @@
     "pages/index/index",
     "pages/datai/index",
     "pages/cp_detail/index",
-    "pages/all_item/index"
+    "pages/all_item/index",
+    "pages/home/idea/index",
+    "pages/myMine/complaint/index",
+    "pages/myMine/dyh/index",
+    "pages/home/ptxq/index",
+    "pages/myMine/earnings/index",
+    "pages/myMine/collaborate/index",
+    "pages/myMine/aboutUs/index",
+    "pages/myMine/dyaccredit/index",
+    "pages/article/index",
+    "pages/myMine/inform/index",
+    "pages/myMine/wallet/index",
+    "pages/myMine/addcard/index",
+    "pages/myMine/cardlist/index",
+    "pages/myMine/system/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -21,8 +35,8 @@
         "selectedIconPath": "./image/首页act.png"
       },
       {
-        "pagePath": "pages/datai/index",
-        "text": "数据",
+        "pagePath": "pages/article/index",
+        "text": "创作",
         "iconPath": "./image/数据.png",
         "selectedIconPath": "./image/数据act.png"
       },

@@ -1,0 +1,54 @@
+<view wx:if="{{userinfo}}">
+	<view class="top">
+		<view class="user">
+			<image class="useravat" src="{{userinfo.avatarUrl || userinfo.avatar}}"></image>
+			<view class="user_xq">
+				<view class="nickname" style="font-size:34rpx">{{userinfo.nickName || userinfo.nickname}}</view>
+				<view style="font-size:28rpx;color:#cbcedd;margin-top:20rpx">粉丝数:更新中</view>
+			</view>
+		</view>
+		<view class="surplus">
+			<text style="color:#2eeae4" class="iconfont icon-xuexilvdian"></text> 剩余14天
+		</view>
+		<view data-id="{{0}}" bindtap="adddyh" class="gengduo iconfont icon-gengduo"></view>
+	</view>
+	<view class="listItem">
+		<view class="listData" wx:for="{{list}}" >
+
+		</view>
+		<view>
+			<view style="color:#999;width:100%;text-align:center; line-height: 80rpx;">—我是有底线的—</view>
+		</view>
+	</view>
+
+</view>
+
+<!-- <view wx:if="{{!userinfo}}">
+	<view class="model_xq">
+		<view style="color:#c2c2c2;margin-bottom:15rpx">授权抖音号您可：</view>
+		<view style="color:#fff" class="xq_txt">一键发布视频到抖音</view>
+		<view style="color:#fff" class="xq_txt">查看小程序收益数据</view>
+		<view style="color:#fff" class="xq_txt">获取抖音粉丝用户画像以及活跃度</view>
+	</view>
+</view> -->
+
+<view bindtap="adddyh" data-id="{{1}}" class="adddyh">添加抖音号</view>
+
+<view catchtouchmove="preventD" catchtap="nonemodel" class="model" wx:if="{{modelAct}}">
+	<view wx:if="{{modelId==1}}" catchtap="{{true}}" bindlongtap="showBigImg" class="model_main">
+		<view class="model_title" style="text-align:center;width:100%">抖音APP扫码授权</view>
+		<view class="model_title_xq" style="text-align:center;width:100%">授权功能当前支持所有抖音号</view>
+		<image class="model_img" src="https://tgadmin.clvtmcn.cn/{{addimg}}"></image>
+		<view class="model_xq">
+			<view style="color:#999;margin-bottom:15rpx">授权抖音号您可：</view>
+			<view class="xq_txt">一键发布视频到抖音</view>
+			<view class="xq_txt">查看小程序收益数据</view>
+			<view class="xq_txt">获取抖音粉丝用户画像以及活跃度</view>
+		</view>
+	</view>
+	<view wx:if="{{modelId==0}}" class="model_two">
+		<view style="font-size:40rpx;line-height:150rpx">授权剩余14天</view>
+		<view style="background:red" bindtap="adddyh" data-id="{{1}}" class="btnsq">重新授权</view>
+		<view style="background:#999" class="btnsq">删除抖音号</view>
+	</view>
+</view>

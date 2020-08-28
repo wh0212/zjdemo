@@ -1,0 +1,50 @@
+<view wx:key="index" class="list">
+	<view class="title_t">银行卡</view>
+	<view wx:for="{{kalist}}" wx:key="index" class="item">
+		<view class="item_top">
+			<text style="font-size:36rpx">银行卡</text>
+			<text style="font-size:28rpx"><text style="color:green;font-size:24rpx" class="iconfont icon-xuexilvdian"></text> 审核通过</text>
+		</view>
+		<view class="count">
+			<view class="nonecount" wx:if="{{index!=indexa}}">
+				<view class="nonecount_item" wx:for="{{3}}" wx:key="index">
+					<view class="dian" wx:for="{{4}}" wx:key="index"></view>
+				</view>
+				<view>{{item.bank[item.bank.length-4]}}{{item.bank[item.bank.length-3]}}{{item.bank[item.bank.length-2]}}{{item.bank[item.bank.length-1]}}</view>
+			</view>
+			<view class="nonecount" wx:if="{{index==indexa}}">
+				<view>{{item.bank}}</view>
+			</view>
+			<view bindtap="active" data-index="{{index}}" class="iconfont icon-mimayanjingguanbi"></view>
+		</view>
+		<view class="item_name">
+			<view>王皓</view>
+			<view>{{item.bank_name}}</view>
+		</view>
+	</view>
+	<view class="title_t">支付宝</view>
+	<view wx:for="{{zfblist}}" wx:key="index" class="item">
+		<view class="item_top">
+			<text style="font-size:36rpx">支付宝</text>
+			<text style="font-size:28rpx"><text style="color:green;font-size:24rpx" class="iconfont icon-xuexilvdian"></text> 审核通过</text>
+		</view>
+		<view class="count">
+			<!-- <view class="nonecount" wx:if="{{index!=indexa}}">
+				<view class="nonecount_item" wx:for="{{3}}" wx:key="index">
+					<view class="dian" wx:for="{{4}}" wx:key="index"></view>
+				</view>
+				<view>{{item.alipay_name[item.alipay_name.length-4]}}{{item.alipay_name[item.alipay_name.length-3]}}{{item.alipay_name[item.alipay_name.length-2]}}{{item.alipay_name[item.alipay_name.length-1]}}</view>
+			</view> -->
+			<view class="nonecount" >
+				<view>{{item.alipay_name}}</view>
+			</view>
+			<!-- <view bindtap="active" data-index="{{index}}" class="iconfont icon-mimayanjingguanbi"></view> -->
+		</view>
+		<view class="item_name">
+			<view>王皓</view>
+			<view>{{item.bank_name}}</view>
+		</view>
+	</view>
+</view>
+
+<navigator url="/pages/myMine/addcard/index" class="btn">添加银行卡</navigator>

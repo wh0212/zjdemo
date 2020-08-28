@@ -1,8 +1,8 @@
-<view class="pt_jc">
+<!-- <view class="pt_jc">
 	<view class="pt_jc_item">热门视频榜</view>
 	<view style="background:#913eff" class="pt_jc_item">星图热榜</view>
 	<view style="background:#ff8361" class="pt_jc_item">热点话题榜</view>
-</view>
+</view> -->
 <view class="data_pt">
 	<view class="pt_count {{ind==index ? 'act':''}}" wx:for="{{ptlist}}" data-index="{{index}}" wx:key="index" bindtap="ptbtn">{{item}}
 		<view class="actdian" wx:if="{{ind==index}}"></view>
@@ -25,7 +25,7 @@
 				<text>{{item.xcxName}}</text>
 			</view>
 		</view>
-		<view class="list_item_price_cp">推广</view>
+		<view class="list_item_price_cp" catchtap="promotion">推广</view>
 	</view>
 </view>
 <!-- 收益排行 -->
@@ -56,3 +56,7 @@
 		<view class="list_item_price">{{item.price}}元</view>
 	</view>
 </view>
+
+<!-- 推广码遮罩层 -->
+<modelXz model="{{model}}" bind:typept="typept"></modelXz>
+<addImg modelerm="{{ewmact}}" url="{{'../../image/1.jpg'}}"></addImg>

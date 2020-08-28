@@ -1,10 +1,16 @@
 page {
   background: #14152b;
 }
-
+.top{
+  width: 100%;
+  background-color: #14152b;
+  padding: 20rpx;
+  position: fixed;
+  top: 0rpx;
+  z-index: 999;
+}
 .search {
-  width: 90%;
-  margin: 20rpx auto;
+  width: 91.6%;
   background: #212345;
   height: 90rpx;
   display: flex;
@@ -13,8 +19,11 @@ page {
   color: #73769d;
   justify-content: space-between;
   font-size: 32rpx;
+  padding: 0rpx 10rpx;
 }
-
+.ss{
+  margin-top: 130rpx;
+}
 .inp {
   width: 79%;
 }
@@ -84,6 +93,7 @@ page {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  font-size: 34rpx;
 }
 .itemxq_name{
   color: #999;
@@ -101,87 +111,42 @@ page {
   color: #fe2b52;
   position: absolute;
   right: 0;
+  font-size: 36rpx;
 }
-
-/* 下载推广码 */
-.tuiguang {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 999;
-}
-.tuiguang_main {
-  width: 80%;
-  padding: 20rpx 0rpx;
-  background: #fff;
-  border-radius: 10rpx;
-  position: absolute;
-  left: 50%;
-  /* 定位父级的50% */
-  top: 50%;
-  transform: translate(-50%, -50%);
-  /*自己的50% */
-}
-.main_title {
-  text-align: center;
-  font-size: 35rpx;
-}
-.main_js {
-  text-align: center;
-  line-height: 70rpx;
-}
-.main_dy{
+.about{
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  width: 90%;
-  margin: 20rpx auto;
-  position: relative;
+  flex-wrap: wrap;
+  margin-bottom: 40rpx;
 }
-.dylogo{
-  width: 100rpx;
-  height: 100rpx;
-  margin-right: 30rpx;
-}
-.main_dy_tg{
-  float: right;
-  right: 0;
-  position: absolute;
-  z-index: 9999999;
-  font-size: 28rpx;
-  background: #fe2c53;
-  color: #fff;
+.about_item{
+  color: #c2c2c2;
+  background:#212345;
   text-align: center;
-  padding: 10rpx 20rpx;
-}
-.ewm {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 99999;
-}
-.ewm_main {
-  width: 80%;
-  padding: 20rpx 0rpx;
-  background: #fff;
-  border-radius: 10rpx;
-  position: absolute;
-  left: 50%;
-  /* 定位父级的50% */
-  top: 50%;
-  transform: translate(-50%, -50%);
-  /*自己的50% */
-  text-align: center;
-}
-.saveImg{
+  padding: 15rpx 0rpx;
+  width: 160rpx;
   font-size: 30rpx;
-  text-align: center;
+  border: 1px #14152b solid;
+  margin: 20rpx;
+  margin-bottom: 0rpx;
+  margin-right: 0rpx;
 }
-
-
-
+.act{
+  color:#ddc956;
+  border: 1px #ddc956 solid;
+}
+.sear_title{
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.scroll{
+  border:1px red solid;
+  width: 100%;
+  height: 70vh;
+}

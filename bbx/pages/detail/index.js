@@ -21,6 +21,19 @@ Page({
     bottom: 58,
     shipinAct:1
   },
+  adloadhandler(e) {
+    console.log("广告加载成功");
+  },
+  aderrorhandler(e) {
+    console.log("广告加载失败", e);
+    tt.showToast({
+      title: "广告加载失败" + e.errMsg,
+      icon: "fail",
+    });
+  },
+  adclosehandler(e) {
+    console.log("广告关闭");
+  },
   viewTouchMove(e) {
     var height = tt.getSystemInfoSync().windowHeight;
     var width = tt.getSystemInfoSync().windowWidth;

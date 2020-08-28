@@ -1,0 +1,58 @@
+/* 下载推广码 */
+.tuiguang {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.tuiguang_main {
+  width: 80%;
+  padding: 20rpx 0rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  position: absolute;
+  left: 50%;
+  /* 定位父级的50% */
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /*自己的50% */
+}
+
+.main_title {
+  text-align: center;
+  font-size: 35rpx;
+}
+
+.main_js {
+  text-align: center;
+  line-height: 70rpx;
+}
+
+.main_dy {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: 20rpx auto;
+  position: relative;
+}
+
+.dylogo {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 30rpx;
+}
+
+.main_dy_tg {
+  float: right;
+  right: 0;
+  position: absolute;
+  z-index: 9999999;
+  font-size: 28rpx;
+  background: #fe2c53;
+  color: #fff;
+  text-align: center;
+  padding: 10rpx 20rpx;
+}

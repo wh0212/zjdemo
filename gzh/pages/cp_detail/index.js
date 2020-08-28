@@ -1,104 +1,40 @@
-import * as echarts from '../../ec-canvas/echarts';
-let chart = null;
-function initChart(canvas, width, height, dpr) {
-  chart = echarts.init(canvas, null, {
-    width: width,
-    height: height,
-    devicePixelRatio: dpr // new
-  });
-  canvas.setChart(chart);
 
-  var option = {
-    textStyle: {
-      color: '#767aa1'
-    },
-    grid: {
-      y: 10
-    },
-    xAxis: {
-      type: 'category',
-      data: ['20', '26', '27', '28', '29']
-    },
-    yAxis: {
-      type: 'value',
-      textStyle: {
-        color: '#767aa1'
-      },
-      splitLine: {
-        show: true,
-        color: '#767aa1',
-        lineStyle: {
-          color: '#767aa1',
-          type: 'dashed'
-        }
-      }
-    },
-    series: [{
-      data: [0, 0, 10, 0, 0],
-      type: 'line',
-      areaStyle: {
-        normal: {
-          color: '#fff'
-        }
-      },
-      itemStyle: {
-        normal: {
-          label: {
-            color: '#fff',
-            show: true
-          }
-        }
-      }
-    },]
-  }
-  chart.setOption(option);
-  return chart;
-}
-
+import Request from "../../utils/request";
 Page({
   data: {
     dataItem: {},
-    ec: {
-      onInit: initChart
-    },
     time: '',
     model: false,
-    ewmact:false
+    ewmact: false,
+    page: 1,
+    id: 0,
+    name:""
   },
-  addpush(){
-
-  },
-  showBigImg(v) {
-    wx.getImageInfo({
-      src: v.currentTarget.dataset.img,
-      success: (res) => {
-        wx.saveImageToPhotosAlbum({
-          filePath: res.path,
-          success(result) {
-            wx.showToast({
-              title: '保存成功',
-              icon: 'success',
-              duration: 2000
-            })
-          },
-        })
+  addpush() {
+    var that = this;
+    this.setData({
+      page: this.data.page += 1
+    })
+    Request({
+      url: "api/small/pagearticle",
+      method: "get",
+      data: {
+        page: that.data.page,
+        class_id: that.data.id,
+        name:that.data.name
       }
-    })
-  },
-  ewmnone() {
-    this.setData({
-      ewmact: false
-    })
-  },
-  nodemdel() {
-    this.setData({
-      model: false
+    }).then((res) => {
+      if(res.data.data.length==0){
+        console.log("mei")
+      }
+      that.setData({
+        'dataItem.children': [...that.data.dataItem.children, ...res.data.data]
+      })
     })
   },
   typept(v) {
-    console.log(v.currentTarget.dataset.pt)
     this.setData({
-      ewmact: true
+      ewmact: v.detail.ewmact
     })
   },
   promotion() {
@@ -112,14 +48,30 @@ Page({
     })
   },
   onLoad(v) {
-    console.log(JSON.parse(v.data))
+    this.setData({
+      id: v.id,
+      name:v.name == undefined ? '' : v.name
+    })
+    var that = this;
+    Request({
+      url: "api/small/lists",
+      method: "get",
+      data: {
+        class_id: v.id,
+        name: v.name == undefined ? '' : v.name
+      }
+    }).then((res) => {
+      console.log(res)
+      this.setData({
+        dataItem: res.data[0]
+      })
+    })
     var date = new Date()
     const year = date.getFullYear()
     const month = date.getMonth() + 1
     const day = date.getDate()
     this.setData({
-      time: `${year}-${month}-${day}`,
-      dataItem: JSON.parse(v.data)
+      time: `${year}-${month}-${day}`
     })
   }
 });
