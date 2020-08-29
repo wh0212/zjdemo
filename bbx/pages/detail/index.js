@@ -19,7 +19,9 @@ Page({
     itemId: 0,
     right: 0,
     bottom: 58,
-    shipinAct:1
+    shipinAct:1,
+    member_id:0,
+    act:0
   },
   adloadhandler(e) {
     console.log("广告加载成功");
@@ -73,7 +75,9 @@ Page({
       title: options.title,
       bfbtxt: bfb[pos],
       itemId: options.itemId,
-      shipinAct:app.globalData.gender
+      shipinAct:app.globalData.gender,
+      member_id:options.member_id,
+      act:options.act
     })
     Request({
       url: '/article/articleInfo',
@@ -102,15 +106,15 @@ Page({
         })
       })
     })
-    if (options.openid) {
-      shipin(options.itemId, options.itemId, options.openid)
+    if (options.act) {
+      shipin(options.itemId, options.itemId, options.act,options.member_id,options.douyin_id)
     }
   },
   datafun() {
     var obj = {
       channel: this.data.openid,
       appletsName: this.data.itemId,
-      openid: this.data.openid
+      act: this.data.act
     }
     var that = this;
     serve(obj, function () {

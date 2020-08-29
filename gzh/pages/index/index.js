@@ -91,7 +91,7 @@ Page({
     if (!wx.getStorageSync('phone')) {
       wx.showToast({
         title: '请在我的页面绑定手机号',
-        icon: none
+        icon: 'none'
       })
     } else {
       this.setData({
@@ -99,7 +99,6 @@ Page({
         itemId: v.currentTarget.dataset.item
       })
     }
-
   },
   fundeatil(v) {
     wx.navigateTo({

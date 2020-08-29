@@ -1,0 +1,13 @@
+<view class="main">
+	<view class="title">
+		<view>已提现总金额</view>
+		<view style="color:red">{{price}} (元)</view>
+	</view>
+</view>
+<view class="list">
+  <view wx:for="{{list}}" wx:key="index" class="item">
+    <view class="price">{{item.price}}</view>
+    <view style="color:#fff">{{item.pass_time}}</view>
+  </view>
+  <view class="botm">-到底了-</view>
+</view>

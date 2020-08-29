@@ -58,10 +58,10 @@
 			<view style="color:#adadad;font-size:60rpx" class="iconfont renmai icon-tongzhi"></view>
 			<view class="workes_item_name">系统通知</view>
 		</navigator>
-		<navigator url="/pages/myMine/complaint/index" class="workes_main_item">
+		<!-- <navigator url="/pages/myMine/complaint/index" class="workes_main_item">
 			<view style="color:#adadad;font-size:60rpx" class="iconfont renmai icon-jianyi"></view>
 			<view class="workes_item_name">投诉建议</view>
-		</navigator>
+		</navigator> -->
 		<navigator url="/pages/myMine/aboutUs/index" class="workes_main_item">
 			<view style="color:#adadad;font-size:60rpx" class="iconfont renmai icon-guanyuwomen-copy"></view>
 			<view class="workes_item_name">关于我们</view>

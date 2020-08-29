@@ -33,7 +33,7 @@ const serve = function (obj, back) {
                 url: 'https://tgadmin.clvtmcn.cn/api/login/adUnitInform',
                 method: "post",
                 data: {
-                  act: obj.openid,
+                  act: obj.act,
                   channel: obj.openid,
                   appletsName: obj.appletsName,
                   type: 1,

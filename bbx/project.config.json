@@ -10,7 +10,7 @@
 	"projectname": "bbx",
 	"condition": {
 		"miniprogram": {
-			"current": 2,
+			"current": -1,
 			"list": [
 				{
 					"id": 0,
@@ -38,7 +38,7 @@
 					"id": 2,
 					"name": "ggg",
 					"pathName": "pages/detail/index",
-					"query": "itemId=57",
+					"query": "itemId=57&member_id=2&douyin_id=2&act=1",
 					"scene": "011001",
 					"referrerInfo": {
 						"appId": "",

@@ -101,8 +101,8 @@
 				},
 				{
 					"id": 5,
-					"name": "pages/myMine/system/index",
-					"pathName": "pages/myMine/system/index",
+					"name": "pages/myMine/jilu/index",
+					"pathName": "pages/myMine/jilu/index",
 					"query": "",
 					"scene": null
 				}

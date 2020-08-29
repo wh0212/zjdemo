@@ -1,5 +1,5 @@
 
-function shipin(channel,name,openid1) {
+function shipin(channel,name,openid1,member_id,douyinId) {
   console.log(channel,name,openid1,"jinru qudao")
   tt.request({
     url: "https://tgadmin.clvtmcn.cn/api/channel/channelAdd",
@@ -9,7 +9,9 @@ function shipin(channel,name,openid1) {
       channel,
       applets_name: name,
       type: 2,
-      act:openid1
+      act:openid1,
+      member_id:member_id,
+      douyin_id:douyinId
     },
     success(res) {
       console.log(res,111111);

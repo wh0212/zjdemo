@@ -5,34 +5,51 @@ Page({
    * 页面的初始数据
    */
   data: {
-    money:{},
-    zsy:0,
-    yue:0
+    money: {},
+    zsy: 0,
+    yue: 0
   },
-  tixian(){
-    if(this.data.yue==0){
+  tixian() {
+    if (this.data.yue == 0) {
       wx.showToast({
         title: '余额不足无法提现',
       })
-    }else{
+    } else {
       var that = this;
       Request({
-        url:"api/Bankcard/pay",
-        method:"get",
-        data:{
-          pay_type:1,
-          id:1,
-          price:that.data.yue,
-          token:wx.getStorageSync('login').token
+        url: "api/Bankcard/pay",
+        method: "get",
+        data: {
+          pay_type: 1,
+          id: 1,
+          price: that.data.yue,
+          token: wx.getStorageSync('login').token
         }
+      }).then((res) => {
+        wx.showToast({
+          title: '提现成功',
+        })
+        Request({
+          url: "api/Member/monthprice",
+          method: "get",
+          data: {
+            member_id: wx.getStorageSync('member_id'),
+            token: wx.getStorageSync('login').token
+          }
+        }).then((res) => {
+          console.log(res.data)
+          that.setData({
+            money: res.data
+          })
+        })
       })
     }
   },
   onLoad: function (options) {
     console.log(options)
     this.setData({
-      zsy:options.shouyi,
-      yue:options.yue
+      zsy: options.shouyi,
+      yue: options.yue
     })
     var that = this;
     Request({
@@ -40,7 +57,7 @@ Page({
       method: "get",
       data: {
         member_id: wx.getStorageSync('member_id'),
-        token:wx.getStorageSync('login').token
+        token: wx.getStorageSync('login').token
       }
     }).then((res) => {
       console.log(res.data)
