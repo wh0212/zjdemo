@@ -169,11 +169,11 @@ export default {
       }
     },
     handleAvatarSuccess(res, file) {
-      this.imageUrl = URL.createObjectURL(file.raw);
-      console.log(URL.createObjectURL(file.raw));
+      this.imageUrl = file.response.data;
+
     },
     beforeAvatarUpload(file) {
-      console.log(file);
+      console.log(file,"3333");
     },
   },
   mounted() {
