@@ -42,7 +42,7 @@
 <scrolly class="scroll-view" pull="{{pull}}" top="{{top}}" push="{{push}}" bindonDown="onDown" bindtoload="toload" bindrefresh="refresh">
 	<view tt:if="{{list.length>0}}">
 		<swiper indicator-active-color="#e74135" class="banner" indicator-dots autoplay circular interval="3000">
-			<swiper-item class="swiperItem" tt:if="{{index<6}}" bindtap="detail" data-item="{{item}}" tt:for="{{list}}">
+			<swiper-item class="swiperItem" tt:if="{{index<6 && item.image}}" bindtap="detail" data-item="{{item}}" tt:for="{{list}}">
 				<view class="scrollTitle">{{item.title}}</view>
 				<image style="width:100%;border-radius: 20rpx;" mode="aspectFill" src="{{item.image}}" class="slide-image" />
 			</swiper-item>
@@ -53,17 +53,19 @@
 					<view class="item_right_title">{{item.title}}</view>
 					<view class="item_right_xq">
 						<text>{{item.type}}</text>
-						<text>{{item.date}}</text>
+						<!-- <text>{{item.date}}</text> -->
+            <text class="item_cishu">阅读次数:{{item.readnum}}</text>
 					</view>
 				</view>
 				<view tt:if="{{item.image==''}}" class="item_right_none">
 					<view class="item_right_title_none">{{item.title}}</view>
 					<view class="item_right_xq">
 						<text>{{item.type}}</text>
-						<text>{{item.date}}</text>
+						<!-- <text>{{item.date}}</text> -->
+            <text class="item_cishu">阅读次数:{{item.readnum}}</text>
 					</view>
 				</view>
-				<image class="item_img" src="{{item.image}}" mode="" />
+				<image tt:if="{{item.image}}" class="item_img" src="{{item.image}}" mode="" />
 			</view>
 		</view>
 	</view>

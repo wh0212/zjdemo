@@ -3,7 +3,8 @@ import Request from "../../ults/http.js"
 Page({
   data: {
     list: [],
-    navList: [{name: '综合'}],
+    swiperlist: [],
+    navList: [{ name: '综合' }],
     recommend: [],
     navact: 0,
     page: 1,
@@ -13,7 +14,7 @@ Page({
     itemWdith: 62,
     delItem: false,
     searchAct: true,
-    navItem: {name: '综合'},//默认类目
+    navItem: { name: '综合' },//默认类目
     bottomAct: false,
     clueData: [],
     pull: {
@@ -29,7 +30,7 @@ Page({
     right: 635,
     bottom: 950
   },
-  searchfun(){
+  searchfun() {
     tt.navigateTo({
       url: '/pages/search/index'
     });
@@ -80,13 +81,13 @@ Page({
     }, 1000)
   },
   toload(e) {
-      this.setData({
-        'push.isLoading': true,
-        'push.pullText': '正在加载'
-      })
+    this.setData({
+      'push.isLoading': true,
+      'push.pullText': '正在加载'
+    })
     setTimeout(() => {
       this.data.page++;
-      console.log(this.data.page, this.data.navItem.id,"page");
+      console.log(this.data.page, this.data.navItem.id, "page");
       if (!this.data.searchAct) {
         Request({
           url: '/article/search',
@@ -97,7 +98,7 @@ Page({
             article_class_id: '' || this.data.navItem.id
           }
         }).then((res) => {
-        
+
           if (res.data.data.length == 0) {
             this.setData({
               bottomAct: true,
@@ -106,7 +107,7 @@ Page({
             })
           } else {
             this.setData({
-              list: [...res.data.data,...this.data.list],
+              list: [...res.data.data, ...this.data.list],
               clueData: data,
               'push.isLoading': false,
               'push.pullText': '- 上拉加载更多 -'
@@ -204,7 +205,7 @@ Page({
       })
       tt.showToast({
         title: '正在编辑',
-        icon:'fail',
+        icon: 'fail',
         success: () => {
           this.setData({
             modelAct: true
@@ -216,6 +217,7 @@ Page({
       })
     } else {
       this.data.recommend.map((v, i) => {
+        tt.setStorageSync('navId', item.id);
         if (v.id == item.id) {
           obj = v
           tt.request({
@@ -307,13 +309,14 @@ Page({
   },
   // model选择类目
   navitemxz(v) {
+    tt.setStorageSync('navId',v.currentTarget.dataset.item.id);
     this.setData({
       page: 1,
       inptxt: '',
       searchAct: true,
       bottomAct: false,
-      top:0,
-      downTop:false
+      top: 0,
+      downTop: false
     })
     Request({
       url: '/article/search',
@@ -350,13 +353,15 @@ Page({
   },
   // nav-选择类目
   navitem(v) {
+    console.log(v.currentTarget.dataset.item.id,"dsafdsafdfd")
+    tt.setStorageSync('navId',v.currentTarget.dataset.item.id);
     this.setData({
       page: 1,
       inptxt: '',
       searchAct: true,
       bottomAct: false,
-      top:0,
-      downTop:false
+      top: 0,
+      downTop: false
     })
     Request({
       url: '/article/search',
@@ -397,7 +402,7 @@ Page({
     });
   },
   onLoad: function (options) {
-    console.log(options,"dfdfdfd")
+    console.log(options, "dfdfdfd")
     this.setData({
       openid: options.openid
     })
@@ -414,6 +419,7 @@ Page({
         recommend: res.data.hot
       })
     })
+
     // list
     Request({
       url: '/article/search',
@@ -444,6 +450,22 @@ Page({
         recommend: remcod
       })
     }
+  },
+  onShow() {
+    // list
+    Request({
+      url: '/article/search',
+      method: 'GET',
+      data: {
+        title: '',
+        page: this.data.page,
+        article_class_id: tt.getStorageSync('navId')
+      }
+    }).then((res) => {
+      this.setData({
+        list: res.data.data
+      })
+    })
   },
   onHide() {
     tt.setStorageSync('navlist', this.data.navList);

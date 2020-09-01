@@ -1,8 +1,10 @@
 <scrolly class="scroll-view" pull="{{pull}}" top="{{top}}" push="{{push}}" bindonDown="onDown" bindtoload="toload" bindrefresh="refresh">
 	<view class="user">
+		<view bindtap="toPick" class="iconfont iconzhuti"></view>
 		<image class="userAvatar" src="{{userinfo.avatarUrl}}" mode="" />
 		<view class="username">{{userinfo.nickName}}</view>
 	</view>
+	<color-picker bindchangeColor="pickColor" initColor="{{rgb}}" show="{{pick}}" />
 
 	<view tt:if="{{navActive==0}}" class="mine main">
 		<view class="txt">
@@ -11,3 +13,9 @@
 		<image class="xr" src="/image/timg1.gif" mode="" />
 	</view>
 </scrolly>
+
+<view catchtouchmove='true' bindtap="hidemodel" tt:if="{{showmodel}}" class="model">
+	<view class="model_main">
+
+	</view>
+</view>

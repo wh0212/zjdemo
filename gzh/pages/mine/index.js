@@ -6,7 +6,33 @@ Page({
     phoneAct: false,
     modelerm: false,
     userPhone: wx.getStorageSync('phone') || "请绑定手机号",
-    money: {}
+    money: {},
+    result:{}
+  },
+  saoma() {
+    var _this = this;
+    // 允许从相机和相册扫码
+    wx.scanCode({
+      success: (res) => {
+        console.log(res.result,"saoma")
+        console.log(wx.getStorageSync('login').token)
+        console.log(wx.getStorageSync('member_id'))
+        Request({
+          url:"api/member/scanget",
+          method: "get",
+          data:{
+            token:wx.getStorageSync('login').token,
+            member_id:wx.getStorageSync('member_id'),
+            scan_token:res.result
+          }
+        }).then((res)=>{
+          console.log(res,"cg")
+          wx.showToast({
+            title: '授权成功，去网页进行登录',
+          })
+        })
+      }
+    })
   },
   relation() {
     wx.setClipboardData({
@@ -65,14 +91,13 @@ Page({
             code: res.code
           }
         }).then((res) => {
-          console.log(res.data, "登录");
           wx.setStorageSync('login', res.data)
           Request({
             url: "api/Wxlogin/getUserInfo",
             method: "get",
             data: {
-              encryptedData: that.data.resdata.encryptedData,
-              iv: that.data.resdata.iv,
+              encryptedData: v.detail.encryptedData,
+              iv: v.detail.iv,
               session_key: res.data.session_key,
               token: res.data.token
             }
@@ -84,10 +109,9 @@ Page({
               data: {
                 member_id: res1.data.member_id
               }
-            }).then((res) => {
-              console.log(res.data)
+            }).then((res2) => {
               that.setData({
-                money: res.data
+                money: res2.data
               })
             })
           })
@@ -95,12 +119,12 @@ Page({
       }
     });
   },
-  onLoad: function () {
-    console.log(wx.getStorageSync('login').token)
-    if (!wx.getStorageSync('login').token) {
+  onLoad: function (v) {
+    console.log(v.code)
+    if(v.code==-1){
       this.setData({
         model: true
-      });
+      })
     }
     wx.checkSession({
       success() {
@@ -113,22 +137,30 @@ Page({
         });
       }
     })
+    console.log(wx.getStorageSync('login').token)
+    if (!wx.getStorageSync('login').token) {
+      this.setData({
+        model: true
+      });
+    }
+
     var that = this;
     wx.getSetting({
       success: function (res) {
-        if (res.authSetting['scope.userInfo']) {
-          Request({
-            url: "api/Member/memberinfo",
-            method: "get",
-            data: {
-              member_id: wx.getStorageSync('member_id')
-            }
-          }).then((res) => {
-            console.log(res.data)
-            that.setData({
-              money: res.data
-            })
+        Request({
+          url: "api/Member/memberinfo",
+          method: "get",
+          data: {
+            member_id: wx.getStorageSync('member_id')
+          }
+        }).then((res) => {
+          console.log(res.data)
+          that.setData({
+            money: res.data
           })
+        })
+        if (res.authSetting['scope.userInfo']) {
+
           wx.getUserInfo({
             success: function (res) {
               that.setData({

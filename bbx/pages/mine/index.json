@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "scrolly": "../../comm/scroll"
+    "scrolly": "../../comm/scroll",
+    "color-picker":"/components/color-picker/color-picker" 
   },
   "navigationBarBackgroundColor": "#e74135",
   "navigationBarTextStyle":"white"

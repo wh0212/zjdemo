@@ -5,8 +5,23 @@
     </div>
     <div class="right">
       <div class="right_top">
-        <img class="logo" src="../assets/logo.png" alt srcset />
-        <span class="logo_title">快狗推</span>
+        <div class="top_left">
+          <img class="logo" src="../assets/logo.png" alt srcset />
+          <span class="logo_title">快狗推</span>
+        </div>
+        <div @click="dialogTableVisiblefun" class="top_right">
+          <div style="font-size:12px">小程序扫码登录登录</div>
+          <span style="font-size:30px" class="iconfont iconerweima"></span>
+        </div>
+        <el-dialog
+          style="text-align:center"
+          title="扫码登录"
+          :modal="false"
+          :visible.sync="dialogTableVisible"
+          :before-close="nonefun"
+        >
+          <img style="width:30%" :src="'https://tgadmin.clvtmcn.cn/'+ermImage" alt srcset />
+        </el-dialog>
       </div>
       <div class="data" v-if="showact">
         <div class="title">登录</div>
@@ -91,10 +106,67 @@ export default {
       zc_password2: "",
       zc_phone: "",
       zc_yzm: "",
+      dialogTableVisible: false,
+      ermImage: "",
     };
   },
   components: {},
   methods: {
+    nonefun() {
+      this.dialogTableVisible = false;
+      clearInterval(this.interv);
+      clearInterval(this.time);
+    },
+    dialogTableVisiblefun() {
+      var that = this;
+      axios
+        .get("https://tgadmin.clvtmcn.cn/index/index/scanCode", {})
+        .then((res) => {
+          console.log(res);
+          if (res.data.code == 1) {
+            this.dialogTableVisible = true;
+            this.ermImage = res.data.data.img_url;
+            that.interv = setInterval(() => {
+              axios
+                .get("https://tgadmin.clvtmcn.cn/index/index/islogin", {
+                  params: {
+                    token: res.data.data.token,
+                  },
+                })
+                .then((res1) => {
+                  console.log(res1.data);
+                  if (res1.data.code == 1) {
+                    clearInterval(this.interv);
+                    console.log(res1.data.data, "1111");
+                    window.localStorage.setItem("login", res.data.data.token);
+                    this.$router.push("/about");
+                  } else if (res1.data.code == -1) {
+                    this.dialogTableVisible = false;
+                    clearInterval(this.interv);
+                    this.$alert("授权失败，请重新扫码授权", "授权状态", {
+                      confirmButtonText: "确定",
+                    });
+                  }
+                });
+            }, 2000);
+            that.time = setTimeout(() => {
+              clearInterval(this.interv);
+              this.dialogTableVisible = false;
+              this.$alert("授权失败，验证超时请重新扫码授权", "授权状态", {
+                confirmButtonText: "确定",
+              });
+            }, 30000);
+          } else {
+          }
+        })
+        .catch((e) => {
+          console.log("获取数据失败");
+          this.$message({
+            message: "失败了",
+            type: "warning",
+          });
+        });
+    },
     zc_add() {
       axios
         .get("https://tgadmin.clvtmcn.cn/index/index/register", {
@@ -145,8 +217,6 @@ export default {
       window.open(routeUrl.href, "_blank");
     },
     addbtn() {
-     
-      
       axios
         .get("https://tgadmin.clvtmcn.cn/index/index/login", {
           params: {
@@ -165,8 +235,8 @@ export default {
               type: "success",
             });
             this.$router.push({
-              path:'/about'
-            })
+              path: "/about",
+            });
           } else {
             this.$message({
               message: res.data.msg,
@@ -186,6 +256,17 @@ export default {
         this.code = a;
       }
     },
+  },
+  beforeDestroy() {
+    console.log("kuhia");
+    if (this.interv) {
+      //如果定时器还在运行 或者直接关闭，不用判断
+      clearInterval(this.interv); //关闭
+    }
+    if (this.time) {
+      //如果定时器还在运行 或者直接关闭，不用判断
+      clearInterval(this.time); //关闭
+    }
   },
 };
 </script>
@@ -254,10 +335,22 @@ export default {
   border-radius: 10px;
   padding: 20px;
 }
+.top_left {
+  display: flex;
+  align-items: center;
+}
+.top_right {
+  display: flex;
+  align-items: center;
+}
 .right_top {
   width: 100%;
   height: 5rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+div{
+  cursor:pointer
 }
 </style>

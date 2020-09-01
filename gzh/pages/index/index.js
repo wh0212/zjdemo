@@ -56,7 +56,6 @@ Page({
     })
   },
   ptDetail(e) {
-    console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
       url: '/pages/home/ptxq/index?id=' + e.currentTarget.dataset.id,
     })
@@ -64,7 +63,6 @@ Page({
   typept(v) {
     var pt = v.detail.pt == "dy" ? "douyin" : "toutiao";
     var that = this;
-    console.log(that.data.itemId)
     Request({
       url: "api/qrcode/downloadQrcode",
       method: "get",
@@ -80,11 +78,9 @@ Page({
       var url = 'https://tgadmin.clvtmcn.cn/' + res.data.url;
       console.log(url, res)
       that.setData({
-        imageUrl: url
+        imageUrl: url,
+        ewmact: v.detail.ewmact
       })
-    })
-    this.setData({
-      ewmact: v.detail.ewmact
     })
   },
   promotion(v) {
@@ -95,8 +91,8 @@ Page({
       })
     } else {
       this.setData({
-        model: true,
-        itemId: v.currentTarget.dataset.item
+        itemId: v.currentTarget.dataset.item,
+        model: true
       })
     }
   },

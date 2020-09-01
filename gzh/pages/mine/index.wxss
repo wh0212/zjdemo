@@ -50,7 +50,10 @@ page {
   text-align: center;
   background: #fff;
 }
+.price_jine{
+  width: 200rpx;
 
+}
 .saveImg {
   text-align: center;
 }

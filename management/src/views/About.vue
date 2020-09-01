@@ -1,35 +1,34 @@
 <template>
   <div class="about">
+    <div class="model">
+      <img style="width:100%" src="https://tgadmin.clvtmcn.cn/upload/img/gzh.jpg" alt srcset />
+    </div>
     <div class="nav">
       <div class="nav_main">
-        <div class="logo">
+        <div @click="home" class="logo">
           <img src="../assets/logo.png" alt />
           <span class="logo_txt">快狗推</span>
         </div>
         <div class="user">
           <div class="useravat">
-            <img :src="userinfo.avatar" alt />
+            <img v-if="userinfo.avatar" :src="userinfo.avatar" alt />
+            <img v-else src="../assets/0.jpg" alt srcset />
+          </div>
+          <div @click="quit" class="nav_right">
+            <el-tooltip class="item" effect="dark" content="退出登录" placement="bottom">
+              <div class="iconfont icontuichu"></div>
+            </el-tooltip>
           </div>
         </div>
       </div>
     </div>
-    <!--     
-    <div class="main">
-      <div class="main_title">
-        <div class="da_avatr">
-          <img :src="userinfo.avatar" alt />
-        </div>
-      </div>
-      <div class="usertxt">
-        <div class="username">{{userinfo.nickname}}</div>
-        <div class="bjzl">编辑个人资料</div>
-      </div>
-    </div>-->
     <!--  -->
     <div class="list">
       <div class="list_title">
         <span>文章</span>
-        <span @click="text" style="color:#2489f1">写文章</span>
+        <span @click="text" style="color:#2489f1">
+          <span class="iconfont iconbianji"></span> 写文章
+        </span>
       </div>
       <div class="list_main">
         <div v-for="(item,index) in list" :key="index" class="list_item">
@@ -56,13 +55,14 @@
 
 <script>
 import axios from "axios";
+import Request from "../util/http";
 export default {
   data() {
     return {
       page: 1,
       userinfo: {},
       list: [],
-      num:0
+      num: 0,
     };
   },
   mounted() {
@@ -74,13 +74,19 @@ export default {
         },
       })
       .then((res) => {
-        console.log(res.data.data);
         this.userinfo = res.data.data.user;
         this.list = res.data.data.article.data;
-        this.num=res.data.data.num
+        this.num = res.data.data.num;
       });
   },
   methods: {
+    quit() {
+      localStorage.removeItem("login");
+      this.$router.push("/home");
+    },
+    home() {
+      this.$router.push("/home");
+    },
     chakanfun(item) {
       console.log(item);
       let routeUrl = this.$router.resolve({
@@ -121,6 +127,15 @@ export default {
 </script>
 
 <style  scoped>
+.model {
+  position: fixed;
+  right: 30px;
+  top: 60%;
+  background: red;
+  z-index: 99999999999999999;
+  width: 100px;
+  height: 100px;
+}
 .chakan {
   background: rgb(209, 17, 17);
   color: #fff;
@@ -230,6 +245,7 @@ export default {
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-around;
 }
 .logo {
   display: flex;
@@ -251,5 +267,8 @@ export default {
   width: 100%;
   height: 80px;
   background: #fff;
+}
+div {
+  cursor: pointer;
 }
 </style>

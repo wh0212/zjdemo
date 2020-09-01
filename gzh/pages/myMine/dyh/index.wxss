@@ -43,6 +43,23 @@
   bottom: 100rpx;
   left: 5%;
 }
+.add{
+  color: #fff;
+  text-align: center;
+  margin-top: 100rpx;
+  font-size: 40rpx;
+}
+.listData{
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0px;
+  /* border-bottom: 1rpx rgb(94, 93, 93) solid; */
+}
+.listData image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
 .model{
   position: fixed;
   left: 0;

@@ -2,13 +2,16 @@
 import Request from "../../utils/request";
 Page({
   data: {
+    lenact:true,
     dataItem: {},
     time: '',
     model: false,
     ewmact: false,
     page: 1,
     id: 0,
-    name:""
+    name: "",
+    itemId: 0,
+    imageUrl:""
   },
   addpush() {
     var that = this;
@@ -21,11 +24,13 @@ Page({
       data: {
         page: that.data.page,
         class_id: that.data.id,
-        name:that.data.name
+        name: that.data.name
       }
     }).then((res) => {
-      if(res.data.data.length==0){
-        console.log("mei")
+      if (res.data.data.length == 0) {
+        that.setData({
+          lenact:false
+        })
       }
       that.setData({
         'dataItem.children': [...that.data.dataItem.children, ...res.data.data]
@@ -33,14 +38,40 @@ Page({
     })
   },
   typept(v) {
-    this.setData({
-      ewmact: v.detail.ewmact
+    var pt = v.detail.pt == "dy" ? "douyin" : "toutiao";
+    var that = this;
+    Request({
+      url: "api/qrcode/downloadQrcode",
+      method: "get",
+      data: {
+        appid: "tt99eeef5306d4c283",
+        id: that.data.itemId,
+        member_id: wx.getStorageSync('member_id'),
+        token: wx.getStorageSync('login').token,
+        type: pt,
+        douyin_id: wx.getStorageSync('douyin_id')
+      }
+    }).then((res) => {
+      var url = 'https://tgadmin.clvtmcn.cn/' + res.data.url;
+      console.log(url, res)
+      that.setData({
+        imageUrl: url,
+        ewmact: v.detail.ewmact
+      })
     })
   },
-  promotion() {
-    this.setData({
-      model: true
-    })
+  promotion(v) {
+    if (!wx.getStorageSync('phone')) {
+      wx.showToast({
+        title: '请在我的页面绑定手机号',
+        icon: 'none'
+      })
+    } else {
+      this.setData({
+        itemId: v.currentTarget.dataset.item,
+        model: true
+      })
+    }
   },
   changeDate(v) {
     this.setData({
@@ -50,7 +81,7 @@ Page({
   onLoad(v) {
     this.setData({
       id: v.id,
-      name:v.name == undefined ? '' : v.name
+      name: v.name == undefined ? '' : v.name
     })
     var that = this;
     Request({

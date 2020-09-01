@@ -18,7 +18,7 @@
 	<view class="remaining_yu">
 		<view class="remainng_yue">
 			<view>可提现金额</view>
-			<view style="font-size:55rpx;font-weight:600">{{money.tixian_price}}</view>
+			<view class="price_jine" style="font-size:55rpx;font-weight:600">{{money.tixian_price}}</view>
 		</view>
 		<navigator url="/pages/myMine/wallet/index?yue={{money.tixian_price}}&shouyi={{money.price}}" class="mywallet">我的钱包</navigator>
 	</view>
@@ -58,10 +58,10 @@
 			<view style="color:#adadad;font-size:60rpx" class="iconfont renmai icon-tongzhi"></view>
 			<view class="workes_item_name">系统通知</view>
 		</navigator>
-		<!-- <navigator url="/pages/myMine/complaint/index" class="workes_main_item">
-			<view style="color:#adadad;font-size:60rpx" class="iconfont renmai icon-jianyi"></view>
-			<view class="workes_item_name">投诉建议</view>
-		</navigator> -->
+		<view bindtap="saoma" class="workes_main_item">
+			<view style="color:#adadad;font-size:60rpx" class="iconfont renmai icon-icon-test"></view>
+			<view class="workes_item_name">扫一扫</view>
+		</view>
 		<navigator url="/pages/myMine/aboutUs/index" class="workes_main_item">
 			<view style="color:#adadad;font-size:60rpx" class="iconfont renmai icon-guanyuwomen-copy"></view>
 			<view class="workes_item_name">关于我们</view>

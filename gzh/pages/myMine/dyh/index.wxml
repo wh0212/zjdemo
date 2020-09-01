@@ -1,4 +1,4 @@
-<view wx:if="{{userinfo}}">
+<view wx:if="{{userinfo.avatar}}">
 	<view class="top">
 		<view class="user">
 			<image class="useravat" src="{{userinfo.avatarUrl || userinfo.avatar}}"></image>
@@ -13,8 +13,9 @@
 		<view data-id="{{0}}" bindtap="adddyh" class="gengduo iconfont icon-gengduo"></view>
 	</view>
 	<view class="listItem">
-		<view class="listData" wx:for="{{list}}" >
-
+		<view class="listData" wx:for="{{list}}" wx:key="index">
+			<!-- <image src="{{item.avatar}}"></image>
+			<view style="color:#fff;padding-left:20px">{{item.nickname}}</view> -->
 		</view>
 		<view>
 			<view style="color:#999;width:100%;text-align:center; line-height: 80rpx;">—我是有底线的—</view>
@@ -23,14 +24,15 @@
 
 </view>
 
-<!-- <view wx:if="{{!userinfo}}">
+<view wx:if="{{!userinfo.avatar}}">
 	<view class="model_xq">
 		<view style="color:#c2c2c2;margin-bottom:15rpx">授权抖音号您可：</view>
 		<view style="color:#fff" class="xq_txt">一键发布视频到抖音</view>
 		<view style="color:#fff" class="xq_txt">查看小程序收益数据</view>
 		<view style="color:#fff" class="xq_txt">获取抖音粉丝用户画像以及活跃度</view>
 	</view>
-</view> -->
+	<view class="add">赶快去添加抖音号吧!</view>
+</view>
 
 <view bindtap="adddyh" data-id="{{1}}" class="adddyh">添加抖音号</view>
 
@@ -49,6 +51,6 @@
 	<view wx:if="{{modelId==0}}" class="model_two">
 		<view style="font-size:40rpx;line-height:150rpx">授权剩余14天</view>
 		<view style="background:red" bindtap="adddyh" data-id="{{1}}" class="btnsq">重新授权</view>
-		<view style="background:#999" class="btnsq">删除抖音号</view>
+		<view bindtap="deldyh" style="background:#999" class="btnsq">删除抖音号</view>
 	</view>
 </view>

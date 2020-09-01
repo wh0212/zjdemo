@@ -5,15 +5,10 @@
     "pages/datai/index",
     "pages/cp_detail/index",
     "pages/all_item/index",
-    "pages/home/idea/index",
-    "pages/myMine/complaint/index",
     "pages/myMine/dyh/index",
     "pages/home/ptxq/index",
-    "pages/myMine/earnings/index",
-    "pages/myMine/collaborate/index",
     "pages/myMine/aboutUs/index",
     "pages/myMine/dyaccredit/index",
-    "pages/article/index",
     "pages/myMine/inform/index",
     "pages/myMine/wallet/index",
     "pages/myMine/addcard/index",
@@ -24,7 +19,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "快狗推",
+    "navigationBarTitleText": "资讯百宝箱",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -34,12 +29,6 @@
         "pagePath": "pages/index/index",
         "iconPath": "./image/首页.png",
         "selectedIconPath": "./image/首页act.png"
-      },
-      {
-        "pagePath": "pages/article/index",
-        "text": "创作",
-        "iconPath": "./image/数据.png",
-        "selectedIconPath": "./image/数据act.png"
       },
       {
         "pagePath": "pages/mine/index",

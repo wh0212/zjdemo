@@ -2,7 +2,13 @@
 page {
   background: #14162b;
 }
-
+.bottom{
+  width: 100%;
+  text-align: center;
+  color: #999;
+  font-size: 26rpx;
+  line-height: 80rpx;
+}
 .top {
   width: 95%;
   margin: 20rpx auto;

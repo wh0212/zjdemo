@@ -1,7 +1,7 @@
 import Request from "../../../utils/request";
 Page({
   data: {
-    userinfo: wx.getStorageSync('userinfo'),
+    userinfo: {},
     addimg: "",
     modelAct: false,
     modelId: 0,

@@ -9,7 +9,11 @@
   border-radius: 20rpx;
   overflow: hidden;
 }
-
+.item_cishu{
+  font-size: 30rpx;
+  color: #999;
+  margin-left: 20rpx
+}
 .scroll-view {
     position: fixed;
     top: 225rpx;
@@ -142,7 +146,6 @@ page{
 .item_right_title{
   font-size: 34rpx;
   width: 380rpx;
-  margin-bottom: 15rpx;
   text-overflow: -o-ellipsis-lastline;
   overflow: hidden;
   text-overflow: ellipsis;

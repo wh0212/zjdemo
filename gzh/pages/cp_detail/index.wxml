@@ -18,7 +18,8 @@
 				</view>
 				<view bindtap="promotion" style="color:#e83669;font-size:30rpx">预览</view>
 			</view>
-			<view bindtap="addpush" class="pushlist">加载更多</view>
+			<view wx:if="{{!lenact}}" class="bottom">到底了</view>
+			<view wx:if="{{lenact}}" bindtap="addpush" class="pushlist">加载更多</view>
 		</view>
 	</view>
 </view>
@@ -80,4 +81,4 @@
 
 <!-- 下载推广码 -->
 <modelXz model="{{model}}" bind:typept="typept"></modelXz>
-<addImg modelerm="{{ewmact}}" url="{{'../../image/1.jpg'}}"></addImg>
+<addImg modelerm="{{ewmact}}" url="{{imageUrl}}"></addImg>

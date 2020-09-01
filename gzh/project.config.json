@@ -93,16 +93,16 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/home/idea/index",
-					"pathName": "pages/home/idea/index",
+					"id": 4,
+					"name": "pages/home/ptxq/index",
+					"pathName": "pages/home/ptxq/index",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": 5,
-					"name": "pages/myMine/jilu/index",
-					"pathName": "pages/myMine/jilu/index",
+					"name": "pages/myMine/dyh/index",
+					"pathName": "pages/myMine/dyh/index",
 					"query": "",
 					"scene": null
 				}

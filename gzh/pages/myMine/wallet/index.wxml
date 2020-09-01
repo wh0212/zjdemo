@@ -29,6 +29,6 @@
 
 
 <view class="about">
-	<view class="about_item">提现记录 <text class="iconfont pt_icon icon-icon"></text></view>
+	<navigator url="/pages/myMine/jilu/index" class="about_item">提现记录 <text class="iconfont pt_icon icon-icon"></text></navigator>
 	<navigator url="/pages/myMine/cardlist/index" class="about_item">银行卡 <text class="iconfont pt_icon icon-icon"></text></navigator>
 </view>

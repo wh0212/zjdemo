@@ -12,6 +12,7 @@
 	<view class="date_type">
 		<text>{{item.date}}</text>
 		<text>{{item.type}}</text>
+    <text>{{item.readnum}}</text>
 	</view>
 	<view class="image">
 		<image mode="aspectFill" class="image" src="{{item.image}}" mode="" />
@@ -41,6 +42,7 @@
 		<view class="item" bindtap="detail" data-item="{{item}}" tt:for="{{list}}">
 			<view tt:if="{{item.image}}" class="item_right">
 				<view class="item_right_title">{{item.title}}</view>
+        <view class="item_cishu">阅读次数:10</view>
 				<view class="item_right_xq">
 					<text>{{item.type}}</text>
 					<text>{{item.date}}</text>
@@ -48,6 +50,7 @@
 			</view>
 			<view tt:if="{{item.image==''}}" class="item_right_none">
 				<view class="item_right_title_none">{{item.title}}</view>
+        <view class="item_cishu">阅读次数:10</view>
 				<view class="item_right_xq">
 					<text>{{item.type}}</text>
 					<text>{{item.date}}</text>

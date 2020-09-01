@@ -13,6 +13,7 @@ Page({
     if (this.data.yue == 0) {
       wx.showToast({
         title: '余额不足无法提现',
+        icon:"none"
       })
     } else {
       var that = this;

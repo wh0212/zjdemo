@@ -6,7 +6,10 @@
   font-weight: 550;
   line-height: 52rpx
 }
-
+.item_cishu{
+  color: #999;
+  font-size: 30rpx;
+}
 .date_type{
   font-size: 30rpx;
   color: #7b7b7b;

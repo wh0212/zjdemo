@@ -5,6 +5,17 @@
   align-items: center;
   border-bottom: 1px rgb(175, 175, 175) solid
 }
+.tt-1465615094-weui-actionsheet{
+  padding: 0rpx 40rpx !important;
+  width: 90% !important
+}
+.iconzhuti{
+  position: absolute;
+  right: 20rpx;
+  font-size: 50rpx;
+  top: 20rpx;
+  color: red
+}
 .nav_item{
   flex: 1;
   text-align: center;
@@ -121,7 +132,8 @@ page{
   padding-top: 50rpx;
   border-radius: 20rpx;
   margin: 20rpx auto;
-  opacity: 0.8
+  opacity: 0.8;
+  position: relative
 }
 .userAvatar{
   width: 140rpx;
@@ -136,4 +148,17 @@ page{
   border-radius: 40rpx;
   font-size: 32rpx;
   border: 1px #999 solid
+}
+.model{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.733);
+}
+.model_main{
+  width: 100%;
+  background: #Fff;
+  padding: 20rpx;
 }

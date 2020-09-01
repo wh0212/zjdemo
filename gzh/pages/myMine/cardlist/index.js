@@ -28,7 +28,12 @@ Page({
         token: wx.getStorageSync('login').token
       }
     }).then((res) => {
-      console.log(res.data)
+      console.log(res,"11")
+      if(res.code==-1){
+        wx.reLaunch({
+          url: '/pages/mine/index?code=-1',
+        })
+      }
       that.setData({
         kalist: res.data.bank_card,
         zfblist: res.data.alipay

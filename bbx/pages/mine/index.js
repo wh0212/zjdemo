@@ -1,5 +1,6 @@
 Page({
   data: {
+    showmodel: false,
     navActive: 0,
     prom: {
       txt: '',
@@ -12,6 +13,53 @@ Page({
       pullText: ''
     },
     downTop: false,
+    rgb: 'rgb(0,154,97)',//初始值
+    pick: false
+  },
+  // 显示取色器
+  toPick: function () {
+    this.setData({
+      pick: true
+    })
+  },
+  rgb2hex(color) {
+    let rgb = color.split(',');
+    let R = parseInt(rgb[0].split('(')[1]);
+    let G = parseInt(rgb[1]);
+    let B = parseInt(rgb[2].split(')')[0]);
+    let hex = "#" + ((1 << 24) + (R << 16) + (G << 8) + B).toString(16).slice(1);
+    return hex;
+  },
+  //取色结果回调
+  pickColor(e) {
+    console.log(e)
+    let rgb = e.detail.color;
+    tt.setNavigationBarColor({
+      frontColor: "#ffffff",
+      backgroundColor: this.rgb2hex(e.detail.color),
+      success(res) {
+        console.log(res);
+      },
+      fail(res) {
+        console.log("setNavigationBarColor调用失败");
+      },
+    });
+    this.setData({
+      rgb: rgb
+    })
+  },
+  amend() {
+
+  },
+  hidemodel() {
+    this.setData({
+      showmodel: false
+    })
+  },
+  showmodelfun() {
+    this.setData({
+      showmodel: true
+    })
   },
   refresh(e) {
     this.setData({
@@ -42,7 +90,7 @@ Page({
     })
   },
   onShow() {
-  
+
   },
   onShareAppMessage(option) {
     return {
