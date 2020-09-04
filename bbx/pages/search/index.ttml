@@ -29,17 +29,19 @@
           <view class="item_right_title">{{item.title}}</view>
           <view class="item_right_xq">
             <text>{{item.type}}</text>
-            <text>{{item.date}}</text>
+            <!-- <text>{{item.date}}</text> -->
+            <text class="item_cishu">阅读次数:{{item.readnum}}</text>
           </view>
         </view>
         <view  tt:if="{{item.image==''}}" class="item_right_none">
           <view class="item_right_title_none">{{item.title}}</view>
           <view class="item_right_xq">
             <text>{{item.type}}</text>
-            <text>{{item.date}}</text>
+            <!-- <text>{{item.date}}</text> -->
+            <text class="item_cishu">阅读次数:{{item.readnum}}</text>
           </view>
         </view>
-        <image class="item_img" src="{{item.image}}" mode="" />
+        <image tt:if="{{item.image}}" class="item_img" src="{{item.image}}" mode="" />
       </view>
     </view>
   </view>

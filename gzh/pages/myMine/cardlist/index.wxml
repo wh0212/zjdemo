@@ -18,7 +18,7 @@
 			<view bindtap="active" data-index="{{index}}" class="iconfont icon-mimayanjingguanbi"></view>
 		</view>
 		<view class="item_name">
-			<view>王皓</view>
+			<view>{{item.name}}</view>
 			<view>{{item.bank_name}}</view>
 		</view>
 	</view>
@@ -41,7 +41,7 @@
 			<!-- <view bindtap="active" data-index="{{index}}" class="iconfont icon-mimayanjingguanbi"></view> -->
 		</view>
 		<view class="item_name">
-			<view>王皓</view>
+			<view>{{item.name}}</view>
 			<view>{{item.bank_name}}</view>
 		</view>
 	</view>

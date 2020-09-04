@@ -1,7 +1,9 @@
 var app = getApp()
-import serve from "../../ults/video.js"
+// import serve from "../../ults/video.js"
 import shipin from "../../ults/qudao.js"
+
 import Request from "../../ults/http.js"
+
 Page({
   data: {
     item: {},
@@ -19,27 +21,15 @@ Page({
     itemId: 0,
     right: 0,
     bottom: 58,
-    shipinAct:1,
-    member_id:0,
-    act:0
+    shipinAct: 0,
+    member_id: 0,
+    act: 0
   },
-  adloadhandler(e) {
-    console.log("广告加载成功");
-  },
-  aderrorhandler(e) {
-    console.log("广告加载失败", e);
-    tt.showToast({
-      title: "广告加载失败" + e.errMsg,
-      icon: "fail",
-    });
-  },
-  adclosehandler(e) {
-    console.log("广告关闭");
-  },
+
   viewTouchMove(e) {
     var height = tt.getSystemInfoSync().windowHeight;
     var width = tt.getSystemInfoSync().windowWidth;
-    var left = width - e.touches[0].clientX * 2 +280;
+    var left = width - e.touches[0].clientX * 2 + 280;
     var top = e.touches[0].clientY * 2 - 30;
     if (left > tt.getSystemInfoSync().windowWidth * 2 - 160) {
       left = tt.getSystemInfoSync().windowWidth * 2 - 160
@@ -66,8 +56,11 @@ Page({
     });
   },
   onLoad: function (options) {
+    app.globalData.currentPage = this;
+
+    this.jiancha()
     console.log(options, "123123")
-    var bfb = ['51%', '50%', '46%','45%', '48%', '53%', '47%', '52%', '53%', '53%', '54%', '55%', '56%', '57%']
+    var bfb = ['51%', '50%', '46%', '45%', '48%', '53%', '47%', '52%', '53%', '53%', '54%', '55%', '56%', '57%']
     var pos = Math.round(Math.random() * (bfb.length - 1))
     tt.setStorageSync('typeId', options.type);
     this.setData({
@@ -75,10 +68,10 @@ Page({
       title: options.title,
       bfbtxt: bfb[pos],
       itemId: options.itemId,
-      shipinAct:app.globalData.gender,
-      member_id:options.member_id,
-      act:options.act
+      member_id: options.member_id,
+      act: options.act
     })
+    console.log(this.data.itemId)
     Request({
       url: '/article/articleInfo',
       method: 'GET',
@@ -106,29 +99,152 @@ Page({
         })
       })
     })
+
     if (options.act) {
-      shipin(options.itemId, options.itemId, options.act,options.member_id,options.douyin_id)
+      shipin(options.itemId, options.itemId, options.act, options.member_id, options.douyin_id)
     }
   },
-  datafun() {
+  jiancha() {
+    var that = this;
+    tt.getSystemInfo({
+      success: (res) => {
+        if (res.appName == 'Toutiao') {
+          console.log("头条")
+          that.setData({
+            shipinAct: 0
+          })
+        } else if (res.appName == 'Douyin') {
+          console.log("抖音")
+          that.setData({
+            shipinAct: 1
+          })
+          tt.getSystemInfo({
+            success: (res) => {
+              if (res.platform == 'android') {
+                if (parseFloat(res.version) > 10.3) {
+                } else {
+                  tt.showModal({
+                    title: "提示",
+                    content: "当前客户端版本过低，无法使用该功能，请升级客户端或关闭后重启更新。",
+                  });
+                }
+              } else {
+                if (parseFloat(res.version) > 10.7) {
+
+                } else {
+                  tt.showModal({
+                    title: "提示",
+                    content: "当前客户端版本过低，无法使用该功能，请升级客户端或关闭后重启更新。",
+                  });
+                }
+              }
+            }
+          })
+        }
+      }
+    })
+  },
+  errcancelAdFunction() {
+    var that = this;
+    tt.showToast({
+      title: "请稍等",
+      icon: "loading",
+      duration: 2000,
+      success(res) {
+        that.setData({
+          scroll: false
+        })
+      },
+      fail(res) {
+        console.log(`showToast调用失败`);
+      },
+    });
+  },
+  //广告监听
+  closeAdFunction() {
+    console.log('播放结束')
+    var that = this;
     var obj = {
       channel: this.data.openid,
       appletsName: this.data.itemId,
       act: this.data.act
     }
-    var that = this;
-    serve(obj, function () {
-      that.setData({
-        scroll: false
-      })
-    })
+    if (this.data.shipinAct == 1) {
+      tt.showToast({
+        title: "请稍等",
+        icon: "loading",
+        duration: 2000,
+        success(res) {
+          tt.request({
+            url: 'https://tgadmin.clvtmcn.cn/api/login/adUnitInform',
+            method: "post",
+            data: {
+              act: obj.act,
+              appletsName: obj.appletsName,
+              type: 1,
+              appid: 'tt99eeef5306d4c283'
+            },
+            success: (res) => {
+              console.log(res, 222)
+              that.setData({
+                scroll: false
+              })
+            }
+          });
+
+        },
+        fail(res) {
+          console.log(`showToast调用失败`);
+        },
+      });
+    } else {
+      tt.showToast({
+        title: "请稍等",
+        icon: "loading",
+        duration: 2000,
+        success(res) {
+          setTimeout(() => {
+            that.setData({
+              scroll: false
+            })
+          }, 2000)
+        },
+        fail(res) {
+          console.log(`showToast调用失败`);
+        },
+      });
+    }
+
+  },
+  cancelAdFunction() {
+    console.log('用户取消')
+    tt.showToast({ title: '未完整观看视频不能获取奖励哦', icon: 'none' })
+  },
+  datafun() {
+    console.log(111)
+    var obj = {
+      channel: this.data.openid,
+      appletsName: this.data.itemId,
+      act: this.data.act
+    }
+    app.playAd()
+    // var that = this;
+    // serve(obj, function () {
+    //   that.setData({
+    //     scroll: false
+    //   })
+    // })
+  },
+  onHide() {
+    console.log("离开")
+
   },
   onShareAppMessage(option) {
     // option.from === 'button'
     return {
       title: this.data.item.title,
       desc: this.data.item.title,
-      path: `/pages/detail/index?from=sharebuttonabc&otherkey=othervalue&id=${this.data.item.title}&itemId=${this.data.item.id}`,
+      path: `/pages/detail/index?from=sharebuttonabc&otherkey=othervalue&id=${this.data.itemId}&itemId=${this.data.itemId}&act=${this.data.act}`,
       // imageUrl: '',
       templateId: '4csdk0ph0k62j48etv',
       success() {

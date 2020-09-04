@@ -1,12 +1,4 @@
-<!-- <view>
-  <ad
-    unit-id="10qdbhkaj7mji0a86i"
-    bindload="adloadhandler"
-    binderror="aderrorhandler"
-    bindclose="adclosehandler"
-    ad-intervals="{{30}}"
-  ></ad>
-</view> -->
+
 <view class="main">
 	<view class="title">{{item.title}}</view>
 	<view class="date_type">
@@ -14,7 +6,7 @@
 		<text>{{item.type}}</text>
     <text>{{item.readnum}}</text>
 	</view>
-	<view class="image">
+	<view tt:if="{{item.image}}" class="image">
 		<image mode="aspectFill" class="image" src="{{item.image}}" mode="" />
 	</view>
 	<view id="txt" class="{{scroll?'txt':'act'}}">

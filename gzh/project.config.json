@@ -105,6 +105,13 @@
 					"pathName": "pages/myMine/dyh/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/myMine/introduce/index",
+					"pathName": "pages/myMine/introduce/index",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

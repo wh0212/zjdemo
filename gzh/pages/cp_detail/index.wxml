@@ -16,7 +16,7 @@
 					<view class="cp_zi_data">{{item2.title}}</view>
 					<view class="cp_zi_bt">{{item2.share}}</view>
 				</view>
-				<view bindtap="promotion" style="color:#e83669;font-size:30rpx">预览</view>
+				<view bindtap="promotion" data-item="{{item2.id}}"  style="color:#e83669;font-size:30rpx">预览</view>
 			</view>
 			<view wx:if="{{!lenact}}" class="bottom">到底了</view>
 			<view wx:if="{{lenact}}" bindtap="addpush" class="pushlist">加载更多</view>

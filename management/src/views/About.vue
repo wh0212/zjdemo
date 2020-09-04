@@ -14,6 +14,11 @@
             <img v-if="userinfo.avatar" :src="userinfo.avatar" alt />
             <img v-else src="../assets/0.jpg" alt srcset />
           </div>
+          <div @click="shouyi" class="nav_right">
+            <el-tooltip class="item" effect="dark" content="收益" placement="bottom">
+              <div class="iconfont iconshouyi"></div>
+            </el-tooltip>
+          </div>
           <div @click="quit" class="nav_right">
             <el-tooltip class="item" effect="dark" content="退出登录" placement="bottom">
               <div class="iconfont icontuichu"></div>
@@ -26,18 +31,25 @@
     <div class="list">
       <div class="list_title">
         <span>文章</span>
-        <span @click="text" style="color:#2489f1">
-          <span class="iconfont iconbianji"></span> 写文章
-        </span>
+        <div>
+          <span @click="shipin" style="color:#2489f1;margin-right:20px">
+            <span class="iconfont iconsucai"></span> 素材库
+          </span>
+          <span @click="text" style="color:#2489f1;margin-right:20px">
+            <span class="iconfont iconbianji"></span> 写文章
+          </span>
+        </div>
       </div>
       <div class="list_main">
         <div v-for="(item,index) in list" :key="index" class="list_item">
-          <img class="item_left" :src="item.image" alt />
+          <img class="item_left" v-if="item.image" :src="item.image" alt />
           <div class="item_right">
             <div class="right_title">{{item.title}}</div>
             <div class="right_date">{{item.add_time}}</div>
           </div>
-          <div class="chakan" @click="chakanfun(item)">查看详情</div>
+          <div class="chakan">
+            <div class="chakan_item" @click="chakanfun(item)">查看详情</div>
+          </div>
         </div>
       </div>
       <div class="fenye">
@@ -56,30 +68,59 @@
 <script>
 import axios from "axios";
 import Request from "../util/http";
+import Clipboard from "clipboard";
 export default {
   data() {
     return {
       page: 1,
+      visible: false,
       userinfo: {},
       list: [],
       num: 0,
+      message: "请稍等...",
+      douyin: false,
+      txt: "",
     };
   },
   mounted() {
-    axios
-      .get("https://tgadmin.clvtmcn.cn/index/index/personal", {
-        params: {
-          token: localStorage.getItem("login"),
-          page: 1,
-        },
-      })
-      .then((res) => {
-        this.userinfo = res.data.data.user;
-        this.list = res.data.data.article.data;
-        this.num = res.data.data.num;
-      });
+    Request({
+      url: "index/index/personal",
+      method: "get",
+      params: {
+        token: localStorage.getItem("login"),
+        page: 1,
+      },
+    }).then((res) => {
+      this.userinfo = res.data.data.user;
+      this.list = res.data.data.article.data;
+      this.num = res.data.data.num;
+    });
+    // axios
+    //   .get("https://www.kuaigoutui.com/index/index/personal", {
+    //     params: {
+    //       token: localStorage.getItem("login"),
+    //       page: 1,
+    //     },
+    //   })
+    //   .then((res) => {
+    //     this.userinfo = res.data.data.user;
+    //     this.list = res.data.data.article.data;
+    //     this.num = res.data.data.num;
+    //   });
   },
   methods: {
+    shipin() {
+      let routeUrl = this.$router.resolve({
+        name: "search",
+      });
+      window.open(routeUrl.href, "_blank");
+    },
+    shouyi() {
+      let routeUrl = this.$router.resolve({
+        name: "shouyi",
+      });
+      window.open(routeUrl.href, "_blank");
+    },
     quit() {
       localStorage.removeItem("login");
       this.$router.push("/home");
@@ -88,7 +129,6 @@ export default {
       this.$router.push("/home");
     },
     chakanfun(item) {
-      console.log(item);
       let routeUrl = this.$router.resolve({
         name: "text",
         query: {
@@ -104,29 +144,39 @@ export default {
       window.open(routeUrl.href, "_blank");
     },
     handleCurrentChange(e) {
-      console.log(e, "123");
       this.page = e;
-      axios
-        .get("https://tgadmin.clvtmcn.cn/index/index/personal", {
-          params: {
-            token: localStorage.getItem("login"),
-            page: e,
-          },
-        })
-        .then((res) => {
-          console.log(res.data.data);
-          this.userinfo = res.data.data.user;
-          this.list = res.data.data.article.data;
-        });
+      Request({
+        url: "index/index/personal",
+        method: "get",
+        params: {
+          token: localStorage.getItem("login"),
+          page: e,
+        },
+      }).then((res) => {
+        this.userinfo = res.data.data.user;
+        this.list = res.data.data.article.data;
+      });
+      // axios
+      //   .get("https://www.kuaigoutui.com/index/index/personal", {
+      //     params: {
+      //       token: localStorage.getItem("login"),
+      //       page: e,
+      //     },
+      //   })
+      //   .then((res) => {
+      //     this.userinfo = res.data.data.user;
+      //     this.list = res.data.data.article.data;
+      //   });
     },
-    handleSizeChange(e) {
-      console.log(e, "12e333");
-    },
+    handleSizeChange(e) {},
   },
 };
 </script>
 
 <style  scoped>
+.no_douyin {
+  text-align: center;
+}
 .model {
   position: fixed;
   right: 30px;
@@ -136,13 +186,18 @@ export default {
   width: 100px;
   height: 100px;
 }
-.chakan {
+.chakan_item {
   background: rgb(209, 17, 17);
   color: #fff;
   padding: 5px 10px;
+  margin-right: 10px;
+}
+.chakan {
   float: right;
   position: absolute;
   right: 20px;
+  display: flex;
+  align-items: center;
 }
 .right_date {
   color: #999;

@@ -66,6 +66,10 @@
 			<view style="color:#adadad;font-size:60rpx" class="iconfont renmai icon-guanyuwomen-copy"></view>
 			<view class="workes_item_name">关于我们</view>
 		</navigator>
+		<navigator url="/pages/myMine/introduce/index" class="workes_main_item">
+			<view style="color:#adadad;font-size:60rpx" class="iconfont renmai icon-jieshao"></view>
+			<view class="workes_item_name">玩法介绍</view>
+		</navigator>
 		<navigator url="/pages/myMine/system/index" class="workes_main_item">
 			<view style="color:#adadad;font-size:60rpx" class="iconfont renmai icon-xitongshezhi"></view>
 			<view class="workes_item_name">系统设置</view>

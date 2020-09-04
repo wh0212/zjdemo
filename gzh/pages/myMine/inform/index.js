@@ -1,21 +1,21 @@
 import Request from "../../../utils/request";
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
     xzact: 0,
     list:[]
+  },
+  itemfun(v){
+    console.log(v.currentTarget.dataset.item)
+    wx.navigateTo({
+      url: `/pages/home/ptxq/index?type=1`,
+    })
   },
   xuanzefun(v) {
     this.setData({
       xzact: v.currentTarget.dataset.index
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     var that = this;
     Request({
@@ -32,16 +32,10 @@ Page({
     })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
   onReady: function () {
 
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
 
   },

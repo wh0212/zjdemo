@@ -1,0 +1,19 @@
+.main{
+  width: 95%;
+  margin: 0 auto;
+  padding: 20rpx 0rpx;
+}
+.title{
+  color: #Fff;
+  border-bottom: 1rpx #999 solid;
+  line-height: 80rpx;
+}
+.title_xq{
+  color: #fff;
+  line-height: 80rpx;
+}
+.image{
+  width: 100%;
+  height: 1300rpx;
+  margin-bottom: 20rpx;
+}

@@ -1,10 +1,9 @@
 import axios from "axios"
 import router from '../router/index'
-
+const baseUrl = "https://tgadmin.clvtmcn.cn/"
 axios.interceptors.response.use(
     response => {
-        console.log(response)
-        if (response.data.code !=1) {
+        if (response.data.code ==-1) {
             router.push({
                 path: "/login"
             })
@@ -19,7 +18,8 @@ axios.interceptors.response.use(
 const Request = (params) => {
     return new Promise((resolve, reject) => {
         axios({
-            ...params
+            ...params,
+            url:baseUrl+params.url
         }).then((res) => {
             resolve(res)
         }).catch((err) => {

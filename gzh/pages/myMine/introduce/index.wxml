@@ -1,0 +1,50 @@
+<view class="main">
+	<view>
+		<view class="title">*第一步</view>
+		<view class="title_xq">微信搜索“资讯百宝箱”,点击进入小程序</view>
+		<image class="image" src="https://img.kuaigoutui.com/tttt/bbb.jpg"></image>
+	</view>
+	<view>
+		<view class="title">*第二步</view>
+		<view class="title_xq">点击绑定手机号</view>
+		<image class="image" src="https://img.kuaigoutui.com/cccccc.jpg"></image>
+	</view>
+	<view>
+		<view class="title">*第三步</view>
+		<view class="title_xq">点击绑定抖音号，长按保存图片后，打开抖音，点击上方的搜一搜，扫码保存到手机相册的二维码</view>
+		<image class="image" src="https://img.kuaigoutui.com/dddddd.jpg"></image>
+		<image class="image" src="https://img.kuaigoutui.com/eeeeee.jpg"></image>
+		<image class="image" src="https://img.kuaigoutui.com/ffffff.jpg"></image>
+		<image class="image" src="https://img.kuaigoutui.com/gggggg.jpg"></image>
+	</view>
+	<view>
+		<view class="title">*第四步</view>
+		<view class="title_xq">同意授权，绑定成功，接着我们就可以返回微信，进入小程序，点击首页您可以选择合适您的产品进行推广</view>
+		<image class="image" src="https://img.kuaigoutui.com/hhhhhh.jpg"></image>
+		<image class="image" src="https://img.kuaigoutui.com/iiiiii.jpg"></image>
+	</view>
+	<view>
+		<view class="title">*第五步</view>
+		<view class="title_xq">如何下载二维码推广？首先，选择一个小程序，这里您可以搜索您想要的内容，也可以浏览选择合适的下载二维码</view>
+		<image class="image" src="https://img.kuaigoutui.com/jjjjjj.jpg"></image>
+		<image class="image" src="https://img.kuaigoutui.com/kkkkkk.jpg"></image>
+	</view>
+	<view>
+		<view class="title">*第六步</view>
+		<view class="title_xq">选择合适的二维码下载保存到手机后，打开抖音扫码，点击打开小程序，就能看到所选的文章，点击右上方的拍视频上传或者拍摄视频即可</view>
+		<image class="image" src="https://img.kuaigoutui.com/llllll.jpg"></image>
+		<image class="image" src="https://img.kuaigoutui.com/mmmmmm.jpg"></image>
+	</view>
+	<view>
+		<view class="title">*第七步</view>
+		<view class="title_xq">文章的标题将会作为小程序的锚点出现在视频左下方，请注意图文一定要相结合！</view>
+		<image class="image" src="https://img.kuaigoutui.com/nnnnnn.jpg"></image>
+		<image class="image" src="https://img.kuaigoutui.com/qqqqqq.jpg"></image>
+	</view>
+  <view>
+		<view class="title">帮助</view>
+		<view class="title_xq">如果在小程序中没有找到合适您的推广文章内容，到我们的官网：
+              www.kuaigoutui.com“个人中心”去编辑跟您视频内容相匹配的文章，
+              上传到我们的小程序上，也可以联系我们，我们帮您编辑，然后再到小程序中进行推广。</view>
+	</view>
+</view>

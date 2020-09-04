@@ -51,6 +51,6 @@
 	<view wx:if="{{modelId==0}}" class="model_two">
 		<view style="font-size:40rpx;line-height:150rpx">授权剩余14天</view>
 		<view style="background:red" bindtap="adddyh" data-id="{{1}}" class="btnsq">重新授权</view>
-		<view bindtap="deldyh" style="background:#999" class="btnsq">删除抖音号</view>
+		<!-- <view bindtap="deldyh" style="background:#999" class="btnsq">删除抖音号</view> -->
 	</view>
 </view>

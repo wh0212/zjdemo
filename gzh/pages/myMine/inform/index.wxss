@@ -10,7 +10,11 @@
   padding-bottom: 20rpx;
   padding-top: 20rpx;
 }
-
+.botm{
+  text-align: center;
+  color: #999;
+  line-height: 80rpx;
+}
 .xuanze_about view {
   flex: 1;
   text-align: center;

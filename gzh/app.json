@@ -14,7 +14,8 @@
     "pages/myMine/addcard/index",
     "pages/myMine/cardlist/index",
     "pages/myMine/system/index",
-    "pages/myMine/jilu/index"
+    "pages/myMine/jilu/index",
+    "pages/myMine/introduce/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

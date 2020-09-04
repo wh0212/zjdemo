@@ -1,4 +1,4 @@
-<view class="main">
+<view class="main" wx:if="{{act}}">
 	<view class="title">快狗推推广宣传基本要求</view>
 	<view class="txt">
 		已剪辑好的视频可以在本小程序中选择与内容相关的文章作为锚点挂载在视频下方，
@@ -9,5 +9,18 @@
     可以挂载这部电影的台前幕后的有趣经历等，以起到对于视频内容的延伸拓展，扩展用户的视野，
     提升用户在使用视频中获取的信息知识
 	</view>
+</view>
 
+<view class="main" wx:if="{{!act}}">
+  <view class="title">{{item.title}}</view>
+  <view class="user">
+    <image class="avats" src="https://img.kuaigoutui.com/logoa9aaa5f97d584ddbc2733d5fa6c55de.png"></image>
+    <view class="name">
+      <view>抖推猫</view>
+      <view>{{item.add_time}}</view>
+    </view>
+  </view>
+  <view class="txt">
+  {{item.text}}
+  </view>
 </view>

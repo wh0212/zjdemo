@@ -1,15 +1,14 @@
 import Request from "../../utils/request"
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     list: [],
     model: false,
     itemId: null,
     inptxt: "",
-    imageUrl: ""
+    imageUrl: "",
+    phoneAct:false,
+    userPhone:"",
+    bili:[91,90,92,93,94,95]
   },
   search() {
     var that = this;
@@ -33,6 +32,11 @@ Page({
         console.log(that.data.list)
       })
     }
+  },
+  nomodel(){
+    this.setData({
+      phoneAct:false
+    })
   },
   inpchange(v) {
     if (!v.detail.value) {
@@ -60,7 +64,30 @@ Page({
       url: '/pages/home/ptxq/index?id=' + e.currentTarget.dataset.id,
     })
   },
+  getPhoneNumber(e) {
+    console.log(e.detail)
+    var that = this;
+    Request({
+      url: "api/Wxlogin/getmoblie",
+      method: "get",
+      data: {
+        encryptedData: e.detail.encryptedData,
+        iv: e.detail.iv,
+        session_key: wx.getStorageSync('login').session_key,
+        token: wx.getStorageSync('login').token,
+        member_id: wx.getStorageSync('member_id')
+      }
+    }).then((res) => {
+      console.log(res)
+      wx.setStorageSync('phone', res.data.moblie)
+      that.setData({
+        userPhone: res.data.moblie,
+        phoneAct:false
+      })
+    })
+  },
   typept(v) {
+    console.log(v,"ddddddd")
     var pt = v.detail.pt == "dy" ? "douyin" : "toutiao";
     var that = this;
     Request({
@@ -85,11 +112,16 @@ Page({
   },
   promotion(v) {
     if (!wx.getStorageSync('phone')) {
+      this.setData({
+        phoneAct:true
+      })
+    } else if (!wx.getStorageSync('douyin_id')) {
       wx.showToast({
-        title: '请在我的页面绑定手机号',
+        title: '还未授权抖音号，请授权',
         icon: 'none'
       })
     } else {
+      console.log( v.currentTarget.dataset,"id")
       this.setData({
         itemId: v.currentTarget.dataset.item,
         model: true

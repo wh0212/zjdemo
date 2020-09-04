@@ -1,6 +1,6 @@
 <view catchtap="nodemdel_erm" catchtouchmove="preventD" wx:if="{{modelerm}}" class="model_ewm">
 	<view catchtap="{{true}}" class="ewm_main">
 		<image style="width:90%;" bindlongtap="showBigImg" src="{{url}}"></image>
-		<view class="saveImg">长按图片保存</view>
+		<view class="saveImg">长按图片保存分享小程序</view>
 	</view>
 </view>

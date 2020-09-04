@@ -5,7 +5,8 @@
   border-radius: 20rpx;
   overflow: hidden;
 }
-.top{
+
+.top {
   width: 100%;
   background-color: #14152b;
   padding: 20rpx;
@@ -13,6 +14,7 @@
   top: 0rpx;
   z-index: 999;
 }
+
 .search {
   width: 91.5%;
   background: #212345;
@@ -73,7 +75,8 @@ page {
   font-size: 28rpx;
   line-height: 60rpx;
 }
-.pt_swiper_item{
+
+.pt_swiper_item {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -175,14 +178,21 @@ page {
   display: flex;
   align-items: center;
 }
-
+.bili{
+  margin-left: 30rpx;
+  color: #999;
+  font-size: 30rpx;
+}
 .item_top_left_xq {
   height: 150rpx;
   color: #fff;
   display: flex;
   padding-left: 20rpx;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: space-around;
+  display: flex;
+  align-items: center;
+  /* margin-left: 30rpx; */
 }
 
 .item_top_left_xq_gj {
@@ -262,10 +272,37 @@ page {
   color: #8282a8;
   font-size: 26rpx;
 }
-.icon-mianfei{
+
+.icon-mianfei {
   color: #eee;
   position: absolute;
   right: 0;
   top: 0;
   font-size: 70rpx;
+}
+
+.model {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.712);
+}
+
+.main_model {
+  width: 80%;
+  padding: 20rpx 0rpx;
+  border-radius: 10rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: #fff;
+}
+.user_bj{
+  width: 100% !important;
+  height: 100% !important;
+  background: none;
 }

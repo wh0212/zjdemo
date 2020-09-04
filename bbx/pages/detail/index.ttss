@@ -153,7 +153,6 @@ animation: scaleDrew 2.5s ease-in-out infinite;
 .item_right_title{
   font-size: 34rpx;
   width: 380rpx;
-  margin-bottom: 15rpx;
   text-overflow: -o-ellipsis-lastline;
   overflow: hidden;
   text-overflow: ellipsis;

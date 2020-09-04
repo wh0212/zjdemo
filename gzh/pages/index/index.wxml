@@ -39,6 +39,7 @@
 				<view class="list_item_top_left">
 					<view class="item_top_left_xq">
 						<view>{{item.title}}</view>
+						<view class="bili">推广比例90%</view>
 					</view>
 				</view>
 				<view class="list_item_top_right" data-item="{{item}}" bindtap="fundeatil">查看详情</view>
@@ -63,3 +64,10 @@
 <!-- 推广码遮罩层 -->
 <modelXz model="{{model}}" bind:typept="typept"></modelXz>
 <addImg modelerm="{{ewmact}}" url="{{imageUrl}}"></addImg>
+
+
+<view catchtap="nomodel" wx:if="{{phoneAct}}" class="model">
+	<view class="main_model">
+			<button open-type="getPhoneNumber" class="user_bj bianji" bindgetphonenumber="getPhoneNumber">绑定手机号</button>
+	</view>
+</view>

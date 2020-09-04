@@ -107,7 +107,7 @@ Page({
             })
           } else {
             this.setData({
-              list: [...res.data.data, ...this.data.list],
+              list: [...this.data.list,...res.data.data],
               clueData: data,
               'push.isLoading': false,
               'push.pullText': '- 上拉加载更多 -'
@@ -463,7 +463,7 @@ Page({
       }
     }).then((res) => {
       this.setData({
-        list: res.data.data
+        list: [...this.data.list,...res.data.data]
       })
     })
   },

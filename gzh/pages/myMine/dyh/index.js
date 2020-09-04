@@ -13,6 +13,7 @@ Page({
       title: '提示',
       content: '是否要保存图片',
       success(res) {
+        console.log(`https://tgadmin.clvtmcn.cn/${that.data.addimg}`)
         if (res.confirm) {
           wx.getImageInfo({
             src: `https://tgadmin.clvtmcn.cn/${that.data.addimg}`,

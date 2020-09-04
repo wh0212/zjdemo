@@ -1,11 +1,14 @@
 var app = getApp()
+
 var videoAd = tt.createRewardedVideoAd({
   adUnitId: 'nqcqfka2i3j3rf69ub'
 })
+
 const serve = function (obj, back) {
   console.log(obj, "广告", app.globalData.gender)
   if (app.globalData.gender == 1) {
-    console.log(videoAd)
+    console.log(videoAd, 3333)
+    // 发生错误
     videoAd.onError((err) => {
       tt.showToast({
         title: "请稍等",
@@ -19,8 +22,12 @@ const serve = function (obj, back) {
         },
       });
     })
+
     // 监听关闭
     videoAd.onClose((status) => {
+      // if (!videoAd) return
+      // videoAd.offClose()
+
       if (status && status.isEnded || status === undefined) {
         console.log('视频正常关闭 下发奖励')
         tt.showToast({
@@ -28,24 +35,22 @@ const serve = function (obj, back) {
           icon: "loading",
           duration: 2000,
           success(res) {
-            setTimeout(() => {
-              tt.request({
-                url: 'https://tgadmin.clvtmcn.cn/api/login/adUnitInform',
-                method: "post",
-                data: {
-                  act: obj.act,
-                  channel: obj.openid,
-                  appletsName: obj.appletsName,
-                  type: 1,
-                  appid: 'tt99eeef5306d4c283'
-                },
-                success: (res) => {
-                  console.log(res, 222)
-                  back()
-                }
-              });
+            tt.request({
+              url: 'https://tgadmin.clvtmcn.cn/api/login/adUnitInform',
+              method: "post",
+              data: {
+                act: obj.act,
+                appletsName: obj.appletsName,
+                type: 1,
+                appid: 'tt99eeef5306d4c283'
+              },
+              success: (res) => {
+                console.log(res, 222)
 
-            }, 2000)
+                back()
+              }
+            });
+
           },
           fail(res) {
             console.log(`showToast调用失败`);
@@ -57,6 +62,8 @@ const serve = function (obj, back) {
       }
     })
     videoAdCreat()
+
+
   } else {
     tt.showToast({
       title: "请稍等",
@@ -83,7 +90,7 @@ function videoAdLoad() {
     videoAd.show().catch((err) => {
       videoAd.load()
         .then(() => videoAd.show())
-        .catch(err => {})
+        .catch(err => { })
     })
   }
 }

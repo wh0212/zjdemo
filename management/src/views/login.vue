@@ -90,6 +90,8 @@
 
 <script>
 import axios from "axios";
+import Request from "../util/http"
+const baseUrl = "https://tgadmin.clvtmcn.cn/"
 export default {
   name: "Login",
   data() {
@@ -97,8 +99,8 @@ export default {
       username: "",
       password: "",
       yzm: "",
-      numcount: "https://tgadmin.clvtmcn.cn/index/index/verify?num=9",
-      numcount1: "https://tgadmin.clvtmcn.cn/index/index/verify?num=3",
+      numcount: `${baseUrl}index/index/verify?num=9`,
+      numcount1: `${baseUrl}index/index/verify?num=3`,
       code: 9,
       showact: true,
       zc_username: "",
@@ -120,24 +122,21 @@ export default {
     dialogTableVisiblefun() {
       var that = this;
       axios
-        .get("https://tgadmin.clvtmcn.cn/index/index/scanCode", {})
+        .get(`${baseUrl}index/index/scanCode`, {})
         .then((res) => {
-          console.log(res);
           if (res.data.code == 1) {
             this.dialogTableVisible = true;
             this.ermImage = res.data.data.img_url;
             that.interv = setInterval(() => {
               axios
-                .get("https://tgadmin.clvtmcn.cn/index/index/islogin", {
+                .get(`${baseUrl}index/index/islogin`, {
                   params: {
                     token: res.data.data.token,
                   },
                 })
                 .then((res1) => {
-                  console.log(res1.data);
                   if (res1.data.code == 1) {
                     clearInterval(this.interv);
-                    console.log(res1.data.data, "1111");
                     window.localStorage.setItem("login", res.data.data.token);
                     this.$router.push("/about");
                   } else if (res1.data.code == -1) {
@@ -160,7 +159,7 @@ export default {
           }
         })
         .catch((e) => {
-          console.log("获取数据失败");
+          
           this.$message({
             message: "失败了",
             type: "warning",
@@ -169,7 +168,7 @@ export default {
     },
     zc_add() {
       axios
-        .get("https://tgadmin.clvtmcn.cn/index/index/register", {
+        .get(`${baseUrl}index/index/register`, {
           params: {
             login_account: this.zc_username,
             phone: this.zc_phone,
@@ -182,13 +181,13 @@ export default {
         .then((res) => {
           console.log("11111", res.data.code);
           if (res.data.code == 1) {
-            console.log(12323);
+           
             this.$message({
               message: "恭喜你，注册成功,去登录吧",
               type: "success",
             });
           } else {
-            console.log("dddd");
+           
             this.$message({
               message: res.data.msg,
               type: "warning",
@@ -196,8 +195,7 @@ export default {
           }
         })
         .catch((e) => {
-          console.log(e, "oooo");
-          console.log("获取数据失败");
+         
           this.$message({
             message: "失败了",
             type: "warning",
@@ -218,7 +216,7 @@ export default {
     },
     addbtn() {
       axios
-        .get("https://tgadmin.clvtmcn.cn/index/index/login", {
+        .get(`${baseUrl}index/index/login`, {
           params: {
             code: this.yzm,
             phone: this.username,
@@ -227,7 +225,7 @@ export default {
           },
         })
         .then((res) => {
-          console.log("数据是:", res);
+         
           window.localStorage.setItem("login", res.data.data.token);
           if (res.data.code == 1) {
             this.$message({
@@ -247,7 +245,7 @@ export default {
     },
     huoqu() {
       var a = Math.floor(Math.random() * 10000);
-      var count = `https://tgadmin.clvtmcn.cn/index/index/verify?num=${a}`;
+      var count = `${baseUrl}index/index/verify?num=${a}`;
       if (this.showact) {
         this.numcount = count;
         this.code = a;
@@ -258,7 +256,7 @@ export default {
     },
   },
   beforeDestroy() {
-    console.log("kuhia");
+    
     if (this.interv) {
       //如果定时器还在运行 或者直接关闭，不用判断
       clearInterval(this.interv); //关闭

@@ -6,7 +6,6 @@ function shipin(channel,name,openid1,member_id,douyinId) {
     method: "post",
     data: {
       openid:tt.getStorageSync('openid'),
-      channel,
       applets_name: name,
       type: 2,
       act:openid1,

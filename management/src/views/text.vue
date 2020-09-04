@@ -17,10 +17,10 @@
     <div class="bianiji">
       <el-form ref="form" :model="form" label-position="left" label-width="80px">
         <el-form-item label="标题">
-          <el-input v-model="form.name"></el-input>
+          <el-input :disabled="!checkAct" v-model="form.name"></el-input>
         </el-form-item>
         <el-form-item label="选择类目">
-          <el-select v-model="form.region" placeholder="请选择类目">
+          <el-select v-model="form.region" :disabled="!checkAct" placeholder="请选择类目">
             <el-option
               v-for="(item,index) in leimulist"
               :key="index"
@@ -31,6 +31,7 @@
         </el-form-item>
         <el-form-item label="上传图片">
           <el-upload
+            :disabled="!checkAct"
             class="avatar-uploader"
             action="https://tgadmin.clvtmcn.cn/index/index/uploadfile"
             :show-file-list="false"
@@ -42,11 +43,17 @@
           </el-upload>
         </el-form-item>
         <el-form-item label="上传文章">
-          <quill-editor ref="text" v-model="content" class="myQuillEditor" :options="editorOption" />
+          <quill-editor
+            :disabled="!checkAct"
+            ref="text"
+            v-model="content"
+            class="myQuillEditor"
+            :options="editorOption"
+          />
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="yulan">预览</el-button>
-          <el-button type="primary" @click="onSubmit">立即提交</el-button>
+          <el-button v-if="checkAct" type="primary" @click="onSubmit">立即{{act?'提交':'修改'}}</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -72,6 +79,7 @@ import "quill/dist/quill.core.css";
 import "quill/dist/quill.snow.css";
 import "quill/dist/quill.bubble.css";
 import Request from "../util/http";
+const baseUrl = "https://tgadmin.clvtmcn.cn/";
 export default {
   data() {
     return {
@@ -86,6 +94,8 @@ export default {
       editorOption: quillConfig,
       modeAct: false,
       contentyu: "",
+      act: false,
+      checkAct: true,
     };
   },
   components: {
@@ -93,7 +103,10 @@ export default {
   },
   methods: {
     yulan() {
-      var con = this.content.replace(/\<img/gi,'<img style="width:100%;height:100%;object-fit: cover"');
+      var con = this.content.replace(
+        /\<img/gi,
+        '<img style="width:100%;height:100%;object-fit: cover"'
+      );
       this.modeAct = true;
       if (this.modeAct && this.contentyu) {
         return;
@@ -125,7 +138,7 @@ export default {
       if (this.$route.query.id) {
         console.log("修改");
         axios
-          .post("https://tgadmin.clvtmcn.cn/index/index/editArticle", {
+          .post(`${baseUrl}index/index/editArticle`, {
             title: this.form.name,
             article_class_id: this.form.region,
             image: this.imageUrl,
@@ -140,19 +153,7 @@ export default {
                 message: "恭喜你，修改成功了",
                 type: "success",
               });
-              this.$router.push("/about")
-              // axios
-              //   .get("https://tgadmin.clvtmcn.cn/index/index/articleInfo", {
-              //     params: {
-              //       id: this.$route.query.id,
-              //     },
-              //   })
-              //   .then((res) => {
-              //     this.form.name = res.data.data.title;
-              //     this.form.region = res.data.data.article_class_id;
-              //     this.content = res.data.data.article_content;
-              //     this.imageUrl = res.data.data.image;
-              //   });
+              this.$router.push("/about");
             }
           });
       } else {
@@ -165,7 +166,7 @@ export default {
           return;
         }
         axios
-          .post("https://tgadmin.clvtmcn.cn/index/index/ueditoradd", {
+          .post(`${baseUrl}index/index/ueditoradd`, {
             title: this.form.name,
             article_class_id: this.form.region,
             image: this.imageUrl,
@@ -197,10 +198,15 @@ export default {
     // Quill.register('modules/eeSourceBtn', eeSourceBtn);
     // quillConfig.register(Quill);
     // quillConfig.initButton();
+    console.log(this.$store.state);
 
     if (this.$route.query.id) {
+      this.act = false;
+      if (this.$route.query.type == 1) {
+        this.checkAct = false;
+      }
       axios
-        .get("https://tgadmin.clvtmcn.cn/index/index/articleInfo", {
+        .get(`${baseUrl}index/index/articleInfo`, {
           params: {
             id: this.$route.query.id,
           },
@@ -210,10 +216,16 @@ export default {
           this.form.region = res.data.data.article_class_id;
           this.content = res.data.data.article_content;
           this.imageUrl = res.data.data.image;
+          this.yulan();
+          this.modeAct = true;
         });
+    } else {
+      this.act = true;
+      this.checkAct = true;
     }
+
     axios
-      .get("https://tgadmin.clvtmcn.cn/index/index/personal", {
+      .get(`${baseUrl}index/index/personal`, {
         params: {
           token: localStorage.getItem("login"),
           page: 1,
@@ -224,11 +236,9 @@ export default {
         this.list = res.data.data.article.data;
       });
 
-    axios
-      .get("https://tgadmin.clvtmcn.cn/index/index/Articleclass")
-      .then((res) => {
-        this.leimulist = res.data.data;
-      });
+    axios.get(`${baseUrl}index/index/Articleclass`).then((res) => {
+      this.leimulist = res.data.data;
+    });
   },
 };
 </script>

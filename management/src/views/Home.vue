@@ -51,8 +51,8 @@
               本小程序一科普信息知识为主，主要针对短视频内容里边的知识点进行延伸扩展，让用户在获取视频信息咨询的同时，
               能够丰富视频里面延伸出来的知识，扩展视野，让用户在观看视频的同时，做到视频，图文相结合的信息高效获取。
             </div>
-            <div class="ljxcx">了解小程序>></div>
-            <el-button @click="home(3)" class="zhuce" type="primary" round>免费注册体验</el-button>
+            <div class="ljxcx" @click="home(3)">了解小程序>></div>
+            <el-button @click="home(4)" class="zhuce" type="primary" round>免费注册体验</el-button>
           </div>
         </div>
       </div>
@@ -78,7 +78,11 @@
             <div>
               <el-tooltip effect="light" placement="top">
                 <div slot="content">
-                  <img src="http://img.kuaigoutui.com/537eac22118117557c569998f305542.jpg" alt srcset />
+                  <img
+                    src="https://img.kuaigoutui.com/537eac22118117557c569998f305542.jpg"
+                    alt
+                    srcset
+                  />
                 </div>
                 <div>微信公众号</div>
               </el-tooltip>
@@ -86,7 +90,12 @@
             <div>
               <el-tooltip effect="light" placement="top">
                 <div slot="content">
-                  <img style="width:240px" src="https://microapp.bytedance.com/api/v1/app/tt99eeef5306d4c283/current/qrcode" alt="" srcset="">
+                  <img
+                    style="width:240px"
+                    src="https://microapp.bytedance.com/api/v1/app/tt99eeef5306d4c283/current/qrcode"
+                    alt
+                    srcset
+                  />
                 </div>
                 <div>抖音小程序</div>
               </el-tooltip>
@@ -104,7 +113,7 @@
         <div style="width:30px;height:30px;background:#e1caf3"></div>
       </div>
       <div class="about_txt">
-        快狗推专注于短视频生态打造，整合短视频领域流浪，提升用户观看体验感，在不影响短视频内容的同时进行变现服务。
+        快狗推专注于短视频生态打造，整合短视频领域流量，提升用户观看体验感，在不影响短视频内容的同时进行变现服务。
         快狗推致力于短视频内容的扩展，根据短视频内容的特点进行小程序内容创作，分别有影视资讯，科普知识，汽车，美食，体育等，
         满足各种投放需求，让短视频内容得以扩展，流量价值得以充分体现，实现最大化收益。
       </div>
@@ -113,7 +122,6 @@
 </template>
 
 <script>
-// import Erwm from "../components/erwm"
 export default {
   name: "Home",
   components: {
@@ -122,7 +130,7 @@ export default {
   data() {
     return {
       act: true,
-      navlist: ["首页", "产品介绍", "关于我们", "个人中心"],
+      navlist: ["首页", "产品介绍", "关于我们", "新手流程", "个人中心"],
       navact: false,
       homeNav: 0,
     };
@@ -136,7 +144,7 @@ export default {
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop;
-      console.log(scrollTop);
+
       if (scrollTop > 500) {
         this.navact = true;
       } else {
@@ -144,7 +152,6 @@ export default {
       }
     },
     home(v) {
-      console.log(v);
       this.homeNav = v;
       if (v == 0) {
         var PageId = document.querySelector("#swiper");
@@ -166,6 +173,12 @@ export default {
           top: PageId.offsetTop - 100,
           behavior: "smooth",
         });
+        this.navact = true;
+      } else if (v == 3) {
+        let routeUrl = this.$router.resolve({
+          path: "/flow",
+        });
+        window.open(routeUrl.href, "_blank");
         this.navact = true;
       } else {
         if (localStorage.getItem("login")) {
@@ -233,7 +246,7 @@ export default {
   text-align: center;
   line-height: 100px;
 }
-.xcx_xq div:nth-child(3){
+.xcx_xq div:nth-child(3) {
   margin-right: 0px;
 }
 .xcx_xq {

@@ -76,5 +76,5 @@
 
 <!-- 回到顶部 -->
 <view tt:if="{{downTop}}" bindtap="ontop" class="ontop">
-	<view class="iconfont on_Top icon-huidaodingbu"></view>
+	<view class="iconfont on_Top iconhuidaodingbu"></view>
 </view>
