@@ -2,7 +2,7 @@
 import Request from "../../utils/request";
 Page({
   data: {
-    lenact:true,
+    lenact: true,
     dataItem: {},
     time: '',
     model: false,
@@ -11,7 +11,30 @@ Page({
     id: 0,
     name: "",
     itemId: 0,
-    imageUrl:""
+    imageUrl: "",
+    phoneAct:false
+  },
+  getPhoneNumber(e) {
+    console.log(e.detail)
+    var that = this;
+    Request({
+      url: "api/Wxlogin/getmoblie",
+      method: "get",
+      data: {
+        encryptedData: e.detail.encryptedData,
+        iv: e.detail.iv,
+        session_key: wx.getStorageSync('login').session_key,
+        token: wx.getStorageSync('login').token,
+        member_id: wx.getStorageSync('member_id')
+      }
+    }).then((res) => {
+      console.log(res)
+      wx.setStorageSync('phone', res.data.moblie)
+      that.setData({
+        userPhone: res.data.moblie,
+        phoneAct:false
+      })
+    })
   },
   addpush() {
     var that = this;
@@ -29,7 +52,7 @@ Page({
     }).then((res) => {
       if (res.data.data.length == 0) {
         that.setData({
-          lenact:false
+          lenact: false
         })
       }
       that.setData({
@@ -62,8 +85,12 @@ Page({
   },
   promotion(v) {
     if (!wx.getStorageSync('phone')) {
+      this.setData({
+        phoneAct: true
+      })
+    } else if (!wx.getStorageSync('douyin_id')) {
       wx.showToast({
-        title: '请在我的页面绑定手机号',
+        title: '还未授权抖音号，请授权',
         icon: 'none'
       })
     } else {

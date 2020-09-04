@@ -75,7 +75,6 @@ Page({
     })
   },
   bindGetUserInfo(v) {
-    console.log(v, "userinfo")
     wx.setStorageSync('userinfo', v.detail.userInfo)
     wx.setStorageSync('iv', v.detail.iv)
     wx.setStorageSync('encry', v.detail.encryptedData)
@@ -159,7 +158,6 @@ Page({
               }
             }
           });
-
         })
       }
     });
@@ -167,6 +165,21 @@ Page({
   },
 
   onShow: function () {
+    var that = this;
+    if (wx.getStorageSync('member_id')) {
+      Request({
+        url: "api/Member/memberinfo",
+        method: "get",
+        data: {
+          member_id: wx.getStorageSync('member_id')
+        }
+      }).then((res2) => {
+        console.log(res2.data,"111")
+        that.setData({
+          money: res2.data
+        })
+      })
+    }
     this.setData({
       userinfo: wx.getStorageSync('userinfo')
     })
@@ -179,6 +192,9 @@ Page({
         userPhone: "请绑定手机号"
       })
     }
+    
+
+
   },
   onShareAppMessage: function () {
 

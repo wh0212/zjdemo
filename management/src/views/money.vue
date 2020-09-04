@@ -74,16 +74,6 @@ export default {
     }).then((res) => {
       this.userinfo = res.data.data.user;
     });
-    // axios
-    //   .get("https://www.kuaigoutui.com/index/index/personal", {
-    //     params: {
-    //       token: localStorage.getItem("login"),
-    //       page: 1,
-    //     },
-    //   })
-    //   .then((res) => {
-    //     this.userinfo = res.data.data.user;
-    //   });
     Request({
       url: "index/member/memberinfo",
       method: "get",
@@ -93,16 +83,6 @@ export default {
     }).then((res) => {
       this.sy = res.data.data;
     });
-    // axios
-    //   .get("https://www.kuaigoutui.com/index/member/memberinfo", {
-    //     params: {
-    //       token: localStorage.getItem("login"),
-    //     },
-    //   })
-    //   .then((res) => {
-    //     console.log(res.data.data);
-    //     this.sy = res.data.data;
-    //   });
     Request({
       url: "index/member/info",
       method: "get",
@@ -114,19 +94,6 @@ export default {
       this.tableData = res.data.data.data;
       this.num = res.data.data.num;
     });
-
-    // axios
-    //   .get("https://www.kuaigoutui.com/index/member/info", {
-    //     params: {
-    //       token: localStorage.getItem("login"),
-    //       page: 1,
-    //     },
-    //   })
-    //   .then((res) => {
-    //     console.log(res.data.data);
-    //     this.tableData = res.data.data.data;
-    //     this.num = res.data.data.num;
-    //   });
   },
   methods: {
     handleCurrentChange(e) {
@@ -141,16 +108,6 @@ export default {
       }).then((res) => {
         this.tableData = res.data.data.data;
       });
-      //   axios
-      //     .get("https://www.kuaigoutui.com/index/member/info", {
-      //       params: {
-      //         token: localStorage.getItem("login"),
-      //         page: e,
-      //       },
-      //     })
-      //     .then((res) => {
-      //       this.tableData = res.data.data.data;
-      //     });
     },
     handleSizeChange(e) {},
     home() {

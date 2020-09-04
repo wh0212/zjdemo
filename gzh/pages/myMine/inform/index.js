@@ -6,9 +6,8 @@ Page({
     list:[]
   },
   itemfun(v){
-    console.log(v.currentTarget.dataset.item)
     wx.navigateTo({
-      url: `/pages/home/ptxq/index?type=1`,
+      url: `/pages/home/ptxq/index?type=${v.currentTarget.dataset.item.id}`,
     })
   },
   xuanzefun(v) {

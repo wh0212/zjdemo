@@ -207,3 +207,29 @@ ec-canvas {
 .container {
   height: 400rpx;
 }
+
+.model {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.712);
+}
+
+.main_model {
+  width: 80%;
+  padding: 20rpx 0rpx;
+  border-radius: 10rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: #fff;
+}
+.user_bj{
+  width: 100% !important;
+  height: 100% !important;
+  background: none;
+}

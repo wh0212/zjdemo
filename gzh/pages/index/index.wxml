@@ -44,6 +44,7 @@
 				</view>
 				<view class="list_item_top_right" data-item="{{item}}" bindtap="fundeatil">查看详情</view>
 			</view>
+						<view class="bili2">现仅支持安卓端</view>
 			<view wx:if="{{item.children.length>0}}">
 				<view class="item_cp">精选<text style="color:#fdec4e">{{item.children.length}}</text>款子产品</view>
 				<!-- 子产品 -->
@@ -64,7 +65,6 @@
 <!-- 推广码遮罩层 -->
 <modelXz model="{{model}}" bind:typept="typept"></modelXz>
 <addImg modelerm="{{ewmact}}" url="{{imageUrl}}"></addImg>
-
 
 <view catchtap="nomodel" wx:if="{{phoneAct}}" class="model">
 	<view class="main_model">
