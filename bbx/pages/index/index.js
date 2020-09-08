@@ -419,7 +419,7 @@ Page({
         recommend: res.data.hot
       })
     })
-
+  console.log(this.data.list,"dddd")
     // list
     Request({
       url: '/article/search',
@@ -430,6 +430,7 @@ Page({
         article_class_id: ''
       }
     }).then((res) => {
+      console.log(res.data.data)
       this.setData({
         list: res.data.data
       })
@@ -452,20 +453,22 @@ Page({
     }
   },
   onShow() {
+    console.log(1,this.data.list)
     // list
-    Request({
-      url: '/article/search',
-      method: 'GET',
-      data: {
-        title: '',
-        page: this.data.page,
-        article_class_id: tt.getStorageSync('navId')
-      }
-    }).then((res) => {
-      this.setData({
-        list: [...this.data.list,...res.data.data]
-      })
-    })
+    // Request({
+    //   url: '/article/search',
+    //   method: 'GET',
+    //   data: {
+    //     title: '',
+    //     page: this.data.page,
+    //     article_class_id: tt.getStorageSync('navId')
+    //   }
+    // }).then((res) => {
+    //   console.log(res.data.data)
+    //   this.setData({
+    //     list: [...this.data.list,...res.data.data]
+    //   })
+    // })
   },
   onHide() {
     tt.setStorageSync('navlist', this.data.navList);

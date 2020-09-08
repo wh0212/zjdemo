@@ -23,9 +23,114 @@ Page({
     bottom: 58,
     shipinAct: 0,
     member_id: 0,
-    act: 0
+    act: 0,
+    zan: false,
+    commlist: [],
+    textare: "",
+    page: 1
   },
+  // 评论加载更多
+  addgengduofun() {
+    this.setData({
+      page: this.data.page += 1
+    })
+    var that = this;
+    console.log(this.data.page)
+    Request({
+      url: '/article/articleInfopage',
+      method: 'GET',
+      data: {
+        page: that.data.page,
+        id: that.data.itemId
+      }
+    }).then((res) => {
+      console.log(res.data)
+      that.setData({
+        commlist: [...that.data.commlist, ...res.data]
+      })
+    })
 
+  },
+  textareatxt_chg(v) {
+    this.setData({
+      textare: v.detail.value
+    })
+  },
+  // 发表评论
+  addcomment() {
+    if (this.data.textare == "") {
+      tt.showToast({
+        title: '不能为空',
+        icon: "fail"
+      });
+      return
+    }
+    var that = this;
+    Request({
+      url: '/article/commentadd',
+      method: 'GET',
+      data: {
+        article_id: that.data.itemId,
+        openid: tt.getStorageSync('openid'),
+        nickname: tt.getStorageSync('userInfo').nickName,
+        text: this.data.textare,
+        url: tt.getStorageSync('userInfo').avatarUrl
+      }
+    }).then((res) => {
+      console.log(res)
+      if (res.code == 1) {
+        tt.showToast({
+          title: '发表成功'
+        });
+        Request({
+          url: '/article/articleInfo',
+          method: 'GET',
+          data: {
+            id: that.data.itemId,
+            openid: tt.getStorageSync('openid')
+          }
+        }).then((res) => {
+          that.setData({
+            textare: "",
+            commlist: res.data.article_comment_list
+          })
+        })
+
+      } else {
+        tt.showToast({
+          title: '发表失败，请重试',
+          icon: 'fail'
+        });
+      }
+
+    })
+  },
+  // 点赞
+  dianZfun() {
+    this.setData({
+      zan: !this.data.zan
+    })
+    var that = this;
+    Request({
+      url: '/article/likeadd',
+      method: 'GET',
+      data: {
+        article_id: that.data.itemId,
+        openid: tt.getStorageSync('openid'),
+        type: that.data.zan ? 2 : 1
+      }
+    }).then((res) => {
+      if (that.data.zan) {
+        tt.showToast({
+          title: '点赞成功'
+        });
+      } else {
+        tt.showToast({
+          title: '取消成功'
+        });
+      }
+    })
+  },
   viewTouchMove(e) {
     var height = tt.getSystemInfoSync().windowHeight;
     var width = tt.getSystemInfoSync().windowWidth;
@@ -57,7 +162,6 @@ Page({
   },
   onLoad: function (options) {
     app.globalData.currentPage = this;
-
     this.jiancha()
     console.log(options, "123123")
     var bfb = ['51%', '50%', '46%', '45%', '48%', '53%', '47%', '52%', '53%', '53%', '54%', '55%', '56%', '57%']
@@ -76,14 +180,18 @@ Page({
       url: '/article/articleInfo',
       method: 'GET',
       data: {
-        id: options.itemId
+        id: options.itemId,
+        openid: tt.getStorageSync('openid')
       }
     }).then((res) => {
+      console.log(res.data)
       var details = res.data.detail.replace(/\<img/gi, '<img style="width:100%;height:100%;object-fit: cover"');
       res.data.detail = details;
       this.setData({
         item: res.data,
-        openid: options.openid
+        openid: options.openid,
+        zan: res.data.like_type,
+        commlist: res.data.article_comment_list
       })
       Request({
         url: '/article/search',

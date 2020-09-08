@@ -1,3 +1,4 @@
+
 App({
   globalData: {
     gender: 0, //0-头条，1-抖音
@@ -12,22 +13,20 @@ App({
   },
 
   playAd: function () {
-    let videoAd = this.globalData.videoAd
+    let videoAd = this.globalData.videoAd;
+    console.log(videoAd)
     // 照抄的官方例子
-    videoAd
-      .show()
-      .then(() => {
-        console.log("广告显示成功");
-      })
-      .catch((err) => {
-        console.log("广告组件出现问题", err);
-        // 可以手动加载一次
-        videoAd.load().then(() => {
-          console.log("手动加载成功");
-          // 加载成功后需要再显示广告
-          return videoAd.show();
-        });
+    videoAd.show().then(() => {
+      console.log("广告显示成功");
+    }).catch((err) => {
+      console.log("广告组件出现问题", err);
+      // 可以手动加载一次
+      videoAd.load().then(() => {
+        console.log("手动加载成功");
+        // 加载成功后需要再显示广告
+        return videoAd.show();
       });
+    });
   },
   onLaunch: function () {
     if (this.globalData.videoAd) {
@@ -102,7 +101,6 @@ App({
         });
       }
     })
-
   },
   onHide: function () {
     tt.setStorageSync('navId', '');

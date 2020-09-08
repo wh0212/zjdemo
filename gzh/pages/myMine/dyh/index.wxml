@@ -41,6 +41,7 @@
 		<view class="model_title" style="text-align:center;width:100%">抖音APP扫码授权</view>
 		<view class="model_title_xq" style="text-align:center;width:100%">授权功能当前支持所有抖音号</view>
 		<image class="model_img" src="https://tgadmin.clvtmcn.cn/{{addimg}}"></image>
+		<view>长按保存图片</view>
 		<view class="model_xq">
 			<view style="color:#999;margin-bottom:15rpx">授权抖音号您可：</view>
 			<view class="xq_txt">一键发布视频到抖音</view>

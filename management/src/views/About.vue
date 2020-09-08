@@ -95,18 +95,6 @@ export default {
       this.list = res.data.data.article.data;
       this.num = res.data.data.num;
     });
-    // axios
-    //   .get("https://www.kuaigoutui.com/index/index/personal", {
-    //     params: {
-    //       token: localStorage.getItem("login"),
-    //       page: 1,
-    //     },
-    //   })
-    //   .then((res) => {
-    //     this.userinfo = res.data.data.user;
-    //     this.list = res.data.data.article.data;
-    //     this.num = res.data.data.num;
-    //   });
   },
   methods: {
     shipin() {
@@ -156,17 +144,6 @@ export default {
         this.userinfo = res.data.data.user;
         this.list = res.data.data.article.data;
       });
-      // axios
-      //   .get("https://www.kuaigoutui.com/index/index/personal", {
-      //     params: {
-      //       token: localStorage.getItem("login"),
-      //       page: e,
-      //     },
-      //   })
-      //   .then((res) => {
-      //     this.userinfo = res.data.data.user;
-      //     this.list = res.data.data.article.data;
-      //   });
     },
     handleSizeChange(e) {},
   },

@@ -1,10 +1,9 @@
-
 <view class="main">
 	<view class="title">{{item.title}}</view>
 	<view class="date_type">
 		<text>{{item.date}}</text>
 		<text>{{item.type}}</text>
-    <text>{{item.readnum}}</text>
+		<text>{{item.readnum}}</text>
 	</view>
 	<view tt:if="{{item.image}}" class="image">
 		<image mode="aspectFill" class="image" src="{{item.image}}" mode="" />
@@ -14,7 +13,7 @@
 	</view>
 </view>
 
-<button tt:if="{{shipinAct==1}}" style="right:{{right}}rpx;top:{{bottom}}rpx;"  catchtouchmove="viewTouchMove" open-type="share" class="shipin" data-channel="video" >
+<button z style="right:{{right}}rpx;top:{{bottom}}rpx"  catchtouchmove="viewTouchMove" open-type="share" class="shipin" data-channel="video" >
   <text class="iconfont iconpaishipin"></text>
   拍视频
 </button>
@@ -26,8 +25,38 @@
 	<view class="btn" bindtap="datafun">观看视频查看完整信息</view>
 </view>
 
-
 <view tt:if="{{!scroll}}" class="qq">如侵犯您的权益请与我们联系。我们将立即删除。</view>
+
+<view tt:if="{{!scroll}}" class="dianzan">
+  <text style="font-size:30rpx;margin-right:20rpx">赞一个</text>
+  <text bindtap="dianZfun" tt:if="{{!zan}}" style="font-size:50rpx" class="iconfont icondianzan"></text>
+  <text bindtap="dianZfun" tt:if="{{zan}}" style="font-size:50rpx;color:red" class="iconfont iconpraise2"></text>
+</view>
+
+<view class="comment" tt:if="{{!scroll}}">
+  <view class="comment_title">评论</view>
+  <textarea bindinput="textareatxt_chg" class="textareatxt" value="{{textare}}" placeholder="在此处写入评论内容..." />
+  <view class="pushlist"  bindtap="addcomment">发表</view>
+</view>
+
+<view class="commentlist" tt:if="{{!scroll}}">
+  <view class="comment_title" style="margin-bottom:30rpx">评论列表</view>
+  <view class="comment_list">
+    <view class="comment_item" tt:for="{{commlist}}">
+      <view class="comment_user">
+        <image class="user_img" src="{{item.headimgurl}}" mode="" />
+        <view class="user_right">
+          <view style="font-size:32rpx">{{item.nickname}}</view>
+          <view style="font-size:28rpx;color:#999">{{item.add_time}}</view>
+        </view>
+      </view>
+      <view class="comment_txt">{{item.text}}</view>
+    </view>
+  </view>
+  <view tt:if="{{commlist.length!==0}}"  bindtap="addgengduofun" class="addgengduo">加载更多</view>
+  <view tt:if="{{commlist.length==0}}" class="addgengduo">暂无评论</view>
+</view>
+
 <view class="list" tt:if="{{list.length>0 && !scroll}}">
 	<view class="tuijian">为你推荐</view>
 	<view class="class_list">
