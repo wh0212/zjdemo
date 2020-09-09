@@ -21,7 +21,6 @@
     </div>
     <div class="list">
       <div class="list_title">
-        <span>文章</span>
         <div class="search_inp">
           <el-input
             placeholder="请输入内容"
@@ -32,7 +31,7 @@
           <el-button type="primary" @click="searchfun">搜索</el-button>
         </div>
         <div>
-          <span @click="text" style="color:#2489f1;margin-right:20px">
+          <span @click="text" style="color:#2489f1;margin-right:20px;font-size:15px">
             <span class="iconfont iconbianji"></span> 写文章
           </span>
         </div>
@@ -63,12 +62,12 @@
                 </div>
                 <div>{{txt}}</div>
               </div>
-              <div class="chakan_item" @click="copyfun(item)" slot="reference">生成链接</div>
+              <div class="chakan_item" style="margin-right:0px" @click="copyfun(item)" slot="reference">生成链接</div>
             </el-popover>
           </div>
         </div>
       </div>
-      <div class="fenye">
+      <div style="float:right" class="fenye">
         <el-pagination
           background
           layout="prev, pager, next"
@@ -177,7 +176,7 @@ export default {
     },
     chakanfun(item) {
       let routeUrl = this.$router.resolve({
-        path: "/pctext",
+        path: "/mbtext",
         query: {
           id: item.id,
           type:1
@@ -187,7 +186,7 @@ export default {
     },
     text() {
       let routeUrl = this.$router.resolve({
-        path: "/pctext",
+        path: "/mbtext",
       });
       window.open(routeUrl.href, "_blank");
     },
@@ -219,10 +218,10 @@ export default {
     },
     quit() {
       localStorage.removeItem("login");
-      this.$router.push("/pchome");
+      this.$router.push("/mbhome");
     },
     home() {
-      this.$router.push("/pchome");
+      this.$router.push("/mbhome");
     },
   },
 };
@@ -254,23 +253,30 @@ export default {
 .chakan {
   float: right;
   position: absolute;
-  right: 20px;
+  right: 0px;
+  bottom: 20px;
   display: flex;
   align-items: center;
 }
 .right_date {
   color: #999;
   line-height: 40px;
+  font-size: 15px;
 }
 .right_title {
-  font-size: 20px;
+  font-size: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .item_right {
-  padding-left: 20px;
+  padding-left: 10px;
   height: 100%;
+  flex: 1; 
+  width: 80px;
 }
 .item_left {
-  width: 150px;
+  width: 130px;
   height: 100px;
 }
 .list_item {
@@ -286,8 +292,12 @@ export default {
   margin: 0 auto;
 }
 .fenye {
-  float: right;
-  margin: 20px;
+  /* float: right;
+  /* margin: 3px; 
+  margin-left: 50px; */
+}
+.el-pagination{
+    width: 80% !important;
 }
 .list_title {
   padding: 20px;
@@ -297,7 +307,7 @@ export default {
   justify-content: space-between;
 }
 .list {
-  width: 80%;
+  width: 95%;
   margin: 20px auto;
   background: #fff;
   border-radius: 20px;
@@ -331,11 +341,11 @@ export default {
   align-items: center;
 }
 .logo img {
-  width: 80px;
-  height: 100px;
+  width: 70px;
+  height: 90px;
 }
 .nav_main {
-  width: 80%;
+  width: 90%;
   height: 100%;
   margin: 0 auto;
   display: flex;

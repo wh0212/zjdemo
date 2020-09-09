@@ -1,9 +1,5 @@
 <template>
-  <div class="home">
-    <!-- <Erwm/> -->
-    <div class="model">
-      <img style="width:100%" src="https://tgadmin.clvtmcn.cn/upload/img/gzh.jpg" alt srcset />
-    </div>
+  <div>
     <div class="top" :style="{background:(navact? '#fff':'rgba(255, 255, 255, 0.574)')}">
       <div class="nav">
         <div class="logo">
@@ -21,7 +17,7 @@
       </div>
     </div>
     <div class="swiper" id="swiper">
-      <el-carousel trigger="click" height="600px">
+      <el-carousel trigger="click" height="12rem">
         <el-carousel-item>
           <img class="swiper_img" src="../assets/banner.png" alt srcset />
         </el-carousel-item>
@@ -40,12 +36,12 @@
         </div>
         <div class="fuwu_ti">加入我们不止获得推广权限</div>
         <div class="fuwu_count">
-          <div class="fuwu_left">
+          <!-- <div class="fuwu_left">
             <img src="../assets/shouji.png" alt />
-          </div>
+          </div>-->
           <div class="fuwu_count_right">
             <div class="right_title">短视频+小程序</div>
-            <div style="width:60px;height:10px;background:#3192ff;border-radius: 10px;"></div>
+            <div style="width:60px;height:6px;background:#3192ff;border-radius: 10px;"></div>
             <div class="right_ti">让你的短视频更有价值</div>
             <div style="line-height:30px">
               本小程序一科普信息知识为主，主要针对短视频内容里边的知识点进行延伸扩展，让用户在获取视频信息咨询的同时，
@@ -123,10 +119,6 @@
 
 <script>
 export default {
-  name: "Home",
-  components: {
-    // Erwm
-  },
   data() {
     return {
       act: true,
@@ -145,7 +137,7 @@ export default {
         document.documentElement.scrollTop ||
         document.body.scrollTop;
 
-      if (scrollTop > 500) {
+      if (scrollTop > 190) {
         this.navact = true;
       } else {
         this.navact = false;
@@ -176,19 +168,19 @@ export default {
         this.navact = true;
       } else if (v == 3) {
         let routeUrl = this.$router.resolve({
-          path: "/pcflow",
+          path: "/mbflow",
         });
         window.open(routeUrl.href, "_blank");
         this.navact = true;
       } else {
         if (localStorage.getItem("login")) {
           let routeUrl = this.$router.resolve({
-            path: "/pcabout",
+            path: "/mbabout",
           });
           window.open(routeUrl.href, "_blank");
         }
         let routeUrl = this.$router.resolve({
-          path: "/pclogin",
+          path: "/mblogin",
         });
         window.open(routeUrl.href, "_blank");
       }
@@ -199,52 +191,27 @@ export default {
   },
 };
 </script>
-
-<style  scoped>
-.model {
-  position: fixed;
-  right: 30px;
-  top: 60%;
-  background: red;
-  z-index: 99999999999999999;
-  width: 100px;
-  height: 100px;
-}
-.erwm {
-  width: 150px;
-  height: 150px;
-  position: absolute;
-  left: 50%;
-  /* 定位父级的50% */
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 99099;
-  background: #fff;
-  border-radius: 20px;
-}
-.swiper_img {
-  width: 100%;
-  height: 100%;
-}
+<style scoped>
 .about_txt {
-  margin-top: 50px;
+  margin-top: 10px;
   line-height: 30px;
   color: #999;
 }
 .about {
   width: 80%;
   margin: 0 auto;
-  height: 400px;
+  height: 30rem;
 }
 .xcx_xq div {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   background: #2067ff;
   color: #fff;
   border-radius: 50%;
   margin-right: 50px;
   text-align: center;
-  line-height: 100px;
+  line-height: 80px;
+  font-size: 13px;
 }
 .xcx_xq div:nth-child(3) {
   margin-right: 0px;
@@ -262,7 +229,7 @@ export default {
   line-height: 80px;
   color: #fff;
   font-weight: 550;
-  font-size: 26px;
+  font-size: 16px;
 }
 .xcx_left {
   flex: 0.4;
@@ -283,17 +250,18 @@ export default {
 }
 .xcx_count {
   width: 100%;
-  height: 600px;
+  height: 35rem;
   background: url("../assets/bj.jpg") no-repeat;
   background-size: 100% 100%;
 }
 .fuwu_left {
-  flex: 0.5;
+  flex: 0.1;
   text-align: center;
   height: 85%;
+  border: 1px red solid;
 }
 .fuwu_left img {
-  height: 100%;
+  height: 60%;
   margin-top: 0px;
 }
 .zhuce {
@@ -304,15 +272,17 @@ export default {
   font-size: 14px;
 }
 .right_ti {
-  line-height: 80px;
+  line-height: 40px;
+  font-size: 15px;
+  margin-bottom: 20px;
 }
 .right_title {
   font-weight: 600;
-  font-size: 25px;
-  margin-bottom: 30px;
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 .fuwu_count_right {
-  flex: 0.5;
+  flex: 1;
   height: 85%;
 }
 .fuwu_count {
@@ -327,7 +297,7 @@ export default {
 }
 .fuwu_title {
   text-align: center;
-  width: 40%;
+  width: 80%;
   margin: 0 auto;
   height: 100px;
   display: flex;
@@ -335,7 +305,7 @@ export default {
   justify-content: space-between;
   color: #000;
   font-weight: 550;
-  font-size: 25px;
+  font-size: 15px;
 }
 .fuwu_main {
   width: 80%;
@@ -344,34 +314,38 @@ export default {
 }
 .fuwu {
   width: 100%;
-  height: 600px;
+  height: 35rem;
 }
 .swiper {
   width: 100%;
-  height: 650px;
-  position: relative;
+  height: 12rem;
+}
+.swiper_img {
+  width: 100%;
+  height: 100%;
 }
 .act {
   font-weight: 600;
 }
 .nav_item {
-  margin: 0px 2rem;
+  margin: 0px 0.4rem;
   cursor: pointer;
+  font-size: 11px;
 }
 .nav_list {
-  margin-left: 5rem;
+  margin-left: 1rem;
   width: 80%;
   display: flex;
   align-items: center;
   height: 100%;
 }
 .logo img {
-  width: 80px;
-  height: 100px;
+  width: 60px;
+  height: 80px;
 }
 .nav {
-  width: 80%;
-  height: 6rem;
+  width: 95%;
+  height: 5rem;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -380,18 +354,12 @@ export default {
 }
 .top {
   width: 100%;
-  height: 6rem;
+  height: 5rem;
   background: rgba(255, 255, 255, 0.574);
   position: fixed;
   left: 50%;
   top: 0;
   transform: translate(-50%);
   z-index: 9999;
-}
-.home {
-  width: 100%;
-}
-div {
-  cursor: pointer;
 }
 </style>

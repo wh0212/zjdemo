@@ -43,14 +43,16 @@
           </el-upload>
         </el-form-item>
         <el-form-item label="上传文章">
-          <quill-editor
+          
+        </el-form-item>
+        <quill-editor
             :disabled="!checkAct"
             ref="text"
             v-model="content"
             class="myQuillEditor"
             :options="editorOption"
           />
-        </el-form-item>
+          <div style="height:70px;width:100%"></div>
         <el-form-item>
           <el-button type="primary" @click="yulan">预览</el-button>
           <el-button v-if="checkAct" type="primary" @click="onSubmit">立即{{act?'提交':'修改'}}</el-button>
@@ -131,7 +133,7 @@ export default {
       sourceEditorButton.innerText = "源码编辑";
     },
     home() {
-      this.$router.push("/pchome");
+      this.$router.push("/mbhome");
     },
     onSubmit() {
       var that = this;
@@ -151,7 +153,7 @@ export default {
                 message: "恭喜你，修改成功了",
                 type: "success",
               });
-              this.$router.push("/pcabout");
+              this.$router.push("/mbabout");
             }
           });
       } else {
@@ -177,7 +179,7 @@ export default {
                 type: "success",
               });
               this.$router.push({
-                path: "/pcabout",
+                path: "/mbabout",
               });
             }
           });
@@ -240,6 +242,9 @@ export default {
 </script>
 
 <style  scoped>
+.myQuillEditor{
+    margin-bottom: 40px;
+}
 .main_txt {
   margin-top: 20px;
   cursor: pointer;
@@ -324,11 +329,11 @@ export default {
   align-items: center;
 }
 .logo img {
-  width: 80px;
-  height: 100px;
+  width: 70px;
+  height: 90px;
 }
 .nav_main {
-  width: 80%;
+  width: 90%;
   height: 100%;
   margin: 0 auto;
   display: flex;

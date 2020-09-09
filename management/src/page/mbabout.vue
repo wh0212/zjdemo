@@ -1,13 +1,13 @@
 <template>
   <div class="about">
-    <div class="model">
+    <!-- <div class="model">
       <img style="width:100%" src="https://tgadmin.clvtmcn.cn/upload/img/gzh.jpg" alt srcset />
-    </div>
+    </div>-->
     <div class="nav">
       <div class="nav_main">
         <div @click="home" class="logo">
           <img src="../assets/logo.png" alt />
-          <span class="logo_txt">快狗推</span>
+          <span class="logo_txt" style="font-size:15px">快狗推</span>
         </div>
         <div class="user">
           <div class="useravat">
@@ -42,7 +42,7 @@
       </div>
       <div class="list_main">
         <div v-for="(item,index) in list" :key="index" class="list_item">
-          <img class="item_left" v-if="item.image" :src="item.image" alt />
+          <img class="item_left" v-if="item.image" style="width:60px" :src="item.image" alt />
           <div class="item_right">
             <div class="right_title">{{item.title}}</div>
             <div class="right_date">{{item.add_time}}</div>
@@ -52,8 +52,9 @@
           </div>
         </div>
       </div>
-      <div class="fenye">
+      <div style="float:right" class="fenye">
         <el-pagination
+
           background
           layout="prev, pager, next"
           :total="num"
@@ -97,28 +98,29 @@ export default {
     });
   },
   methods: {
-    shipin() {    //素材库
+    shipin() {
+      //素材库
       let routeUrl = this.$router.resolve({
-        path: "/pcsearch",
+        path: "/mbsearch",
       });
       window.open(routeUrl.href, "_blank");
     },
     shouyi() {
       let routeUrl = this.$router.resolve({
-        path: "/pcshouyi",
+        path: "/mbshouyi",
       });
       window.open(routeUrl.href, "_blank");
     },
     quit() {
       localStorage.removeItem("login");
-      this.$router.push("/pchome");
+      this.$router.push("/mbhome");
     },
     home() {
-      this.$router.push("/pchome");
+      this.$router.push("/mbhome");
     },
     chakanfun(item) {
       let routeUrl = this.$router.resolve({
-        path: "/pctext",
+        path: "/mbtext",
         query: {
           id: item.id,
         },
@@ -127,11 +129,12 @@ export default {
     },
     text() {
       let routeUrl = this.$router.resolve({
-        path: "/pctext",
+        path: "/mbtext",
       });
       window.open(routeUrl.href, "_blank");
     },
-    handleCurrentChange(e) {  //分页
+    handleCurrentChange(e) {
+      //分页
       this.page = e;
       Request({
         url: "index/index/personal",
@@ -168,28 +171,41 @@ export default {
   color: #fff;
   padding: 5px 10px;
   margin-right: 10px;
+ 
 }
 .chakan {
-  float: right;
   position: absolute;
-  right: 20px;
+  right: 30px;
+  bottom: 20px;
   display: flex;
   align-items: center;
 }
 .right_date {
   color: #999;
   line-height: 40px;
+  font-size: 14px;
 }
 .right_title {
-  font-size: 20px;
+    width: 100%;
+  font-size: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  
 }
 .item_right {
   padding-left: 20px;
   height: 100%;
+  flex: 1; 
+  width: 80px;
 }
 .item_left {
-  width: 150px;
-  height: 100px;
+  width: 100px;
+  height: 90px;
+  flex: .8;
+}
+.item_left img{
+    width: 100% !important;
 }
 .list_item {
   position: relative;
@@ -204,8 +220,7 @@ export default {
   margin: 0 auto;
 }
 .fenye {
-  float: right;
-  margin: 20px;
+  
 }
 .list_title {
   padding: 20px;
@@ -215,7 +230,7 @@ export default {
   justify-content: space-between;
 }
 .list {
-  width: 80%;
+  width: 95%;
   margin: 20px auto;
   background: #fff;
   border-radius: 20px;
@@ -284,11 +299,11 @@ export default {
   align-items: center;
 }
 .logo img {
-  width: 80px;
-  height: 100px;
+  width: 70px;
+  height: 90px;
 }
 .nav_main {
-  width: 80%;
+  width: 90%;
   height: 100%;
   margin: 0 auto;
   display: flex;
@@ -302,5 +317,8 @@ export default {
 }
 div {
   cursor: pointer;
+}
+.item_left img{
+    width: 130px;
 }
 </style>

@@ -111,11 +111,11 @@ export default {
     },
     handleSizeChange(e) {},
     home() {
-      this.$router.push("/pchome");
+      this.$router.push("/mbhome");
     },
     quit() {
       localStorage.removeItem("login");
-      this.$router.push("/pchome");
+      this.$router.push("/mbhome");
     },
   },
 };
@@ -123,11 +123,18 @@ export default {
 
 
 <style  scoped>
+.main_sy div{
+    line-height: 40px;
+    text-align:center;
+    width: 50%;
+}
 .main_sy {
   margin-top: 20px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: left;
+  font-size: 15px;
+  flex-wrap: wrap;
 }
 .list_title {
   border-bottom: 1px #c2c2cc solid;
@@ -136,7 +143,7 @@ export default {
   justify-content: space-between;
 }
 .main {
-  width: 80%;
+  width: 90%;
   background: #fff;
   border-radius: 10px;
   margin: 20px auto;
@@ -163,11 +170,11 @@ export default {
   align-items: center;
 }
 .logo img {
-  width: 80px;
-  height: 100px;
+  width: 70px;
+  height: 90px;
 }
 .nav_main {
-  width: 80%;
+  width: 90%;
   height: 100%;
   margin: 0 auto;
   display: flex;

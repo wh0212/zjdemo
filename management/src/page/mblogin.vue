@@ -20,7 +20,7 @@
           :visible.sync="dialogTableVisible"
           :before-close="nonefun"
         >
-          <img style="width:30%" :src="'https://tgadmin.clvtmcn.cn/'+ermImage" alt srcset />
+          <img style="width:100%" :src="'https://tgadmin.clvtmcn.cn/'+ermImage" alt srcset />
         </el-dialog>
       </div>
       <div class="data" v-if="showact">
@@ -138,7 +138,7 @@ export default {
                   if (res1.data.code == 1) {
                     clearInterval(this.interv);
                     window.localStorage.setItem("login", res.data.data.token);
-                    this.$router.push("/pcabout");
+                    this.$router.push("/mbabout");
                   } else if (res1.data.code == -1) {
                     this.dialogTableVisible = false;
                     clearInterval(this.interv);
@@ -209,7 +209,7 @@ export default {
     },
     tiaozhuan() {
       let routeUrl = this.$router.resolve({
-        path: "/pcabout",
+        path: "/mbabout",
       });
       window.open(routeUrl.href, "_blank");
     },
@@ -232,7 +232,7 @@ export default {
               type: "success",
             });
             this.$router.push({
-              path: "/pcabout",
+              path: "/mbabout",
             });
           } else {
             this.$message({
@@ -288,7 +288,7 @@ export default {
 }
 .left img {
   width: 90%;
-  height: 30rem;
+  height: 10rem;
 }
 .btn {
   width: 100%;
@@ -313,7 +313,7 @@ export default {
   margin: 0 auto;
 }
 .main {
-  width: 85%;
+  width: 95%;
   height: 30rem;
   position: absolute;
   left: 50%;
@@ -321,7 +321,8 @@ export default {
   transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 360px;
 }
 .left {
   flex: 1;

@@ -6,41 +6,79 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: "/",
-    redirect: '/home'
+    // 移动端首页
+    path: '/mbhome',
+    name: 'mbHome',
+    component: ()=>import('../page/home.vue'),
+    meta: {
+      title: '首页'
+    }
   },
   {
-    path: '/login',
+    // PC端首页
+    path: '/pchome',
+    name: 'pcHome',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Home.vue'),
+    meta: {
+      title: '首页'
+    }
+  },
+  {
+    path: '/pclogin',
     name: 'login',
     component: Login
   },
   {
-    path: '/home',
-    name: 'Home',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Home.vue')
+    path: '/mblogin',
+    name: 'login',
+    component: () => import(/* webpackChunkName: "about" */ '../page/mblogin.vue'),
   },
   {
-    path: '/about',
+    path: '/pcabout',
     name: 'About',
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+    path: '/mbabout',
+    name: 'About',
+    component: () => import(/* webpackChunkName: "about" */ '../page/mbabout.vue')
   }, {
-    path: '/flow',
+    path: '/pcflow',
     name: 'flow',
     component: () => import(/* webpackChunkName: "about" */ '../views/flow.vue')
   }, {
-    path: '/text',
+    path: '/mbflow',
+    name: 'flow',
+    component: () => import(/* webpackChunkName: "about" */ '../page/mbflow.vue')
+  },{
+    path: '/pctext',
     name: 'text',
     component: () => import(/* webpackChunkName: "about" */ '../views/text.vue')
   },
   {
-    path: '/search',
+    path: '/mbtext',
+    name: 'text',
+    component: () => import(/* webpackChunkName: "about" */ '../page/mbtext.vue')
+  },
+  {
+    path: '/pcsearch',
     name: 'search',
     component: () => import(/* webpackChunkName: "about" */ '../views/search.vue')
   },
   {
-    path: '/shouyi',
+    path: '/mbsearch',
+    name: 'search',
+    component: () => import(/* webpackChunkName: "about" */ '../page/mbsearch.vue')
+  },
+  {
+    path: '/pcshouyi',
     name: 'shouyi',
     component: () => import(/* webpackChunkName: "about" */ '../views/money.vue')
+  },
+  {
+    path: '/mbshouyi',
+    name: 'shouyi',
+    component: () => import(/* webpackChunkName: "about" */ '../page/mbshouyi.vue')
   },
 ]
 
