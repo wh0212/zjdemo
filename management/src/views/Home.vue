@@ -118,6 +118,11 @@
         满足各种投放需求，让短视频内容得以扩展，流量价值得以充分体现，实现最大化收益。
       </div>
     </div>
+    <div class="btm">
+      <div>地址：北京市朝阳区洛克时代c座7层</div>
+      <div>北京微播跳动科技有限公司</div>
+      <a class="tz" target="_blank" href="https://beian.miit.gov.cn/">京ICP备20029591号</a>
+    </div>
   </div>
 </template>
 
@@ -175,10 +180,19 @@ export default {
         });
         this.navact = true;
       } else if (v == 3) {
-        let routeUrl = this.$router.resolve({
-          path: "/pcflow",
-        });
-        window.open(routeUrl.href, "_blank");
+        if (localStorage.getItem("login")) {
+          let routeUrl = this.$router.resolve({
+            path: "/pcflow",
+          });
+          window.open(routeUrl.href, "_blank");
+        } else {
+          this.$alert("您还没有登录,点击确定到登录页面", "提示", {
+            confirmButtonText: "确定",
+            callback: (action) => {
+              this.$router.push("/pclogin");
+            },
+          });
+        }
         this.navact = true;
       } else {
         if (localStorage.getItem("login")) {
@@ -201,6 +215,20 @@ export default {
 </script>
 
 <style  scoped>
+.tz {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.btm {
+  width: 100%;
+  background: #181c23;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  padding: 50px 0px;
+}
 .model {
   position: fixed;
   right: 30px;

@@ -10,7 +10,7 @@
           <span class="logo_title">快狗推</span>
         </div>
         <div @click="dialogTableVisiblefun" class="top_right">
-          <div style="font-size:12px">小程序扫码登录登录</div>
+          <div style="font-size:12px">小程序扫码登录</div>
           <span style="font-size:30px" class="iconfont iconerweima"></span>
         </div>
         <el-dialog
@@ -70,12 +70,6 @@
             show-password
             v-model="zc_password2"
           ></el-input>
-          <el-input
-            class="input"
-            placeholder="输入手机号"
-            prefix-icon="el-icon-user-solid"
-            v-model="zc_phone"
-          ></el-input>
           <div class="yzm input">
             <el-input style="width:50%" placeholder="请输入验证码" v-model="zc_yzm" clearable></el-input>
             <img class="ewm" @click="huoqu" :src="numcount1" alt />
@@ -90,8 +84,8 @@
 
 <script>
 import axios from "axios";
-import Request from "../util/http"
-const baseUrl = "https://tgadmin.clvtmcn.cn/"
+import Request from "../util/http";
+const baseUrl = "https://tgadmin.clvtmcn.cn/";
 export default {
   name: "Login",
   data() {
@@ -159,7 +153,6 @@ export default {
           }
         })
         .catch((e) => {
-          
           this.$message({
             message: "失败了",
             type: "warning",
@@ -171,7 +164,7 @@ export default {
         .get(`${baseUrl}index/index/register`, {
           params: {
             login_account: this.zc_username,
-            phone: this.zc_phone,
+            phone: this.zc_username,
             pwd: this.zc_password,
             regist_pwd_con: this.zc_password2,
             num: this.code,
@@ -180,13 +173,12 @@ export default {
         })
         .then((res) => {
           if (res.data.code == 1) {
-           
             this.$message({
               message: "恭喜你，注册成功,去登录吧",
               type: "success",
             });
+            this.showact = true;
           } else {
-           
             this.$message({
               message: res.data.msg,
               type: "warning",
@@ -194,7 +186,6 @@ export default {
           }
         })
         .catch((e) => {
-         
           this.$message({
             message: "失败了",
             type: "warning",
@@ -224,7 +215,6 @@ export default {
           },
         })
         .then((res) => {
-         
           window.localStorage.setItem("login", res.data.data.token);
           if (res.data.code == 1) {
             this.$message({
@@ -255,7 +245,6 @@ export default {
     },
   },
   beforeDestroy() {
-    
     if (this.interv) {
       //如果定时器还在运行 或者直接关闭，不用判断
       clearInterval(this.interv); //关闭
@@ -347,7 +336,7 @@ export default {
   align-items: center;
   justify-content: space-between;
 }
-div{
-  cursor:pointer
+div {
+  cursor: pointer;
 }
 </style>

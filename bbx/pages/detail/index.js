@@ -107,9 +107,6 @@ Page({
   },
   // 点赞
   dianZfun() {
-    this.setData({
-      zan: !this.data.zan
-    })
     var that = this;
     Request({
       url: '/article/likeadd',
@@ -120,15 +117,27 @@ Page({
         type: that.data.zan ? 2 : 1
       }
     }).then((res) => {
-      if (that.data.zan) {
-        tt.showToast({
-          title: '点赞成功'
-        });
+      console.log(res)
+      if (res.code == 1) {
+        that.setData({
+          zan: !that.data.zan
+        })
+        if (that.data.zan) {
+          tt.showToast({
+            title: '点赞成功'
+          });
+        } else {
+          tt.showToast({
+            title: '取消成功'
+          });
+        }
       } else {
         tt.showToast({
-          title: '取消成功'
+          title: '请稍后尝试',
+          icon: "fail"
         });
       }
+
     })
   },
   viewTouchMove(e) {

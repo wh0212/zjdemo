@@ -14,6 +14,11 @@
             <img v-if="userinfo.avatar" :src="userinfo.avatar" alt />
             <img v-else src="../assets/0.jpg" alt srcset />
           </div>
+          <div @click="flowfun" class="nav_right">
+            <el-tooltip class="item" effect="dark" content="新手流程" placement="bottom">
+              <div class="iconfont iconliucheng1"></div>
+            </el-tooltip>
+          </div>
           <div @click="shouyi" class="nav_right">
             <el-tooltip class="item" effect="dark" content="收益" placement="bottom">
               <div class="iconfont iconshouyi"></div>
@@ -91,13 +96,21 @@ export default {
         page: 1,
       },
     }).then((res) => {
+      console.log(res.data);
       this.userinfo = res.data.data.user;
       this.list = res.data.data.article.data;
       this.num = res.data.data.num;
     });
   },
   methods: {
-    shipin() {    //素材库
+    flowfun() {
+      let routeUrl = this.$router.resolve({
+        path: "/pcflow",
+      });
+      window.open(routeUrl.href, "_blank");
+    },
+    shipin() {
+      //素材库
       let routeUrl = this.$router.resolve({
         path: "/pcsearch",
       });
@@ -131,7 +144,8 @@ export default {
       });
       window.open(routeUrl.href, "_blank");
     },
-    handleCurrentChange(e) {  //分页
+    handleCurrentChange(e) {
+      //分页
       this.page = e;
       Request({
         url: "index/index/personal",

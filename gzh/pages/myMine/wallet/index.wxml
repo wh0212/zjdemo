@@ -2,7 +2,7 @@
 	<view style="color:#999">可提现余额(元)</view>
 	<view class="money">
 		<view class="moneycount">{{yue}}</view>
-		<view bindtap="tixian" class="btntx">申请提现</view>
+		<view bindtap="tixianbtn" class="btntx">申请提现</view>
 	</view>
 	<view class="txt">单笔提现金额超过5000元，平台待收取信息服务费6%，具体详见规则</view>
 </view>
@@ -27,8 +27,32 @@
 	</view>
 </view>
 
-
 <view class="about">
 	<navigator url="/pages/myMine/jilu/index" class="about_item">提现记录 <text class="iconfont pt_icon icon-icon"></text></navigator>
 	<navigator url="/pages/myMine/cardlist/index" class="about_item">银行卡 <text class="iconfont pt_icon icon-icon"></text></navigator>
 </view>
+
+<block wx:if="{{isShowConfirm}}">
+	<view class='toast-box'>
+		<view class='toastbg'></view>
+		<view class='showToast'>
+			<view class='toast-title'>
+				<text>提现金额</text>
+			</view>
+			<view class='toast-main'>
+				<view class='toast-input'>
+					<input type='digit' placeholder='输入提现金额' bindinput='setValue' value="{{priceNumber}}" data-name='stuEidtName'></input>
+					<view bindtap="qbjine" class="quanbu">全部</view>
+				</view>
+			</view>
+			<view class='toast-button'>
+				<view class='button1 btn'>
+					<view catchtap='cancel'>取消</view>
+				</view>
+				<view class='button2 btn'>
+					<view data-url="../allOrder/allOrder" catchtap='confirmAcceptance'>确定</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</block>

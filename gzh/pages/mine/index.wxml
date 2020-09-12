@@ -70,6 +70,12 @@
 			<view style="color:#adadad;font-size:60rpx" class="iconfont renmai icon-jieshao"></view>
 			<view class="workes_item_name">玩法介绍</view>
 		</navigator>
+		<!-- <view class="workes_main_item">
+			<button open-type="contact" size="mini" class="kefu">
+				<view style="color:#adadad;font-size:60rpx" class="iconfont renmai icon-kefu"></view>
+				<view class="workes_item_name">客服</view>
+			</button>
+		</view> -->
 		<navigator url="/pages/myMine/system/index" class="workes_main_item">
 			<view style="color:#adadad;font-size:60rpx" class="iconfont renmai icon-xitongshezhi"></view>
 			<view class="workes_item_name">系统设置</view>

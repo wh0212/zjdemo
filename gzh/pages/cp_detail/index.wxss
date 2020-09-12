@@ -1,14 +1,15 @@
-
 page {
   background: #14162b;
 }
-.bottom{
+
+.bottom {
   width: 100%;
   text-align: center;
   color: #999;
   font-size: 26rpx;
   line-height: 80rpx;
 }
+
 .top {
   width: 95%;
   margin: 20rpx auto;
@@ -89,6 +90,14 @@ page {
   line-height: 50rpx;
   margin-left: -60rpx;
   font-size: 30rpx;
+}
+
+.cp_zi_data {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .cp_zi_bt {
@@ -228,7 +237,8 @@ ec-canvas {
   text-align: center;
   background: #fff;
 }
-.user_bj{
+
+.user_bj {
   width: 100% !important;
   height: 100% !important;
   background: none;

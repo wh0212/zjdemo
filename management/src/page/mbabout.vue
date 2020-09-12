@@ -14,6 +14,11 @@
             <img v-if="userinfo.avatar" :src="userinfo.avatar" alt />
             <img v-else src="../assets/0.jpg" alt srcset />
           </div>
+          <div @click="flowfun" class="nav_right">
+            <el-tooltip class="item" effect="dark" content="新手流程" placement="bottom">
+              <div class="iconfont iconliucheng1"></div>
+            </el-tooltip>
+          </div>
           <div @click="shouyi" class="nav_right">
             <el-tooltip class="item" effect="dark" content="收益" placement="bottom">
               <div class="iconfont iconshouyi"></div>
@@ -54,7 +59,6 @@
       </div>
       <div style="float:right" class="fenye">
         <el-pagination
-
           background
           layout="prev, pager, next"
           :total="num"
@@ -102,6 +106,12 @@ export default {
       //素材库
       let routeUrl = this.$router.resolve({
         path: "/mbsearch",
+      });
+      window.open(routeUrl.href, "_blank");
+    },
+    flowfun() {
+      let routeUrl = this.$router.resolve({
+        path: "/mbflow",
       });
       window.open(routeUrl.href, "_blank");
     },
@@ -171,7 +181,6 @@ export default {
   color: #fff;
   padding: 5px 10px;
   margin-right: 10px;
- 
 }
 .chakan {
   position: absolute;
@@ -186,26 +195,25 @@ export default {
   font-size: 14px;
 }
 .right_title {
-    width: 100%;
+  width: 100%;
   font-size: 16px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  
 }
 .item_right {
   padding-left: 20px;
   height: 100%;
-  flex: 1; 
+  flex: 1;
   width: 80px;
 }
 .item_left {
   width: 100px;
   height: 90px;
-  flex: .8;
+  flex: 0.8;
 }
-.item_left img{
-    width: 100% !important;
+.item_left img {
+  width: 100% !important;
 }
 .list_item {
   position: relative;
@@ -220,7 +228,6 @@ export default {
   margin: 0 auto;
 }
 .fenye {
-  
 }
 .list_title {
   padding: 20px;
@@ -318,7 +325,7 @@ export default {
 div {
   cursor: pointer;
 }
-.item_left img{
-    width: 130px;
+.item_left img {
+  width: 130px;
 }
 </style>

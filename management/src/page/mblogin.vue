@@ -10,7 +10,7 @@
           <span class="logo_title">快狗推</span>
         </div>
         <div @click="dialogTableVisiblefun" class="top_right">
-          <div style="font-size:12px">小程序扫码登录登录</div>
+          <div style="font-size:12px">小程序扫码登录</div>
           <span style="font-size:30px" class="iconfont iconerweima"></span>
         </div>
         <el-dialog
@@ -69,12 +69,6 @@
             prefix-icon="el-icon-edit"
             show-password
             v-model="zc_password2"
-          ></el-input>
-          <el-input
-            class="input"
-            placeholder="输入手机号"
-            prefix-icon="el-icon-user-solid"
-            v-model="zc_phone"
           ></el-input>
           <div class="yzm input">
             <el-input style="width:50%" placeholder="请输入验证码" v-model="zc_yzm" clearable></el-input>
@@ -171,7 +165,7 @@ export default {
         .get(`${baseUrl}index/index/register`, {
           params: {
             login_account: this.zc_username,
-            phone: this.zc_phone,
+            phone: this.zc_username,
             pwd: this.zc_password,
             regist_pwd_con: this.zc_password2,
             num: this.code,
@@ -185,6 +179,7 @@ export default {
               message: "恭喜你，注册成功,去登录吧",
               type: "success",
             });
+            this.showact=true
           } else {
            
             this.$message({

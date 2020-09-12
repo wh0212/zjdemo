@@ -55,3 +55,97 @@
   border-bottom: 1px rgb(39, 41, 77) solid;
   border-top: 1px rgb(39, 41, 77) solid;
 }
+
+/*  */
+.toast-box {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+
+.toastbg {
+  opacity: 0.2;
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.showToast {
+  position: absolute;
+  opacity: 1;
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 40%;
+}
+
+.toast-title {
+  padding-left: 5%;
+  background-color: red;
+  color: white;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  border-top-right-radius: 16rpx;
+  border-top-left-radius: 16rpx;
+}
+
+.toast-main {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  background-color: white;
+  text-align: center;
+}
+
+.toast-input {
+  margin-left: 5%;
+  margin-right: 5%;
+  border: 1px solid #ddd;
+  padding-left: 2vh;
+  padding-right: 2vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.toast-input input{
+  width: 75%;
+}
+.toast-button {
+  display: flex;
+  align-items: center;
+}
+
+.button1 {
+  width: 50% !important;
+}
+
+.button2 {
+  width: 50% !important;
+}
+.button1 view {
+  width: 100%;
+  background-color: white;
+  color: red;
+  border-radius: 0px;
+  border-bottom-left-radius: 16rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+.quanbu{
+  font-size: 32rpx;
+}
+.button2 view{
+  width: 100%;
+  background-color: #fff;
+  color: black;
+  border-radius: 0px;
+  border-bottom-right-radius: 16rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+
