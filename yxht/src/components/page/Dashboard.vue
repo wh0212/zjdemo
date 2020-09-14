@@ -7,17 +7,13 @@
                         <img src="../../assets/img/img.jpg" class="user-avator" alt />
                         <div class="user-info-cont">
                             <div class="user-info-name">{{name}}</div>
-                            <div>{{role}}</div>
+                            <!-- <div>{{role}}</div> -->
                         </div>
                     </div>
                     <div class="user-info-list">
                         上次登录时间：
-                        <span>2019-11-01</span>
+                        <span>2020-9-13</span>
                     </div>
-                    <!-- <div class="user-info-list">
-                        上次登录地点：
-                        <span>东莞</span>
-                    </div>-->
                 </el-card>
             </el-col>
             <el-col :span="16">
@@ -35,8 +31,8 @@
                     </el-col>
                     <el-col :span="8">
                         <el-card shadow="hover" :body-style="{padding: '0px'}">
-                            <div class="grid-content grid-con-1">
-                                <i class="el-icon-lx-people grid-con-icon"></i>
+                            <div class="grid-content grid-con-4">
+                                <i class="el-icon-data-line grid-con-icon"></i>
                                 <div class="grid-cont-right">
                                     <div class="grid-num">{{temp.income_num}}</div>
                                     <div>总收益</div>
@@ -47,7 +43,7 @@
                     <el-col :span="8">
                         <el-card shadow="hover" :body-style="{padding: '0px'}">
                             <div class="grid-content grid-con-2">
-                                <i class="el-icon-lx-notice grid-con-icon"></i>
+                                <i class="el-icon-data-analysis grid-con-icon"></i>
                                 <div class="grid-cont-right">
                                     <div class="grid-num">{{temp.yesterday_add_user}}</div>
                                     <div>昨日收益</div>
@@ -57,8 +53,8 @@
                     </el-col>
                     <el-col style="margin-top:30px" :span="8">
                         <el-card shadow="hover" :body-style="{padding: '0px'}">
-                            <div  class="grid-content grid-con-3">
-                                <i class="el-icon-lx-goods grid-con-icon"></i>
+                            <div class="grid-content grid-con-3">
+                                <i class="el-icon-pie-chart grid-con-icon"></i>
                                 <div class="grid-cont-right">
                                     <div class="grid-num">{{temp.yesterday_income}}</div>
                                     <div>昨日新增用户</div>
@@ -93,7 +89,7 @@ export default {
     data() {
         return {
             name: localStorage.getItem('ms_username'),
-            temp:{},
+            temp: {},
             data: [
                 {
                     name: '2018/09/04',
@@ -177,11 +173,11 @@ export default {
             return this.name === 'admin' ? '超级管理员' : '普通用户';
         }
     },
-    mounted(){
-        HomeData({token:localStorage.getItem('token')}).then((res)=>{
-            console.log(res.data.data,"2222")
-            this.temp= res.data.data
-        })
+    mounted() {
+        HomeData({ token: localStorage.getItem('token') }).then((res) => {
+            console.log(res.data.data, '2222');
+            this.temp = res.data.data;
+        });
     },
     // created() {
     //     this.handleListener();
@@ -260,13 +256,19 @@ export default {
 .grid-con-1 .grid-num {
     color: rgb(45, 140, 240);
 }
+.grid-con-4 .grid-con-icon {
+    background: #f5a623;
+}
+.grid-con-4 .grid-num {
+    color: #f5a623;
+}
 
 .grid-con-2 .grid-con-icon {
     background: rgb(100, 213, 114);
 }
 
 .grid-con-2 .grid-num {
-    color: rgb(45, 140, 240);
+    color: rgb(100, 213, 114);
 }
 
 .grid-con-3 .grid-con-icon {

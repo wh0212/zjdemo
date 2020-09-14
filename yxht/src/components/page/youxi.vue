@@ -78,17 +78,17 @@
                 ref="form"
                 :model="temp1"
                 label-position="left"
-                label-width="70px"
+                label-width="90px"
                 style="width: 100%; height: 50vh;overflow-y: scroll;"
             >
-                <el-form-item label="游戏名" prop="game_name">
-                    <el-input style="width:80%" v-model="temp1.game_name" clearable />
+                <el-form-item label="游戏名称" prop="game_name">
+                    <el-input placeholder="游戏名称" style="width:80%" v-model="temp1.game_name" clearable />
                 </el-form-item>
                 <el-form-item label="游戏详情" prop="game_details">
-                    <el-input style="width:80%" v-model="temp1.game_details" clearable />
+                    <el-input placeholder="游戏详情" style="width:80%" v-model="temp1.game_details" clearable />
                 </el-form-item>
-                <el-form-item label="下载链接" prop="download_url">
-                    <el-input style="width:80%" v-model="temp1.download_url" clearable />
+                <el-form-item  label="下载链接" prop="download_url">
+                    <el-input placeholder="下载链接" style="width:80%" v-model="temp1.download_url" clearable />
                 </el-form-item>
                 <el-form-item label="头图" prop="image_url">
                     <el-upload
@@ -102,7 +102,7 @@
                         <i v-else class="el-icon-plus avatar-uploader-icon"></i>
                     </el-upload>
                 </el-form-item>
-                <el-form-item label="游戏轮播图" prop="images_urls">
+                <el-form-item label-width="90px" label="游戏轮播图" prop="images_urls">
                     <el-upload
                         action="http://tesadmin.hniux.cn/api/game/uploadfile"
                         list-type="picture-card"
@@ -285,6 +285,7 @@ export default {
                     download_url: this.temp1.download_url,
                     images_urls: this.temp1.images_urls
                 };
+                console.log(this.temp1.images_urls.length)
                 if (!this.temp1.game_name || !this.temp1.game_details || !this.temp1.image_url || !this.temp1.download_url || this.temp1.images_urls.length==0) {
                     this.$message.warning('内容不能为空');
                     this.addeditVisible = true;
@@ -385,5 +386,8 @@ export default {
     width: 180px;
     height: 180px;
     display: block;
+}
+.el-form-item__label{
+    border:1px red solid !important;
 }
 </style>

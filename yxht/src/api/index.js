@@ -1,13 +1,6 @@
 // import request from '../utils/request';
 const baseUrl = "http://tesadmin.hniux.cn/api"
 import requestHttp from "../utils/http"
-export const fetchData = query => {
-    return request({
-        url: './table.json',
-        method: 'get',
-        params: query
-    });
-};
 
 export const Login = query => {
     return requestHttp({

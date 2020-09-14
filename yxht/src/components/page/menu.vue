@@ -60,14 +60,14 @@
                         ></el-option>
                     </el-select>
                 </el-form-item>
-                <el-form-item label="类名名称" prop="title">
-                    <el-input style="width:80%" v-model="temp.title" clearable />
+                <el-form-item label="栏目名称" prop="title">
+                    <el-input placeholder="栏目名称" style="width:80%" v-model="temp.title" clearable />
                 </el-form-item>
                 <el-form-item label="图标" prop="icon">
-                    <el-input style="width:80%" v-model="temp.icon" clearable />
+                    <el-input placeholder="图标" style="width:80%" v-model="temp.icon" clearable />
                 </el-form-item>
                 <el-form-item label="路径" prop="router">
-                    <el-input style="width:80%" v-model="temp.router" clearable />
+                    <el-input placeholder="栏目路径" style="width:80%" v-model="temp.router" clearable />
                 </el-form-item>
             </el-form>
             <div slot="footer" class="dialog-footer">

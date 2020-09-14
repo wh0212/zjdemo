@@ -48,7 +48,7 @@
                 <el-table-column label="状态" align="center">
                     <template slot-scope="scope">
                         <el-tag
-                            :type="scope.row.status_str==='正常'?'success':(scope.row.state==='禁用'?'danger':'')"
+                            :type="scope.row.status_str==='正常'?'success':(scope.row.status_str==='禁止'?'danger':'')"
                         >{{scope.row.status_str}}</el-tag>
                     </template>
                     <!-- <el-switch v-model="value" active-color="#13ce66" inactive-color="#ff4949"></el-switch> -->
@@ -102,10 +102,10 @@
                 </el-select>-->
                 <!-- </el-form-item> -->
                 <el-form-item label="账号" prop="userName">
-                    <el-input style="width:80%" v-model="temp.username" clearable />
+                    <el-input placeholder="账号" style="width:80%" v-model="temp.username" clearable />
                 </el-form-item>
                 <el-form-item label="密码" prop="password">
-                    <el-input style="width:80%" v-model="temp.password" show-password />
+                    <el-input style="width:80%" :placeholder="idx==-1?'密码':'默认原密码'" v-model="temp.password" show-password />
                 </el-form-item>
                 <el-form-item label="头像" prop="img">
                     <el-upload
@@ -119,19 +119,10 @@
                         <i v-else class="el-icon-plus avatar-uploader-icon"></i>
                     </el-upload>
                 </el-form-item>
-                <!-- <el-form-item label="姓名" prop="username">
-                    <el-input style="width:80%" v-model="temp.username" clearable />
-                </el-form-item>
-                <el-form-item style="width:80%" label="手机" prop="phone">
-                    <el-input v-model="temp.phone" clearable />
-                </el-form-item>
-                <el-form-item style="width:80%" label="邮箱" prop="email">
-                    <el-input v-model="temp.email" clearable />
-                </el-form-item>-->
                 <el-form-item label="状态">
                     <el-radio-group v-model="temp.status">
                         <el-radio :label="1">正常</el-radio>
-                        <el-radio :label="0">禁用</el-radio>
+                        <el-radio :label="0">禁止</el-radio>
                     </el-radio-group>
                 </el-form-item>
                 <el-form-item label="权限">

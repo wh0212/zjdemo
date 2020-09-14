@@ -43,6 +43,14 @@
                 </el-dropdown>
             </div>
         </div>
+         <!-- 个人信息 -->
+        <el-drawer
+            title="个人信息"
+            :visible.sync="drawer"
+            direction="rtl"
+        >
+            <span>我来啦!</span>
+        </el-drawer>
     </div>
 </template>
 <script>
@@ -50,6 +58,8 @@ import bus from '../common/bus';
 export default {
     data() {
         return {
+            drawer: false,
+            direction: 'rtl',
             collapse: true,
             fullscreen: false,
             name: 'root',

@@ -1,6 +1,6 @@
 
 module.exports = {
-    publicPath:'./',
+    publicPath: './',
     outputDir: 'dist',  //build输出目录
     assetsDir: 'assets', //静态资源目录（js, css, img）
     lintOnSave: false, //是否开启eslint
@@ -19,5 +19,10 @@ module.exports = {
                 }
             },
         },
+    },
+    configureWebpack: (config) => {
+        if (process.env.NODE_ENV === 'production') {
+            config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true
+        }
     }
 }
