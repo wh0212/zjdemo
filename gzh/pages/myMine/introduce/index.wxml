@@ -41,10 +41,10 @@
 		<image class="image" src="https://img.kuaigoutui.com/nnnnnn.jpg"></image>
 		<image class="image" src="https://img.kuaigoutui.com/qqqqqq.jpg"></image>
 	</view>
-  <view>
+  <!-- <view>
 		<view class="title">帮助</view>
 		<view class="title_xq">如果在小程序中没有找到合适您的推广文章内容，到我们的官网：
               www.kuaigoutui.com“个人中心”去编辑跟您视频内容相匹配的文章，
               上传到我们的小程序上，也可以联系我们，我们帮您编辑，然后再到小程序中进行推广。</view>
-	</view>
+	</view> -->
 </view>

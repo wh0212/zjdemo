@@ -25,15 +25,19 @@
 	<view class="wallet">
 		<view class="wallet_item">
 			<view style="font-size:38rpx;margin-top:10rpx">{{money.price}}</view>
-			<view style="color:#999">总收益(元)</view>
+			<view style="color:#999">总收益</view>
 		</view>
 		<view class="wallet_item">
 			<view style="font-size:38rpx;margin-top:10rpx">{{money.yugu_price}}</view>
-			<view style="color:#999">今日预估收益(元)</view>
+			<view style="color:#999">今日预估收益</view>
 		</view>
 		<view class="wallet_item">
 			<view style="font-size:38rpx;margin-top:10rpx">{{money.zuori_price}}</view>
-			<view style="color:#999">昨日收益(元)</view>
+			<view style="color:#999">昨日收益</view>
+		</view>
+		<view class="wallet_item">
+			<view style="font-size:38rpx;margin-top:10rpx">{{money.ecpm}}</view>
+			<view style="color:#999">ECPM</view>
 		</view>
 	</view>
 </view>

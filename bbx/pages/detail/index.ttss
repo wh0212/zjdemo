@@ -34,9 +34,15 @@
   font-size: 32rpx;
   padding-bottom: 30rpx !important;;
   line-height: 60rpx;
-  height: calc(100vh + 400rpx) !important;
+  height: calc(100vh + 400rpx) !important; 
   overflow: hidden !important;
-  z-index: 9
+  z-index: 9;
+   /* word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:20;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  display: -webkit-box; */
 }
 .zhezhoa{
   height: 200rpx;

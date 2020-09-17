@@ -24,7 +24,7 @@
                 default-expand-all
                 :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
             >
-                <el-table-column prop="title" label="类目" width="180"></el-table-column>
+                <el-table-column prop="title" label="栏目" width="180"></el-table-column>
                 <el-table-column prop="icon" label="图标" width="180"></el-table-column>
                 <el-table-column prop="index" label="路径">
                     <template slot-scope="scope">/{{scope.row.index}}</template>
@@ -48,9 +48,9 @@
                 :model="temp"
                 label-position="left"
                 label-width="70px"
-                style="width: 100%; height: 50vh;overflow-y: scroll;"
+                style="width: 100%; height: 50vh;"
             >
-                <el-form-item label="类名名称" prop="name">
+                <el-form-item label="栏目名称" prop="name">
                     <el-select v-model="temp.fid" placeholder="请选择">
                         <el-option
                             v-for="item in tableData"

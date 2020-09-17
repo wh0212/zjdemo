@@ -116,7 +116,7 @@ export const youxilistData = (query) => {
     });
 };
 
-// 添加类目
+// 添加栏目
 export const addmenu = (query) => {
     return requestHttp({
         url: `${baseUrl}/menu/menu_add`,
@@ -125,7 +125,7 @@ export const addmenu = (query) => {
     });
 };
 
-// 用户类目列表
+// 用户栏目列表
 export const menuList = (query) => {
     return requestHttp({
         url: `${baseUrl}/menu/menu_list_array`,
@@ -134,7 +134,7 @@ export const menuList = (query) => {
     });
 };
 
-// 用户类目列表删除
+// 用户栏目列表删除
 export const delmenu = (query) => {
     return requestHttp({
         url: `${baseUrl}/menu/menu_delete`,
